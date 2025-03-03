@@ -170,7 +170,7 @@ int udpServerSetup(int serverPort)
 	/* Get the port number */
 	serverAddrLen = sizeof(serverAddress);
 	getsockname(socketNum,(struct sockaddr *) &serverAddress,  (socklen_t *) &serverAddrLen);
-	printf("Server using Port #: %d\n", ntohs(serverAddress.sin6_port));
+	printf("---------------------------Server using Port #: %d---------------------------\n", ntohs(serverAddress.sin6_port));
 
 	return socketNum;	
 	

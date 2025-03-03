@@ -1,57 +1,74 @@
-#include <stdio.h> 
-#include <stdlib.h> 
 #include "buffer.h"
-#include "communication.h"
 
-#define WINDOW_SIZE 3 
-
-//Initializes a buffer 
-void buffer_init(Circular_Buffer *c){
-    c->entries = malloc(WINDOW_SIZE * sizeof(BufferEntry)); //Dynamically Allocate Memory base off of window size
-    if(c->entries == NULL){
+// Initialize the circular buffer
+void buffer_init(CircularBuffer *buff, int window_size, int chunk_size) {
+    buff->entries = (BufferEntry *)malloc(window_size * sizeof(BufferEntry));
+    if (buff->entries == NULL) {
         perror("Memory Allocation Failure in Buffer Init");
-        exit(0); 
+        exit(1);
     }
-    c->highest = -1; 
-    c->expected = 0; 
 
-    //Set all valid flags to zero 
-    for(int i = 0; i < WINDOW_SIZE;i++){
-        c->entries[i].valid_flag = 0; 
-    }
-}   
+    buff->highest = window_size - 1;  // No packets sent yet
+    buff->lowest = 0;    // Lowest unacknowledged packet
+    buff->current = 0;   // Next sequence number that can be sent
+    buff->size = window_size;
+    buff->buffer_size = chunk_size; 
 
-
-//This function adds an out of order packet to the buffer. 
-void buffer_add(Circular_Buffer *c, int sequence_num, Packet in_packet){
-   
-    //Put packet into index and make index valid
-    int index = sequence_num % WINDOW_SIZE;
-    // c->entries[index].packet = in_packet;
-    c->entries[index].valid_flag = 1; 
-
-
-
-    // Check and update highest. 
-    if (sequence_num  > c->highest) {
-        c->highest = in_packet.sequence_num;
+    // Allocate memory for each chunk and mark invalid
+    for (int i = 0; i < window_size; i++) {
+        buff->entries[i].data = (char *)malloc(chunk_size);
+        if (buff->entries[i].data == NULL) {
+            perror("Memory Allocation Failure for BufferEntry Data");
+            exit(1);
+        }
+        buff->entries[i].valid_flag = false;
+        buff->entries[i].sequence_num = -1;
     }
 }
 
+// Add a data chunk to the buffer
+void buffer_add(CircularBuffer *buff, int sequence_num, uint8_t *data, int data_size) {
+    int index = sequence_num % buff->size;  // Circular index calculation
 
-void buffer_write_to_disk(Circular_Buffer *c, FILE *out_file){
-    //While expected is valid, we write to buffer. 
-    //Do the calculation for the buffer. 
-    int index = c->expected % WINDOW_SIZE; 
-    // while(c->entries[index].packet.sequence_num == c->expected && c->entries[index].valid_flag){
-        
-    // }
+    // Store the data chunk
+    memcpy(buff->entries[index].data, data, data_size);
+    buff->entries[index].sequence_num = sequence_num;
+    buff->entries[index].valid_flag = 1;
+
+    // Update highest sequence number seen
+    if (sequence_num > buff->highest) {
+        buff->highest = sequence_num;
+    }
+
+    // Move current forward if this was the next expected packet
+    if (sequence_num == buff->current) {
+        buff->current++;
+    }
 }
 
+// Remove an acknowledged packet from the buffer
+void buffer_remove(CircularBuffer *buff, int sequence_num) {
+    int index = sequence_num % buff->size;
 
-// Frees the dynamically allocated entries
-void buffer_free(Circular_Buffer *c) {
-    free(c->entries);
-    c->entries = NULL; 
+    // Ensure it's a valid packet before removing
+    if (buff->entries[index].valid_flag && buff->entries[index].sequence_num == sequence_num) {
+        buff->entries[index].valid_flag = false;
+        buff->entries[index].sequence_num = -1;
+
+        // Move `lowest` forward if this was the lowest unacknowledged packet
+        if (sequence_num == buff->lowest) {
+            while (buff->entries[buff->lowest % buff->size].valid_flag == false &&
+                   buff->lowest <= buff->highest) {
+                buff->lowest++;
+            }
+        }
+    }
 }
 
+// Free dynamically allocated memory
+void buffer_free(CircularBuffer *buff) {
+    for (int i = 0; i < buff->size; i++) {
+        free(buff->entries[i].data);
+    }
+    free(buff->entries);
+}

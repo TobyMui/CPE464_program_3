@@ -1,30 +1,30 @@
 #ifndef BUFFER_H
 #define BUFFER_H
 
-#include <stdio.h> 
-#include <stdlib.h> 
-#include <stdbool.h> 
-#include <stdint.h> 
-#include <string.h> 
-#include "communication.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <string.h>
 
-//SIZE
-#define WINDOW_SIZE 3
+typedef struct {
+    char *data;       // Will be set by buffer-size
+    int sequence_num; // Packet sequence number
+    bool valid_flag;  // If the chunk is stored in the buffer
+} BufferEntry;
 
-typedef struct{
-    Packet *packet; 
-    int valid_flag; 
-}BufferEntry; 
+typedef struct {
+    BufferEntry *entries;
+    int highest;  // Highest sent sequence number
+    int lowest;   // Lowest unacknowledged sequence number
+    int current;  // Next sequence number that can be sent
+    int size;     // Window size 
+    int buffer_size; //Buffer Size 
+} CircularBuffer;
 
-typedef struct{
-    BufferEntry *entries; 
-    int highest; 
-    int expected;
-}Circular_Buffer;
+void buffer_init(CircularBuffer *buff, int window_size, int chunk_size);
+void buffer_add(CircularBuffer *buff, int sequence_num, uint8_t *data, int data_size);
+void buffer_remove(CircularBuffer *buff, int sequence_num);
+void buffer_free(CircularBuffer *buff);
 
-void buffer_init(Circular_Buffer *buff); 
-void buffer_add(Circular_Buffer *c, int sequence_num, Packet in_packet);
-void buffer_free(Circular_Buffer *buff); 
-
-
-#endif 
+#endif

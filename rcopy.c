@@ -31,9 +31,7 @@
 void talkToServer(int socketNum, struct sockaddr_in6 * server);
 void send_filename(int socketNum, struct sockaddr_in6 *server, uint32_t window_size, uint32_t buffer_size, char *filename); 
 void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]);
-void filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]);
-
-
+int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]);
 
 int readFromStdin(char * buffer);
 int checkArgs(int argc, char * argv[]);
@@ -68,9 +66,9 @@ int main (int argc, char *argv[])
 //The 7 bytes header follows 32 bits seq# , 16 bits checksum,8 bits flag, and then filename. 
 //Max filename is 100 characters. 
 void send_filename(int socketNum, struct sockaddr_in6 *server, uint32_t window_size, uint32_t buffer_size, char *filename) {
-    printf("Window size: %d\n", window_size);
-    printf("Buffer size: %d\n", buffer_size);
-    printf("Filename: %s\n", filename);
+    // printf("Window size: %d\n", window_size);
+    // printf("Buffer size: %d\n", buffer_size);
+    // printf("Filename: %s\n", filename); 
 
     uint8_t out_packet[MAX_PDU]; // Packet to be constructed
     memset(out_packet, 0, sizeof(out_packet)); // Zero out the packet.
@@ -83,12 +81,12 @@ void send_filename(int socketNum, struct sockaddr_in6 *server, uint32_t window_s
     out_packet[6] = FLAG_FILENAME;
 
     // Add Window Size (bytes 7-10)
-    uint32_t net_window_size = htonl(window_size);
-    memcpy(out_packet + 7, &net_window_size, 4);
+    uint32_t network_window_size = htonl(window_size);
+    memcpy(out_packet + 7, &network_window_size, 4);
 
     // Add Buffer Size (bytes 11-14)
-    uint32_t net_buffer_size = htonl(buffer_size);
-    memcpy(out_packet + 11, &net_buffer_size, 4);
+    uint32_t network_buffer_size = htonl(buffer_size);
+    memcpy(out_packet + 11, &network_buffer_size, 4);
 
     // Add Filename (starting at byte 15)
     strncpy((char *)(out_packet + 15), filename, strlen(filename));
@@ -96,8 +94,7 @@ void send_filename(int socketNum, struct sockaddr_in6 *server, uint32_t window_s
     // Set checksum field (bytes 4-5) to 0 before computing checksum
     memset(out_packet + 4, 0, 2);
 
-    // Calculate checksum
-    uint16_t checksum = in_cksum((unsigned short *)out_packet, 15 + strlen(filename));
+	uint16_t checksum = in_cksum((unsigned short *)out_packet, 15 + strlen(filename));
 
     // Store checksum in bytes 4-5
     memcpy(out_packet + 4, &checksum, 2);
@@ -105,21 +102,51 @@ void send_filename(int socketNum, struct sockaddr_in6 *server, uint32_t window_s
     // Send filename packet ot the server
 	int serverAddrLen = sizeof(struct sockaddr_in6);
 	int out_packet_len = 15 + strlen(filename); 
+	printf("packet length = %d\n", out_packet_len );
+
 	safeSendto(socketNum, out_packet, out_packet_len, 0, (struct sockaddr *) server, serverAddrLen);
 }
 
-void filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]) {
+//Check the response from the server after sending a filename return 1, if no error. 
+int process_filename_response(uint8_t *in_buffer, int in_buff_len){
+	// Verify checksum
+    if (in_cksum((unsigned short *)in_buffer, in_buff_len) != 0) {
+        fprintf(stderr, "Checksum verification failed, packet dropped\n");
+        return 0; 
+    }
+	
+	//Check the flag 
+	int flag = 0; 
+	memcpy(&flag, &in_buffer[6], 1); 
+	printf("Flag: %d\n", flag); 
+	
+	if( flag == FLAG_FILENAME_ERROR){
+		printf("Filename doesn't exist, please retry\n");
+		exit(1); 
+	}else if(flag == FLAG_FILENAME_ACK){
+		printf("Filename exist, the server will be sending data\n");
+		return 1; 
+	}else{
+		return 0; 
+	}
+
+	return 0; 
+}
+
+
+
+int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]) {
     int attempts = 1;
-    char buffer[MAXBUF];
+    uint8_t buffer[MAXBUF];
     socklen_t serverLen = sizeof(struct sockaddr_in6);
     
     // Setup the poll set and add our socket to it
     setupPollSet();
     addToPollSet(socketNum);
 
-    while (attempts < 10) {
+    while (attempts <= 10) {
         send_filename(socketNum, server, atoi(argv[3]), atoi(argv[4]), argv[1]);
-        printf("Attempt %d: Sent filename packet\n", attempts + 1);
+        printf("Attempt %d: Sent filename packet\n", attempts);
 
         // Wait for up to 1 second for a response
         int readySocket = pollCall(1000);  // 1000ms timeout
@@ -127,19 +154,25 @@ void filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[])
         if (readySocket == socketNum) {  // Data available
             int recvLen = safeRecvfrom(socketNum, buffer, MAXBUF, 0, 
                                        (struct sockaddr *)server, (int *)&serverLen);
-            printf("Received response from server: %s\n", buffer);
-            return;  // Successful response, exit function
+
+            printf("Incoming bytes: %d, Received response from server: %s\n", recvLen ,buffer);
+			//Process the respnse from server, check the flag. 
+			if(1 == process_filename_response(buffer,recvLen)) {
+				return 1; // Successful response, exit function
+			}
         } else if (readySocket == -1) {  // Timeout
             printf("Timeout: No response received. Attempt: %d\n" , attempts);
         } else {
             perror("pollCall");
-            exit(EXIT_FAILURE);
+            exit(1);
         }
         attempts++;
+		printf("\n");
     }
 
     printf("Failed to receive response after 10 attempts.\n");
-    exit(EXIT_FAILURE);
+	return 0; 
+    exit(1);
 }
 
 
@@ -152,13 +185,15 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]){
 	//Initialize the trouble maker
 	float error_rate = atof(argv[5]);
 	printf("Error_rate: %f\n", error_rate );
-	sendtoErr_init(error_rate, 1, 1, 0, 1);
+	sendtoErr_init(error_rate, 1, 1, 1, 1);
 
 	while(state!=DONE){
 		switch(state){
 			case SEND_FILENAME: 
-				filename_exchange(sockfd, server, argv);
-				printf("Sending Init Packet to \n");
+				if(1 == filename_exchange(sockfd, server, argv)){
+					state = FILE_OK;
+					printf("File Ok state reached\n");
+				}
 				state = DONE; 
 				break; 
 			case FILE_OK: 
@@ -247,37 +282,42 @@ int checkArgs(int argc, char * argv[])
 	}
 
 	//Check argv[3] for window size, shouldn't be less than 0
-	if(atoi(argv[3]) <= 0){
+	//Window size max i 2^30 
+	char *remainderPtr = NULL; 
+	int window_size = strtol( argv[3], &remainderPtr, 10);
+	if(*remainderPtr != '\0'|| window_size <= 0 || window_size >= (1<<30)){
 		printf("Error: Invalid Window Size\n");
 		exit(1);
 	}
 
-	//Check argv[4] for buffer size
-	if(atoi(argv[4]) <= 0){
+	//Check argv[4], buffer-size, is a valid input and number. 
+	//Not sure about the max buffer size 
+	int buffer_size = strtol(argv[4], &remainderPtr, 10); 
+	if(*remainderPtr != '\0'|| buffer_size <= 0 || buffer_size >= 1400){
 		printf("Error: Invalid Buffer Size\n");
 		exit(1);
 	}
 
-	//Check argv[5] error rate
-	if(atoi(argv[5]) < 0 || atoi(argv[5]) > 1){
+	//Check argv[5] error rate with strtof
+	float error_rate = strtof( argv[5], &remainderPtr);
+	if(*remainderPtr != '\0' || error_rate < 0 || error_rate > 1){
 		printf("Error: Invalid error rate, the acceptable range is [0,1]\n");
 		exit(1); 
 	}
+
 
 	//Check argv[6], remote server name
 	if(strlen(argv[6]) == 0  ){
 		printf("Error: Remote-machine is empty\n");
 	}
 
-	 //Check argv[7] port number.
-	 int remote_port = atoi(argv[7]);
-	 if (remote_port <= 0 || remote_port > 65535) {
-		 printf("Error: remote-port must be a valid port number.\n");
-		 exit(1);
-	 }
-	
-	
-	portNumber = atoi(argv[7]);
+
+ 	// Validate remote port number (argv[7]) using strtol
+    portNumber = strtol(argv[7], &remainderPtr, 10);
+    if (*remainderPtr != '\0' || portNumber <= 0 || portNumber > 65535) {
+        printf("Error: remote-port must be a valid port number.\n");
+        exit(1);
+    }
 	
 	return portNumber;
 }
