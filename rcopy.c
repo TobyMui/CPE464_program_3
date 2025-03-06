@@ -22,6 +22,7 @@
 #include "checksum.h"
 #include "cpe464.h"
 #include "pollLib.h"
+#include "buffer.h"
 
 #define WINDOW_SIZE
 
@@ -32,6 +33,8 @@ void talkToServer(int socketNum, struct sockaddr_in6 * server);
 void send_filename(int socketNum, struct sockaddr_in6 *server, uint32_t window_size, uint32_t buffer_size, char *filename); 
 void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]);
 int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]);
+void send_SREJ (int sockfd, struct sockaddr_in6 *server, uint32_t missing_seq);
+void send_rr(int sockfd, struct sockaddr_in6 *server, uint32_t next_expected_seq);
 
 int readFromStdin(char * buffer);
 int checkArgs(int argc, char * argv[]);
@@ -114,7 +117,6 @@ int process_filename_response(uint8_t *in_buffer, int in_buff_len){
         fprintf(stderr, "Checksum verification failed, packet dropped\n");
         return 0; 
     }
-	
 	//Check the flag 
 	int flag = 0; 
 	memcpy(&flag, &in_buffer[6], 1); 
@@ -137,7 +139,7 @@ int process_filename_response(uint8_t *in_buffer, int in_buff_len){
 
 int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]) {
     int attempts = 1;
-    uint8_t buffer[MAXBUF];
+    uint8_t buffer[MAX_PDU];
     socklen_t serverLen = sizeof(struct sockaddr_in6);
     
     // Setup the poll set and add our socket to it
@@ -152,9 +154,7 @@ int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]) 
         int readySocket = pollCall(1000);  // 1000ms timeout
 
         if (readySocket == socketNum) {  // Data available
-            int recvLen = safeRecvfrom(socketNum, buffer, MAXBUF, 0, 
-                                       (struct sockaddr *)server, (int *)&serverLen);
-
+            int recvLen = safeRecvfrom(socketNum, buffer, MAX_PDU, 0, (struct sockaddr *)server, (int *)&serverLen);
             printf("Incoming bytes: %d, Received response from server: %s\n", recvLen ,buffer);
 			//Process the respnse from server, check the flag. 
 			if(1 == process_filename_response(buffer,recvLen)) {
@@ -163,7 +163,7 @@ int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]) 
         } else if (readySocket == -1) {  // Timeout
             printf("Timeout: No response received. Attempt: %d\n" , attempts);
         } else {
-            perror("pollCall");
+            perror("Error with poll call\n");
             exit(1);
         }
         attempts++;
@@ -175,12 +175,127 @@ int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]) 
     exit(1);
 }
 
+int receive_data(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outputFile){
+	uint8_t in_packet[MAX_PDU]; 
+	memset(in_packet, '\0', sizeof(in_packet));
+	socklen_t addr_len = sizeof(server);
 
+
+	int attempts = 1; 
+	while(attempts <= 10){
+		int readySocket = pollCall(1000); //1000ms timeout
+		if(readySocket == socketNum){
+			int recvLen = safeRecvfrom(socketNum, in_packet, MAX_PDU, 0, (struct sockaddr *)server, (int *)&addr_len);
+			printf("--------------------------------------------------------------------\n");
+
+			//Grab the sequence number boiiiiiiiii
+			uint32_t seq_num;
+			memcpy(&seq_num,in_packet,4);
+			seq_num = ntohl(seq_num); 
+
+			printf("Incoming bytes: %d \n", recvLen);
+			printf("seq num: %d\n", seq_num); 
+
+
+			printf("\n");
+			char message[100];
+			memset(message,'\0',100);			
+			
+			memcpy(message, in_packet +7, 100);
+
+			fwrite(message, 100, 1, outputFile);
+
+			// printf("Message Received: %s\n", message); 
+
+			printf("\n");
+
+			//Check for EOF flag
+			int flag = in_packet[6];
+			if(flag == FLAG_EOF){
+				return -1;
+			}
+
+			send_rr(socketNum, server, seq_num + 1);
+			
+			//Process the packet spending on the flag.
+			return recvLen;
+			break;
+		}else if(readySocket == -1){
+			printf("Timeout: No response received. Attempt: %d\n", attempts); 
+		}else{
+			perror("Error with poll call\n"); 
+			exit(1); 
+		}
+		attempts++; 
+		printf("\n"); 
+	}
+	return 0; 
+}
+
+////////////////////////////////Functions for Sending Packets///////////////////////////////
+
+/*This function sends an SREJ to the server*/
+void send_SREJ (int sockfd, struct sockaddr_in6 *server, uint32_t missing_seq) {
+    uint8_t srej_packet[11];//packet to be built
+    memset(srej_packet, '\0', sizeof(srej_packet)); //set buffer to null
+	socklen_t addr_len = sizeof(server);
+
+
+    uint32_t net_seq_num = htonl(0); 
+    uint32_t net_nack_seq = htonl(missing_seq);
+
+	//Add data 
+    memcpy(srej_packet, &net_seq_num, 4);
+    srej_packet[6] = FLAG_SREJ;
+    memcpy(srej_packet + 7, &net_nack_seq, 4);
+
+    // Compute checksum and insert into (5-6)
+    memset(srej_packet + 4, 0, 2);
+    uint16_t checksum = in_cksum((unsigned short *)srej_packet, 11);
+    memcpy(srej_packet + 4, &checksum, 2);
+
+    // Send SREJ packet
+	safeSendto(sockfd, srej_packet, 11, 0, (struct sockaddr *) server, addr_len);
+}
+
+/*This function sends an RR to the server. */
+void send_rr(int sockfd, struct sockaddr_in6 *server, uint32_t next_expected_seq) {
+    uint8_t rr_packet[11]; //packet to be built
+    memset(rr_packet, 0, sizeof(rr_packet)); //set buffer to null
+	socklen_t addr_len = sizeof(struct sockaddr_in6);
+
+	//sequence number 
+    uint32_t net_seq_num = htonl(0);
+    uint32_t net_ack_seq = htonl(next_expected_seq);
+    
+    // Set sequence number, flag, and RR sequence number
+    memcpy(rr_packet, &net_seq_num, 4); 
+    rr_packet[6] = FLAG_RR;
+    memcpy(rr_packet + 7, &net_ack_seq, 4);
+
+    // Compute checksum and insert into (5-6)
+    memset(rr_packet + 4, 0, 2);
+    uint16_t checksum = in_cksum((unsigned short *)rr_packet, 11);
+    memcpy(rr_packet + 4, &checksum, 2);
+
+    // Send RR packet
+	safeSendto(sockfd, rr_packet, 11, 0, (struct sockaddr *) server, addr_len);
+}
 
 /////////////////////////////////////////FSM///////////////////////////////////////////
 
 void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]){
 	RcopyState state = SEND_FILENAME;
+
+	//Initiate buffer
+	CircularBuffer *buffer = (CircularBuffer*)malloc(sizeof(CircularBuffer)); 
+
+	//Open a file for writing 
+	FILE *output_file = fopen(argv[2], "w"); 
+	if(output_file == NULL){
+		perror("Error openning file");
+		exit(1);
+	}
 	
 	//Initialize the trouble maker
 	float error_rate = atof(argv[5]);
@@ -191,20 +306,31 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]){
 		switch(state){
 			case SEND_FILENAME: 
 				if(1 == filename_exchange(sockfd, server, argv)){
-					state = FILE_OK;
+					state = RECEIVE_DATA;
 					printf("File Ok state reached\n");
 				}
-				state = DONE; 
 				break; 
 			case FILE_OK: 
 				break; 
 			case RECEIVE_DATA: 
-				break;
+				int readBytes = 1; //Start at 1 to start the while loop
+				//Recieve until there is no more EOF 
+				while(readBytes > 0){
+					if((readBytes = receive_data(sockfd, server, buffer, output_file)) == -1){
+						state = DONE; 
+					} 
+				}
+				fflush(output_file);
+				break; 
 			default: 
 				state = DONE; 
+				fflush(output_file);
+				fclose(output_file); 
+				break;
 		}
-
 	}
+
+
 }
 
 
