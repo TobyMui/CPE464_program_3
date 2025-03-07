@@ -135,8 +135,6 @@ int process_filename_response(uint8_t *in_buffer, int in_buff_len){
 	return 0; 
 }
 
-
-
 int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]) {
     int attempts = 1;
     uint8_t buffer[MAX_PDU];
@@ -175,47 +173,86 @@ int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]) 
     exit(1);
 }
 
+/*This function parses the incoming function and will send an SREJ or RR accordingly
+  returns the flag in the packet
+  returns -1 if checksum failed. 
+  returns 0 if EOF*/
+int process_packet_in(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outputFile, uint8_t *in_packet, int in_packet_len){
+	// Verify checksum
+    if (in_cksum((unsigned short *)in_packet, in_packet_len) != 0){
+        printf("Checksum error, packet will be dropped\n");
+        return -1;
+    }
+	
+	//Check the sequence number
+	uint32_t seq_num;
+	memcpy(&seq_num, in_packet,4);
+	seq_num = ntohl(seq_num); 
+
+	printf("Incoming bytes: %d \n", in_packet_len);
+	printf("seq num: %d\n", seq_num); 
+
+	//Grab data chunk
+	uint8_t data[in_packet_len - HEADER_SIZE]; 
+	memcpy(data, in_packet +7, sizeof(data)); 
+
+	//Check for EOF
+	if(in_packet[6] == FLAG_EOF){
+		return 0;
+	}
+
+	printf("Current: %d ---------------\n", buffer->current);
+
+	//Logic for writing and buffering (FSM sort of)
+	if(seq_num == buffer->current){ //Write to disk (inorder)
+		fwrite(data, in_packet_len - HEADER_SIZE, 1, outputFile); //Write to file
+		send_rr(socketNum, server, seq_num + 1);
+		buffer->current++; 
+
+		//Check the buffer
+		int index = buffer->current % buffer->size; 
+		if(buffer->entries[index].valid_flag == 1){
+			fwrite(data, buffer->entries[index].data_len, 1, outputFile); //Write to file, NEED TO FIX FOR PROPER LENGTH
+			buffer->entries[index].valid_flag = 0;
+			buffer->current++; 
+		}
+	}else{
+		printf("------- SREJ for Packet: %d------- \n",buffer->current);
+
+		buffer_add(buffer, seq_num, data, in_packet_len - HEADER_SIZE); //Add data
+		int index = buffer->current % buffer->size; 
+		buffer->entries[index].data_len = in_packet_len - HEADER_SIZE; //Add length of data to the index 
+
+
+		send_SREJ(socketNum, server, buffer->current); 
+	}
+
+	return in_packet[6];
+}
+
+
+/*Returns bytes received 
+  Returns -1, when EOF detected*/
 int receive_data(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outputFile){
 	uint8_t in_packet[MAX_PDU]; 
 	memset(in_packet, '\0', sizeof(in_packet));
 	socklen_t addr_len = sizeof(server);
+	fflush(outputFile);
 
 
 	int attempts = 1; 
 	while(attempts <= 10){
 		int readySocket = pollCall(1000); //1000ms timeout
-		if(readySocket == socketNum){
+		if(readySocket > 0){
 			int recvLen = safeRecvfrom(socketNum, in_packet, MAX_PDU, 0, (struct sockaddr *)server, (int *)&addr_len);
 			printf("--------------------------------------------------------------------\n");
-
-			//Grab the sequence number boiiiiiiiii
-			uint32_t seq_num;
-			memcpy(&seq_num,in_packet,4);
-			seq_num = ntohl(seq_num); 
-
-			printf("Incoming bytes: %d \n", recvLen);
-			printf("seq num: %d\n", seq_num); 
-
-
-			printf("\n");
-			char message[100];
-			memset(message,'\0',100);			
+			//Grab the sequence number and check that it is the expected. 
 			
-			memcpy(message, in_packet +7, 100);
+			//Process packet
+			if(process_packet_in(socketNum, server, buffer, outputFile,in_packet,recvLen) == 0){ //returns 0 if EOF
+				return -1; 
+			} 
 
-			fwrite(message, 100, 1, outputFile);
-
-			// printf("Message Received: %s\n", message); 
-
-			printf("\n");
-
-			//Check for EOF flag
-			int flag = in_packet[6];
-			if(flag == FLAG_EOF){
-				return -1;
-			}
-
-			send_rr(socketNum, server, seq_num + 1);
 			
 			//Process the packet spending on the flag.
 			return recvLen;
@@ -238,7 +275,7 @@ int receive_data(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buf
 void send_SREJ (int sockfd, struct sockaddr_in6 *server, uint32_t missing_seq) {
     uint8_t srej_packet[11];//packet to be built
     memset(srej_packet, '\0', sizeof(srej_packet)); //set buffer to null
-	socklen_t addr_len = sizeof(server);
+	socklen_t addr_len = sizeof(struct sockaddr_in6);
 
 
     uint32_t net_seq_num = htonl(0); 
@@ -289,9 +326,10 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]){
 
 	//Initiate buffer
 	CircularBuffer *buffer = (CircularBuffer*)malloc(sizeof(CircularBuffer)); 
+	buffer_init( buffer, atoi(argv[3]), atoi(argv[4]));
 
 	//Open a file for writing 
-	FILE *output_file = fopen(argv[2], "w"); 
+	FILE *output_file = fopen(argv[2], "wb"); 
 	if(output_file == NULL){
 		perror("Error openning file");
 		exit(1);
@@ -314,13 +352,13 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]){
 				break; 
 			case RECEIVE_DATA: 
 				int readBytes = 1; //Start at 1 to start the while loop
-				//Recieve until there is no more EOF 
+				//Recieve until there is no more EOF, however we need to check that the data is coming in order 
 				while(readBytes > 0){
 					if((readBytes = receive_data(sockfd, server, buffer, output_file)) == -1){
 						state = DONE; 
 					} 
+					//FILE IS NOT FINISHING BECAUSE IT IS NOT GETTING FLUSHEDDDDDDDDDDD
 				}
-				fflush(output_file);
 				break; 
 			default: 
 				state = DONE; 

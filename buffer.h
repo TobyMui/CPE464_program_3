@@ -8,9 +8,10 @@
 #include <string.h>
 
 typedef struct {
-    uint8_t *data;       // Will be set by buffer-size
+    uint8_t *data;    // Will be set by buffer-size
     int sequence_num; // Packet sequence number
     bool valid_flag;  // If the chunk is stored in the buffer
+    int data_len;      // length of data
 } BufferEntry;
 
 typedef struct {

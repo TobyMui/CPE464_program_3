@@ -4,3 +4,9 @@ Toby Mui , 6PM
     -Look into implementing sending file name. Get the initilization to work tmr hopefully!!!
 
 Make an FSM. 
+
+
+
+3/5/2025
+
+    Need to fix EOF state. Currenlty the output is appending all of the NULLS. 

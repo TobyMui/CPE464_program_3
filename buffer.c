@@ -31,7 +31,7 @@ void buffer_add(CircularBuffer *buff, int sequence_num, uint8_t *data, int data_
     int index = sequence_num % buff->size;  // Circular index calculation
 
     // Store the data chunk
-    memset(buff->entries[index].data, '\0', buff->buffer_size);
+    memset(buff->entries[index].data, 0, buff->buffer_size);
     memcpy(buff->entries[index].data, data, data_size);
     buff->entries[index].sequence_num = sequence_num;
     buff->entries[index].valid_flag = 1;
