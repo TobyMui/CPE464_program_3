@@ -23,9 +23,8 @@ typedef struct {
     int buffer_size; //Buffer Size 
 } CircularBuffer;
 
-void buffer_init(CircularBuffer *buff, int window_size, int chunk_size);
+void buffer_init(CircularBuffer *buff, int window_size, int chunk_size, int highest);
 void buffer_add(CircularBuffer *buff, int sequence_num, uint8_t *data, int data_size);
-void buffer_remove(CircularBuffer *buff, int sequence_num);
 void buffer_free(CircularBuffer *buff);
 
 #endif

@@ -35,16 +35,20 @@ int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]);
 void send_SREJ(int sockfd, struct sockaddr_in6 *server, uint32_t missing_seq);
 void send_rr(int sockfd, struct sockaddr_in6 *server, uint32_t next_expected_seq);
 
-int readFromStdin(char *buffer);
 int checkArgs(int argc, char *argv[]);
 
-typedef enum
-{
+typedef enum{
 	DONE,
 	SEND_FILENAME,
 	RECEIVE_DATA,
 	FILE_OK
 } RcopyState;
+
+typedef enum{
+	INORDER,
+	BUFFER, 
+	FLUSHING
+} recvState;
 
 int main(int argc, char *argv[])
 {
@@ -196,12 +200,50 @@ int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[])
 	exit(1);
 }
 
+
+// recvState INORDER(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outputFile, uint8_t *in_packet, int in_packet_len){
+// 	// Verify checksum
+// 	if (in_cksum((unsigned short *)in_packet, in_packet_len) != 0){
+// 		printf("Checksum error, packet will be dropped\n");
+// 		return -1;
+// 	}
+
+// 	// Get the sequence number
+// 	uint32_t seq_num;
+// 	memcpy(&seq_num, in_packet, 4);
+// 	seq_num = ntohl(seq_num);
+
+// 	// //Grab the data from the packet 
+// 	// printf("Incoming bytes: %d \n", in_packet_len);
+// 	// printf("Incoming Packet Sequence num: %d\n", seq_num);
+// 	// uint8_t message[in_packet_len - 6];
+// 	// memset(message, '\0', in_packet_len - 6);
+// 	// memcpy(message, in_packet + 7, in_packet_len - 7);
+// 	// printf("Data in: %s\n", message);
+// 	// printf("\n");
+
+// 	if(seq_num == buffer->current){ //In order State
+// 		printf("~~~~~Writing in order Packet: %d~~~~~ \n", buffer->current);
+// 		fwrite(in_packet, in_packet_len - HEADER_SIZE, 1, outputFile); //Write to disk
+// 		buffer->highest = buffer->current; //Highest = expected
+// 		buffer->current++; //expected++
+// 		send_rr(socketNum, server, buffer->current);
+// 		return INORDER;
+// 	}else if(seq_num > buffer->current){
+// 		printf("~~~~~SREJ for Packet: %d~~~~~ \n", buffer->current);
+// 		send_SREJ(socketNum,server,buffer->current); //SREJ for expected 
+// 		int buff_index = seq_num % buffer->size; //Calculate index for circular buffer
+// 		buffer_add(buffer, seq_num, in_packet + 7, in_packet_len - 7); // add to buffer 
+// 		return BUFFER; 
+// 	}
+
+// }
+
 /*This function parses the incoming function and will send an SREJ or RR accordingly
   returns the flag in the packet
   returns -1 if checksum failed.
   returns 0 if EOF*/
-int process_packet_in(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outputFile, uint8_t *in_packet, int in_packet_len)
-{
+  int process_packet_in(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outputFile, uint8_t *in_packet, int in_packet_len){
 	// Verify checksum
 	if (in_cksum((unsigned short *)in_packet, in_packet_len) != 0){
 		printf("Checksum error, packet will be dropped\n");
@@ -233,12 +275,14 @@ int process_packet_in(int socketNum, struct sockaddr_in6 *server, CircularBuffer
 	}
 
 	printf("Current: %d ---------------\n", buffer->current);
+	printf("Highest: %d ---------------\n",buffer->highest);
 
 	// Logic for writing and buffering (FSM sort of)
 	if (seq_num == buffer->current){ // Write to disk (inorder)
 		fwrite(data, in_packet_len - HEADER_SIZE, 1, outputFile); // Write to file
 		printf("Sending RR%d\n", buffer->current + 1);
 		send_rr(socketNum, server, buffer->current + 1);
+		buffer->highest = buffer->current; 
 		buffer->current++;
 
 		// Check the buffer
@@ -250,56 +294,58 @@ int process_packet_in(int socketNum, struct sockaddr_in6 *server, CircularBuffer
 			buffer->current++;
 			index = buffer->current % buffer->size;
 		}
-	}else{
-		if (seq_num > buffer->current) {  // Only buffer packets ahead of current
-			printf("------- SREJ for Packet: %d------- \n", buffer->current);
-			buffer_add(buffer, seq_num, data, in_packet_len - HEADER_SIZE);
-			int index = seq_num % buffer->size;
-			buffer->entries[index].data_len = in_packet_len - HEADER_SIZE;
-			send_SREJ(socketNum, server, buffer->current);  // Request missing current seq
-		}
+	}else if(seq_num > buffer->current) {
+		// Only buffer packets ahead of current
+		printf("------- SREJ for Packet: %d------- \n", buffer->current);
+		buffer_add(buffer, seq_num, data, in_packet_len - HEADER_SIZE);
+		int index = seq_num % buffer->size;
+		buffer->entries[index].data_len = in_packet_len - HEADER_SIZE;
+		send_SREJ(socketNum, server, buffer->current);  // Request missing current seq
+		buffer->highest = seq_num; //Updated expected to be incoming seq_num
 	}
 
 	return in_packet[6];
 }
 
+  
+
 /*Returns bytes received
   Returns -1, when EOF detected*/
-int receive_data(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outputFile)
-{
-	uint8_t in_packet[MAX_PDU];
-	memset(in_packet, '\0', sizeof(in_packet));
-	socklen_t addr_len = sizeof(server);
-	fflush(outputFile);
-
-	int attempts = 1;
-	while (attempts <= 10){
-		int readySocket = pollCall(1000); // 1000ms timeout
-		if (readySocket > 0){
-			printf("--------------------------------------------------------------------\n\n");
-
-			int recvLen = safeRecvfrom(socketNum, in_packet, MAX_PDU, 0, (struct sockaddr *)server, (int *)&addr_len);
-			// Grab the sequence number and check that it is the expected.
-			// Process packet
-			if (process_packet_in(socketNum, server, buffer, outputFile, in_packet, recvLen) == 0){ // returns 0 if EOF
-				return -1;
-			}
-
-			// Process the packet spending on the flag.
-			return recvLen;
-			break;
-		}else if (readySocket == -1){
-			printf("Timeout: No response received. Attempt: %d\n", attempts);
-		}else{
-			perror("Error with poll call\n");
-			exit(1);
-		}
-		send_SREJ(socketNum, server, buffer->current);
-		attempts++;
-		printf("\n");
-	}
-	return 0;
-}
+  int receive_data(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outputFile)
+  {
+	  uint8_t in_packet[MAX_PDU];
+	  memset(in_packet, '\0', sizeof(in_packet));
+	  socklen_t addr_len = sizeof(server);
+	  fflush(outputFile);
+  
+	  int attempts = 1;
+	  while (attempts <= 10){
+		  int readySocket = pollCall(1000); // 1000ms timeout
+		  if (readySocket > 0){
+			  printf("--------------------------------------------------------------------\n\n");
+  
+			  int recvLen = safeRecvfrom(socketNum, in_packet, MAX_PDU, 0, (struct sockaddr *)server, (int *)&addr_len);
+			  // Grab the sequence number and check that it is the expected.
+			  // Process packet
+			  if (process_packet_in(socketNum, server, buffer, outputFile, in_packet, recvLen) == 0){ // returns 0 if EOF
+				  return -1;
+			  }
+  
+			  // Process the packet spending on the flag.
+			  return recvLen;
+			  break;
+		  }else if (readySocket == -1){
+			  printf("Timeout: No response received. Attempt: %d\n", attempts);
+		  }else{
+			  perror("Error with poll call\n");
+			  exit(1);
+		  }
+		  send_SREJ(socketNum, server, buffer->current);
+		  attempts++;
+		  printf("\n");
+	  }
+	  return 0;
+  }
 
 ////////////////////////////////Functions for Sending Packets///////////////////////////////
 
@@ -360,7 +406,7 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[])
 
 	// Initiate buffer
 	CircularBuffer *buffer = (CircularBuffer *)malloc(sizeof(CircularBuffer));
-	buffer_init(buffer, atoi(argv[3]), atoi(argv[4]));
+	buffer_init(buffer, atoi(argv[3]), atoi(argv[4]), 0);
 
 	// Open a file for writing
 	FILE *output_file = fopen(argv[2], "wb");
@@ -390,6 +436,8 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[])
 			while (readBytes > 0){
 				if ((readBytes = receive_data(sockfd, server, buffer, output_file)) == -1){
 					state = DONE;
+					fflush(output_file);
+				fclose(output_file);
 					break;
 				}
 			}
@@ -404,75 +452,24 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[])
 	}
 }
 
-void talkToServer(int socketNum, struct sockaddr_in6 *server)
-{
-	int serverAddrLen = sizeof(struct sockaddr_in6);
-	char *ipString = NULL;
-	int dataLen = 0;
-	char buffer[MAXBUF + 1];
-
-	buffer[0] = '\0';
-	while (buffer[0] != '.')
-	{
-		dataLen = readFromStdin(buffer);
-
-		printf("Sending: %s with len: %d\n", buffer, dataLen);
-
-		safeSendto(socketNum, buffer, dataLen, 0, (struct sockaddr *)server, serverAddrLen);
-
-		safeRecvfrom(socketNum, buffer, MAXBUF, 0, (struct sockaddr *)server, &serverAddrLen);
-
-		// print out bytes received
-		ipString = ipAddressToString(server);
-		printf("Server with ip: %s and port %d said it received %s\n", ipString, ntohs(server->sin6_port), buffer);
-	}
-}
-
-int readFromStdin(char *buffer)
-{
-	char aChar = 0;
-	int inputLen = 0;
-
-	// Important you don't input more characters than you have space
-	buffer[0] = '\0';
-	printf("Enter data: ");
-	while (inputLen < (MAXBUF - 1) && aChar != '\n'){
-		aChar = getchar();
-		if (aChar != '\n')
-		{
-			buffer[inputLen] = aChar;
-			inputLen++;
-		}
-	}
-
-	// Null terminate the string
-	buffer[inputLen] = '\0';
-	inputLen++;
-
-	return inputLen;
-}
-
 int checkArgs(int argc, char *argv[])
 {
 	int portNumber = 0;
 
 	/* check command line arguments  */
-	if (argc != 8)
-	{
+	if (argc != 8){
 		printf("usage: %s from-filename to-filename window-size buffer-size error-rate remote-machine remote-number \n", argv[0]);
 		exit(1);
 	}
 
 	// Check that there are filenames
-	if (strlen(argv[1]) == 0 || strlen(argv[2]) == 0)
-	{
+	if (strlen(argv[1]) == 0 || strlen(argv[2]) == 0){
 		printf("Error: from-filename and/or to-filename are/is empty.\n");
 		exit(1);
 	}
 
 	// Check filename lengths
-	if (strlen(argv[1]) >= 100 || strlen(argv[2]) >= 100)
-	{
+	if (strlen(argv[1]) >= 100 || strlen(argv[2]) >= 100){
 		printf("Error: from-filename and/or to-filename exceeds 99 characters.\n");
 		exit(1);
 	}
@@ -481,8 +478,7 @@ int checkArgs(int argc, char *argv[])
 	// Window size max i 2^30
 	char *remainderPtr = NULL;
 	int window_size = strtol(argv[3], &remainderPtr, 10);
-	if (*remainderPtr != '\0' || window_size <= 0 || window_size >= (1 << 30))
-	{
+	if (*remainderPtr != '\0' || window_size <= 0 || window_size >= (1 << 30)){
 		printf("Error: Invalid Window Size\n");
 		exit(1);
 	}
@@ -490,30 +486,26 @@ int checkArgs(int argc, char *argv[])
 	// Check argv[4], buffer-size, is a valid input and number.
 	// Not sure about the max buffer size
 	int buffer_size = strtol(argv[4], &remainderPtr, 10);
-	if (*remainderPtr != '\0' || buffer_size <= 0 || buffer_size >= 1400)
-	{
+	if (*remainderPtr != '\0' || buffer_size <= 0 || buffer_size >= 1400){
 		printf("Error: Invalid Buffer Size\n");
 		exit(1);
 	}
 
 	// Check argv[5] error rate with strtof
 	float error_rate = strtof(argv[5], &remainderPtr);
-	if (*remainderPtr != '\0' || error_rate < 0 || error_rate > 1)
-	{
+	if (*remainderPtr != '\0' || error_rate < 0 || error_rate > 1){
 		printf("Error: Invalid error rate, the acceptable range is [0,1]\n");
 		exit(1);
 	}
 
 	// Check argv[6], remote server name
-	if (strlen(argv[6]) == 0)
-	{
+	if (strlen(argv[6]) == 0){
 		printf("Error: Remote-machine is empty\n");
 	}
 
 	// Validate remote port number (argv[7]) using strtol
 	portNumber = strtol(argv[7], &remainderPtr, 10);
-	if (*remainderPtr != '\0' || portNumber <= 0 || portNumber > 65535)
-	{
+	if (*remainderPtr != '\0' || portNumber <= 0 || portNumber > 65535){
 		printf("Error: remote-port must be a valid port number.\n");
 		exit(1);
 	}

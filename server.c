@@ -54,36 +54,6 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-// /*This Function is for building packets
-//   For building headers, set payload to NULL and payload_size to 0*/
-// int build_packet(uint8_t *packet, uint32_t seq_num, uint8_t flag, uint8_t *payload, int payload_size){
-//     memset(packet, 0, 7 + payload_size); // Zero out the packet
-//     int packet_len = 0;
-
-//     // Set sequence number (bytes 0-3)
-//     uint32_t net_seq_num = htonl(seq_num);
-//     memcpy(packet, &net_seq_num, 4);
-
-//     // Set flag (byte 6)
-//     packet[6] = flag;
-
-//     // Copy payload if provided
-//     if (payload != NULL && payload_size > 0)
-//     {
-//         memcpy(packet + 7, payload, payload_size);
-//         packet_len = HEADER_SIZE + payload_size;
-//     }else{
-//         packet_len = HEADER_SIZE;
-//     }
-
-//     // Compute checksum (bytes 4-5)
-//     memset(packet + 4, 0, 2); // Reset checksum field to 0 before computing
-//     uint16_t checksum = in_cksum((unsigned short *)packet, 7 + payload_size);
-//     memcpy(packet + 4, &checksum, 2);
-
-//     return packet_len;
-// }
-
 // This function sends a filename ack
 void send_filename_ack(int socketNum, struct sockaddr_in6 *client)
 {
@@ -118,57 +88,61 @@ void send_filename_error(int socketNum, struct sockaddr_in6 *client)
 
 /*This function processes the filename packet from rcopy.
   It sets the filename, window-size, and buffer-size*/
-FILE *processFilenameAck(int socketNum, CircularBuffer *window, struct sockaddr_in6 *client)
-{
-    // Initialize buffer and client address
-    uint8_t buffer[MAX_PDU];
-    int clientAddrLen = sizeof(struct sockaddr_in6);
+  FILE *processFilenameAck(int socketNum, CircularBuffer *window, struct sockaddr_in6 *client) {
+    uint8_t buffer[MAX_PDU];  
+    socklen_t addr_len = sizeof(struct sockaddr_in6);
+    int attempts = 0;
 
-    // Receive the filename packet
-    int dataLen = safeRecvfrom(socketNum, buffer, MAX_PDU, 0, (struct sockaddr *)client, &clientAddrLen);
-    if (dataLen < 0)
-    {
-        perror("Failed to receive filename packet");
-        return NULL;
+    while (attempts < 10) {  // Allow up to 10 attempts
+        printf("Attempt %d: Waiting for filename packet...\n", attempts + 1);
+        // Receive the filename packet
+        int dataLen = safeRecvfrom(socketNum, buffer, MAX_PDU, 0, (struct sockaddr *)client, (int *)&addr_len);
+        if (dataLen < 0) {
+            perror("Failed to receive filename packet");
+            attempts++;
+            continue;  // Retry if reception fails
+        }
+
+        // Verify checksum
+        if (in_cksum((unsigned short *)buffer, dataLen) != 0) {
+            fprintf(stderr, "Checksum verification failed (Attempt %d/10)\n", attempts + 1);
+            attempts++;
+            continue;  // Retry if checksum fails
+        }
+
+        printf("Checksum Passed!\n");
+
+        // Extract window size and buffer size
+        int window_size = ntohl(*(uint32_t *)(buffer + 7));
+        int buffer_size = ntohl(*(uint32_t *)(buffer + 11));
+        buffer_init(window, window_size, buffer_size, window_size);
+
+        // Extract filename safely
+        char filename[101] = {0};
+        int filename_len = dataLen - 15;
+        if (filename_len > 100) {
+            filename_len = 100;
+        }
+        strncpy(filename, (char *)(buffer + 15), filename_len);
+        filename[filename_len] = '\0';  // Ensure null termination
+
+        printf("Filename requested: %s\n", filename);
+        printf("Window Size: %u, Buffer Size: %u\n", window_size, buffer_size);
+
+        // Attempt to open the requested file
+        FILE *file = fopen(filename, "rb");
+        if (!file) {
+            perror("Failed to open file");
+            send_filename_error(socketNum, client);
+            return NULL;
+        }
+
+        // Send acknowledgment after successfully opening the file
+        send_filename_ack(socketNum, client);
+        return file;
     }
-
-    // Verify checksum
-    if (in_cksum((unsigned short *)buffer, dataLen) != 0)
-    {
-        fprintf(stderr, "Checksum verification failed\n");
-        return NULL;
-    }
-    printf("Checksum Passed!\n");
-
-    // Get window size and buffer size and init of buffer
-    int window_size = ntohl(*(uint32_t *)(buffer + 7));
-    int buffer_size = ntohl(*(uint32_t *)(buffer + 11));
-    buffer_init(window, window_size, buffer_size);
-
-    // Get filename, ensuring proper bounds
-    char filename[100] = {0}; // Ensure it's null-terminated
-    int filename_len = dataLen - 15;
-    if (filename_len > 99){
-        filename_len = 99; // Prevent buffer overflow
-    }
-    strncpy(filename, (char *)(buffer + 15), filename_len);
-    filename[filename_len] = '\0'; // Ensure null termination
-
-    printf("Filename requested: %s\n", filename);
-    printf("Window Size: %u, Buffer Size: %u\n", window_size, buffer_size);
-
-    // Attempt to open the requested file
-    FILE *file = fopen(filename, "rb");
-    if (!file){
-        perror("Failed to open file");
-        send_filename_error(socketNum, client);
-        return NULL;
-    }
-
-    // Send acknowledgment after successfully opening the file
-    send_filename_ack(socketNum, client);
-
-    return file;
+    printf("Error: Max attempts (10) reached. Failed to receive valid filename packet.\n");
+    return NULL;  // Return NULL after 10 failed attempts
 }
 
 /*Returns -1 when EOF*/
@@ -387,7 +361,7 @@ void server_FSM(int socketNum)
     FILE *export_file;
 
     // Initialize sendtoErr for simulating errors
-    sendErr_init(ERROR_RATE, 1, 1, 1, 0);
+    sendErr_init(ERROR_RATE, 1, 1, 1, 1);
 
     // Client Socket
     struct sockaddr_in6 client;
@@ -402,8 +376,7 @@ void server_FSM(int socketNum)
             export_file = processFilenameAck(socketNum, window, &client);
             if (export_file == NULL){
                 state = DONE; // Transition to DONE if file was not successfully opened
-            }
-            else{
+            }else{
                 state = SEND_DATA;
                 printf("Sending data...\n");
             }
