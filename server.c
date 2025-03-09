@@ -19,8 +19,6 @@
 #include "buffer.h"
 #include "pollLib.h"
 
-#define MAXBUF 80
-
 float ERROR_RATE = 0.0;
 
 void server_FSM(int socketNum);
@@ -55,13 +53,14 @@ int main(int argc, char *argv[])
 }
 
 // This function sends a filename ack
-void send_filename_ack(int socketNum, struct sockaddr_in6 *client)
-{
+void send_filename_ack(int socketNum, struct sockaddr_in6 *client){
     uint8_t out_packet[7]; // Packet to be constructed
     int packet_len = 0;    // Packet size
 
     // Build packet
     packet_len = build_packet(out_packet, 0, FLAG_FILENAME_ACK, NULL, 0);
+
+    out_packet[5] = 5; //make wrong on purposs
 
     // Calculate addr_len for safeSendTo
     int addr_len = sizeof(struct sockaddr_in6);
@@ -71,8 +70,7 @@ void send_filename_ack(int socketNum, struct sockaddr_in6 *client)
 }
 
 // This function sends a filename_error
-void send_filename_error(int socketNum, struct sockaddr_in6 *client)
-{
+void send_filename_error(int socketNum, struct sockaddr_in6 *client){
     uint8_t out_packet[7]; // Packet to be constructed
     int packet_len = 0;    // Packet size
 
@@ -211,12 +209,6 @@ void send_data(int socketNum, struct sockaddr_in6 *client, CircularBuffer *windo
   void resend_packet(int socketNum, struct sockaddr_in6 *client, uint32_t seq_num, CircularBuffer *window, int flag_option) {
     int index = seq_num % window->size;  // Get circular buffer index
 
-    // // Ensure the packet exists before resending
-    // if (!window->entries[index].valid_flag || window->entries[index].sequence_num != seq_num) {
-    //     printf("Error: Cannot resend missing packet #%d (Not in buffer)\n", seq_num);
-    //     return;
-    // }
-
     printf("Resending packet #%d from buffer index %d\n", seq_num, index);
 
     // Get the correct data size
@@ -275,7 +267,8 @@ int process_rr_srej_eof(int socketNum, struct sockaddr_in6 *client, CircularBuff
         resend_packet(socketNum, client, seq_num, window,FLAG_RESENT_DATA);
     }else if(flag == FLAG_EOF){
         printf("EOF FLAG DETECTED\n"); 
-
+    }else if(flag == FLAG_FILENAME){
+        printf("Fuck we are stuck!!!!!\n");
     }else{
         printf("Unexpected acknowledgment flag received. Ignoring.\n");
     }
@@ -331,7 +324,6 @@ ServerState handle_send_data(int socketNum, struct sockaddr_in6 *client, Circula
     return SEND_DATA; // Continue sending data
 }
 
-
 ServerState handle_wait_EOF_ack(int socketNum, struct sockaddr_in6 *client, CircularBuffer *window) {
     int attempt = 0;
     int pollResult;
@@ -343,7 +335,8 @@ ServerState handle_wait_EOF_ack(int socketNum, struct sockaddr_in6 *client, Circ
         pollResult = pollCall(1000);
         
         if(pollResult >= 0) {
-           if(FLAG_EOF == process_rr_srej_eof(socketNum,client, window)){
+            attempt = 0;//Reset attempts
+            if(FLAG_EOF == process_rr_srej_eof(socketNum,client, window)){
             return DONE;
             break;
            }
@@ -363,7 +356,7 @@ void server_FSM(int socketNum)
     FILE *export_file;
 
     // Initialize sendtoErr for simulating errors
-    sendErr_init(ERROR_RATE, 1, 1, 1, 0);
+    sendErr_init(ERROR_RATE, 1, 1, 1, 1);
 
     // Client Socket
     struct sockaddr_in6 client;

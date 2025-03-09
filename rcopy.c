@@ -24,22 +24,8 @@
 #include "pollLib.h"
 #include "buffer.h"
 
-#define WINDOW_SIZE
-#define MAXBUF 80
-
-void talkToServer(int socketNum, struct sockaddr_in6 *server);
-void send_filename(int socketNum, struct sockaddr_in6 *server, uint32_t window_size, uint32_t buffer_size, char *filename);
-void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]);
-int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]);
-void send_SREJ(int sockfd, struct sockaddr_in6 *server, uint32_t missing_seq);
-void send_rr(int sockfd, struct sockaddr_in6 *server, uint32_t next_expected_seq);
-
-int checkArgs(int argc, char *argv[]);
-
-int eof_seq_num = 0; //Store seq num of EOF packet
-
 typedef enum{
-	DONE,
+	DONE, 
 	SEND_FILENAME,
 	RECEIVE_DATA,
 	FILE_OK
@@ -51,6 +37,15 @@ typedef enum{
 	FLUSH,
 	EXIT
 } recvState;
+
+void send_filename(int socketNum, struct sockaddr_in6 *server, uint32_t window_size, uint32_t buffer_size, char *filename);
+void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]);
+RcopyState filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]);
+void send_SREJ(int sockfd, struct sockaddr_in6 *server, uint32_t missing_seq);
+void send_rr(int sockfd, struct sockaddr_in6 *server, uint32_t next_expected_seq);
+
+int checkArgs(int argc, char *argv[]);
+int eof_seq_num = 0; //Store seq num of EOF packet
 
 int main(int argc, char *argv[])
 {
@@ -142,6 +137,7 @@ int process_filename_response(uint8_t *in_buffer, int in_buff_len)
 		fprintf(stderr, "Checksum verification failed, packet dropped\n");
 		return 0;
 	}
+
 	// Check the flag
 	int flag = 0;
 	memcpy(&flag, &in_buffer[6], 1);
@@ -150,10 +146,12 @@ int process_filename_response(uint8_t *in_buffer, int in_buff_len)
 	if (flag == FLAG_FILENAME_ERROR){
 		printf("Filename doesn't exist, please retry\n");
 		exit(1);
-	}
-	else if (flag == FLAG_FILENAME_ACK){
+	}else if (flag == FLAG_FILENAME_ACK){
 		printf("Filename exist, the server will be sending data\n");
 		return 1;
+	}else if(flag == FLAG_DATA){
+		printf("Filename Ack lost, but received data");
+		return 1; 
 	}else{
 		return 0;
 	}
@@ -161,8 +159,9 @@ int process_filename_response(uint8_t *in_buffer, int in_buff_len)
 	return 0;
 }
 
-int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[])
-{
+/*This function attempts to send the filename to the server
+*/
+RcopyState filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[]){
 	int attempts = 1;
 	uint8_t buffer[MAX_PDU];
 	socklen_t serverLen = sizeof(struct sockaddr_in6);
@@ -178,14 +177,13 @@ int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[])
 		// Wait for up to 1 second for a response
 		int readySocket = pollCall(1000); // 1000ms timeout
 
-		if (readySocket == socketNum)
-		{ // Data available
+		if (readySocket == socketNum){ // Data available
 			int recvLen = safeRecvfrom(socketNum, buffer, MAX_PDU, 0, (struct sockaddr *)server, (int *)&serverLen);
 			printf("Incoming bytes: %d, Received response from server: %s\n", recvLen, buffer);
 
 			// Process the respnse from server, check the flag.
 			if (1 == process_filename_response(buffer, recvLen)){
-				return 1; // Successful response, exit function
+				return RECEIVE_DATA; // Successful response, exit function
 			}
 		}else if (readySocket == -1){ // Timeout
 			printf("Timeout: No response received. Attempt: %d\n", attempts);
@@ -198,15 +196,14 @@ int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[])
 	}
 
 	printf("Failed to receive response after 10 attempts.\n");
-	return 0;
+	return DONE;
 	exit(1);
 }
   
 ////////////////////////////////Functions for Sending Packets///////////////////////////////
 
 /*This function sends an SREJ to the server*/
-void send_SREJ(int sockfd, struct sockaddr_in6 *server, uint32_t missing_seq)
-{
+void send_SREJ(int sockfd, struct sockaddr_in6 *server, uint32_t missing_seq){
 	uint8_t srej_packet[11];						// packet to be built
 	memset(srej_packet, '\0', sizeof(srej_packet)); // set buffer to null
 	socklen_t addr_len = sizeof(struct sockaddr_in6);
@@ -229,8 +226,7 @@ void send_SREJ(int sockfd, struct sockaddr_in6 *server, uint32_t missing_seq)
 }
 
 /*This function sends an RR to the server. */
-void send_rr(int sockfd, struct sockaddr_in6 *server, uint32_t next_expected_seq)
-{
+void send_rr(int sockfd, struct sockaddr_in6 *server, uint32_t next_expected_seq){
 	uint8_t rr_packet[11];					 // packet to be built
 	memset(rr_packet, 0, sizeof(rr_packet)); // set buffer to null
 	socklen_t addr_len = sizeof(struct sockaddr_in6);
@@ -272,12 +268,14 @@ recvState handle_flush(int sockNum, struct sockaddr_in6 *server, CircularBuffer 
         buffer->current++;
 
         // Send RR for the NEXT expected sequence number
+		printf("Sending RR in flush:%d \n", buffer->current); 
         send_rr(sockNum, server, buffer->current);
     }
 
     // Check if we need to request missing packets
     if (buffer->current < buffer->highest && buffer->entries[buffer->current % buffer->size].valid_flag == 0) {
         send_SREJ(sockNum, server, buffer->current);
+		printf("Sending RR and SREJ in flush:%d \n", buffer->current); 
 		send_rr(sockNum, server, buffer->current);
 
         return BUFFER;
@@ -383,6 +381,7 @@ recvState handle_inorder(int sockNum, struct sockaddr_in6 *server, CircularBuffe
 			buffer->highest = buffer->current; 
 			buffer->current++;
 			send_rr(sockNum,server, buffer->current); 
+			printf("Sending RR and SREJ in buffer:%d \n", buffer->current); 
 			return INORDER; 
 		}else if(seq_num > buffer->current){ // return out of order and buffer
 			send_SREJ(sockNum, server, buffer->current); 
@@ -455,15 +454,17 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]){
 	// Initialize the trouble maker
 	float error_rate = atof(argv[5]);
 	printf("Error_rate: %f\n", error_rate);
-	sendtoErr_init(error_rate, 1, 1, 1, 0);
+	sendtoErr_init(error_rate, 1, 1, 1, 1);
 
 	while (state != DONE){
 		switch (state){
 		case SEND_FILENAME:
-			if (1 == filename_exchange(sockfd, server, argv)){
-				state = RECEIVE_DATA;
-				printf("File Ok state reached\n");
+			state = filename_exchange(sockfd, server, argv);
+			if(state == DONE){
+				buffer_free(buffer); 
+				break;
 			}
+			printf("File Ok state reached\n");
 			break;
 		case RECEIVE_DATA:
 			currentRecvState = nextRecvState; 
