@@ -47,7 +47,8 @@ typedef enum{
 typedef enum{
 	INORDER,
 	BUFFER, 
-	FLUSHING
+	FLUSH,
+	EXIT
 } recvState;
 
 int main(int argc, char *argv[])
@@ -199,45 +200,6 @@ int filename_exchange(int socketNum, struct sockaddr_in6 *server, char *argv[])
 	return 0;
 	exit(1);
 }
-
-
-// recvState INORDER(int socketNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outputFile, uint8_t *in_packet, int in_packet_len){
-// 	// Verify checksum
-// 	if (in_cksum((unsigned short *)in_packet, in_packet_len) != 0){
-// 		printf("Checksum error, packet will be dropped\n");
-// 		return -1;
-// 	}
-
-// 	// Get the sequence number
-// 	uint32_t seq_num;
-// 	memcpy(&seq_num, in_packet, 4);
-// 	seq_num = ntohl(seq_num);
-
-// 	// //Grab the data from the packet 
-// 	// printf("Incoming bytes: %d \n", in_packet_len);
-// 	// printf("Incoming Packet Sequence num: %d\n", seq_num);
-// 	// uint8_t message[in_packet_len - 6];
-// 	// memset(message, '\0', in_packet_len - 6);
-// 	// memcpy(message, in_packet + 7, in_packet_len - 7);
-// 	// printf("Data in: %s\n", message);
-// 	// printf("\n");
-
-// 	if(seq_num == buffer->current){ //In order State
-// 		printf("~~~~~Writing in order Packet: %d~~~~~ \n", buffer->current);
-// 		fwrite(in_packet, in_packet_len - HEADER_SIZE, 1, outputFile); //Write to disk
-// 		buffer->highest = buffer->current; //Highest = expected
-// 		buffer->current++; //expected++
-// 		send_rr(socketNum, server, buffer->current);
-// 		return INORDER;
-// 	}else if(seq_num > buffer->current){
-// 		printf("~~~~~SREJ for Packet: %d~~~~~ \n", buffer->current);
-// 		send_SREJ(socketNum,server,buffer->current); //SREJ for expected 
-// 		int buff_index = seq_num % buffer->size; //Calculate index for circular buffer
-// 		buffer_add(buffer, seq_num, in_packet + 7, in_packet_len - 7); // add to buffer 
-// 		return BUFFER; 
-// 	}
-
-// }
 
 /*This function parses the incoming function and will send an SREJ or RR accordingly
   returns the flag in the packet
@@ -398,19 +360,194 @@ void send_rr(int sockfd, struct sockaddr_in6 *server, uint32_t next_expected_seq
 	safeSendto(sockfd, rr_packet, 11, 0, (struct sockaddr *)server, addr_len);
 }
 
+// recvState handle_flush(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile){
+
+// 	while( buffer->entries[buffer->current % buffer->size].valid_flag == 1 ){
+// 		fwrite(buffer->entries->data, buffer->entries->data_len, 1, outFile); // Write to file go to inorder 
+// 		buffer->entries[buffer->current % buffer->size].valid_flag = 0; 
+// 		buffer->current++; 
+
+// 		if(buffer->current == buffer->highest){
+// 			fwrite(buffer->entries->data, buffer->entries->data_len, 1, outFile);
+// 			buffer->current++; 
+// 			send_rr(sockNum, server, buffer->current);
+// 			return INORDER; 
+// 		}else if( buffer->current < buffer->highest){
+// 			send_SREJ(sockNum,server, buffer->current);
+// 			send_rr(sockNum, server, buffer->current);
+// 			return BUFFER; 
+// 		}
+// 	}
+	
+// 	return EXIT; 
+// }
+
+
+recvState handle_flush(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile) {
+    while(1) {
+        // Calculate current index using modulo for circular buffer
+		printf("buffering\n"); 
+        int current_index = buffer->current % buffer->size;
+        
+        // Exit loop if current entry is invalid
+        if (buffer->entries[current_index].valid_flag != 1) break;
+
+        // Write the actual buffered data
+        fwrite(buffer->entries[current_index].data, 1, buffer->entries[current_index].data_len,  outFile);
+        
+        // Mark entry as invalid (FIXED: use = instead of ==)
+        buffer->entries[current_index].valid_flag = 0;
+        
+        // Move to next sequence number
+        buffer->current++;
+
+        // Send RR for the NEXT expected sequence number
+        send_rr(sockNum, server, buffer->current);
+    }
+
+    // Check if we need to request missing packets
+    if (buffer->current < buffer->highest && buffer->entries[buffer->current % buffer->size].valid_flag == 0) {
+        send_SREJ(sockNum, server, buffer->current);
+		send_rr(sockNum, server, buffer->current);
+
+        return BUFFER;
+    }
+
+    // Return to normal processing if we're caught up
+    return INORDER;
+}
+
+recvState handle_buffer(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile){
+	//Init for FSM
+	int recvLen = 0; 
+	int socketReady; 
+	uint8_t in_packet[MAX_PDU]; //Packet to be received
+	memset(in_packet, 0, sizeof(in_packet)); //Zero out the packet
+	socklen_t addr_len = sizeof(server);
+
+	socketReady = pollCall(10000);
+	if(socketReady == sockNum){
+		recvLen = safeRecvfrom(sockNum, in_packet, MAX_PDU, 0, (struct sockaddr *)server, (int *)&addr_len); //Recv data
+			
+		//Check the checksum
+		if (in_cksum((unsigned short *)in_packet, recvLen) != 0){
+				printf("Checksum error, packet will be dropped\n");
+				return BUFFER; 
+		}
+
+		//Get sequence number
+		// Get the sequence number
+		uint32_t seq_num;
+		memcpy(&seq_num, in_packet, 4);
+		seq_num = ntohl(seq_num);
+
+		//Algorithm for determining the next state
+		if( seq_num == buffer->current){ //Move to flush state; 
+			fwrite(in_packet + HEADER_SIZE , recvLen - HEADER_SIZE, 1, outFile); // Write to file go to inorder 
+			fflush(outFile);
+			buffer->current++;
+			return FLUSH; 
+		}else if(seq_num > buffer->current){ // return out of order and buffer
+			buffer_add(buffer, seq_num, in_packet + HEADER_SIZE, recvLen - HEADER_SIZE ); 
+			buffer->highest = buffer->current;  
+			return BUFFER;
+		}
+	}else if(socketReady == -1){ 
+		printf("FIX LATER BUT YOU NEED TO TERMINATE GRACEFULLY\n"); 
+		exit(-1); 
+	}
+	return BUFFER; 
+}
+
+recvState handle_inorder(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile){
+	//Init for FSM
+	int recvLen = 0; 
+	int socketReady; 
+	uint8_t in_packet[MAX_PDU]; //Packet to be received
+	memset(in_packet, 0, sizeof(in_packet)); //Zero out the packet
+	socklen_t addr_len = sizeof(server);
+
+	socketReady = pollCall(10000);
+	if(socketReady == sockNum){
+		recvLen = safeRecvfrom(sockNum, in_packet, MAX_PDU, 0, (struct sockaddr *)server, (int *)&addr_len); //Recv data
+			
+		//Check the checksum
+		if (in_cksum((unsigned short *)in_packet, recvLen) != 0){
+				printf("Checksum error, packet will be dropped\n");
+				return INORDER; 
+		}
+
+		//Get sequence number
+		// Get the sequence number
+		uint32_t seq_num;
+		memcpy(&seq_num, in_packet, 4);
+		seq_num = ntohl(seq_num);
+
+		//Algorithm for determining the next state
+		if( seq_num == buffer->current){
+			fwrite(in_packet + HEADER_SIZE , recvLen - HEADER_SIZE, 1, outFile); // Write to file go to inorder
+			fflush(outFile);
+			buffer->highest = buffer->current; 
+			buffer->current++;
+			send_rr(sockNum,server, buffer->current); 
+			return INORDER; 
+		}else if(seq_num > buffer->current){ // return out of order and buffer
+			send_SREJ(sockNum, server, buffer->current); 
+			buffer_add(buffer, seq_num, in_packet + HEADER_SIZE, recvLen - HEADER_SIZE ); 
+			buffer->highest = buffer->current;  
+			return BUFFER;
+		}
+		send_rr(sockNum, server, buffer->current);
+	}else if(socketReady == -1){ 
+		printf("FIX LATER BUT YOU NEED TO TERMINATE GRACEFULLY\n"); 
+		exit(-1); 
+	}
+	return INORDER; 
+}
+
+void receive_data_fsm(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile, recvState current, recvState next){
+	printf("~~~~~Expected: %d  ~~~~~~~ \n", buffer->current); 	
+	switch(current){
+			case INORDER: 
+				next = handle_inorder(sockNum, server, buffer, outFile);
+				if (next == EXIT) {
+					printf("Exiting from INORDER\n");
+				}
+			case BUFFER:
+				printf("BUFFERING:\n");
+				next = handle_buffer(sockNum, server, buffer, outFile);
+				if (next == EXIT) {
+					printf("Exiting from BUFFER\n");
+				}
+				break; 
+			case FLUSH:
+				next = handle_flush(sockNum, server, buffer, outFile);
+				if (next == EXIT) {
+					printf("Exiting from FLUSH\n");
+				}
+				break; 
+			case EXIT: 
+				break;
+			default:
+				next = EXIT; 
+		}
+	}
 /////////////////////////////////////////FSM///////////////////////////////////////////
 
-void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[])
-{
+void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]){
 	RcopyState state = SEND_FILENAME;
 
 	// Initiate buffer
 	CircularBuffer *buffer = (CircularBuffer *)malloc(sizeof(CircularBuffer));
 	buffer_init(buffer, atoi(argv[3]), atoi(argv[4]), 0);
 
+	//Init for recvFSM
+	recvState currentRecvState = INORDER; 
+	recvState nextRecvState =  INORDER; 
+
 	// Open a file for writing
-	FILE *output_file = fopen(argv[2], "wb");
-	if (output_file == NULL){
+	FILE *outFile = fopen(argv[2], "wb");
+	if (outFile == NULL){
 		perror("Error openning file");
 		exit(1);
 	}
@@ -418,7 +555,7 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[])
 	// Initialize the trouble maker
 	float error_rate = atof(argv[5]);
 	printf("Error_rate: %f\n", error_rate);
-	sendtoErr_init(error_rate, 1, 1, 1, 1);
+	sendtoErr_init(error_rate, 1, 1, 1, 0);
 
 	while (state != DONE){
 		switch (state){
@@ -428,25 +565,26 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[])
 				printf("File Ok state reached\n");
 			}
 			break;
-		case FILE_OK:
-			break;
 		case RECEIVE_DATA:
-			int readBytes = 1; // Start at 1 to start the while loop
-			// Recieve until there is no more EOF, however we need to check that the data is coming in order
-			while (readBytes > 0){
-				if ((readBytes = receive_data(sockfd, server, buffer, output_file)) == -1){
-					state = DONE;
-					fflush(output_file);
-				fclose(output_file);
-					break;
-				}
-			}
+			currentRecvState = nextRecvState; 
+
+			receive_data_fsm(sockfd,server, buffer, outFile, currentRecvState, nextRecvState);
+
+
+			// while (readBytes > 0){
+			// 	if ((readBytes = receive_data(sockfd, server, buffer, output_file)) == -1){
+			// 		state = DONE;
+			// 		fflush(output_file);
+			// 		fclose(output_file);
+			// 		break;
+			// 	}
+			// }
 			break;
 		default:
 			state = DONE;
-			printf("HELLLLLLLOOOOOOOOOOOOOOOOOOOO\n");
-			fflush(output_file);
-			fclose(output_file);
+			fflush(outFile);
+			fclose(outFile);
+			buffer_free(buffer); 
 			break;
 		}
 	}

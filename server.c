@@ -250,6 +250,7 @@ int process_rr_srej_eof(int socketNum, struct sockaddr_in6 *client, CircularBuff
     // Verify checksum
     if (in_cksum((unsigned short *)in_packet, recv_len) != 0){
         printf("Checksum error in acknowledgment packet. Ignoring.\n");
+        resend_packet(socketNum, client, window->lowest, window, FLAG_RESENT_DATA); 
         return -1;
     }
 
@@ -361,7 +362,7 @@ void server_FSM(int socketNum)
     FILE *export_file;
 
     // Initialize sendtoErr for simulating errors
-    sendErr_init(ERROR_RATE, 1, 1, 1, 1);
+    sendErr_init(ERROR_RATE, 1, 1, 1, 0);
 
     // Client Socket
     struct sockaddr_in6 client;
