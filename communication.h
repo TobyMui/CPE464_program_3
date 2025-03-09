@@ -14,6 +14,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
+#include "checksum.h"
 
 //Constraints 
 #define MAX_PAYLOAD_SIZE 1400
@@ -41,6 +42,6 @@ typedef struct {
 }Packet;
 
 
-
+int build_packet(uint8_t *packet, uint32_t seq_num, uint8_t flag, uint8_t *payload, int payload_size);
 
 #endif

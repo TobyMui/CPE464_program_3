@@ -30,7 +30,8 @@ typedef enum
 {
     DONE,
     FILENAME_ACK,
-    SEND_DATA
+    SEND_DATA,
+    WAIT_EOF_ACK 
 } ServerState;
 
 int main(int argc, char *argv[])
@@ -53,38 +54,35 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-/*This Function is for building packets
-  For building headers, set payload to NULL and payload_size to 0*/
-int build_packet(uint8_t *packet, uint32_t seq_num, uint8_t flag, uint8_t *payload, int payload_size)
-{
-    memset(packet, 0, 7 + payload_size); // Zero out the packet
-    int packet_len = 0;
+// /*This Function is for building packets
+//   For building headers, set payload to NULL and payload_size to 0*/
+// int build_packet(uint8_t *packet, uint32_t seq_num, uint8_t flag, uint8_t *payload, int payload_size){
+//     memset(packet, 0, 7 + payload_size); // Zero out the packet
+//     int packet_len = 0;
 
-    // Set sequence number (bytes 0-3)
-    uint32_t net_seq_num = htonl(seq_num);
-    memcpy(packet, &net_seq_num, 4);
+//     // Set sequence number (bytes 0-3)
+//     uint32_t net_seq_num = htonl(seq_num);
+//     memcpy(packet, &net_seq_num, 4);
 
-    // Set flag (byte 6)
-    packet[6] = flag;
+//     // Set flag (byte 6)
+//     packet[6] = flag;
 
-    // Copy payload if provided
-    if (payload != NULL && payload_size > 0)
-    {
-        memcpy(packet + 7, payload, payload_size);
-        packet_len = HEADER_SIZE + payload_size;
-    }
-    else
-    {
-        packet_len = HEADER_SIZE;
-    }
+//     // Copy payload if provided
+//     if (payload != NULL && payload_size > 0)
+//     {
+//         memcpy(packet + 7, payload, payload_size);
+//         packet_len = HEADER_SIZE + payload_size;
+//     }else{
+//         packet_len = HEADER_SIZE;
+//     }
 
-    // Compute checksum (bytes 4-5)
-    memset(packet + 4, 0, 2); // Reset checksum field to 0 before computing
-    uint16_t checksum = in_cksum((unsigned short *)packet, 7 + payload_size);
-    memcpy(packet + 4, &checksum, 2);
+//     // Compute checksum (bytes 4-5)
+//     memset(packet + 4, 0, 2); // Reset checksum field to 0 before computing
+//     uint16_t checksum = in_cksum((unsigned short *)packet, 7 + payload_size);
+//     memcpy(packet + 4, &checksum, 2);
 
-    return packet_len;
-}
+//     return packet_len;
+// }
 
 // This function sends a filename ack
 void send_filename_ack(int socketNum, struct sockaddr_in6 *client)
@@ -92,7 +90,7 @@ void send_filename_ack(int socketNum, struct sockaddr_in6 *client)
     uint8_t out_packet[7]; // Packet to be constructed
     int packet_len = 0;    // Packet size
 
-    // Build packetwit
+    // Build packet
     packet_len = build_packet(out_packet, 0, FLAG_FILENAME_ACK, NULL, 0);
 
     // Calculate addr_len for safeSendTo
@@ -150,8 +148,9 @@ FILE *processFilenameAck(int socketNum, CircularBuffer *window, struct sockaddr_
     // Get filename, ensuring proper bounds
     char filename[100] = {0}; // Ensure it's null-terminated
     int filename_len = dataLen - 15;
-    if (filename_len > 99)
+    if (filename_len > 99){
         filename_len = 99; // Prevent buffer overflow
+    }
     strncpy(filename, (char *)(buffer + 15), filename_len);
     filename[filename_len] = '\0'; // Ensure null termination
 
@@ -160,8 +159,7 @@ FILE *processFilenameAck(int socketNum, CircularBuffer *window, struct sockaddr_
 
     // Attempt to open the requested file
     FILE *file = fopen(filename, "rb");
-    if (!file)
-    {
+    if (!file){
         perror("Failed to open file");
         send_filename_error(socketNum, client);
         return NULL;
@@ -174,19 +172,18 @@ FILE *processFilenameAck(int socketNum, CircularBuffer *window, struct sockaddr_
 }
 
 /*Returns -1 when EOF*/
-int read_file_to_buffer(CircularBuffer *window, FILE *export_file)
-{
-    size_t bytesRead;                      // Bytes read from fread
-    uint8_t tempBuff[window->buffer_size]; // Buffer for storing data from the file
-    memset(tempBuff, '\0', window->buffer_size);
+int read_file_to_buffer(CircularBuffer *window, FILE *export_file){
+    size_t bytesRead; // Bytes read from fread
+
+    uint8_t tempBuff[window->buffer_size]; //
+    memset(tempBuff, 0, window->buffer_size);  // Clear buffer
 
     int sequence_num = window->current;
     int index = sequence_num % window->size;
 
     bytesRead = fread(tempBuff, 1, window->buffer_size, export_file);
 
-    if (bytesRead == 0)
-    {
+    if (bytesRead == 0){
         // switch state to eof
         printf("END OF FILE!!!!!!!!!!!\n");
         return -1; // End of file
@@ -198,6 +195,8 @@ int read_file_to_buffer(CircularBuffer *window, FILE *export_file)
 
     // Add the data to window data structure :)
     buffer_add(window, sequence_num, tempBuff, bytesRead);
+    window->entries[index].data_len = bytesRead; //Add length of data to the index 
+
 
     printf("Data to be sent: %s\n", window->entries[index].data);
 
@@ -205,8 +204,7 @@ int read_file_to_buffer(CircularBuffer *window, FILE *export_file)
 }
 
 // Function for sending data
-void send_data(int socketNum, struct sockaddr_in6 *client, CircularBuffer *window, FILE *export_file, int bytesRead)
-{
+void send_data(int socketNum, struct sockaddr_in6 *client, CircularBuffer *window, FILE *export_file, int bytesRead){
 
     // Variables for sending data
     int sequence_num = window->current;
@@ -236,82 +234,81 @@ void send_data(int socketNum, struct sockaddr_in6 *client, CircularBuffer *windo
 
 /*This function is for resending a packet
   flag_option is for picking what flag to put in the header*/
-void resend_packet(int socketNum, struct sockaddr_in6 *client, uint32_t seq_num, CircularBuffer *window, int flag_option)
-{
-    int index = seq_num % window->size; // Calculate window index
+  void resend_packet(int socketNum, struct sockaddr_in6 *client, uint32_t seq_num, CircularBuffer *window, int flag_option) {
+    int index = seq_num % window->size;  // Get circular buffer index
 
-    // Ensure the packet exists before resending
-    if (!window->entries[index].valid_flag || window->entries[index].sequence_num != seq_num)
-    {
-        printf("Error: Cannot resend missing packet #%d (Not in buffer)\n", seq_num);
-        return;
-    }
+    // // Ensure the packet exists before resending
+    // if (!window->entries[index].valid_flag || window->entries[index].sequence_num != seq_num) {
+    //     printf("Error: Cannot resend missing packet #%d (Not in buffer)\n", seq_num);
+    //     return;
+    // }
 
     printf("Resending packet #%d from buffer index %d\n", seq_num, index);
 
-    // Build and send packet
+    // Get the correct data size
+    int data_size = window->entries[index].data_len;  // Ensure we use the correct stored size
+
+    // Build packet to be sent
     uint8_t out_packet[MAX_PDU];
+    int packet_size = build_packet(out_packet, seq_num, flag_option, window->entries[index].data, data_size);
 
-    build_packet(out_packet, seq_num, flag_option, window->entries[index].data, sizeof(window->entries[index].data));
+    printf("SIZE OF PACKET:%d\n",packet_size);
 
-    uint32_t net_seq_num = htonl(seq_num);
-    memcpy(out_packet, &net_seq_num, 4);
-    out_packet[6] = FLAG_DATA;
-    memcpy(out_packet + 7, window->entries[index].data, window->buffer_size);
-
-    // Calculate checksum
-    memset(out_packet + 4, 0, 2);
-    uint16_t checksum = in_cksum((unsigned short *)out_packet, window->buffer_size + 7);
-    memcpy(out_packet + 4, &checksum, 2);
-
-    // Send packet
+    // Send packet using correct length
     int addr_len = sizeof(struct sockaddr_in6);
-    int out_packet_len = 7 + window->buffer_size;
-    safeSendto(socketNum, out_packet, out_packet_len, 0, (struct sockaddr *)client, addr_len);
+    safeSendto(socketNum, out_packet, packet_size, 0, (struct sockaddr *)client, addr_len);
 }
 
-void process_rr_srej(int socketNum, CircularBuffer *window, struct sockaddr_in6 *client)
-{
+/*This function processes the packets coming from the client
+  It returns the flag from the packet
+  Returns -1 on error*/
+int process_rr_srej_eof(int socketNum, struct sockaddr_in6 *client, CircularBuffer *window){
     uint8_t in_packet[MAX_PDU];
-    int addr_len = sizeof(client);
+    int addr_len = sizeof(struct sockaddr_in6);
 
     // Receive the packet
-    int recv_len = safeRecvfrom(socketNum, in_packet, MAX_PDU, 0, (struct sockaddr *)&client, &addr_len);
-    if (recv_len < 0)
-    {
+    int recv_len = safeRecvfrom(socketNum, in_packet, MAX_PDU, 0, (struct sockaddr *)client, &addr_len);
+    if (recv_len < 0){
         perror("Error receiving acknowledgment");
-        return;
+        return -1;
     }
 
     // Verify checksum
     if (in_cksum((unsigned short *)in_packet, recv_len) != 0){
         printf("Checksum error in acknowledgment packet. Ignoring.\n");
-        return;
+        return -1;
     }
 
-    // Get SREJ/RR value in le payload
+    // Get SREJ/RR from the incoming packet
     uint32_t seq_num;
     memcpy(&seq_num, in_packet + 7, 4);
     seq_num = ntohl(seq_num);
+    printf("Client is requesting packet:%d \n------", seq_num); 
 
     // Extract flag
     uint8_t flag = in_packet[6];
+    printf("Flag from packet: %d\n", flag);
 
+    //Check the flag and call send either RR or SREJ
     if (flag == FLAG_RR){
         printf("Received RR for packet #%d. Moving window forward.\n", seq_num);
         window->lowest = seq_num;
         window->highest = window->lowest + window->size;
     }else if (flag == FLAG_SREJ){
+        printf("\n"); 
         printf("Received SREJ for packet #%d. Resending...\n", seq_num);
-        resend_packet(socketNum, client, seq_num, window, FLAG_RESENT_DATA);
-    }
-    else{
+        resend_packet(socketNum, client, seq_num, window,FLAG_RESENT_DATA);
+    }else if(flag == FLAG_EOF){
+        printf("EOF FLAG DETECTED\n"); 
+
+    }else{
         printf("Unexpected acknowledgment flag received. Ignoring.\n");
     }
+
+    return flag; 
 }
 
-void send_eof(int socketNum, struct sockaddr_in6 *client)
-{
+void send_eof(int socketNum, struct sockaddr_in6 *client){
     uint8_t eof_packet[7]; // EOF packet size
     int packet_len = 0;
 
@@ -330,37 +327,57 @@ ServerState handle_send_data(int socketNum, struct sockaddr_in6 *client, Circula
     while (window->current < window->highest){
         int readBytes = read_file_to_buffer(window, export_file);
         if (readBytes == -1){
-            return DONE; // EOF detected, transition to DONE
+            return WAIT_EOF_ACK; // EOF detected, transition to DONE
         }
 
         send_data(socketNum, client, window, export_file, readBytes);
-
+    
         // Process acknowledgments (RR/SREJ)
-        while (pollCall(0) != -1){
+        while ((pollCall(0)) >= 0){
             printf("--------------------------Server Checking for Data------------------------\n");
-            process_rr_srej(socketNum, window, client);
+            process_rr_srej_eof(socketNum, client, window);
         }
-
-        // If EOF detected during processing, return DONE
-        if (window->current >= window->highest){
-            break;
-        }
-
         // If window is full, wait for acknowledgments
         int attempts = 0;
-        while (window->current == window->highest)
-        {
-            if (pollCall(1000) == -1){ // Poll with 1s timeout
+        while (window->current == window->highest){
+            if(pollCall(1000) == -1){ // Poll with 1s timeout
                 printf("--------------------------Server Resending Lowest Packet: %d------------------------\n", window->lowest);
                 if (++attempts >= 10){
                     printf("Client timed out. Ending transfer.\n"); //Probably have to change to something else. 
                     return DONE;
                 }
-                resend_packet(socketNum, client, window->lowest, window, FLAG_RESENT_TIMEOUT);
+                resend_packet(socketNum, client, window->lowest, window,FLAG_RESENT_TIMEOUT);
+            }else{
+                process_rr_srej_eof(socketNum, client, window);
             }
         }
     }
     return SEND_DATA; // Continue sending data
+}
+
+
+ServerState handle_wait_EOF_ack(int socketNum, struct sockaddr_in6 *client, CircularBuffer *window) {
+    int attempt = 0;
+    int pollResult;
+
+    while (attempt < 10) {
+        send_eof(socketNum, client);
+        printf("Sent EOF (Attempt %d/10)\n", attempt + 1);
+
+        pollResult = pollCall(1000);
+        
+        if(pollResult >= 0) {
+           if(FLAG_EOF == process_rr_srej_eof(socketNum,client, window)){
+            return DONE;
+            break;
+           }
+        } else if(pollResult == -1) {
+            printf("Timeout waiting for EOF_ACK\n");
+            attempt++;
+        }
+    }
+    printf("EOF_ACK not received after 10 attempts. Terminating.\n");
+    return DONE;
 }
 
 void server_FSM(int socketNum)
@@ -378,19 +395,15 @@ void server_FSM(int socketNum)
     // Initialize Circular Buffer
     CircularBuffer *window = (CircularBuffer *)malloc(sizeof(CircularBuffer));
 
-    while (state != DONE)
-    {
-        switch (state)
-        {
+    while (state != DONE){
+        switch (state){
         case FILENAME_ACK:
             // Change to send_data state if file ack is successful.
             export_file = processFilenameAck(socketNum, window, &client);
-            if (export_file == NULL)
-            {
+            if (export_file == NULL){
                 state = DONE; // Transition to DONE if file was not successfully opened
             }
-            else
-            {
+            else{
                 state = SEND_DATA;
                 printf("Sending data...\n");
             }
@@ -398,13 +411,15 @@ void server_FSM(int socketNum)
         case SEND_DATA:
             state = handle_send_data(socketNum, &client, window, export_file);
             break;
-        case DONE:
-            if (export_file != NULL)
-            {
-                fclose(export_file);
+        case WAIT_EOF_ACK:
+            state = handle_wait_EOF_ack(socketNum,&client, window);
+            if(state == DONE){
+                if (export_file != NULL){
+                    fclose(export_file);
+                }
+                printf("Transfer completed.\n");
+                break;
             }
-            printf("Transfer completed.\n");
-            send_eof(socketNum, &client);
             break;
         default:
             state = DONE; // Default state to end the FSM

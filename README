@@ -10,3 +10,6 @@ Make an FSM.
 3/5/2025
 
     Need to fix EOF state. Currenlty the output is appending all of the NULLS. 
+
+3/8/2025 
+    Works at .1 error rate on server. Figure out where to go from there. 
