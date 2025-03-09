@@ -283,12 +283,13 @@ int process_rr_srej_eof(int socketNum, struct sockaddr_in6 *client, CircularBuff
     return flag; 
 }
 
-void send_eof(int socketNum, struct sockaddr_in6 *client){
+void send_eof(int socketNum, struct sockaddr_in6 *client, CircularBuffer *window){
     uint8_t eof_packet[7]; // EOF packet size
     int packet_len = 0;
 
     // Build the packet with eof flag
-    packet_len = build_packet(eof_packet, 0, FLAG_EOF, NULL, 0);
+    printf("EOF SEQUENCE NUMBER: %d\n",window->current); 
+    packet_len = build_packet(eof_packet, window->current, FLAG_EOF, NULL, 0);
 
     // Send the EOF packet
     int addr_len = sizeof(struct sockaddr_in6);
@@ -336,7 +337,7 @@ ServerState handle_wait_EOF_ack(int socketNum, struct sockaddr_in6 *client, Circ
     int pollResult;
 
     while (attempt < 10) {
-        send_eof(socketNum, client);
+        send_eof(socketNum, client, window);
         printf("Sent EOF (Attempt %d/10)\n", attempt + 1);
 
         pollResult = pollCall(1000);
