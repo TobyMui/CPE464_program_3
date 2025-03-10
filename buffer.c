@@ -43,4 +43,5 @@ void buffer_free(CircularBuffer *buff) {
         free(buff->entries[i].data);
     }
     free(buff->entries);
+    free(buff); 
 }

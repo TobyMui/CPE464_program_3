@@ -1,0 +1,78 @@
+Send Err-INIT ErrRate: 0.10 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   35 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS  9   -FNAME response
+RECV          SEQ#   0 LEN  107 FLAGS 16   -Data #:    0
+SEND MSG#   2 SEQ#   0 LEN   11 FLAGS  5   -RR #:      1
+RECV          SEQ#   1 LEN  107 FLAGS 16   -Data #:    1
+RECV          SEQ#   2 LEN  107 FLAGS 16   -Data #:    2
+SEND MSG#   3 SEQ#   0 LEN   11 FLAGS  5   -RR #:      3
+RECV          SEQ#   3 LEN  107 FLAGS 16   -Data #:    3
+RECV          SEQ#   5 LEN  107 FLAGS 16   -Data #:    5
+SEND MSG#   4 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    4
+RECV          SEQ#   6 LEN  107 FLAGS 16   -Data #:    6
+RECV          SEQ#   7 LEN  107 FLAGS 16   -Data #:    7
+SEND MSG#   5 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    4 - DROPPED 
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined 
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined 
+SEND MSG#   6 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    4
+RECV          SEQ#   4 LEN  107 FLAGS 17   -Resent Data #:    4
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined 
+SEND MSG#   7 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    5
+RECV          SEQ#   4 LEN  107 FLAGS 17   -Resent Data #:    4
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined  - RECV Corrupted packet
+RECV          SEQ#   5 LEN  107 FLAGS 17   -Resent Data #:    5
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined 
+SEND MSG#   8 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    6
+RECV          SEQ#   6 LEN  107 FLAGS 17   -Resent Data #:    6
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined 
+SEND MSG#   9 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    7
+RECV          SEQ#   7 LEN  107 FLAGS 17   -Resent Data #:    7
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined 
+SEND MSG#  10 SEQ#   0 LEN   11 FLAGS  5   -RR #:      9
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined 
+SEND MSG#  11 SEQ#   0 LEN    7 FLAGS 10   -User defined 
+======== SeqNo Report ========
+  Msgs (Total)       :    11
+  Msgs (Unique SeqNo):     1
+==============================
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+packet length = 35
+Attempt 1: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 9
+Filename exist, the server will be sending data
+~~~~~Expected: 0  ~~~~~~~ 
+Sending RR and SREJ in buffer:1 
+BUFFERING:
+~~~~~Expected: 2  ~~~~~~~ 
+Sending RR and SREJ in buffer:3 
+BUFFERING:
+~~~~~Expected: 4  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 4  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 4  ~~~~~~~ 
+EOF DETECTED BABY with seq num: 8
+BUFFERING:
+~~~~~Expected: 5  ~~~~~~~ 
+EOF DETECTED BABY with seq num: 8
+BUFFERING:
+~~~~~Expected: 5  ~~~~~~~ 
+Checksum error, packet will be dropped
+BUFFERING:
+~~~~~Expected: 6  ~~~~~~~ 
+EOF DETECTED BABY with seq num: 8
+BUFFERING:
+~~~~~Expected: 7  ~~~~~~~ 
+EOF DETECTED BABY with seq num: 8
+BUFFERING:
+~~~~~Expected: 8  ~~~~~~~ 
+EOF DETECTED BABY with seq num: 8
+Sending RR and SREJ in buffer:9 
+BUFFERING:
+Exiting tranfer completeSent EOF packet to client.
+Exiting from BUFFER
+
+real	0m0.004s
+user	0m0.002s
+sys	0m0.000s

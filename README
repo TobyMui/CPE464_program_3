@@ -13,3 +13,9 @@ Make an FSM.
 
 3/8/2025 
     Works at .1 error rate on server. Figure out where to go from there. 
+
+
+
+test: 
+
+export

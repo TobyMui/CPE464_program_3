@@ -61,8 +61,6 @@ int main(int argc, char *argv[])
 
 	rcopy_FSM(socketNum, &server, argv);
 
-	// talkToServer(socketNum, &server);
-
 	close(socketNum);
 
 	return 0;
@@ -261,15 +259,15 @@ recvState handle_flush(int sockNum, struct sockaddr_in6 *server, CircularBuffer 
         // Write the actual buffered data
         fwrite(buffer->entries[current_index].data, 1, buffer->entries[current_index].data_len,  outFile);
         
-        // Mark entry as invalid (FIXED: use = instead of ==)
         buffer->entries[current_index].valid_flag = 0;
         
         // Move to next sequence number
         buffer->current++;
 
         // Send RR for the NEXT expected sequence number
-		printf("Sending RR in flush:%d \n", buffer->current); 
         send_rr(sockNum, server, buffer->current);
+
+		printf("flushing!!!!!\n");
     }
 
     // Check if we need to request missing packets
@@ -311,7 +309,6 @@ recvState handle_buffer(int sockNum, struct sockaddr_in6 *server, CircularBuffer
 
 		//Check for EOF flag 
 		if(in_packet[6] == FLAG_EOF){
-			printf("EOF DETECTED BABY with seq num: %d\n", seq_num);
 			eof_seq_num = seq_num; 
 		}
 
@@ -322,18 +319,17 @@ recvState handle_buffer(int sockNum, struct sockaddr_in6 *server, CircularBuffer
 		}
 
 		//Algorithm for determining the next state
-		if( seq_num == buffer->current){ //Move to flush state; 
+		if(seq_num == buffer->current){ //Move to flush state; 
 			fwrite(in_packet + HEADER_SIZE , recvLen - HEADER_SIZE, 1, outFile); // Write to file go to inorder 
 			fflush(outFile);
 			buffer->current++;
 			return FLUSH; 
 		}else if(seq_num > buffer->current){ // return out of order and buffer
 			buffer_add(buffer, seq_num, in_packet + HEADER_SIZE, recvLen - HEADER_SIZE ); 
-			buffer->highest = buffer->current;  
+			buffer->highest = seq_num;
 			return BUFFER;
 		}
 	}else if(socketReady == -1){ 
-		printf("FIX LATER BUT YOU NEED TO TERMINATE GRACEFULLY\n"); 
 		exit(-1); 
 	}
 	return BUFFER; 
@@ -364,7 +360,6 @@ recvState handle_inorder(int sockNum, struct sockaddr_in6 *server, CircularBuffe
 
 		//Check for EOF flag 
 		if(in_packet[6] == FLAG_EOF){
-			printf("EOF DETECTED BABY with seq num: %d\n", seq_num);
 			eof_seq_num = seq_num; 
 		}
 
@@ -375,6 +370,8 @@ recvState handle_inorder(int sockNum, struct sockaddr_in6 *server, CircularBuffe
 		}
 
 		//Algorithm for determining the next state
+		printf("~~~~~~~~~~~Highest: %d, Current: %d, Lowest: %d~~~~~~~~~~~~~~~~~\n", buffer->highest, buffer->current, buffer->lowest);
+
 		if( seq_num == buffer->current){
 			fwrite(in_packet + HEADER_SIZE , recvLen - HEADER_SIZE, 1, outFile); // Write to file go to inorder
 			fflush(outFile);
@@ -385,13 +382,13 @@ recvState handle_inorder(int sockNum, struct sockaddr_in6 *server, CircularBuffe
 			return INORDER; 
 		}else if(seq_num > buffer->current){ // return out of order and buffer
 			send_SREJ(sockNum, server, buffer->current); 
+			printf("Added to buffer======%d", seq_num);
 			buffer_add(buffer, seq_num, in_packet + HEADER_SIZE, recvLen - HEADER_SIZE ); 
-			buffer->highest = buffer->current;  
+			buffer->highest = seq_num;
 			return BUFFER;
 		}
 		send_rr(sockNum, server, buffer->current);
 	}else if(socketReady == -1){ 
-		printf("FIX LATER BUT YOU NEED TO TERMINATE GRACEFULLY\n"); 
 		exit(-1); 
 	}
 	return INORDER; 
@@ -405,8 +402,8 @@ RcopyState receive_data_fsm(int sockNum, struct sockaddr_in6 *server, CircularBu
 				if (next == EXIT) {
 					printf("Exiting from INORDER\n");
 					return DONE; 
-
 				}
+				break;
 			case BUFFER:
 				printf("BUFFERING:\n");
 				next = handle_buffer(sockNum, server, buffer, outFile);
@@ -519,7 +516,7 @@ int checkArgs(int argc, char *argv[])
 	// Check argv[4], buffer-size, is a valid input and number.
 	// Not sure about the max buffer size
 	int buffer_size = strtol(argv[4], &remainderPtr, 10);
-	if (*remainderPtr != '\0' || buffer_size <= 0 || buffer_size >= 1400){
+	if (*remainderPtr != '\0' || buffer_size <= 0 || buffer_size > 1400){
 		printf("Error: Invalid Buffer Size\n");
 		exit(1);
 	}

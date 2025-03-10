@@ -1,0 +1,217 @@
+** ENV - OVERRIDE ERROR DROP: __List__ **
+40
+41
+42
+43
+44
+45
+Send Err-INIT ErrRate: 0.00 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   36 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS  9   -FNAME response
+RECV          SEQ#   0 LEN 1007 FLAGS 16   -Data #:    0
+SEND MSG#   2 SEQ#   0 LEN   11 FLAGS  5   -RR #:      1
+RECV          SEQ#   1 LEN 1007 FLAGS 16   -Data #:    1
+RECV          SEQ#   2 LEN 1007 FLAGS 16   -Data #:    2
+SEND MSG#   3 SEQ#   0 LEN   11 FLAGS  5   -RR #:      3
+RECV          SEQ#   3 LEN 1007 FLAGS 16   -Data #:    3
+RECV          SEQ#   4 LEN 1007 FLAGS 16   -Data #:    4
+SEND MSG#   4 SEQ#   0 LEN   11 FLAGS  5   -RR #:      5
+RECV          SEQ#   5 LEN 1007 FLAGS 16   -Data #:    5
+RECV          SEQ#   6 LEN 1007 FLAGS 16   -Data #:    6
+SEND MSG#   5 SEQ#   0 LEN   11 FLAGS  5   -RR #:      7
+RECV          SEQ#   7 LEN 1007 FLAGS 16   -Data #:    7
+RECV          SEQ#   8 LEN 1007 FLAGS 16   -Data #:    8
+SEND MSG#   6 SEQ#   0 LEN   11 FLAGS  5   -RR #:      9
+RECV          SEQ#   9 LEN 1007 FLAGS 16   -Data #:    9
+RECV          SEQ#  10 LEN 1007 FLAGS 16   -Data #:   10
+SEND MSG#   7 SEQ#   0 LEN   11 FLAGS  5   -RR #:     11
+RECV          SEQ#  11 LEN 1007 FLAGS 16   -Data #:   11
+RECV          SEQ#  12 LEN 1007 FLAGS 16   -Data #:   12
+SEND MSG#   8 SEQ#   0 LEN   11 FLAGS  5   -RR #:     13
+RECV          SEQ#  13 LEN 1007 FLAGS 16   -Data #:   13
+RECV          SEQ#  14 LEN 1007 FLAGS 16   -Data #:   14
+SEND MSG#   9 SEQ#   0 LEN   11 FLAGS  5   -RR #:     15
+RECV          SEQ#  15 LEN 1007 FLAGS 16   -Data #:   15
+RECV          SEQ#  16 LEN 1007 FLAGS 16   -Data #:   16
+SEND MSG#  10 SEQ#   0 LEN   11 FLAGS  5   -RR #:     17
+RECV          SEQ#  17 LEN 1007 FLAGS 16   -Data #:   17
+RECV          SEQ#  18 LEN 1007 FLAGS 16   -Data #:   18
+SEND MSG#  11 SEQ#   0 LEN   11 FLAGS  5   -RR #:     19
+RECV          SEQ#  19 LEN 1007 FLAGS 16   -Data #:   19
+RECV          SEQ#  20 LEN 1007 FLAGS 16   -Data #:   20
+SEND MSG#  12 SEQ#   0 LEN   11 FLAGS  5   -RR #:     21
+RECV          SEQ#  21 LEN 1007 FLAGS 16   -Data #:   21
+RECV          SEQ#  22 LEN 1007 FLAGS 16   -Data #:   22
+SEND MSG#  13 SEQ#   0 LEN   11 FLAGS  5   -RR #:     23
+RECV          SEQ#  23 LEN 1007 FLAGS 16   -Data #:   23
+RECV          SEQ#  24 LEN 1007 FLAGS 16   -Data #:   24
+SEND MSG#  14 SEQ#   0 LEN   11 FLAGS  5   -RR #:     25
+RECV          SEQ#  25 LEN 1007 FLAGS 16   -Data #:   25
+RECV          SEQ#  26 LEN 1007 FLAGS 16   -Data #:   26
+SEND MSG#  15 SEQ#   0 LEN   11 FLAGS  5   -RR #:     27
+RECV          SEQ#  27 LEN 1007 FLAGS 16   -Data #:   27
+RECV          SEQ#  28 LEN 1007 FLAGS 16   -Data #:   28
+SEND MSG#  16 SEQ#   0 LEN   11 FLAGS  5   -RR #:     29
+RECV          SEQ#  29 LEN 1007 FLAGS 16   -Data #:   29
+RECV          SEQ#  30 LEN 1007 FLAGS 16   -Data #:   30
+SEND MSG#  17 SEQ#   0 LEN   11 FLAGS  5   -RR #:     31
+RECV          SEQ#  31 LEN 1007 FLAGS 16   -Data #:   31
+RECV          SEQ#  32 LEN 1007 FLAGS 16   -Data #:   32
+SEND MSG#  18 SEQ#   0 LEN   11 FLAGS  5   -RR #:     33
+RECV          SEQ#  33 LEN 1007 FLAGS 16   -Data #:   33
+RECV          SEQ#  34 LEN 1007 FLAGS 16   -Data #:   34
+SEND MSG#  19 SEQ#   0 LEN   11 FLAGS  5   -RR #:     35
+RECV          SEQ#  35 LEN 1007 FLAGS 16   -Data #:   35
+RECV          SEQ#  36 LEN 1007 FLAGS 16   -Data #:   36
+SEND MSG#  20 SEQ#   0 LEN   11 FLAGS  5   -RR #:     37
+RECV          SEQ#  37 LEN 1007 FLAGS 16   -Data #:   37
+RECV          SEQ#  38 LEN 1007 FLAGS 16   -Data #:   38
+SEND MSG#  21 SEQ#   0 LEN   11 FLAGS  5   -RR #:     39
+RECV          SEQ#  39 LEN 1007 FLAGS 16   -Data #:   39
+RECV          SEQ#  40 LEN 1007 FLAGS 16   -Data #:   40
+SEND MSG#  22 SEQ#   0 LEN   11 FLAGS  5   -RR #:     41
+RECV          SEQ#  41 LEN 1007 FLAGS 16   -Data #:   41
+RECV          SEQ#  42 LEN 1007 FLAGS 16   -Data #:   42
+SEND MSG#  23 SEQ#   0 LEN   11 FLAGS  5   -RR #:     43
+RECV          SEQ#  43 LEN 1007 FLAGS 16   -Data #:   43
+RECV          SEQ#  44 LEN 1007 FLAGS 16   -Data #:   44
+SEND MSG#  24 SEQ#   0 LEN   11 FLAGS  5   -RR #:     45
+RECV          SEQ#  45 LEN 1007 FLAGS 16   -Data #:   45
+RECV          SEQ#  46 LEN 1007 FLAGS 16   -Data #:   46
+SEND MSG#  25 SEQ#   0 LEN   11 FLAGS  5   -RR #:     47
+RECV          SEQ#  47 LEN 1007 FLAGS 16   -Data #:   47
+RECV          SEQ#  48 LEN 1007 FLAGS 16   -Data #:   48
+SEND MSG#  26 SEQ#   0 LEN   11 FLAGS  5   -RR #:     49
+RECV          SEQ#  49 LEN 1007 FLAGS 16   -Data #:   49
+RECV          SEQ#  50 LEN 1007 FLAGS 16   -Data #:   50
+SEND MSG#  27 SEQ#   0 LEN   11 FLAGS  5   -RR #:     51
+RECV          SEQ#  51 LEN  207 FLAGS 16   -Data #:   51
+RECV          SEQ#  52 LEN    7 FLAGS 10   -User defined 
+SEND MSG#  28 SEQ#   0 LEN   11 FLAGS  5   -RR #:     53
+RECV          SEQ#  52 LEN    7 FLAGS 10   -User defined 
+SEND MSG#  29 SEQ#   0 LEN    7 FLAGS 10   -User defined 
+======== SeqNo Report ========
+  Msgs (Total)       :    29
+  Msgs (Unique SeqNo):     1
+==============================
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+packet length = 36
+Attempt 1: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 9
+Filename exist, the server will be sending data
+~~~~~Expected: 0  ~~~~~~~ 
+~~~~~~~~~~~Highest: 0, Current: 0, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:1 
+BUFFERING:
+~~~~~Expected: 2  ~~~~~~~ 
+~~~~~~~~~~~Highest: 0, Current: 2, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:3 
+BUFFERING:
+~~~~~Expected: 4  ~~~~~~~ 
+~~~~~~~~~~~Highest: 2, Current: 4, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:5 
+BUFFERING:
+~~~~~Expected: 6  ~~~~~~~ 
+~~~~~~~~~~~Highest: 4, Current: 6, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:7 
+BUFFERING:
+~~~~~Expected: 8  ~~~~~~~ 
+~~~~~~~~~~~Highest: 6, Current: 8, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:9 
+BUFFERING:
+~~~~~Expected: 10  ~~~~~~~ 
+~~~~~~~~~~~Highest: 8, Current: 10, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:11 
+BUFFERING:
+~~~~~Expected: 12  ~~~~~~~ 
+~~~~~~~~~~~Highest: 10, Current: 12, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:13 
+BUFFERING:
+~~~~~Expected: 14  ~~~~~~~ 
+~~~~~~~~~~~Highest: 12, Current: 14, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:15 
+BUFFERING:
+~~~~~Expected: 16  ~~~~~~~ 
+~~~~~~~~~~~Highest: 14, Current: 16, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:17 
+BUFFERING:
+~~~~~Expected: 18  ~~~~~~~ 
+~~~~~~~~~~~Highest: 16, Current: 18, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:19 
+BUFFERING:
+~~~~~Expected: 20  ~~~~~~~ 
+~~~~~~~~~~~Highest: 18, Current: 20, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:21 
+BUFFERING:
+~~~~~Expected: 22  ~~~~~~~ 
+~~~~~~~~~~~Highest: 20, Current: 22, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:23 
+BUFFERING:
+~~~~~Expected: 24  ~~~~~~~ 
+~~~~~~~~~~~Highest: 22, Current: 24, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:25 
+BUFFERING:
+~~~~~Expected: 26  ~~~~~~~ 
+~~~~~~~~~~~Highest: 24, Current: 26, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:27 
+BUFFERING:
+~~~~~Expected: 28  ~~~~~~~ 
+~~~~~~~~~~~Highest: 26, Current: 28, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:29 
+BUFFERING:
+~~~~~Expected: 30  ~~~~~~~ 
+~~~~~~~~~~~Highest: 28, Current: 30, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:31 
+BUFFERING:
+~~~~~Expected: 32  ~~~~~~~ 
+~~~~~~~~~~~Highest: 30, Current: 32, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:33 
+BUFFERING:
+~~~~~Expected: 34  ~~~~~~~ 
+~~~~~~~~~~~Highest: 32, Current: 34, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:35 
+BUFFERING:
+~~~~~Expected: 36  ~~~~~~~ 
+~~~~~~~~~~~Highest: 34, Current: 36, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:37 
+BUFFERING:
+~~~~~Expected: 38  ~~~~~~~ 
+~~~~~~~~~~~Highest: 36, Current: 38, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:39 
+BUFFERING:
+~~~~~Expected: 40  ~~~~~~~ 
+~~~~~~~~~~~Highest: 38, Current: 40, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:41 
+BUFFERING:
+~~~~~Expected: 42  ~~~~~~~ 
+~~~~~~~~~~~Highest: 40, Current: 42, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:43 
+BUFFERING:
+~~~~~Expected: 44  ~~~~~~~ 
+~~~~~~~~~~~Highest: 42, Current: 44, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:45 
+BUFFERING:
+~~~~~Expected: 46  ~~~~~~~ 
+~~~~~~~~~~~Highest: 44, Current: 46, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:47 
+BUFFERING:
+~~~~~Expected: 48  ~~~~~~~ 
+~~~~~~~~~~~Highest: 46, Current: 48, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:49 
+BUFFERING:
+~~~~~Expected: 50  ~~~~~~~ 
+~~~~~~~~~~~Highest: 48, Current: 50, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:51 
+BUFFERING:
+~~~~~Expected: 52  ~~~~~~~ 
+EOF DETECTED BABY with seq num: 52
+~~~~~~~~~~~Highest: 50, Current: 52, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:53 
+BUFFERING:
+Exiting tranfer completeSent EOF packet to client.
+Exiting from BUFFER
+
+real	0m0.006s
+user	0m0.004s
+sys	0m0.000s

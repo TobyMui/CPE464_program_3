@@ -60,8 +60,6 @@ void send_filename_ack(int socketNum, struct sockaddr_in6 *client){
     // Build packet
     packet_len = build_packet(out_packet, 0, FLAG_FILENAME_ACK, NULL, 0);
 
-    out_packet[5] = 5; //make wrong on purposs
-
     // Calculate addr_len for safeSendTo
     int addr_len = sizeof(struct sockaddr_in6);
 
@@ -86,7 +84,7 @@ void send_filename_error(int socketNum, struct sockaddr_in6 *client){
 
 /*This function processes the filename packet from rcopy.
   It sets the filename, window-size, and buffer-size*/
-  FILE *processFilenameAck(int socketNum, CircularBuffer *window, struct sockaddr_in6 *client) {
+  FILE *processFilenameAck(int socketNum, struct sockaddr_in6 *client, int *window_size, int *buffer_size) {
     uint8_t buffer[MAX_PDU];  
     socklen_t addr_len = sizeof(struct sockaddr_in6);
     int attempts = 0;
@@ -111,9 +109,8 @@ void send_filename_error(int socketNum, struct sockaddr_in6 *client){
         printf("Checksum Passed!\n");
 
         // Extract window size and buffer size
-        int window_size = ntohl(*(uint32_t *)(buffer + 7));
-        int buffer_size = ntohl(*(uint32_t *)(buffer + 11));
-        buffer_init(window, window_size, buffer_size, window_size);
+        *window_size = ntohl(*(uint32_t *)(buffer + 7));
+        *buffer_size = ntohl(*(uint32_t *)(buffer + 11));
 
         // Extract filename safely
         char filename[101] = {0};
@@ -124,8 +121,8 @@ void send_filename_error(int socketNum, struct sockaddr_in6 *client){
         strncpy(filename, (char *)(buffer + 15), filename_len);
         filename[filename_len] = '\0';  // Ensure null termination
 
-        printf("Filename requested: %s\n", filename);
-        printf("Window Size: %u, Buffer Size: %u\n", window_size, buffer_size);
+        // printf("Filename requested: %s\n", filename);
+        // printf("Window Size: %u, Buffer Size: %u\n", window_size, buffer_size);
 
         // Attempt to open the requested file
         FILE *file = fopen(filename, "rb");
@@ -189,6 +186,7 @@ void send_data(int socketNum, struct sockaddr_in6 *client, CircularBuffer *windo
     // Build packet with data from buffer.
     build_packet(out_packet, sequence_num, FLAG_DATA, window->entries[index].data, bytesRead);
 
+
     printf("\n"); 
     printf("Highest: %d, Current: %d, Lowest: %d\n", window->highest, window->current, window->lowest);
 
@@ -250,25 +248,31 @@ int process_rr_srej_eof(int socketNum, struct sockaddr_in6 *client, CircularBuff
     uint32_t seq_num;
     memcpy(&seq_num, in_packet + 7, 4);
     seq_num = ntohl(seq_num);
-    printf("Client is requesting packet:%d \n------", seq_num); 
+    printf("Client is requesting packet:%d ------\n", seq_num); 
 
     // Extract flag
     uint8_t flag = in_packet[6];
-    printf("Flag from packet: %d\n", flag);
-
     //Check the flag and call send either RR or SREJ
     if (flag == FLAG_RR){
         printf("Received RR for packet #%d. Moving window forward.\n", seq_num);
-        window->lowest = seq_num;
-        window->highest = window->lowest + window->size;
+
+        if (seq_num >= window->lowest) {  // Ensure we're moving forward, not backward
+            window->lowest = seq_num;
+            window->highest = window->lowest + window->size;
+    
+            if (window->current > window->highest) {
+                printf("Warning: Current sequence (%d) ahead of highest (%d). Adjusting.\n", window->current, window->highest);
+                window->current = window->highest;  // Prevent current from exceeding highest
+            }
+        } else {
+            printf("Warning: Received RR for an earlier packet (%d), ignoring.\n", seq_num);
+        }
     }else if (flag == FLAG_SREJ){
         printf("\n"); 
         printf("Received SREJ for packet #%d. Resending...\n", seq_num);
         resend_packet(socketNum, client, seq_num, window,FLAG_RESENT_DATA);
     }else if(flag == FLAG_EOF){
         printf("EOF FLAG DETECTED\n"); 
-    }else if(flag == FLAG_FILENAME){
-        printf("Fuck we are stuck!!!!!\n");
     }else{
         printf("Unexpected acknowledgment flag received. Ignoring.\n");
     }
@@ -281,14 +285,11 @@ void send_eof(int socketNum, struct sockaddr_in6 *client, CircularBuffer *window
     int packet_len = 0;
 
     // Build the packet with eof flag
-    printf("EOF SEQUENCE NUMBER: %d\n",window->current); 
     packet_len = build_packet(eof_packet, window->current, FLAG_EOF, NULL, 0);
 
     // Send the EOF packet
     int addr_len = sizeof(struct sockaddr_in6);
     safeSendto(socketNum, eof_packet, packet_len, 0, (struct sockaddr *)client, addr_len);
-
-    printf("Sent EOF packet to client.\n");
 }
 
 ServerState handle_send_data(int socketNum, struct sockaddr_in6 *client, CircularBuffer *window, FILE *export_file){
@@ -302,23 +303,24 @@ ServerState handle_send_data(int socketNum, struct sockaddr_in6 *client, Circula
         send_data(socketNum, client, window, export_file, readBytes);
     
         // Process acknowledgments (RR/SREJ)
-        while ((pollCall(0)) >= 0){
-            printf("--------------------------Server Checking for Data------------------------\n");
+        while ((pollCall(0)) == socketNum){
             process_rr_srej_eof(socketNum, client, window);
         }
+    }
+
         // If window is full, wait for acknowledgments
-        int attempts = 0;
-        while (window->current == window->highest){
-            if(pollCall(1000) == -1){ // Poll with 1s timeout
-                printf("--------------------------Server Resending Lowest Packet: %d------------------------\n", window->lowest);
-                if (++attempts >= 10){
-                    printf("Client timed out. Ending transfer.\n"); //Probably have to change to something else. 
-                    return DONE;
-                }
-                resend_packet(socketNum, client, window->lowest, window,FLAG_RESENT_TIMEOUT);
-            }else{
-                process_rr_srej_eof(socketNum, client, window);
+    int attempts = 0;
+    while (window->current == window->highest){
+        int socketReady = pollCall(1000);
+        if(socketReady == -1){ // Poll with 1s timeout
+            if (++attempts >= 10){
+                printf("Client timed out. Ending transfer.\n"); //Probably have to change to something else. 
+                return DONE;
             }
+            printf("Resending from timeout:%d\n", window->current);
+            resend_packet(socketNum, client, window->lowest, window, FLAG_RESENT_TIMEOUT);
+        }else if(socketReady == socketNum) {
+            process_rr_srej_eof(socketNum, client, window);
         }
     }
     return SEND_DATA; // Continue sending data
@@ -349,51 +351,60 @@ ServerState handle_wait_EOF_ack(int socketNum, struct sockaddr_in6 *client, Circ
     return DONE;
 }
 
-void server_FSM(int socketNum)
-{
-    // Initialize state for the server.
-    ServerState state = FILENAME_ACK;
-    FILE *export_file;
+void server_FSM(int socketNum){
+    while (1) { //Terminates when we ctrl c 
 
-    // Initialize sendtoErr for simulating errors
-    sendErr_init(ERROR_RATE, 1, 1, 1, 1);
+        //Initiate trouble maker 
+        sendErr_init(ERROR_RATE, 1, 1, 1, 1);
 
-    // Client Socket
-    struct sockaddr_in6 client;
+        //Variables for communication
+        FILE *export_file;
+        struct sockaddr_in6 client; 
+        int window_size; 
+        int buffer_size;
+        
+       export_file = processFilenameAck(socketNum, &client, &window_size, &buffer_size);
+       if(export_file == NULL){
+            continue;
+       }else{
+            //Fork
+            pid_t pid = fork(); 
+            if(pid == 0){
+                close(socketNum); //Close the listening socket
+                removeFromPollSet(socketNum);
 
-    // Initialize Circular Buffer
-    CircularBuffer *window = (CircularBuffer *)malloc(sizeof(CircularBuffer));
+                //Open new socket for child process
+                int child_socket = udpServerSetup(0);
+                addToPollSet(child_socket); 
 
-    while (state != DONE){
-        switch (state){
-        case FILENAME_ACK:
-            // Change to send_data state if file ack is successful.
-            export_file = processFilenameAck(socketNum, window, &client);
-            if (export_file == NULL){
-                state = DONE; // Transition to DONE if file was not successfully opened
-            }else{
-                state = SEND_DATA;
-                printf("Sending data...\n");
-            }
-            break;
-        case SEND_DATA:
-            state = handle_send_data(socketNum, &client, window, export_file);
-            break;
-        case WAIT_EOF_ACK:
-            state = handle_wait_EOF_ack(socketNum,&client, window);
-            if(state == DONE){
-                if (export_file != NULL){
-                    fclose(export_file);
+                //Create buffer
+                CircularBuffer *window = (CircularBuffer *)malloc(sizeof(CircularBuffer));
+                buffer_init(window,window_size,buffer_size,buffer_size);                               
+                
+                ServerState state = SEND_DATA;
+                while (state != DONE) {
+                    switch (state) {
+                        case SEND_DATA:
+                            state = handle_send_data(child_socket, &client, window, export_file);
+                            break;
+                        case WAIT_EOF_ACK:
+                            state = handle_wait_EOF_ack(child_socket, &client, window);
+                            break;
+                        default:
+                            state = DONE;
+                    }
                 }
-                printf("Transfer completed.\n");
-                break;
+                buffer_free(window);
+                fclose(export_file);
+                close(child_socket);
+                exit(0);
+            }else if(pid > 0){
+                continue;
+            }else{
+                perror("Fork Failure"); 
             }
-            break;
-        default:
-            state = DONE; // Default state to end the FSM
         }
     }
-    buffer_free(window);
 }
 
 int checkArgs(int argc, char *argv[])

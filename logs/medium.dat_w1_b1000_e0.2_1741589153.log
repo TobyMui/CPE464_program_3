@@ -1,0 +1,85 @@
+Send Err-INIT ErrRate: 0.20 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   36 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS  9   -FNAME response
+RECV          SEQ#   0 LEN 1007 FLAGS 16   -Data #:    0
+SEND MSG#   2 SEQ#   0 LEN   11 FLAGS  5   -RR #:      1
+RECV          SEQ#   1 LEN 1007 FLAGS 16   -Data #:    1
+SEND MSG#   3 SEQ#   0 LEN   11 FLAGS  5   -RR #:      2
+RECV          SEQ#   2 LEN 1007 FLAGS 16   -Data #:    2 - RECV Corrupted packet
+RECV          SEQ#   2 LEN 1007 FLAGS 16   -Data #:    2
+SEND MSG#   4 SEQ#   0 LEN   11 FLAGS  5   -RR #:      3 - FLIPPED BITS 
+RECV          SEQ#   2 LEN 1007 FLAGS 17   -Resent Data #:    2
+SEND MSG#   5 SEQ#   0 LEN   11 FLAGS  5   -RR #:      3
+RECV          SEQ#   3 LEN 1007 FLAGS 16   -Data #:    3
+SEND MSG#   6 SEQ#   0 LEN   11 FLAGS  5   -RR #:      4 - DROPPED 
+RECV          SEQ#   3 LEN 1007 FLAGS 18   -Timeout resent data #:    3
+SEND MSG#   7 SEQ#   0 LEN   11 FLAGS  5   -RR #:      4
+RECV          SEQ#   4 LEN 1007 FLAGS 16   -Data #:    4
+SEND MSG#   8 SEQ#   0 LEN   11 FLAGS  5   -RR #:      5
+RECV          SEQ#   5 LEN 1007 FLAGS 16   -Data #:    5
+SEND MSG#   9 SEQ#   0 LEN   11 FLAGS  5   -RR #:      6
+RECV          SEQ#   6 LEN 1007 FLAGS 16   -Data #:    6
+SEND MSG#  10 SEQ#   0 LEN   11 FLAGS  5   -RR #:      7
+RECV          SEQ#   7 LEN 1007 FLAGS 16   -Data #:    7
+SEND MSG#  11 SEQ#   0 LEN   11 FLAGS  5   -RR #:      8
+RECV          SEQ#   8 LEN 1007 FLAGS 16   -Data #:    8
+SEND MSG#  12 SEQ#   0 LEN   11 FLAGS  5   -RR #:      9
+RECV          SEQ#   9 LEN 1007 FLAGS 16   -Data #:    9
+SEND MSG#  13 SEQ#   0 LEN   11 FLAGS  5   -RR #:     10
+RECV          SEQ#  10 LEN 1007 FLAGS 16   -Data #:   10
+SEND MSG#  14 SEQ#   0 LEN   11 FLAGS  5   -RR #:     11
+RECV          SEQ#  11 LEN 1007 FLAGS 16   -Data #:   11
+SEND MSG#  15 SEQ#   0 LEN   11 FLAGS  5   -RR #:     12
+RECV          SEQ#  12 LEN 1007 FLAGS 16   -Data #:   12
+SEND MSG#  16 SEQ#   0 LEN   11 FLAGS  5   -RR #:     13
+RECV          SEQ#  13 LEN 1007 FLAGS 16   -Data #:   13
+SEND MSG#  17 SEQ#   0 LEN   11 FLAGS  5   -RR #:     14
+RECV          SEQ#  14 LEN 1007 FLAGS 16   -Data #:   14
+SEND MSG#  18 SEQ#   0 LEN   11 FLAGS  5   -RR #:     15
+======== SeqNo Report ========
+  Msgs (Total)       :    18
+  Msgs (Unique SeqNo):     1
+==============================
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+packet length = 36
+Attempt 1: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 9
+Filename exist, the server will be sending data
+~~~~~~~~~~~Highest: 0, Current: 0, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:1 
+~~~~~~~~~~~Highest: 0, Current: 1, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:2 
+Checksum error, packet will be dropped
+~~~~~~~~~~~Highest: 1, Current: 2, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:3 
+~~~~~~~~~~~Highest: 2, Current: 3, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~Highest: 2, Current: 3, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:4 
+~~~~~~~~~~~Highest: 3, Current: 4, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~Highest: 3, Current: 4, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:5 
+~~~~~~~~~~~Highest: 4, Current: 5, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:6 
+~~~~~~~~~~~Highest: 5, Current: 6, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:7 
+~~~~~~~~~~~Highest: 6, Current: 7, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:8 
+~~~~~~~~~~~Highest: 7, Current: 8, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:9 
+~~~~~~~~~~~Highest: 8, Current: 9, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:10 
+~~~~~~~~~~~Highest: 9, Current: 10, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:11 
+~~~~~~~~~~~Highest: 10, Current: 11, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:12 
+~~~~~~~~~~~Highest: 11, Current: 12, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:13 
+~~~~~~~~~~~Highest: 12, Current: 13, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:14 
+~~~~~~~~~~~Highest: 13, Current: 14, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:15 
+
+real	0m11.016s
+user	0m0.003s
+sys	0m0.000s

@@ -1,0 +1,155 @@
+Send Err-INIT ErrRate: 0.15 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   36 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS  9   -FNAME response
+RECV          SEQ#   0 LEN  907 FLAGS 16   -Data #:    0
+SEND MSG#   2 SEQ#   0 LEN   11 FLAGS  5   -RR #:      1 - FLIPPED BITS 
+RECV          SEQ#   1 LEN  907 FLAGS 16   -Data #:    1 - RECV Corrupted packet
+RECV          SEQ#   2 LEN  907 FLAGS 16   -Data #:    2
+SEND MSG#   3 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    1
+RECV          SEQ#   3 LEN  907 FLAGS 16   -Data #:    3
+RECV          SEQ#   4 LEN  907 FLAGS 16   -Data #:    4
+RECV          SEQ#   5 LEN  907 FLAGS 16   -Data #:    5
+RECV          SEQ#   0 LEN  907 FLAGS 17   -Resent Data #:    0
+RECV          SEQ#   1 LEN  907 FLAGS 17   -Resent Data #:    1 - RECV Corrupted packet
+RECV          SEQ#   6 LEN  907 FLAGS 16   -Data #:    6
+RECV          SEQ#   7 LEN  907 FLAGS 16   -Data #:    7
+RECV          SEQ#   8 LEN  907 FLAGS 16   -Data #:    8
+RECV          SEQ#   9 LEN  907 FLAGS 16   -Data #:    9
+RECV          SEQ#  10 LEN  907 FLAGS 16   -Data #:   10
+RECV          SEQ#  12 LEN  907 FLAGS 16   -Data #:   12
+RECV          SEQ#  13 LEN  907 FLAGS 16   -Data #:   13
+RECV          SEQ#  14 LEN  907 FLAGS 16   -Data #:   14
+RECV          SEQ#  15 LEN  907 FLAGS 16   -Data #:   15
+RECV          SEQ#  16 LEN  907 FLAGS 16   -Data #:   16
+RECV          SEQ#  17 LEN  907 FLAGS 16   -Data #:   17
+RECV          SEQ#  18 LEN  907 FLAGS 16   -Data #:   18
+RECV          SEQ#  19 LEN  907 FLAGS 16   -Data #:   19
+RECV          SEQ#  20 LEN  907 FLAGS 16   -Data #:   20
+RECV          SEQ#  21 LEN  907 FLAGS 16   -Data #:   21
+RECV          SEQ#  22 LEN  907 FLAGS 16   -Data #:   22
+RECV          SEQ#  23 LEN  907 FLAGS 16   -Data #:   23
+RECV          SEQ#  24 LEN  907 FLAGS 16   -Data #:   24
+RECV          SEQ#  25 LEN  907 FLAGS 16   -Data #:   25
+RECV          SEQ#  26 LEN  907 FLAGS 16   -Data #:   26
+RECV          SEQ#  27 LEN  907 FLAGS 16   -Data #:   27
+RECV          SEQ#  28 LEN  907 FLAGS 16   -Data #:   28
+RECV          SEQ#  29 LEN  907 FLAGS 16   -Data #:   29 - RECV Corrupted packet
+RECV          SEQ#  30 LEN  907 FLAGS 16   -Data #:   30
+RECV          SEQ#  31 LEN  907 FLAGS 16   -Data #:   31
+RECV          SEQ#  33 LEN  907 FLAGS 16   -Data #:   33
+RECV          SEQ#  34 LEN  907 FLAGS 16   -Data #:   34
+RECV          SEQ#  35 LEN  907 FLAGS 16   -Data #:   35
+RECV          SEQ#  36 LEN  907 FLAGS 16   -Data #:   36
+RECV          SEQ#  37 LEN  907 FLAGS 16   -Data #:   37
+RECV          SEQ#  39 LEN  907 FLAGS 16   -Data #:   39
+RECV          SEQ#  40 LEN  907 FLAGS 16   -Data #:   40
+RECV          SEQ#  41 LEN  907 FLAGS 16   -Data #:   41
+RECV          SEQ#  42 LEN  907 FLAGS 16   -Data #:   42
+RECV          SEQ#  43 LEN  907 FLAGS 16   -Data #:   43
+RECV          SEQ#  45 LEN  907 FLAGS 16   -Data #:   45
+RECV          SEQ#  46 LEN  907 FLAGS 16   -Data #:   46
+RECV          SEQ#  47 LEN  907 FLAGS 16   -Data #:   47
+RECV          SEQ#  48 LEN  907 FLAGS 16   -Data #:   48
+RECV          SEQ#  49 LEN  907 FLAGS 16   -Data #:   49
+RECV          SEQ#  50 LEN  907 FLAGS 16   -Data #:   50 - RECV Corrupted packet
+RECV          SEQ#  51 LEN  907 FLAGS 16   -Data #:   51
+RECV          SEQ#  52 LEN  907 FLAGS 16   -Data #:   52
+RECV          SEQ#  53 LEN  907 FLAGS 16   -Data #:   53
+RECV          SEQ#  54 LEN  907 FLAGS 16   -Data #:   54
+RECV          SEQ#  55 LEN  907 FLAGS 16   -Data #:   55
+RECV          SEQ#  56 LEN  807 FLAGS 16   -Data #:   56
+RECV          SEQ#  57 LEN    7 FLAGS 10   -User defined 
+RECV          SEQ#  57 LEN    7 FLAGS 10   -User defined 
+RECV          SEQ#  57 LEN    7 FLAGS 10   -User defined 
+RECV          SEQ#  57 LEN    7 FLAGS 10   -User defined 
+RECV          SEQ#  57 LEN    7 FLAGS 10   -User defined 
+RECV          SEQ#  57 LEN    7 FLAGS 10   -User defined 
+RECV          SEQ# 65337 LEN    7 FLAGS 10   -User defined  - RECV Corrupted packet
+RECV          SEQ#  57 LEN    7 FLAGS 10   -User defined 
+RECV          SEQ#  57 LEN    7 FLAGS 10   -User defined 
+RECV          SEQ#  57 LEN    7 FLAGS 10   -User defined 
+======== SeqNo Report ========
+  Msgs (Total)       :     3
+  Msgs (Unique SeqNo):     1
+==============================
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+packet length = 36
+Attempt 1: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 9
+Filename exist, the server will be sending data
+~~~~~~~~~~~Highest: 0, Current: 0, Lowest: 0~~~~~~~~~~~~~~~~~
+Sending RR and SREJ in buffer:1 
+Checksum error, packet will be dropped
+~~~~~~~~~~~Highest: 0, Current: 1, Lowest: 0~~~~~~~~~~~~~~~~~
+Added to buffer======2BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+Checksum error, packet will be dropped
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+Checksum error, packet will be dropped
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+Checksum error, packet will be dropped
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+Checksum error, packet will be dropped
+BUFFERING:
+BUFFERING:
+BUFFERING:
+BUFFERING:
+
+real	0m19.025s
+user	0m0.003s
+sys	0m0.000s

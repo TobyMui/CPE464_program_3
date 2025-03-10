@@ -1,0 +1,1364 @@
+Send Err-INIT ErrRate: 0.15 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   35 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS  9   -FNAME response
+RECV          SEQ#   0 LEN 1007 FLAGS 16   -Data #:    0
+SEND MSG#   2 SEQ#   0 LEN   11 FLAGS  5   -RR #:      1
+RECV          SEQ#   1 LEN 1007 FLAGS 16   -Data #:    1
+RECV          SEQ#   2 LEN 1007 FLAGS 16   -Data #:    2
+SEND MSG#   3 SEQ#   0 LEN   11 FLAGS  5   -RR #:      3
+RECV          SEQ#   3 LEN 1007 FLAGS 16   -Data #:    3
+RECV          SEQ#   4 LEN 1007 FLAGS 16   -Data #:    4
+SEND MSG#   4 SEQ#   0 LEN   11 FLAGS  5   -RR #:      5
+RECV          SEQ#   5 LEN 1007 FLAGS 16   -Data #:    5
+RECV          SEQ#   6 LEN 1007 FLAGS 16   -Data #:    6
+SEND MSG#   5 SEQ#   0 LEN   11 FLAGS  5   -RR #:      7
+RECV          SEQ#   7 LEN 1007 FLAGS 16   -Data #:    7
+RECV          SEQ#   8 LEN 1007 FLAGS 16   -Data #:    8
+SEND MSG#   6 SEQ#   0 LEN   11 FLAGS  5   -RR #:      9
+RECV          SEQ#   9 LEN 1007 FLAGS 16   -Data #:    9
+RECV          SEQ#  10 LEN 1007 FLAGS 16   -Data #:   10
+SEND MSG#   7 SEQ#   0 LEN   11 FLAGS  5   -RR #:     11
+RECV          SEQ#  11 LEN 1007 FLAGS 16   -Data #:   11
+RECV          SEQ#  12 LEN 1007 FLAGS 16   -Data #:   12
+SEND MSG#   8 SEQ#   0 LEN   11 FLAGS  5   -RR #:     13
+RECV          SEQ#  13 LEN 1007 FLAGS 16   -Data #:   13
+RECV          SEQ#  14 LEN 1007 FLAGS 16   -Data #:   14
+SEND MSG#   9 SEQ#   0 LEN   11 FLAGS  5   -RR #:     15
+RECV          SEQ#  15 LEN 1007 FLAGS 16   -Data #:   15
+RECV          SEQ#  16 LEN 1007 FLAGS 16   -Data #:   16
+SEND MSG#  10 SEQ#   0 LEN   11 FLAGS  5   -RR #:     17
+RECV          SEQ#  17 LEN 1007 FLAGS 16   -Data #:   17
+RECV          SEQ#  18 LEN 1007 FLAGS 16   -Data #:   18
+SEND MSG#  11 SEQ#   0 LEN   11 FLAGS  5   -RR #:     19
+RECV          SEQ#  19 LEN 1007 FLAGS 16   -Data #:   19
+RECV          SEQ#  20 LEN 1007 FLAGS 16   -Data #:   20
+SEND MSG#  12 SEQ#   0 LEN   11 FLAGS  5   -RR #:     21
+RECV          SEQ#  21 LEN 1007 FLAGS 16   -Data #:   21
+RECV          SEQ#  22 LEN 1007 FLAGS 16   -Data #:   22
+SEND MSG#  13 SEQ#   0 LEN   11 FLAGS  5   -RR #:     23
+RECV          SEQ#  23 LEN 1007 FLAGS 16   -Data #:   23
+RECV          SEQ#  24 LEN 1007 FLAGS 16   -Data #:   24
+SEND MSG#  14 SEQ#   0 LEN   11 FLAGS  5   -RR #:     25
+RECV          SEQ#  25 LEN 1007 FLAGS 16   -Data #:   25
+RECV          SEQ#  26 LEN 1007 FLAGS 16   -Data #:   26
+SEND MSG#  15 SEQ#   0 LEN   11 FLAGS  5   -RR #:     27
+RECV          SEQ#  27 LEN 1007 FLAGS 16   -Data #:   27
+RECV          SEQ#  28 LEN 1007 FLAGS 16   -Data #:   28
+SEND MSG#  16 SEQ#   0 LEN   11 FLAGS  5   -RR #:     29
+RECV          SEQ#  29 LEN 1007 FLAGS 16   -Data #:   29
+RECV          SEQ#  30 LEN 1007 FLAGS 16   -Data #:   30
+SEND MSG#  17 SEQ#   0 LEN   11 FLAGS  5   -RR #:     31 - FLIPPED BITS 
+RECV          SEQ#  31 LEN 1007 FLAGS 16   -Data #:   31
+RECV          SEQ#  29 LEN 1007 FLAGS 17   -Resent Data #:   29
+SEND MSG#  18 SEQ#   0 LEN   11 FLAGS  5   -RR #:     32 - FLIPPED BITS 
+RECV          SEQ#  32 LEN 1007 FLAGS 16   -Data #:   32
+RECV          SEQ#  33 LEN 1007 FLAGS 16   -Data #:   33
+SEND MSG#  19 SEQ#   0 LEN   11 FLAGS  5   -RR #:     34
+RECV          SEQ#  29 LEN 1007 FLAGS 17   -Resent Data #:   29
+RECV          SEQ#  34 LEN 1007 FLAGS 16   -Data #:   34
+SEND MSG#  20 SEQ#   0 LEN   11 FLAGS  5   -RR #:     35
+RECV          SEQ#  35 LEN 1007 FLAGS 16   -Data #:   35
+RECV          SEQ#  36 LEN 1007 FLAGS 16   -Data #:   36
+SEND MSG#  21 SEQ#   0 LEN   11 FLAGS  5   -RR #:     37
+RECV          SEQ#  37 LEN 1007 FLAGS 16   -Data #:   37
+RECV          SEQ#  38 LEN 1007 FLAGS 16   -Data #:   38
+SEND MSG#  22 SEQ#   0 LEN   11 FLAGS  5   -RR #:     39
+RECV          SEQ#  39 LEN 1007 FLAGS 16   -Data #:   39
+RECV          SEQ#  40 LEN 1007 FLAGS 16   -Data #:   40
+SEND MSG#  23 SEQ#   0 LEN   11 FLAGS  5   -RR #:     41
+RECV          SEQ#  41 LEN 1007 FLAGS 16   -Data #:   41
+RECV          SEQ#  42 LEN 1007 FLAGS 16   -Data #:   42
+SEND MSG#  24 SEQ#   0 LEN   11 FLAGS  5   -RR #:     43 - DROPPED 
+RECV          SEQ#  43 LEN 1007 FLAGS 16   -Data #:   43
+RECV          SEQ#  44 LEN 1007 FLAGS 16   -Data #:   44
+SEND MSG#  25 SEQ#   0 LEN   11 FLAGS  5   -RR #:     45
+RECV          SEQ#  45 LEN 1007 FLAGS 16   -Data #:   45
+RECV          SEQ#  46 LEN 1007 FLAGS 16   -Data #:   46
+SEND MSG#  26 SEQ#   0 LEN   11 FLAGS  5   -RR #:     47
+RECV          SEQ#  47 LEN 1007 FLAGS 16   -Data #:   47
+RECV          SEQ#  48 LEN 1007 FLAGS 16   -Data #:   48
+SEND MSG#  27 SEQ#   0 LEN   11 FLAGS  5   -RR #:     49
+RECV          SEQ#  49 LEN 1007 FLAGS 16   -Data #:   49
+RECV          SEQ#  50 LEN 1007 FLAGS 16   -Data #:   50
+SEND MSG#  28 SEQ#   0 LEN   11 FLAGS  5   -RR #:     51
+RECV          SEQ#  51 LEN 1007 FLAGS 16   -Data #:   51
+RECV          SEQ#  52 LEN 1007 FLAGS 16   -Data #:   52
+SEND MSG#  29 SEQ#   0 LEN   11 FLAGS  5   -RR #:     53
+RECV          SEQ#  53 LEN 1007 FLAGS 16   -Data #:   53
+RECV          SEQ#  54 LEN 1007 FLAGS 16   -Data #:   54
+SEND MSG#  30 SEQ#   0 LEN   11 FLAGS  5   -RR #:     55
+RECV          SEQ#  55 LEN 1007 FLAGS 16   -Data #:   55
+RECV          SEQ#  56 LEN 1007 FLAGS 16   -Data #:   56
+SEND MSG#  31 SEQ#   0 LEN   11 FLAGS  5   -RR #:     57
+RECV          SEQ#  57 LEN 1007 FLAGS 16   -Data #:   57
+RECV          SEQ#  58 LEN 1007 FLAGS 16   -Data #:   58
+SEND MSG#  32 SEQ#   0 LEN   11 FLAGS  5   -RR #:     59 - DROPPED 
+RECV          SEQ#  59 LEN 1007 FLAGS 16   -Data #:   59
+RECV          SEQ#  60 LEN 1007 FLAGS 16   -Data #:   60
+SEND MSG#  33 SEQ#   0 LEN   11 FLAGS  5   -RR #:     61
+RECV          SEQ#  61 LEN 1007 FLAGS 16   -Data #:   61
+RECV          SEQ#  62 LEN 1007 FLAGS 16   -Data #:   62
+SEND MSG#  34 SEQ#   0 LEN   11 FLAGS  5   -RR #:     63
+RECV          SEQ#  63 LEN 1007 FLAGS 16   -Data #:   63
+RECV          SEQ#  64 LEN 1007 FLAGS 16   -Data #:   64
+SEND MSG#  35 SEQ#   0 LEN   11 FLAGS  5   -RR #:     65
+RECV          SEQ#  65 LEN 1007 FLAGS 16   -Data #:   65
+RECV          SEQ#  66 LEN 1007 FLAGS 16   -Data #:   66
+SEND MSG#  36 SEQ#   0 LEN   11 FLAGS  5   -RR #:     67
+RECV          SEQ#  67 LEN 1007 FLAGS 16   -Data #:   67
+RECV          SEQ#  68 LEN 1007 FLAGS 16   -Data #:   68
+SEND MSG#  37 SEQ#   0 LEN   11 FLAGS  5   -RR #:     69
+RECV          SEQ#  69 LEN 1007 FLAGS 16   -Data #:   69
+RECV          SEQ#  70 LEN 1007 FLAGS 16   -Data #:   70
+SEND MSG#  38 SEQ#   0 LEN   11 FLAGS  5   -RR #:     71
+RECV          SEQ#  71 LEN 1007 FLAGS 16   -Data #:   71
+RECV          SEQ#  72 LEN 1007 FLAGS 16   -Data #:   72
+SEND MSG#  39 SEQ#   0 LEN   11 FLAGS  5   -RR #:     73 - FLIPPED BITS 
+RECV          SEQ#  73 LEN 1007 FLAGS 16   -Data #:   73
+RECV          SEQ#  74 LEN 1007 FLAGS 16   -Data #:   74
+SEND MSG#  40 SEQ#   0 LEN   11 FLAGS  5   -RR #:     75
+RECV          SEQ#  75 LEN 1007 FLAGS 16   -Data #:   75
+RECV          SEQ#  71 LEN 1007 FLAGS 17   -Resent Data #:   71
+SEND MSG#  41 SEQ#   0 LEN   11 FLAGS  5   -RR #:     76
+RECV          SEQ#  76 LEN 1007 FLAGS 16   -Data #:   76
+RECV          SEQ#  77 LEN 1007 FLAGS 16   -Data #:   77
+SEND MSG#  42 SEQ#   0 LEN   11 FLAGS  5   -RR #:     78 - FLIPPED BITS 
+RECV          SEQ#  78 LEN 1007 FLAGS 16   -Data #:   78
+RECV          SEQ#  79 LEN 1007 FLAGS 16   -Data #:   79
+SEND MSG#  43 SEQ#   0 LEN   11 FLAGS  5   -RR #:     80
+RECV          SEQ#  80 LEN 1007 FLAGS 16   -Data #:   80
+RECV          SEQ#  76 LEN 1007 FLAGS 17   -Resent Data #:   76
+SEND MSG#  44 SEQ#   0 LEN   11 FLAGS  5   -RR #:     81
+RECV          SEQ#  81 LEN 1007 FLAGS 16   -Data #:   81
+RECV          SEQ#  82 LEN 1007 FLAGS 16   -Data #:   82
+SEND MSG#  45 SEQ#   0 LEN   11 FLAGS  5   -RR #:     83 - FLIPPED BITS 
+RECV          SEQ#  83 LEN 1007 FLAGS 16   -Data #:   83
+RECV          SEQ#  84 LEN 1007 FLAGS 16   -Data #:   84
+SEND MSG#  46 SEQ#   0 LEN   11 FLAGS  5   -RR #:     85
+RECV          SEQ#  81 LEN 1007 FLAGS 17   -Resent Data #:   81
+RECV          SEQ#  85 LEN 1007 FLAGS 16   -Data #:   85
+SEND MSG#  47 SEQ#   0 LEN   11 FLAGS  5   -RR #:     86
+RECV          SEQ#  86 LEN 1007 FLAGS 16   -Data #:   86
+RECV          SEQ#  87 LEN 1007 FLAGS 16   -Data #:   87
+SEND MSG#  48 SEQ#   0 LEN   11 FLAGS  5   -RR #:     88
+RECV          SEQ#  88 LEN 1007 FLAGS 16   -Data #:   88
+RECV          SEQ#  89 LEN 1007 FLAGS 16   -Data #:   89
+SEND MSG#  49 SEQ#   0 LEN   11 FLAGS  5   -RR #:     90
+RECV          SEQ#  90 LEN 1007 FLAGS 16   -Data #:   90
+RECV          SEQ#  91 LEN 1007 FLAGS 16   -Data #:   91
+SEND MSG#  50 SEQ#   0 LEN   11 FLAGS  5   -RR #:     92
+RECV          SEQ#  92 LEN 1007 FLAGS 16   -Data #:   92
+RECV          SEQ#  93 LEN 1007 FLAGS 16   -Data #:   93
+SEND MSG#  51 SEQ#   0 LEN   11 FLAGS  5   -RR #:     94
+RECV          SEQ#  94 LEN 1007 FLAGS 16   -Data #:   94
+RECV          SEQ#  95 LEN 1007 FLAGS 16   -Data #:   95
+SEND MSG#  52 SEQ#   0 LEN   11 FLAGS  5   -RR #:     96
+RECV          SEQ#  96 LEN 1007 FLAGS 16   -Data #:   96
+RECV          SEQ#  97 LEN 1007 FLAGS 16   -Data #:   97
+SEND MSG#  53 SEQ#   0 LEN   11 FLAGS  5   -RR #:     98
+RECV          SEQ#  98 LEN 1007 FLAGS 16   -Data #:   98
+RECV          SEQ#  99 LEN 1007 FLAGS 16   -Data #:   99
+SEND MSG#  54 SEQ#   0 LEN   11 FLAGS  5   -RR #:    100
+RECV          SEQ# 100 LEN 1007 FLAGS 16   -Data #:  100
+RECV          SEQ# 101 LEN 1007 FLAGS 16   -Data #:  101
+SEND MSG#  55 SEQ#   0 LEN   11 FLAGS  5   -RR #:    102
+RECV          SEQ# 102 LEN 1007 FLAGS 16   -Data #:  102
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+Error_rate: 0.150000
+packet length = 35
+Attempt 1: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 9
+Filename exist, the server will be sending data
+File Ok state reached
+~~~~~Expected: 0  ~~~~~~~ 
+Sending RR and SREJ in buffer:1 
+BUFFERING:
+~~~~~Expected: 2  ~~~~~~~ 
+Sending RR and SREJ in buffer:3 
+BUFFERING:
+~~~~~Expected: 4  ~~~~~~~ 
+Sending RR and SREJ in buffer:5 
+BUFFERING:
+~~~~~Expected: 6  ~~~~~~~ 
+Sending RR and SREJ in buffer:7 
+BUFFERING:
+~~~~~Expected: 8  ~~~~~~~ 
+Sending RR and SREJ in buffer:9 
+BUFFERING:
+~~~~~Expected: 10  ~~~~~~~ 
+Sending RR and SREJ in buffer:11 
+BUFFERING:
+~~~~~Expected: 12  ~~~~~~~ 
+Sending RR and SREJ in buffer:13 
+BUFFERING:
+~~~~~Expected: 14  ~~~~~~~ 
+Sending RR and SREJ in buffer:15 
+BUFFERING:
+~~~~~Expected: 16  ~~~~~~~ 
+Sending RR and SREJ in buffer:17 
+BUFFERING:
+~~~~~Expected: 18  ~~~~~~~ 
+Sending RR and SREJ in buffer:19 
+BUFFERING:
+~~~~~Expected: 20  ~~~~~~~ 
+Sending RR and SREJ in buffer:21 
+BUFFERING:
+~~~~~Expected: 22  ~~~~~~~ 
+Sending RR and SREJ in buffer:23 
+BUFFERING:
+~~~~~Expected: 24  ~~~~~~~ 
+Sending RR and SREJ in buffer:25 
+BUFFERING:
+~~~~~Expected: 26  ~~~~~~~ 
+Sending RR and SREJ in buffer:27 
+BUFFERING:
+~~~~~Expected: 28  ~~~~~~~ 
+Sending RR and SREJ in buffer:29 
+BUFFERING:
+~~~~~Expected: 30  ~~~~~~~ 
+Sending RR and SREJ in buffer:31 
+BUFFERING:
+~~~~~Expected: 32  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 33  ~~~~~~~ 
+Sending RR and SREJ in buffer:34 
+BUFFERING:
+~~~~~Expected: 34  ~~~~~~~ 
+Sending RR and SREJ in buffer:35 
+BUFFERING:
+~~~~~Expected: 36  ~~~~~~~ 
+Sending RR and SREJ in buffer:37 
+BUFFERING:
+~~~~~Expected: 38  ~~~~~~~ 
+Sending RR and SREJ in buffer:39 
+BUFFERING:
+~~~~~Expected: 40  ~~~~~~~ 
+Sending RR and SREJ in buffer:41 
+BUFFERING:
+~~~~~Expected: 42  ~~~~~~~ 
+Sending RR and SREJ in buffer:43 
+BUFFERING:
+~~~~~Expected: 44  ~~~~~~~ 
+Sending RR and SREJ in buffer:45 
+BUFFERING:
+~~~~~Expected: 46  ~~~~~~~ 
+Sending RR and SREJ in buffer:47 
+BUFFERING:
+~~~~~Expected: 48  ~~~~~~~ 
+Sending RR and SREJ in buffer:49 
+BUFFERING:
+~~~~~Expected: 50  ~~~~~~~ 
+Sending RR and SREJ in buffer:51 
+BUFFERING:
+~~~~~Expected: 52  ~~~~~~~ 
+Sending RR and SREJ in buffer:53 
+BUFFERING:
+~~~~~Expected: 54  ~~~~~~~ 
+Sending RR and SREJ in buffer:55 
+BUFFERING:
+~~~~~Expected: 56  ~~~~~~~ 
+Sending RR and SREJ in buffer:57 
+BUFFERING:
+~~~~~Expected: 58  ~~~~~~~ 
+Sending RR and SREJ in buffer:59 
+BUFFERING:
+~~~~~Expected: 60  ~~~~~~~ 
+Sending RR and SREJ in buffer:61 
+BUFFERING:
+~~~~~Expected: 62  ~~~~~~~ 
+Sending RR and SREJ in buffer:63 
+BUFFERING:
+~~~~~Expected: 64  ~~~~~~~ 
+Sending RR and SREJ in buffer:65 
+BUFFERING:
+~~~~~Expected: 66  ~~~~~~~ 
+Sending RR and SREJ in buffer:67 
+BUFFERING:
+~~~~~Expected: 68  ~~~~~~~ 
+Sending RR and SREJ in buffer:69 
+BUFFERING:
+~~~~~Expected: 70  ~~~~~~~ 
+Sending RR and SREJ in buffer:71 
+BUFFERING:
+~~~~~Expected: 72  ~~~~~~~ 
+Sending RR and SREJ in buffer:73 
+BUFFERING:
+~~~~~Expected: 74  ~~~~~~~ 
+Sending RR and SREJ in buffer:75 
+BUFFERING:
+~~~~~Expected: 76  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 77  ~~~~~~~ 
+Sending RR and SREJ in buffer:78 
+BUFFERING:
+~~~~~Expected: 79  ~~~~~~~ 
+Sending RR and SREJ in buffer:80 
+BUFFERING:
+~~~~~Expected: 81  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 82  ~~~~~~~ 
+Sending RR and SREJ in buffer:83 
+BUFFERING:
+~~~~~Expected: 84  ~~~~~~~ 
+Sending RR and SREJ in buffer:85 
+BUFFERING:
+~~~~~Expected: 85  ~~~~~~~ 
+Sending RR and SREJ in buffer:86 
+BUFFERING:
+~~~~~Expected: 87  ~~~~~~~ 
+Sending RR and SREJ in buffer:88 
+BUFFERING:
+~~~~~Expected: 89  ~~~~~~~ 
+Sending RR and SREJ in buffer:90 
+BUFFERING:
+~~~~~Expected: 91  ~~~~~~~ 
+Sending RR and SREJ in buffer:92 
+BUFFERING:
+~~~~~Expected: 93  ~~~~~~~ 
+Sending RR and SREJ in buffer:94 
+BUFFERING:
+~~~~~Expected: 95  ~~~~~~~ 
+Sending RR and SREJ in buffer:96 
+BUFFERING:
+~~~~~Expected: 97  ~~~~~~~ 
+Sending RR and SREJ in buffer:98 
+BUFFERING:
+~~~~~Expected: 99  ~~~~~~~ 
+Sending RR and SREJ in buffer:100 
+BUFFERING:
+~~~~~Expected: 101  ~~~~~~~ 
+Sending RR and SREJ in buffer:102 
+BUFFERING:
+~~~~~Expected:RECV          SEQ# 103 LEN 1007 FLAGS 16   -Data #:  103
+SEND MSG#  56 SEQ#   0 LEN   11 FLAGS  5   -RR #:    104
+RECV          SEQ# 104 LEN 1007 FLAGS 16   -Data #:  104
+RECV          SEQ# 105 LEN 1007 FLAGS 16   -Data #:  105
+SEND MSG#  57 SEQ#   0 LEN   11 FLAGS  5   -RR #:    106
+RECV          SEQ# 106 LEN 1007 FLAGS 16   -Data #:  106
+RECV          SEQ# 107 LEN 1007 FLAGS 16   -Data #:  107
+SEND MSG#  58 SEQ#   0 LEN   11 FLAGS  5   -RR #:    108
+RECV          SEQ# 108 LEN 1007 FLAGS 16   -Data #:  108
+RECV          SEQ# 109 LEN 1007 FLAGS 16   -Data #:  109
+SEND MSG#  59 SEQ#   0 LEN   11 FLAGS  5   -RR #:    110
+RECV          SEQ# 110 LEN 1007 FLAGS 16   -Data #:  110
+RECV          SEQ# 111 LEN 1007 FLAGS 16   -Data #:  111
+SEND MSG#  60 SEQ#   0 LEN   11 FLAGS  5   -RR #:    112
+RECV          SEQ# 112 LEN 1007 FLAGS 16   -Data #:  112
+RECV          SEQ# 113 LEN 1007 FLAGS 16   -Data #:  113
+SEND MSG#  61 SEQ#   0 LEN   11 FLAGS  5   -RR #:    114
+RECV          SEQ# 114 LEN 1007 FLAGS 16   -Data #:  114
+RECV          SEQ# 115 LEN 1007 FLAGS 16   -Data #:  115
+SEND MSG#  62 SEQ#   0 LEN   11 FLAGS  5   -RR #:    116
+RECV          SEQ# 116 LEN 1007 FLAGS 16   -Data #:  116
+RECV          SEQ# 117 LEN 1007 FLAGS 16   -Data #:  117
+SEND MSG#  63 SEQ#   0 LEN   11 FLAGS  5   -RR #:    118 - FLIPPED BITS 
+RECV          SEQ# 118 LEN 1007 FLAGS 16   -Data #:  118
+RECV          SEQ# 116 LEN 1007 FLAGS 17   -Resent Data #:  116
+SEND MSG#  64 SEQ#   0 LEN   11 FLAGS  5   -RR #:    119
+RECV          SEQ# 119 LEN 1007 FLAGS 16   -Data #:  119
+RECV          SEQ# 120 LEN 1007 FLAGS 16   -Data #:  120
+SEND MSG#  65 SEQ#   0 LEN   11 FLAGS  5   -RR #:    121
+RECV          SEQ# 121 LEN 1007 FLAGS 16   -Data #:  121
+RECV          SEQ# 122 LEN 1007 FLAGS 16   -Data #:  122
+SEND MSG#  66 SEQ#   0 LEN   11 FLAGS  5   -RR #:    123
+RECV          SEQ# 123 LEN 1007 FLAGS 16   -Data #:  123
+RECV          SEQ# 124 LEN 1007 FLAGS 16   -Data #:  124
+SEND MSG#  67 SEQ#   0 LEN   11 FLAGS  5   -RR #:    125
+RECV          SEQ# 125 LEN 1007 FLAGS 16   -Data #:  125
+RECV          SEQ# 126 LEN 1007 FLAGS 16   -Data #:  126
+SEND MSG#  68 SEQ#   0 LEN   11 FLAGS  5   -RR #:    127
+RECV          SEQ# 127 LEN 1007 FLAGS 16   -Data #:  127
+RECV          SEQ# 128 LEN 1007 FLAGS 16   -Data #:  128
+SEND MSG#  69 SEQ#   0 LEN   11 FLAGS  5   -RR #:    129
+RECV          SEQ# 129 LEN 1007 FLAGS 16   -Data #:  129
+RECV          SEQ# 130 LEN 1007 FLAGS 16   -Data #:  130
+SEND MSG#  70 SEQ#   0 LEN   11 FLAGS  5   -RR #:    131
+RECV          SEQ# 131 LEN 1007 FLAGS 16   -Data #:  131
+RECV          SEQ# 132 LEN 1007 FLAGS 16   -Data #:  132
+SEND MSG#  71 SEQ#   0 LEN   11 FLAGS  5   -RR #:    133
+RECV          SEQ# 133 LEN 1007 FLAGS 16   -Data #:  133
+RECV          SEQ# 134 LEN 1007 FLAGS 16   -Data #:  134
+SEND MSG#  72 SEQ#   0 LEN   11 FLAGS  5   -RR #:    135
+RECV          SEQ# 135 LEN 1007 FLAGS 16   -Data #:  135
+RECV          SEQ# 136 LEN 1007 FLAGS 16   -Data #:  136
+SEND MSG#  73 SEQ#   0 LEN   11 FLAGS  5   -RR #:    137
+RECV          SEQ# 137 LEN 1007 FLAGS 16   -Data #:  137
+RECV          SEQ# 138 LEN 1007 FLAGS 16   -Data #:  138
+SEND MSG#  74 SEQ#   0 LEN   11 FLAGS  5   -RR #:    139
+RECV          SEQ# 139 LEN 1007 FLAGS 16   -Data #:  139
+RECV          SEQ# 140 LEN 1007 FLAGS 16   -Data #:  140
+SEND MSG#  75 SEQ#   0 LEN   11 FLAGS  5   -RR #:    141
+RECV          SEQ# 141 LEN 1007 FLAGS 16   -Data #:  141
+RECV          SEQ# 142 LEN 1007 FLAGS 16   -Data #:  142
+SEND MSG#  76 SEQ#   0 LEN   11 FLAGS  5   -RR #:    143 - DROPPED 
+RECV          SEQ# 143 LEN 1007 FLAGS 16   -Data #:  143
+RECV          SEQ# 144 LEN 1007 FLAGS 16   -Data #:  144
+SEND MSG#  77 SEQ#   0 LEN   11 FLAGS  5   -RR #:    145
+RECV          SEQ# 145 LEN 1007 FLAGS 16   -Data #:  145
+RECV          SEQ# 146 LEN 1007 FLAGS 16   -Data #:  146
+SEND MSG#  78 SEQ#   0 LEN   11 FLAGS  5   -RR #:    147
+RECV          SEQ# 147 LEN 1007 FLAGS 16   -Data #:  147
+RECV          SEQ# 148 LEN 1007 FLAGS 16   -Data #:  148
+SEND MSG#  79 SEQ#   0 LEN   11 FLAGS  5   -RR #:    149
+RECV          SEQ# 149 LEN 1007 FLAGS 16   -Data #:  149
+RECV          SEQ# 150 LEN 1007 FLAGS 16   -Data #:  150
+SEND MSG#  80 SEQ#   0 LEN   11 FLAGS  5   -RR #:    151
+RECV          SEQ# 151 LEN 1007 FLAGS 16   -Data #:  151
+RECV          SEQ# 152 LEN 1007 FLAGS 16   -Data #:  152
+SEND MSG#  81 SEQ#   0 LEN   11 FLAGS  5   -RR #:    153
+RECV          SEQ# 153 LEN 1007 FLAGS 16   -Data #:  153
+RECV          SEQ# 154 LEN 1007 FLAGS 16   -Data #:  154
+SEND MSG#  82 SEQ#   0 LEN   11 FLAGS  5   -RR #:    155
+RECV          SEQ# 155 LEN 1007 FLAGS 16   -Data #:  155
+RECV          SEQ# 156 LEN 1007 FLAGS 16   -Data #:  156
+SEND MSG#  83 SEQ#   0 LEN   11 FLAGS  5   -RR #:    157
+RECV          SEQ# 157 LEN 1007 FLAGS 16   -Data #:  157
+RECV          SEQ# 158 LEN 1007 FLAGS 16   -Data #:  158
+SEND MSG#  84 SEQ#   0 LEN   11 FLAGS  5   -RR #:    159
+RECV          SEQ# 159 LEN 1007 FLAGS 16   -Data #:  159
+RECV          SEQ# 160 LEN 1007 FLAGS 16   -Data #:  160
+SEND MSG#  85 SEQ#   0 LEN   11 FLAGS  5   -RR #:    161 - DROPPED 
+RECV          SEQ# 161 LEN 1007 FLAGS 16   -Data #:  161
+RECV          SEQ# 162 LEN 1007 FLAGS 16   -Data #:  162
+SEND MSG#  86 SEQ#   0 LEN   11 FLAGS  5   -RR #:    163
+RECV          SEQ# 163 LEN 1007 FLAGS 16   -Data #:  163
+RECV          SEQ# 164 LEN 1007 FLAGS 16   -Data #:  164
+SEND MSG#  87 SEQ#   0 LEN   11 FLAGS  5   -RR #:    165
+RECV          SEQ# 165 LEN 1007 FLAGS 16   -Data #:  165
+RECV          SEQ# 166 LEN 1007 FLAGS 16   -Data #:  166
+SEND MSG#  88 SEQ#   0 LEN   11 FLAGS  5   -RR #:    167
+RECV          SEQ# 167 LEN 1007 FLAGS 16   -Data #:  167
+RECV          SEQ# 168 LEN 1007 FLAGS 16   -Data #:  168
+SEND MSG#  89 SEQ#   0 LEN   11 FLAGS  5   -RR #:    169 - FLIPPED BITS 
+RECV          SEQ# 169 LEN 1007 FLAGS 16   -Data #:  169
+RECV          SEQ# 170 LEN 1007 FLAGS 16   -Data #:  170
+SEND MSG#  90 SEQ#   0 LEN   11 FLAGS  5   -RR #:    171
+RECV          SEQ# 171 LEN 1007 FLAGS 16   -Data #:  171
+RECV          SEQ# 167 LEN 1007 FLAGS 17   -Resent Data #:  167
+SEND MSG#  91 SEQ#   0 LEN   11 FLAGS  5   -RR #:    172
+RECV          SEQ# 172 LEN 1007 FLAGS 16   -Data #:  172
+RECV          SEQ# 173 LEN 1007 FLAGS 16   -Data #:  173
+SEND MSG#  92 SEQ#   0 LEN   11 FLAGS  5   -RR #:    174
+RECV          SEQ# 174 LEN 1007 FLAGS 16   -Data #:  174
+RECV          SEQ# 175 LEN 1007 FLAGS 16   -Data #:  175
+SEND MSG#  93 SEQ#   0 LEN   11 FLAGS  5   -RR #:    176
+RECV          SEQ# 176 LEN 1007 FLAGS 16   -Data #:  176
+RECV          SEQ# 177 LEN 1007 FLAGS 16   -Data #:  177
+SEND MSG#  94 SEQ#   0 LEN   11 FLAGS  5   -RR #:    178
+RECV          SEQ# 178 LEN 1007 FLAGS 16   -Data #:  178
+RECV          SEQ# 179 LEN 1007 FLAGS 16   -Data #:  179
+SEND MSG#  95 SEQ#   0 LEN   11 FLAGS  5   -RR #:    180
+RECV          SEQ# 180 LEN 1007 FLAGS 16   -Data #:  180
+RECV          SEQ# 181 LEN 1007 FLAGS 16   -Data #:  181
+SEND MSG#  96 SEQ#   0 LEN   11 FLAGS  5   -RR #:    182 - DROPPED 
+RECV          SEQ# 182 LEN 1007 FLAGS 16   -Data #:  182
+RECV          SEQ# 183 LEN 1007 FLAGS 16   -Data #:  183
+SEND MSG#  97 SEQ#   0 LEN   11 FLAGS  5   -RR #:    184
+RECV          SEQ# 184 LEN 1007 FLAGS 16   -Data #:  184
+RECV          SEQ# 185 LEN 1007 FLAGS 16   -Data #:  185
+SEND MSG#  98 SEQ#   0 LEN   11 FLAGS  5   -RR #:    186
+RECV          SEQ# 186 LEN 1007 FLAGS 16   -Data #:  186
+RECV          SEQ# 187 LEN 1007 FLAGS 16   -Data #:  187
+SEND MSG#  99 SEQ#   0 LEN   11 FLAGS  5   -RR #:    188
+RECV          SEQ# 188 LEN 1007 FLAGS 16   -Data #:  188
+RECV          SEQ# 189 LEN 1007 FLAGS 16   -Data #:  189
+SEND MSG# 100 SEQ#   0 LEN   11 FLAGS  5   -RR #:    190 - FLIPPED BITS 
+RECV          SEQ# 190 LEN 1007 FLAGS 16   -Data #:  190
+RECV          SEQ# 191 LEN 1007 FLAGS 16   -Data #:  191
+SEND MSG# 101 SEQ#   0 LEN   11 FLAGS  5   -RR #:    192
+RECV          SEQ# 188 LEN 1007 FLAGS 17   -Resent Data #:  188
+RECV          SEQ# 192 LEN 1007 FLAGS 16   -Data #:  192
+SEND MSG# 102 SEQ#   0 LEN   11 FLAGS  5   -RR #:    193
+RECV          SEQ# 193 LEN 1007 FLAGS 16   -Data #:  193
+RECV          SEQ# 194 LEN 1007 FLAGS 16   -Data #:  194
+SEND MSG# 103 SEQ#   0 LEN   11 FLAGS  5   -RR #:    195
+RECV          SEQ# 195 LEN 1007 FLAGS 16   -Data #:  195
+RECV          SEQ# 196 LEN 1007 FLAGS 16   -Data #:  196
+SEND MSG# 104 SEQ#   0 LEN   11 FLAGS  5   -RR #:    197
+RECV          SEQ# 197 LEN 1007 FLAGS 16   -Data #:  197
+RECV          SEQ# 198 LEN 1007 FLAGS 16   -Data #:  198
+SEND MSG# 105 SEQ#   0 LEN   11 FLAGS  5   -RR #:    199
+RECV          SEQ# 199 LEN 1007 FLAGS 16   -Data #:  199
+RECV          SEQ# 200 LEN 1007 FLAGS 16   -Data #:  200
+SEND MSG# 106 SEQ#   0 LEN   11 FLAGS  5   -RR #:    201
+RECV          SEQ# 201 LEN 1007 FLAGS 16   -Data #:  201
+RECV          SEQ# 202 LEN 1007 FLAGS 16   -Data #:  202
+SEND MSG# 107 SEQ#   0 LEN   11 FLAGS  5   -RR #:    203
+RECV          SEQ# 203 LEN 1007 FLAGS 16   -Data #:  203
+RECV          SEQ# 204 LEN 1007 FLAGS 16   -Data #:  204
+SEND MSG# 108 SEQ#   0 LEN   11 FLAGS  5   -RR #:    205
+RECV          SEQ# 205 LEN 1007 FLAGS 16   -Data #:  205
+RECV          SEQ# 206 LEN 1007 FLAGS 16   -Data #:  206
+SEND MSG# 109 SEQ#   0 LEN   11 FLAGS  5   -RR #:    207
+RECV          SEQ# 207 LEN 1007 FLAGS 16   -Data #:  207
+RECV          SEQ# 208 LEN 1007 FLAGS 16   -Data #:  208
+SEND MSG# 110 SEQ#   0 LEN   11 FLAGS  5   -RR #:    209
+RECV          SEQ# 209 LEN 1007 FLAGS 16   -Data #:  209
+RECV          SEQ# 210 LEN 1007 FLAGS 16   -Data #:  210
+SEND MSG# 111 SEQ#   0 LEN   11 FLAGS  5   -RR #:    211
+ 103  ~~~~~~~ 
+Sending RR and SREJ in buffer:104 
+BUFFERING:
+~~~~~Expected: 105  ~~~~~~~ 
+Sending RR and SREJ in buffer:106 
+BUFFERING:
+~~~~~Expected: 107  ~~~~~~~ 
+Sending RR and SREJ in buffer:108 
+BUFFERING:
+~~~~~Expected: 109  ~~~~~~~ 
+Sending RR and SREJ in buffer:110 
+BUFFERING:
+~~~~~Expected: 111  ~~~~~~~ 
+Sending RR and SREJ in buffer:112 
+BUFFERING:
+~~~~~Expected: 113  ~~~~~~~ 
+Sending RR and SREJ in buffer:114 
+BUFFERING:
+~~~~~Expected: 115  ~~~~~~~ 
+Sending RR and SREJ in buffer:116 
+BUFFERING:
+~~~~~Expected: 117  ~~~~~~~ 
+Sending RR and SREJ in buffer:118 
+BUFFERING:
+~~~~~Expected: 119  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 120  ~~~~~~~ 
+Sending RR and SREJ in buffer:121 
+BUFFERING:
+~~~~~Expected: 122  ~~~~~~~ 
+Sending RR and SREJ in buffer:123 
+BUFFERING:
+~~~~~Expected: 124  ~~~~~~~ 
+Sending RR and SREJ in buffer:125 
+BUFFERING:
+~~~~~Expected: 126  ~~~~~~~ 
+Sending RR and SREJ in buffer:127 
+BUFFERING:
+~~~~~Expected: 128  ~~~~~~~ 
+Sending RR and SREJ in buffer:129 
+BUFFERING:
+~~~~~Expected: 130  ~~~~~~~ 
+Sending RR and SREJ in buffer:131 
+BUFFERING:
+~~~~~Expected: 132  ~~~~~~~ 
+Sending RR and SREJ in buffer:133 
+BUFFERING:
+~~~~~Expected: 134  ~~~~~~~ 
+Sending RR and SREJ in buffer:135 
+BUFFERING:
+~~~~~Expected: 136  ~~~~~~~ 
+Sending RR and SREJ in buffer:137 
+BUFFERING:
+~~~~~Expected: 138  ~~~~~~~ 
+Sending RR and SREJ in buffer:139 
+BUFFERING:
+~~~~~Expected: 140  ~~~~~~~ 
+Sending RR and SREJ in buffer:141 
+BUFFERING:
+~~~~~Expected: 142  ~~~~~~~ 
+Sending RR and SREJ in buffer:143 
+BUFFERING:
+~~~~~Expected: 144  ~~~~~~~ 
+Sending RR and SREJ in buffer:145 
+BUFFERING:
+~~~~~Expected: 146  ~~~~~~~ 
+Sending RR and SREJ in buffer:147 
+BUFFERING:
+~~~~~Expected: 148  ~~~~~~~ 
+Sending RR and SREJ in buffer:149 
+BUFFERING:
+~~~~~Expected: 150  ~~~~~~~ 
+Sending RR and SREJ in buffer:151 
+BUFFERING:
+~~~~~Expected: 152  ~~~~~~~ 
+Sending RR and SREJ in buffer:153 
+BUFFERING:
+~~~~~Expected: 154  ~~~~~~~ 
+Sending RR and SREJ in buffer:155 
+BUFFERING:
+~~~~~Expected: 156  ~~~~~~~ 
+Sending RR and SREJ in buffer:157 
+BUFFERING:
+~~~~~Expected: 158  ~~~~~~~ 
+Sending RR and SREJ in buffer:159 
+BUFFERING:
+~~~~~Expected: 160  ~~~~~~~ 
+Sending RR and SREJ in buffer:161 
+BUFFERING:
+~~~~~Expected: 162  ~~~~~~~ 
+Sending RR and SREJ in buffer:163 
+BUFFERING:
+~~~~~Expected: 164  ~~~~~~~ 
+Sending RR and SREJ in buffer:165 
+BUFFERING:
+~~~~~Expected: 166  ~~~~~~~ 
+Sending RR and SREJ in buffer:167 
+BUFFERING:
+~~~~~Expected: 168  ~~~~~~~ 
+Sending RR and SREJ in buffer:169 
+BUFFERING:
+~~~~~Expected: 170  ~~~~~~~ 
+Sending RR and SREJ in buffer:171 
+BUFFERING:
+~~~~~Expected: 172  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 173  ~~~~~~~ 
+Sending RR and SREJ in buffer:174 
+BUFFERING:
+~~~~~Expected: 175  ~~~~~~~ 
+Sending RR and SREJ in buffer:176 
+BUFFERING:
+~~~~~Expected: 177  ~~~~~~~ 
+Sending RR and SREJ in buffer:178 
+BUFFERING:
+~~~~~Expected: 179  ~~~~~~~ 
+Sending RR and SREJ in buffer:180 
+BUFFERING:
+~~~~~Expected: 181  ~~~~~~~ 
+Sending RR and SREJ in buffer:182 
+BUFFERING:
+~~~~~Expected: 183  ~~~~~~~ 
+Sending RR and SREJ in buffer:184 
+BUFFERING:
+~~~~~Expected: 185  ~~~~~~~ 
+Sending RR and SREJ in buffer:186 
+BUFFERING:
+~~~~~Expected: 187  ~~~~~~~ 
+Sending RR and SREJ in buffer:188 
+BUFFERING:
+~~~~~Expected: 189  ~~~~~~~ 
+Sending RR and SREJ in buffer:190 
+BUFFERING:
+~~~~~Expected: 191  ~~~~~~~ 
+Sending RR and SREJ in buffer:192 
+BUFFERING:
+~~~~~Expected: 192  ~~~~~~~ 
+Sending RR and SREJ in buffer:193 
+BUFFERING:
+~~~~~Expected: 194  ~~~~~~~ 
+Sending RR and SREJ in buffer:195 
+BUFFERING:
+~~~~~Expected: 196  ~~~~~~~ 
+Sending RR and SREJ in buffer:197 
+BUFFERING:
+~~~~~Expected: 198  ~~~~~~~ 
+Sending RR and SREJ in buffer:199 
+BUFFERING:
+~~~~~Expected: 200  ~~~~~~~ 
+Sending RR and SREJ in buffer:201 
+BUFFERING:
+~~~~~Expected: 202  ~~~~~~~ 
+Sending RR and SREJ in buffer:203 
+BUFFERING:
+~~~~~Expected: 204  ~~~~~~~ 
+Sending RR and SREJ in buffer:205 
+BUFFERING:
+~~~~~Expected: 206  ~~~~~~~ 
+Sending RR and SREJ in buffer:207 
+BUFFERING:
+~~~~~Expected: 208  ~~~~~~~ 
+Sending RR and SREJ in buffer:209 
+BUFFERING:
+~~~~~Expected: 210  ~~~~~~~ 
+Sending RR and SREJ in bufRECV          SEQ# 211 LEN 1007 FLAGS 16   -Data #:  211
+RECV          SEQ# 212 LEN 1007 FLAGS 16   -Data #:  212
+SEND MSG# 112 SEQ#   0 LEN   11 FLAGS  5   -RR #:    213
+RECV          SEQ# 213 LEN 1007 FLAGS 16   -Data #:  213
+RECV          SEQ# 214 LEN 1007 FLAGS 16   -Data #:  214
+SEND MSG# 113 SEQ#   0 LEN   11 FLAGS  5   -RR #:    215
+RECV          SEQ# 215 LEN 1007 FLAGS 16   -Data #:  215
+RECV          SEQ# 216 LEN 1007 FLAGS 16   -Data #:  216
+SEND MSG# 114 SEQ#   0 LEN   11 FLAGS  5   -RR #:    217
+RECV          SEQ# 217 LEN 1007 FLAGS 16   -Data #:  217
+RECV          SEQ# 218 LEN 1007 FLAGS 16   -Data #:  218
+SEND MSG# 115 SEQ#   0 LEN   11 FLAGS  5   -RR #:    219
+RECV          SEQ# 219 LEN 1007 FLAGS 16   -Data #:  219
+RECV          SEQ# 220 LEN 1007 FLAGS 16   -Data #:  220
+SEND MSG# 116 SEQ#   0 LEN   11 FLAGS  5   -RR #:    221
+RECV          SEQ# 221 LEN 1007 FLAGS 16   -Data #:  221
+RECV          SEQ# 222 LEN 1007 FLAGS 16   -Data #:  222
+SEND MSG# 117 SEQ#   0 LEN   11 FLAGS  5   -RR #:    223
+RECV          SEQ# 223 LEN 1007 FLAGS 16   -Data #:  223
+RECV          SEQ# 224 LEN 1007 FLAGS 16   -Data #:  224
+SEND MSG# 118 SEQ#   0 LEN   11 FLAGS  5   -RR #:    225
+RECV          SEQ# 225 LEN 1007 FLAGS 16   -Data #:  225
+RECV          SEQ# 226 LEN 1007 FLAGS 16   -Data #:  226
+SEND MSG# 119 SEQ#   0 LEN   11 FLAGS  5   -RR #:    227
+RECV          SEQ# 227 LEN 1007 FLAGS 16   -Data #:  227
+RECV          SEQ# 228 LEN 1007 FLAGS 16   -Data #:  228
+SEND MSG# 120 SEQ#   0 LEN   11 FLAGS  5   -RR #:    229
+RECV          SEQ# 229 LEN 1007 FLAGS 16   -Data #:  229
+RECV          SEQ# 230 LEN 1007 FLAGS 16   -Data #:  230
+SEND MSG# 121 SEQ#   0 LEN   11 FLAGS  5   -RR #:    231
+RECV          SEQ# 231 LEN 1007 FLAGS 16   -Data #:  231
+RECV          SEQ# 232 LEN 1007 FLAGS 16   -Data #:  232
+SEND MSG# 122 SEQ#   0 LEN   11 FLAGS  5   -RR #:    233
+RECV          SEQ# 233 LEN 1007 FLAGS 16   -Data #:  233
+RECV          SEQ# 234 LEN 1007 FLAGS 16   -Data #:  234
+SEND MSG# 123 SEQ#   0 LEN   11 FLAGS  5   -RR #:    235
+RECV          SEQ# 235 LEN 1007 FLAGS 16   -Data #:  235
+RECV          SEQ# 236 LEN 1007 FLAGS 16   -Data #:  236
+SEND MSG# 124 SEQ#   0 LEN   11 FLAGS  5   -RR #:    237
+RECV          SEQ# 237 LEN 1007 FLAGS 16   -Data #:  237
+RECV          SEQ# 238 LEN 1007 FLAGS 16   -Data #:  238
+SEND MSG# 125 SEQ#   0 LEN   11 FLAGS  5   -RR #:    239
+RECV          SEQ# 239 LEN 1007 FLAGS 16   -Data #:  239
+RECV          SEQ# 240 LEN 1007 FLAGS 16   -Data #:  240
+SEND MSG# 126 SEQ#   0 LEN   11 FLAGS  5   -RR #:    241
+RECV          SEQ# 241 LEN 1007 FLAGS 16   -Data #:  241
+RECV          SEQ# 242 LEN 1007 FLAGS 16   -Data #:  242
+SEND MSG# 127 SEQ#   0 LEN   11 FLAGS  5   -RR #:    243
+RECV          SEQ# 243 LEN 1007 FLAGS 16   -Data #:  243
+RECV          SEQ# 244 LEN 1007 FLAGS 16   -Data #:  244
+SEND MSG# 128 SEQ#   0 LEN   11 FLAGS  5   -RR #:    245
+RECV          SEQ# 245 LEN 1007 FLAGS 16   -Data #:  245
+RECV          SEQ# 246 LEN 1007 FLAGS 16   -Data #:  246
+SEND MSG# 129 SEQ#   0 LEN   11 FLAGS  5   -RR #:    247
+RECV          SEQ# 247 LEN 1007 FLAGS 16   -Data #:  247
+RECV          SEQ# 248 LEN 1007 FLAGS 16   -Data #:  248
+SEND MSG# 130 SEQ#   0 LEN   11 FLAGS  5   -RR #:    249 - FLIPPED BITS 
+RECV          SEQ# 249 LEN 1007 FLAGS 16   -Data #:  249
+RECV          SEQ# 247 LEN 1007 FLAGS 17   -Resent Data #:  247
+SEND MSG# 131 SEQ#   0 LEN   11 FLAGS  5   -RR #:    250
+RECV          SEQ# 250 LEN 1007 FLAGS 16   -Data #:  250
+RECV          SEQ# 251 LEN 1007 FLAGS 16   -Data #:  251
+SEND MSG# 132 SEQ#   0 LEN   11 FLAGS  5   -RR #:    252
+RECV          SEQ# 252 LEN 1007 FLAGS 16   -Data #:  252
+RECV          SEQ# 253 LEN 1007 FLAGS 16   -Data #:  253
+SEND MSG# 133 SEQ#   0 LEN   11 FLAGS  5   -RR #:    254
+RECV          SEQ# 254 LEN 1007 FLAGS 16   -Data #:  254
+RECV          SEQ# 255 LEN 1007 FLAGS 16   -Data #:  255
+SEND MSG# 134 SEQ#   0 LEN   11 FLAGS  5   -RR #:    256
+RECV          SEQ# 256 LEN 1007 FLAGS 16   -Data #:  256
+RECV          SEQ# 257 LEN 1007 FLAGS 16   -Data #:  257
+SEND MSG# 135 SEQ#   0 LEN   11 FLAGS  5   -RR #:    258 - FLIPPED BITS 
+RECV          SEQ# 258 LEN 1007 FLAGS 16   -Data #:  258
+RECV          SEQ# 256 LEN 1007 FLAGS 17   -Resent Data #:  256
+SEND MSG# 136 SEQ#   0 LEN   11 FLAGS  5   -RR #:    259
+RECV          SEQ# 259 LEN 1007 FLAGS 16   -Data #:  259
+RECV          SEQ# 260 LEN 1007 FLAGS 16   -Data #:  260
+SEND MSG# 137 SEQ#   0 LEN   11 FLAGS  5   -RR #:    261 - FLIPPED BITS 
+RECV          SEQ# 261 LEN 1007 FLAGS 16   -Data #:  261
+RECV          SEQ# 262 LEN 1007 FLAGS 16   -Data #:  262
+SEND MSG# 138 SEQ#   0 LEN   11 FLAGS  5   -RR #:    263
+RECV          SEQ# 259 LEN 1007 FLAGS 17   -Resent Data #:  259
+RECV          SEQ# 263 LEN 1007 FLAGS 16   -Data #:  263
+SEND MSG# 139 SEQ#   0 LEN   11 FLAGS  5   -RR #:    264
+RECV          SEQ# 264 LEN 1007 FLAGS 16   -Data #:  264
+RECV          SEQ# 265 LEN 1007 FLAGS 16   -Data #:  265
+SEND MSG# 140 SEQ#   0 LEN   11 FLAGS  5   -RR #:    266
+RECV          SEQ# 266 LEN 1007 FLAGS 16   -Data #:  266
+RECV          SEQ# 267 LEN 1007 FLAGS 16   -Data #:  267
+SEND MSG# 141 SEQ#   0 LEN   11 FLAGS  5   -RR #:    268
+RECV          SEQ# 268 LEN 1007 FLAGS 16   -Data #:  268
+RECV          SEQ# 269 LEN 1007 FLAGS 16   -Data #:  269
+SEND MSG# 142 SEQ#   0 LEN   11 FLAGS  5   -RR #:    270
+RECV          SEQ# 270 LEN 1007 FLAGS 16   -Data #:  270
+RECV          SEQ# 271 LEN 1007 FLAGS 16   -Data #:  271
+SEND MSG# 143 SEQ#   0 LEN   11 FLAGS  5   -RR #:    272
+RECV          SEQ# 272 LEN 1007 FLAGS 16   -Data #:  272
+RECV          SEQ# 273 LEN 1007 FLAGS 16   -Data #:  273
+SEND MSG# 144 SEQ#   0 LEN   11 FLAGS  5   -RR #:    274
+RECV          SEQ# 274 LEN 1007 FLAGS 16   -Data #:  274
+RECV          SEQ# 275 LEN 1007 FLAGS 16   -Data #:  275
+SEND MSG# 145 SEQ#   0 LEN   11 FLAGS  5   -RR #:    276
+RECV          SEQ# 276 LEN 1007 FLAGS 16   -Data #:  276
+RECV          SEQ# 277 LEN 1007 FLAGS 16   -Data #:  277
+SEND MSG# 146 SEQ#   0 LEN   11 FLAGS  5   -RR #:    278 - DROPPED 
+RECV          SEQ# 278 LEN 1007 FLAGS 16   -Data #:  278
+RECV          SEQ# 279 LEN 1007 FLAGS 16   -Data #:  279
+SEND MSG# 147 SEQ#   0 LEN   11 FLAGS  5   -RR #:    280 - FLIPPED BITS 
+RECV          SEQ# 280 LEN 1007 FLAGS 16   -Data #:  280
+RECV          SEQ# 276 LEN 1007 FLAGS 17   -Resent Data #:  276
+SEND MSG# 148 SEQ#   0 LEN   11 FLAGS  5   -RR #:    281
+RECV          SEQ# 281 LEN 1007 FLAGS 16   -Data #:  281
+RECV          SEQ# 282 LEN 1007 FLAGS 16   -Data #:  282
+SEND MSG# 149 SEQ#   0 LEN   11 FLAGS  5   -RR #:    283
+RECV          SEQ# 283 LEN 1007 FLAGS 16   -Data #:  283
+RECV          SEQ# 284 LEN 1007 FLAGS 16   -Data #:  284
+SEND MSG# 150 SEQ#   0 LEN   11 FLAGS  5   -RR #:    285
+RECV          SEQ# 285 LEN 1007 FLAGS 16   -Data #:  285
+RECV          SEQ# 286 LEN 1007 FLAGS 16   -Data #:  286
+SEND MSG# 151 SEQ#   0 LEN   11 FLAGS  5   -RR #:    287
+RECV          SEQ# 287 LEN 1007 FLAGS 16   -Data #:  287
+RECV          SEQ# 288 LEN 1007 FLAGS 16   -Data #:  288
+SEND MSG# 152 SEQ#   0 LEN   11 FLAGS  5   -RR #:    289
+RECV          SEQ# 289 LEN 1007 FLAGS 16   -Data #:  289
+RECV          SEQ# 290 LEN 1007 FLAGS 16   -Data #:  290
+SEND MSG# 153 SEQ#   0 LEN   11 FLAGS  5   -RR #:    291
+RECV          SEQ# 291 LEN 1007 FLAGS 16   -Data #:  291
+RECV          SEQ# 292 LEN 1007 FLAGS 16   -Data #:  292
+SEND MSG# 154 SEQ#   0 LEN   11 FLAGS  5   -RR #:    293
+RECV          SEQ# 293 LEN 1007 FLAGS 16   -Data #:  293
+RECV          SEQ# 294 LEN 1007 FLAGS 16   -Data #:  294
+SEND MSG# 155 SEQ#   0 LEN   11 FLAGS  5   -RR #:    295
+RECV          SEQ# 295 LEN 1007 FLAGS 16   -Data #:  295
+RECV          SEQ# 296 LEN 1007 FLAGS 16   -Data #:  296
+SEND MSG# 156 SEQ#   0 LEN   11 FLAGS  5   -RR #:    297
+RECV          SEQ# 297 LEN 1007 FLAGS 16   -Data #:  297
+RECV          SEQ# 298 LEN 1007 FLAGS 16   -Data #:  298
+SEND MSG# 157 SEQ#   0 LEN   11 FLAGS  5   -RR #:    299
+RECV          SEQ# 299 LEN 1007 FLAGS 16   -Data #:  299
+RECV          SEQ# 300 LEN 1007 FLAGS 16   -Data #:  300
+SEND MSG# 158 SEQ#   0 LEN   11 FLAGS  5   -RR #:    301
+RECV          SEQ# 301 LEN 1007 FLAGS 16   -Data #:  301
+RECV          SEQ# 302 LEN 1007 FLAGS 16   -Data #:  302
+SEND MSG# 159 SEQ#   0 LEN   11 FLAGS  5   -RR #:    303 - DROPPED 
+RECV          SEQ# 303 LEN 1007 FLAGS 16   -Data #:  303
+RECV          SEQ# 304 LEN 1007 FLAGS 16   -Data #:  304
+SEND MSG# 160 SEQ#   0 LEN   11 FLAGS  5   -RR #:    305
+RECV          SEQ# 305 LEN 1007 FLAGS 16   -Data #:  305
+RECV          SEQ# 306 LEN 1007 FLAGS 16   -Data #:  306
+SEND MSG# 161 SEQ#   0 LEN   11 FLAGS  5   -RR #:    307
+RECV          SEQ# 307 LEN 1007 FLAGS 16   -Data #:  307
+RECV          SEQ# 308 LEN 1007 FLAGS 16   -Data #:  308
+SEND MSG# 162 SEQ#   0 LEN   11 FLAGS  5   -RR #:    309
+RECV          SEQ# 309 LEN 1007 FLAGS 16   -Data #:  309
+RECV          SEQ# 310 LEN 1007 FLAGS 16   -Data #:  310
+SEND MSG# 163 SEQ#   0 LEN   11 FLAGS  5   -RR #:    311 - DROPPED 
+RECV          SEQ# 311 LEN 1007 FLAGS 16   -Data #:  311
+RECV          SEQ# 312 LEN 1007 FLAGS 16   -Data #:  312
+SEND MSG# 164 SEQ#   0 LEN   11 FLAGS  5   -RR #:    313
+RECV          SEQ# 313 LEN 1007 FLAGS 16   -Data #:  313
+RECV          SEQ# 314 LEN 1007 FLAGS 16   -Data #:  314
+SEND MSG# 165 SEQ#   0 LEN   11 FLAGS  5   -RR #:    315
+RECV          SEQ# 315 LEN 1007 FLAGS 16   -Data #:  315
+RECV          SEQ# 316 LEN 1007 FLAGS 16   -Data #:  316
+SEND MSG# 166 SEQ#   0 LEN   11 FLAGS  5   -RR #:    317
+RECV          SEQ# 317 LEN 1007 FLAGS 16   -Data #:  317
+RECV          SEQ# 318 LEN 1007 FLAGS 16   -Data #:  318
+SEND MSG# 167 SEQ#   0 LEN   11 FLAGS  5   -RR #:    319
+fer:211 
+BUFFERING:
+~~~~~Expected: 212  ~~~~~~~ 
+Sending RR and SREJ in buffer:213 
+BUFFERING:
+~~~~~Expected: 214  ~~~~~~~ 
+Sending RR and SREJ in buffer:215 
+BUFFERING:
+~~~~~Expected: 216  ~~~~~~~ 
+Sending RR and SREJ in buffer:217 
+BUFFERING:
+~~~~~Expected: 218  ~~~~~~~ 
+Sending RR and SREJ in buffer:219 
+BUFFERING:
+~~~~~Expected: 220  ~~~~~~~ 
+Sending RR and SREJ in buffer:221 
+BUFFERING:
+~~~~~Expected: 222  ~~~~~~~ 
+Sending RR and SREJ in buffer:223 
+BUFFERING:
+~~~~~Expected: 224  ~~~~~~~ 
+Sending RR and SREJ in buffer:225 
+BUFFERING:
+~~~~~Expected: 226  ~~~~~~~ 
+Sending RR and SREJ in buffer:227 
+BUFFERING:
+~~~~~Expected: 228  ~~~~~~~ 
+Sending RR and SREJ in buffer:229 
+BUFFERING:
+~~~~~Expected: 230  ~~~~~~~ 
+Sending RR and SREJ in buffer:231 
+BUFFERING:
+~~~~~Expected: 232  ~~~~~~~ 
+Sending RR and SREJ in buffer:233 
+BUFFERING:
+~~~~~Expected: 234  ~~~~~~~ 
+Sending RR and SREJ in buffer:235 
+BUFFERING:
+~~~~~Expected: 236  ~~~~~~~ 
+Sending RR and SREJ in buffer:237 
+BUFFERING:
+~~~~~Expected: 238  ~~~~~~~ 
+Sending RR and SREJ in buffer:239 
+BUFFERING:
+~~~~~Expected: 240  ~~~~~~~ 
+Sending RR and SREJ in buffer:241 
+BUFFERING:
+~~~~~Expected: 242  ~~~~~~~ 
+Sending RR and SREJ in buffer:243 
+BUFFERING:
+~~~~~Expected: 244  ~~~~~~~ 
+Sending RR and SREJ in buffer:245 
+BUFFERING:
+~~~~~Expected: 246  ~~~~~~~ 
+Sending RR and SREJ in buffer:247 
+BUFFERING:
+~~~~~Expected: 248  ~~~~~~~ 
+Sending RR and SREJ in buffer:249 
+BUFFERING:
+~~~~~Expected: 250  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 251  ~~~~~~~ 
+Sending RR and SREJ in buffer:252 
+BUFFERING:
+~~~~~Expected: 253  ~~~~~~~ 
+Sending RR and SREJ in buffer:254 
+BUFFERING:
+~~~~~Expected: 255  ~~~~~~~ 
+Sending RR and SREJ in buffer:256 
+BUFFERING:
+~~~~~Expected: 257  ~~~~~~~ 
+Sending RR and SREJ in buffer:258 
+BUFFERING:
+~~~~~Expected: 259  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 260  ~~~~~~~ 
+Sending RR and SREJ in buffer:261 
+BUFFERING:
+~~~~~Expected: 262  ~~~~~~~ 
+Sending RR and SREJ in buffer:263 
+BUFFERING:
+~~~~~Expected: 263  ~~~~~~~ 
+Sending RR and SREJ in buffer:264 
+BUFFERING:
+~~~~~Expected: 265  ~~~~~~~ 
+Sending RR and SREJ in buffer:266 
+BUFFERING:
+~~~~~Expected: 267  ~~~~~~~ 
+Sending RR and SREJ in buffer:268 
+BUFFERING:
+~~~~~Expected: 269  ~~~~~~~ 
+Sending RR and SREJ in buffer:270 
+BUFFERING:
+~~~~~Expected: 271  ~~~~~~~ 
+Sending RR and SREJ in buffer:272 
+BUFFERING:
+~~~~~Expected: 273  ~~~~~~~ 
+Sending RR and SREJ in buffer:274 
+BUFFERING:
+~~~~~Expected: 275  ~~~~~~~ 
+Sending RR and SREJ in buffer:276 
+BUFFERING:
+~~~~~Expected: 277  ~~~~~~~ 
+Sending RR and SREJ in buffer:278 
+BUFFERING:
+~~~~~Expected: 279  ~~~~~~~ 
+Sending RR and SREJ in buffer:280 
+BUFFERING:
+~~~~~Expected: 281  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 282  ~~~~~~~ 
+Sending RR and SREJ in buffer:283 
+BUFFERING:
+~~~~~Expected: 284  ~~~~~~~ 
+Sending RR and SREJ in buffer:285 
+BUFFERING:
+~~~~~Expected: 286  ~~~~~~~ 
+Sending RR and SREJ in buffer:287 
+BUFFERING:
+~~~~~Expected: 288  ~~~~~~~ 
+Sending RR and SREJ in buffer:289 
+BUFFERING:
+~~~~~Expected: 290  ~~~~~~~ 
+Sending RR and SREJ in buffer:291 
+BUFFERING:
+~~~~~Expected: 292  ~~~~~~~ 
+Sending RR and SREJ in buffer:293 
+BUFFERING:
+~~~~~Expected: 294  ~~~~~~~ 
+Sending RR and SREJ in buffer:295 
+BUFFERING:
+~~~~~Expected: 296  ~~~~~~~ 
+Sending RR and SREJ in buffer:297 
+BUFFERING:
+~~~~~Expected: 298  ~~~~~~~ 
+Sending RR and SREJ in buffer:299 
+BUFFERING:
+~~~~~Expected: 300  ~~~~~~~ 
+Sending RR and SREJ in buffer:301 
+BUFFERING:
+~~~~~Expected: 302  ~~~~~~~ 
+Sending RR and SREJ in buffer:303 
+BUFFERING:
+~~~~~Expected: 304  ~~~~~~~ 
+Sending RR and SREJ in buffer:305 
+BUFFERING:
+~~~~~Expected: 306  ~~~~~~~ 
+Sending RR and SREJ in buffer:307 
+BUFFERING:
+~~~~~Expected: 308  ~~~~~~~ 
+Sending RR and SREJ in buffer:309 
+BUFFERING:
+~~~~~Expected: 310  ~~~~~~~ 
+Sending RR and SREJ in buffer:311 
+BUFFERING:
+~~~~~Expected: 312  ~~~~~~~ 
+Sending RR and SREJ in buffer:313 
+BUFFERING:
+~~~~~Expected: 314  ~~~~~~~ 
+Sending RR and SREJ in buffer:315 
+BUFFERING:
+~~~~~Expected: 316  ~~~~~~~ 
+Sending RR and SREJ in buffer:317 
+BUFFERING:
+~~~~~Expected: 318  ~~~~~~~ 
+Sending RR and SREJ in buffRECV          SEQ# 319 LEN 1007 FLAGS 16   -Data #:  319
+RECV          SEQ# 320 LEN 1007 FLAGS 16   -Data #:  320
+SEND MSG# 168 SEQ#   0 LEN   11 FLAGS  5   -RR #:    321
+RECV          SEQ# 321 LEN 1007 FLAGS 16   -Data #:  321
+RECV          SEQ# 322 LEN 1007 FLAGS 16   -Data #:  322
+SEND MSG# 169 SEQ#   0 LEN   11 FLAGS  5   -RR #:    323
+RECV          SEQ# 323 LEN 1007 FLAGS 16   -Data #:  323
+RECV          SEQ# 324 LEN 1007 FLAGS 16   -Data #:  324
+SEND MSG# 170 SEQ#   0 LEN   11 FLAGS  5   -RR #:    325
+RECV          SEQ# 325 LEN 1007 FLAGS 16   -Data #:  325
+RECV          SEQ# 326 LEN 1007 FLAGS 16   -Data #:  326
+SEND MSG# 171 SEQ#   0 LEN   11 FLAGS  5   -RR #:    327 - FLIPPED BITS 
+RECV          SEQ# 327 LEN 1007 FLAGS 16   -Data #:  327
+RECV          SEQ# 328 LEN 1007 FLAGS 16   -Data #:  328
+SEND MSG# 172 SEQ#   0 LEN   11 FLAGS  5   -RR #:    329
+RECV          SEQ# 325 LEN 1007 FLAGS 17   -Resent Data #:  325
+RECV          SEQ# 329 LEN 1007 FLAGS 16   -Data #:  329
+SEND MSG# 173 SEQ#   0 LEN   11 FLAGS  5   -RR #:    330
+RECV          SEQ# 330 LEN 1007 FLAGS 16   -Data #:  330
+RECV          SEQ# 331 LEN 1007 FLAGS 16   -Data #:  331
+SEND MSG# 174 SEQ#   0 LEN   11 FLAGS  5   -RR #:    332
+RECV          SEQ# 332 LEN 1007 FLAGS 16   -Data #:  332
+RECV          SEQ# 333 LEN 1007 FLAGS 16   -Data #:  333
+SEND MSG# 175 SEQ#   0 LEN   11 FLAGS  5   -RR #:    334
+RECV          SEQ# 334 LEN 1007 FLAGS 16   -Data #:  334
+RECV          SEQ# 335 LEN 1007 FLAGS 16   -Data #:  335
+SEND MSG# 176 SEQ#   0 LEN   11 FLAGS  5   -RR #:    336
+RECV          SEQ# 336 LEN 1007 FLAGS 16   -Data #:  336
+RECV          SEQ# 337 LEN 1007 FLAGS 16   -Data #:  337
+SEND MSG# 177 SEQ#   0 LEN   11 FLAGS  5   -RR #:    338
+RECV          SEQ# 338 LEN 1007 FLAGS 16   -Data #:  338
+RECV          SEQ# 339 LEN 1007 FLAGS 16   -Data #:  339
+SEND MSG# 178 SEQ#   0 LEN   11 FLAGS  5   -RR #:    340
+RECV          SEQ# 340 LEN 1007 FLAGS 16   -Data #:  340
+RECV          SEQ# 341 LEN 1007 FLAGS 16   -Data #:  341
+SEND MSG# 179 SEQ#   0 LEN   11 FLAGS  5   -RR #:    342
+RECV          SEQ# 342 LEN 1007 FLAGS 16   -Data #:  342
+RECV          SEQ# 343 LEN 1007 FLAGS 16   -Data #:  343
+SEND MSG# 180 SEQ#   0 LEN   11 FLAGS  5   -RR #:    344
+RECV          SEQ# 344 LEN 1007 FLAGS 16   -Data #:  344
+RECV          SEQ# 345 LEN 1007 FLAGS 16   -Data #:  345
+SEND MSG# 181 SEQ#   0 LEN   11 FLAGS  5   -RR #:    346
+RECV          SEQ# 346 LEN 1007 FLAGS 16   -Data #:  346
+RECV          SEQ# 347 LEN 1007 FLAGS 16   -Data #:  347
+SEND MSG# 182 SEQ#   0 LEN   11 FLAGS  5   -RR #:    348 - FLIPPED BITS 
+RECV          SEQ# 348 LEN 1007 FLAGS 16   -Data #:  348
+RECV          SEQ# 346 LEN 1007 FLAGS 17   -Resent Data #:  346
+SEND MSG# 183 SEQ#   0 LEN   11 FLAGS  5   -RR #:    349
+RECV          SEQ# 349 LEN 1007 FLAGS 16   -Data #:  349
+RECV          SEQ# 350 LEN 1007 FLAGS 16   -Data #:  350
+SEND MSG# 184 SEQ#   0 LEN   11 FLAGS  5   -RR #:    351
+RECV          SEQ# 351 LEN 1007 FLAGS 16   -Data #:  351
+RECV          SEQ# 352 LEN 1007 FLAGS 16   -Data #:  352
+SEND MSG# 185 SEQ#   0 LEN   11 FLAGS  5   -RR #:    353
+RECV          SEQ# 353 LEN 1007 FLAGS 16   -Data #:  353
+RECV          SEQ# 354 LEN 1007 FLAGS 16   -Data #:  354
+SEND MSG# 186 SEQ#   0 LEN   11 FLAGS  5   -RR #:    355
+RECV          SEQ# 355 LEN 1007 FLAGS 16   -Data #:  355
+RECV          SEQ# 356 LEN 1007 FLAGS 16   -Data #:  356
+SEND MSG# 187 SEQ#   0 LEN   11 FLAGS  5   -RR #:    357
+RECV          SEQ# 357 LEN 1007 FLAGS 16   -Data #:  357
+RECV          SEQ# 358 LEN 1007 FLAGS 16   -Data #:  358
+SEND MSG# 188 SEQ#   0 LEN   11 FLAGS  5   -RR #:    359
+RECV          SEQ# 359 LEN 1007 FLAGS 16   -Data #:  359
+RECV          SEQ# 360 LEN 1007 FLAGS 16   -Data #:  360
+SEND MSG# 189 SEQ#   0 LEN   11 FLAGS  5   -RR #:    361
+RECV          SEQ# 361 LEN 1007 FLAGS 16   -Data #:  361
+RECV          SEQ# 362 LEN 1007 FLAGS 16   -Data #:  362
+SEND MSG# 190 SEQ#   0 LEN   11 FLAGS  5   -RR #:    363 - FLIPPED BITS 
+RECV          SEQ# 363 LEN 1007 FLAGS 16   -Data #:  363
+RECV          SEQ# 364 LEN 1007 FLAGS 16   -Data #:  364
+SEND MSG# 191 SEQ#   0 LEN   11 FLAGS  5   -RR #:    365
+RECV          SEQ# 361 LEN 1007 FLAGS 17   -Resent Data #:  361
+RECV          SEQ# 365 LEN 1007 FLAGS 16   -Data #:  365
+SEND MSG# 192 SEQ#   0 LEN   11 FLAGS  5   -RR #:    366
+RECV          SEQ# 366 LEN 1007 FLAGS 16   -Data #:  366
+RECV          SEQ# 367 LEN 1007 FLAGS 16   -Data #:  367
+SEND MSG# 193 SEQ#   0 LEN   11 FLAGS  5   -RR #:    368
+RECV          SEQ# 368 LEN 1007 FLAGS 16   -Data #:  368
+RECV          SEQ# 369 LEN 1007 FLAGS 16   -Data #:  369
+SEND MSG# 194 SEQ#   0 LEN   11 FLAGS  5   -RR #:    370
+RECV          SEQ# 370 LEN 1007 FLAGS 16   -Data #:  370
+RECV          SEQ# 371 LEN 1007 FLAGS 16   -Data #:  371
+SEND MSG# 195 SEQ#   0 LEN   11 FLAGS  5   -RR #:    372 - DROPPED 
+RECV          SEQ# 372 LEN 1007 FLAGS 16   -Data #:  372
+RECV          SEQ# 373 LEN 1007 FLAGS 16   -Data #:  373
+SEND MSG# 196 SEQ#   0 LEN   11 FLAGS  5   -RR #:    374
+RECV          SEQ# 374 LEN 1007 FLAGS 16   -Data #:  374
+RECV          SEQ# 375 LEN 1007 FLAGS 16   -Data #:  375
+SEND MSG# 197 SEQ#   0 LEN   11 FLAGS  5   -RR #:    376 - FLIPPED BITS 
+RECV          SEQ# 376 LEN 1007 FLAGS 16   -Data #:  376
+RECV          SEQ# 377 LEN 1007 FLAGS 16   -Data #:  377
+SEND MSG# 198 SEQ#   0 LEN   11 FLAGS  5   -RR #:    378
+RECV          SEQ# 374 LEN 1007 FLAGS 17   -Resent Data #:  374
+RECV          SEQ# 378 LEN 1007 FLAGS 16   -Data #:  378
+SEND MSG# 199 SEQ#   0 LEN   11 FLAGS  5   -RR #:    379
+RECV          SEQ# 379 LEN 1007 FLAGS 16   -Data #:  379
+RECV          SEQ# 380 LEN 1007 FLAGS 16   -Data #:  380
+SEND MSG# 200 SEQ#   0 LEN   11 FLAGS  5   -RR #:    381
+RECV          SEQ# 381 LEN 1007 FLAGS 16   -Data #:  381
+RECV          SEQ# 382 LEN 1007 FLAGS 16   -Data #:  382
+SEND MSG# 201 SEQ#   0 LEN   11 FLAGS  5   -RR #:    383
+RECV          SEQ# 383 LEN 1007 FLAGS 16   -Data #:  383
+RECV          SEQ# 384 LEN 1007 FLAGS 16   -Data #:  384
+SEND MSG# 202 SEQ#   0 LEN   11 FLAGS  5   -RR #:    385
+RECV          SEQ# 385 LEN 1007 FLAGS 16   -Data #:  385
+RECV          SEQ# 386 LEN 1007 FLAGS 16   -Data #:  386
+SEND MSG# 203 SEQ#   0 LEN   11 FLAGS  5   -RR #:    387
+RECV          SEQ# 387 LEN 1007 FLAGS 16   -Data #:  387
+RECV          SEQ# 388 LEN 1007 FLAGS 16   -Data #:  388
+SEND MSG# 204 SEQ#   0 LEN   11 FLAGS  5   -RR #:    389
+RECV          SEQ# 389 LEN 1007 FLAGS 16   -Data #:  389
+RECV          SEQ# 390 LEN 1007 FLAGS 16   -Data #:  390
+SEND MSG# 205 SEQ#   0 LEN   11 FLAGS  5   -RR #:    391
+RECV          SEQ# 391 LEN 1007 FLAGS 16   -Data #:  391
+RECV          SEQ# 392 LEN 1007 FLAGS 16   -Data #:  392
+SEND MSG# 206 SEQ#   0 LEN   11 FLAGS  5   -RR #:    393
+RECV          SEQ# 393 LEN 1007 FLAGS 16   -Data #:  393
+RECV          SEQ# 394 LEN 1007 FLAGS 16   -Data #:  394
+SEND MSG# 207 SEQ#   0 LEN   11 FLAGS  5   -RR #:    395 - FLIPPED BITS 
+RECV          SEQ# 395 LEN 1007 FLAGS 16   -Data #:  395
+RECV          SEQ# 393 LEN 1007 FLAGS 17   -Resent Data #:  393
+SEND MSG# 208 SEQ#   0 LEN   11 FLAGS  5   -RR #:    396
+RECV          SEQ# 396 LEN 1007 FLAGS 16   -Data #:  396
+RECV          SEQ# 397 LEN 1007 FLAGS 16   -Data #:  397
+SEND MSG# 209 SEQ#   0 LEN   11 FLAGS  5   -RR #:    398
+RECV          SEQ# 398 LEN 1007 FLAGS 16   -Data #:  398
+RECV          SEQ# 399 LEN 1007 FLAGS 16   -Data #:  399
+SEND MSG# 210 SEQ#   0 LEN   11 FLAGS  5   -RR #:    400
+RECV          SEQ# 400 LEN 1007 FLAGS 16   -Data #:  400
+RECV          SEQ# 401 LEN 1007 FLAGS 16   -Data #:  401
+SEND MSG# 211 SEQ#   0 LEN   11 FLAGS  5   -RR #:    402
+RECV          SEQ# 402 LEN 1007 FLAGS 16   -Data #:  402
+RECV          SEQ# 403 LEN 1007 FLAGS 16   -Data #:  403
+SEND MSG# 212 SEQ#   0 LEN   11 FLAGS  5   -RR #:    404
+RECV          SEQ# 404 LEN 1007 FLAGS 16   -Data #:  404
+RECV          SEQ# 405 LEN 1007 FLAGS 16   -Data #:  405
+SEND MSG# 213 SEQ#   0 LEN   11 FLAGS  5   -RR #:    406
+RECV          SEQ# 406 LEN 1007 FLAGS 16   -Data #:  406
+RECV          SEQ# 407 LEN 1007 FLAGS 16   -Data #:  407
+SEND MSG# 214 SEQ#   0 LEN   11 FLAGS  5   -RR #:    408
+RECV          SEQ# 408 LEN 1007 FLAGS 16   -Data #:  408
+RECV          SEQ# 409 LEN 1007 FLAGS 16   -Data #:  409
+SEND MSG# 215 SEQ#   0 LEN   11 FLAGS  5   -RR #:    410
+RECV          SEQ# 410 LEN 1007 FLAGS 16   -Data #:  410
+RECV          SEQ# 411 LEN 1007 FLAGS 16   -Data #:  411
+SEND MSG# 216 SEQ#   0 LEN   11 FLAGS  5   -RR #:    412
+RECV          SEQ# 412 LEN 1007 FLAGS 16   -Data #:  412
+RECV          SEQ# 413 LEN 1007 FLAGS 16   -Data #:  413
+SEND MSG# 217 SEQ#   0 LEN   11 FLAGS  5   -RR #:    414
+RECV          SEQ# 414 LEN 1007 FLAGS 16   -Data #:  414
+RECV          SEQ# 415 LEN 1007 FLAGS 16   -Data #:  415
+SEND MSG# 218 SEQ#   0 LEN   11 FLAGS  5   -RR #:    416
+RECV          SEQ# 416 LEN 1007 FLAGS 16   -Data #:  416
+RECV          SEQ# 417 LEN 1007 FLAGS 16   -Data #:  417
+SEND MSG# 219 SEQ#   0 LEN   11 FLAGS  5   -RR #:    418
+RECV          SEQ# 418 LEN 1007 FLAGS 16   -Data #:  418
+RECV          SEQ# 419 LEN 1007 FLAGS 16   -Data #:  419
+SEND MSG# 220 SEQ#   0 LEN   11 FLAGS  5   -RR #:    420
+RECV          SEQ# 420 LEN 1007 FLAGS 16   -Data #:  420
+RECV          SEQ# 421 LEN 1007 FLAGS 16   -Data #:  421
+SEND MSG# 221 SEQ#   0 LEN   11 FLAGS  5   -RR #:    422
+RECV          SEQ# 422 LEN 1007 FLAGS 16   -Data #:  422
+RECV          SEQ# 423 LEN 1007 FLAGS 16   -Data #:  423
+SEND MSG# 222 SEQ#   0 LEN   11 FLAGS  5   -RR #:    424
+RECV          SEQ# 424 LEN 1007 FLAGS 16   -Data #:  424
+er:319 
+BUFFERING:
+~~~~~Expected: 320  ~~~~~~~ 
+Sending RR and SREJ in buffer:321 
+BUFFERING:
+~~~~~Expected: 322  ~~~~~~~ 
+Sending RR and SREJ in buffer:323 
+BUFFERING:
+~~~~~Expected: 324  ~~~~~~~ 
+Sending RR and SREJ in buffer:325 
+BUFFERING:
+~~~~~Expected: 326  ~~~~~~~ 
+Sending RR and SREJ in buffer:327 
+BUFFERING:
+~~~~~Expected: 328  ~~~~~~~ 
+Sending RR and SREJ in buffer:329 
+BUFFERING:
+~~~~~Expected: 329  ~~~~~~~ 
+Sending RR and SREJ in buffer:330 
+BUFFERING:
+~~~~~Expected: 331  ~~~~~~~ 
+Sending RR and SREJ in buffer:332 
+BUFFERING:
+~~~~~Expected: 333  ~~~~~~~ 
+Sending RR and SREJ in buffer:334 
+BUFFERING:
+~~~~~Expected: 335  ~~~~~~~ 
+Sending RR and SREJ in buffer:336 
+BUFFERING:
+~~~~~Expected: 337  ~~~~~~~ 
+Sending RR and SREJ in buffer:338 
+BUFFERING:
+~~~~~Expected: 339  ~~~~~~~ 
+Sending RR and SREJ in buffer:340 
+BUFFERING:
+~~~~~Expected: 341  ~~~~~~~ 
+Sending RR and SREJ in buffer:342 
+BUFFERING:
+~~~~~Expected: 343  ~~~~~~~ 
+Sending RR and SREJ in buffer:344 
+BUFFERING:
+~~~~~Expected: 345  ~~~~~~~ 
+Sending RR and SREJ in buffer:346 
+BUFFERING:
+~~~~~Expected: 347  ~~~~~~~ 
+Sending RR and SREJ in buffer:348 
+BUFFERING:
+~~~~~Expected: 349  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 350  ~~~~~~~ 
+Sending RR and SREJ in buffer:351 
+BUFFERING:
+~~~~~Expected: 352  ~~~~~~~ 
+Sending RR and SREJ in buffer:353 
+BUFFERING:
+~~~~~Expected: 354  ~~~~~~~ 
+Sending RR and SREJ in buffer:355 
+BUFFERING:
+~~~~~Expected: 356  ~~~~~~~ 
+Sending RR and SREJ in buffer:357 
+BUFFERING:
+~~~~~Expected: 358  ~~~~~~~ 
+Sending RR and SREJ in buffer:359 
+BUFFERING:
+~~~~~Expected: 360  ~~~~~~~ 
+Sending RR and SREJ in buffer:361 
+BUFFERING:
+~~~~~Expected: 362  ~~~~~~~ 
+Sending RR and SREJ in buffer:363 
+BUFFERING:
+~~~~~Expected: 364  ~~~~~~~ 
+Sending RR and SREJ in buffer:365 
+BUFFERING:
+~~~~~Expected: 365  ~~~~~~~ 
+Sending RR and SREJ in buffer:366 
+BUFFERING:
+~~~~~Expected: 367  ~~~~~~~ 
+Sending RR and SREJ in buffer:368 
+BUFFERING:
+~~~~~Expected: 369  ~~~~~~~ 
+Sending RR and SREJ in buffer:370 
+BUFFERING:
+~~~~~Expected: 371  ~~~~~~~ 
+Sending RR and SREJ in buffer:372 
+BUFFERING:
+~~~~~Expected: 373  ~~~~~~~ 
+Sending RR and SREJ in buffer:374 
+BUFFERING:
+~~~~~Expected: 375  ~~~~~~~ 
+Sending RR and SREJ in buffer:376 
+BUFFERING:
+~~~~~Expected: 377  ~~~~~~~ 
+Sending RR and SREJ in buffer:378 
+BUFFERING:
+~~~~~Expected: 378  ~~~~~~~ 
+Sending RR and SREJ in buffer:379 
+BUFFERING:
+~~~~~Expected: 380  ~~~~~~~ 
+Sending RR and SREJ in buffer:381 
+BUFFERING:
+~~~~~Expected: 382  ~~~~~~~ 
+Sending RR and SREJ in buffer:383 
+BUFFERING:
+~~~~~Expected: 384  ~~~~~~~ 
+Sending RR and SREJ in buffer:385 
+BUFFERING:
+~~~~~Expected: 386  ~~~~~~~ 
+Sending RR and SREJ in buffer:387 
+BUFFERING:
+~~~~~Expected: 388  ~~~~~~~ 
+Sending RR and SREJ in buffer:389 
+BUFFERING:
+~~~~~Expected: 390  ~~~~~~~ 
+Sending RR and SREJ in buffer:391 
+BUFFERING:
+~~~~~Expected: 392  ~~~~~~~ 
+Sending RR and SREJ in buffer:393 
+BUFFERING:
+~~~~~Expected: 394  ~~~~~~~ 
+Sending RR and SREJ in buffer:395 
+BUFFERING:
+~~~~~Expected: 396  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 397  ~~~~~~~ 
+Sending RR and SREJ in buffer:398 
+BUFFERING:
+~~~~~Expected: 399  ~~~~~~~ 
+Sending RR and SREJ in buffer:400 
+BUFFERING:
+~~~~~Expected: 401  ~~~~~~~ 
+Sending RR and SREJ in buffer:402 
+BUFFERING:
+~~~~~Expected: 403  ~~~~~~~ 
+Sending RR and SREJ in buffer:404 
+BUFFERING:
+~~~~~Expected: 405  ~~~~~~~ 
+Sending RR and SREJ in buffer:406 
+BUFFERING:
+~~~~~Expected: 407  ~~~~~~~ 
+Sending RR and SREJ in buffer:408 
+BUFFERING:
+~~~~~Expected: 409  ~~~~~~~ 
+Sending RR and SREJ in buffer:410 
+BUFFERING:
+~~~~~Expected: 411  ~~~~~~~ 
+Sending RR and SREJ in buffer:412 
+BUFFERING:
+~~~~~Expected: 413  ~~~~~~~ 
+Sending RR and SREJ in buffer:414 
+BUFFERING:
+~~~~~Expected: 415  ~~~~~~~ 
+Sending RR and SREJ in buffer:416 
+BUFFERING:
+~~~~~Expected: 417  ~~~~~~~ 
+Sending RR and SREJ in buffer:418 
+BUFFERING:
+~~~~~Expected: 419  ~~~~~~~ 
+Sending RR and SREJ in buffer:420 
+BUFFERING:
+~~~~~Expected: 421  ~~~~~~~ 
+Sending RR and SREJ in buffer:422 
+BUFFERING:
+~~~~~Expected: 423  ~~~~~~~ 
+Sending RR and SREJ in buffer:424 
+BUFFERING:
+~~~~~Expected: 425  ~~RECV          SEQ# 425 LEN 1007 FLAGS 16   -Data #:  425
+SEND MSG# 223 SEQ#   0 LEN   11 FLAGS  5   -RR #:    426
+RECV          SEQ# 426 LEN 1007 FLAGS 16   -Data #:  426
+RECV          SEQ# 427 LEN 1007 FLAGS 16   -Data #:  427
+SEND MSG# 224 SEQ#   0 LEN   11 FLAGS  5   -RR #:    428
+RECV          SEQ# 428 LEN 1007 FLAGS 16   -Data #:  428
+RECV          SEQ# 429 LEN 1007 FLAGS 16   -Data #:  429
+SEND MSG# 225 SEQ#   0 LEN   11 FLAGS  5   -RR #:    430
+RECV          SEQ# 430 LEN   87 FLAGS 16   -Data #:  430
+RECV          SEQ# 431 LEN    7 FLAGS 10   -User defined 
+SEND MSG# 226 SEQ#   0 LEN   11 FLAGS  5   -RR #:    432
+RECV          SEQ# 431 LEN    7 FLAGS 10   -User defined 
+SEND MSG# 227 SEQ#   0 LEN    7 FLAGS 10   -User defined 
+======== SeqNo Report ========
+  Msgs (Total)       :   227
+  Msgs (Unique SeqNo):     1
+==============================
+~~~~~ 
+Sending RR and SREJ in buffer:426 
+BUFFERING:
+~~~~~Expected: 427  ~~~~~~~ 
+Sending RR and SREJ in buffer:428 
+BUFFERING:
+~~~~~Expected: 429  ~~~~~~~ 
+Sending RR and SREJ in buffer:430 
+BUFFERING:
+~~~~~Expected: 431  ~~~~~~~ 
+EOF DETECTED BABY with seq num: 431
+Sending RR and SREJ in buffer:432 
+BUFFERING:
+EOF DETECTED BABY with seq num: 431
+Exiting tranfer completeSent EOF packet to client.
+Exiting from BUFFER
+
+real	0m0.017s
+user	0m0.013s
+sys	0m0.000s

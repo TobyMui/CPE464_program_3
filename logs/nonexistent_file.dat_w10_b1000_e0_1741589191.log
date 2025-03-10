@@ -1,0 +1,17 @@
+Send Err-INIT ErrRate: 0.00 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   46 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS 32   -User defined 
+======== SeqNo Report ========
+  Msgs (Total)       :     1
+  Msgs (Unique SeqNo):     1
+==============================
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+packet length = 46
+Attempt 1: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 32
+Filename doesn't exist, please retry
+
+real	0m0.002s
+user	0m0.002s
+sys	0m0.000s

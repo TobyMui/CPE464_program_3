@@ -1,0 +1,153 @@
+Send Err-INIT ErrRate: 0.20 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   36 FLAGS  8   -FNAME request - FLIPPED BITS 
+SEND MSG#   2 SEQ#   0 LEN   36 FLAGS  8   -FNAME request
+RECV          SEQ# 65280 LEN    7 FLAGS  9   -FNAME response - RECV Corrupted packet
+Checksum verification failed, packet dropped
+SEND MSG#   3 SEQ#   0 LEN   36 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS  9   -FNAME response
+RECV          SEQ#   0 LEN 1007 FLAGS 16   -Data #:    0 - RECV Corrupted packet
+RECV          SEQ#   1 LEN 1007 FLAGS 16   -Data #:    1 - RECV Corrupted packet
+RECV          SEQ#   2 LEN 1007 FLAGS 16   -Data #:    2
+SEND MSG#   4 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    0
+RECV          SEQ#   3 LEN 1007 FLAGS 16   -Data #:    3
+RECV          SEQ#   0 LEN 1007 FLAGS 16   -Data #:    0
+SEND MSG#   5 SEQ#   0 LEN   11 FLAGS  5   -RR #:      1
+RECV          SEQ#   4 LEN 1007 FLAGS 16   -Data #:    4 - RECV Corrupted packet
+RECV          SEQ#   1 LEN 1007 FLAGS 16   -Data #:    1
+SEND MSG#   6 SEQ#   0 LEN   11 FLAGS  5   -RR #:      2 - DROPPED 
+RECV          SEQ#   5 LEN 1007 FLAGS 16   -Data #:    5
+RECV          SEQ#   2 LEN 1007 FLAGS 16   -Data #:    2
+SEND MSG#   7 SEQ#   0 LEN   11 FLAGS  5   -RR #:      3
+RECV          SEQ#   6 LEN 1007 FLAGS 16   -Data #:    6 - RECV Corrupted packet
+RECV          SEQ#   3 LEN 1007 FLAGS 16   -Data #:    3 - RECV Corrupted packet
+RECV          SEQ#   0 LEN 1007 FLAGS 17   -Resent Data #:    0
+RECV          SEQ#   4 LEN 1007 FLAGS 16   -Data #:    4
+SEND MSG#   8 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    3 - DROPPED 
+RECV          SEQ#   7 LEN 1007 FLAGS 16   -Data #:    7
+RECV          SEQ#   5 LEN 1007 FLAGS 16   -Data #:    5
+SEND MSG#   9 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    3
+RECV          SEQ#   8 LEN 1007 FLAGS 16   -Data #:    8
+RECV          SEQ#   9 LEN 1007 FLAGS 16   -Data #:    9
+SEND MSG#  10 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    3
+RECV          SEQ#  10 LEN 1007 FLAGS 16   -Data #:   10
+RECV          SEQ#  11 LEN 1007 FLAGS 16   -Data #:   11 - RECV Corrupted packet
+RECV          SEQ#  12 LEN 1007 FLAGS 16   -Data #:   12
+RECV          SEQ#  13 LEN 1007 FLAGS 16   -Data #:   13
+SEND MSG#  11 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    3
+RECV          SEQ#  14 LEN 1007 FLAGS 16   -Data #:   14
+RECV          SEQ#  15 LEN 1007 FLAGS 16   -Data #:   15
+SEND MSG#  12 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    3
+RECV          SEQ#  16 LEN 1007 FLAGS 16   -Data #:   16 - RECV Corrupted packet
+RECV          SEQ#  24 LEN 1007 FLAGS 16   -Data #:   24
+SEND MSG#  13 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    3
+RECV          SEQ#  25 LEN 1007 FLAGS 16   -Data #:   25
+RECV          SEQ#  26 LEN 1007 FLAGS 16   -Data #:   26
+SEND MSG#  14 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    3 - FLIPPED BITS 
+RECV          SEQ#  27 LEN 1007 FLAGS 16   -Data #:   27
+RECV          SEQ#  28 LEN 1007 FLAGS 16   -Data #:   28 - RECV Corrupted packet
+RECV          SEQ#   3 LEN 1007 FLAGS 17   -Resent Data #:    3
+RECV          SEQ#  29 LEN 1007 FLAGS 16   -Data #:   29
+SEND MSG#  15 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    4
+RECV          SEQ#   0 LEN 1007 FLAGS 17   -Resent Data #:    0
+RECV          SEQ#  30 LEN 1007 FLAGS 16   -Data #:   30
+SEND MSG#  16 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    4
+RECV          SEQ#  31 LEN 1007 FLAGS 16   -Data #:   31
+RECV          SEQ#   4 LEN 1007 FLAGS 17   -Resent Data #:    4 - RECV Corrupted packet
+RECV          SEQ#   4 LEN 1007 FLAGS 17   -Resent Data #:    4 - RECV Corrupted packet
+RECV          SEQ#  32 LEN 1007 FLAGS 16   -Data #:   32
+SEND MSG#  17 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    4
+RECV          SEQ#  33 LEN 1007 FLAGS 16   -Data #:   33
+RECV          SEQ#  34 LEN 1007 FLAGS 16   -Data #:   34
+SEND MSG#  18 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    4
+RECV          SEQ#  35 LEN 1007 FLAGS 16   -Data #:   35 - RECV Corrupted packet
+RECV          SEQ#   4 LEN 1007 FLAGS 17   -Resent Data #:    4
+SEND MSG#  19 SEQ#   0 LEN   11 FLAGS  5   -RR #:      5
+RECV          SEQ#   4 LEN 1007 FLAGS 17   -Resent Data #:    4
+RECV          SEQ#  36 LEN 1007 FLAGS 16   -Data #:   36
+SEND MSG#  20 SEQ#   0 LEN   11 FLAGS  6   -SREJ #:    5
+RECV          SEQ#  37 LEN 1007 FLAGS 16   -Data #:   37
+======== SeqNo Report ========
+  Msgs (Total)       :    20
+  Msgs (Unique SeqNo):     1
+==============================
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+Error_rate: 0.200000
+packet length = 36
+Attempt 1: Sent filename packet
+Timeout: No response received. Attempt: 1
+
+packet length = 36
+Attempt 2: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+
+packet length = 36
+Attempt 3: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 9
+Filename exist, the server will be sending data
+File Ok state reached
+~~~~~Expected: 0  ~~~~~~~ 
+Checksum error, packet will be dropped
+BUFFERING:
+Checksum error, packet will be dropped
+~~~~~Expected: 0  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 0  ~~~~~~~ 
+Sending RR and SREJ in buffer:1 
+BUFFERING:
+Checksum error, packet will be dropped
+~~~~~Expected: 1  ~~~~~~~ 
+Sending RR and SREJ in buffer:2 
+BUFFERING:
+~~~~~Expected: 2  ~~~~~~~ 
+Sending RR and SREJ in buffer:3 
+BUFFERING:
+Checksum error, packet will be dropped
+~~~~~Expected: 3  ~~~~~~~ 
+Checksum error, packet will be dropped
+BUFFERING:
+~~~~~Expected: 3  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 3  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 3  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 3  ~~~~~~~ 
+Checksum error, packet will be dropped
+BUFFERING:
+~~~~~Expected: 3  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 3  ~~~~~~~ 
+BUFFERING:
+Checksum error, packet will be dropped
+~~~~~Expected: 3  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 3  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 3  ~~~~~~~ 
+Checksum error, packet will be dropped
+BUFFERING:
+~~~~~Expected: 4  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 4  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 4  ~~~~~~~ 
+Checksum error, packet will be dropped
+BUFFERING:
+Checksum error, packet will be dropped
+~~~~~Expected: 4  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 4  ~~~~~~~ 
+BUFFERING:
+Checksum error, packet will be dropped
+~~~~~Expected: 4  ~~~~~~~ 
+Sending RR and SREJ in buffer:5 
+BUFFERING:
+~~~~~Expected: 5  ~~~~~~~ 
+BUFFERING:
+~~~~~Expected: 5  ~~~~~~~ 
+FIX LATER BUT YOU NEED TO TERMINATE GRACEFULLY
+
+real	0m11.005s
+user	0m0.003s
+sys	0m0.000s
