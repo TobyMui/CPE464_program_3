@@ -1,0 +1,110 @@
+Send Err-INIT ErrRate: 0.10 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   35 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS  9   -FNAME response
+RECV          SEQ#   0 LEN  107 FLAGS 16   -Data #:    0
+SEND MSG#   2 SEQ#   0 LEN   11 FLAGS  5   -RR #:      1
+RECV          SEQ#   1 LEN  107 FLAGS 16   -Data #:    1
+SEND MSG#   3 SEQ#   0 LEN   11 FLAGS  5   -RR #:      2 - FLIPPED BITS 
+RECV          SEQ#   2 LEN  107 FLAGS 16   -Data #:    2
+SEND MSG#   4 SEQ#   0 LEN   11 FLAGS  5   -RR #:      3
+RECV          SEQ#   3 LEN  107 FLAGS 16   -Data #:    3
+SEND MSG#   5 SEQ#   0 LEN   11 FLAGS  5   -RR #:      4
+RECV          SEQ#   4 LEN  107 FLAGS 16   -Data #:    4
+SEND MSG#   6 SEQ#   0 LEN   11 FLAGS  5   -RR #:      5
+RECV          SEQ#   5 LEN  107 FLAGS 16   -Data #:    5
+SEND MSG#   7 SEQ#   0 LEN   11 FLAGS  5   -RR #:      6 - DROPPED 
+RECV          SEQ#   1 LEN  107 FLAGS 17   -Resent Data #:    1
+SEND MSG#   8 SEQ#   0 LEN   11 FLAGS  5   -RR #:      6 - FLIPPED BITS 
+RECV          SEQ#   6 LEN  107 FLAGS 16   -Data #:    6
+SEND MSG#   9 SEQ#   0 LEN   11 FLAGS  5   -RR #:      7
+RECV          SEQ#   7 LEN  107 FLAGS 16   -Data #:    7
+SEND MSG#  10 SEQ#   0 LEN   11 FLAGS  5   -RR #:      8
+RECV          SEQ#   5 LEN  107 FLAGS 17   -Resent Data #:    5
+SEND MSG#  11 SEQ#   0 LEN   11 FLAGS  5   -RR #:      8
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined 
+SEND MSG#  12 SEQ#   0 LEN   11 FLAGS  5   -RR #:      9
+RECV          SEQ#   8 LEN    7 FLAGS 10   -User defined 
+SEND MSG#  13 SEQ#   0 LEN    7 FLAGS 10   -User defined 
+======== SeqNo Report ========
+  Msgs (Total)       :    13
+  Msgs (Unique SeqNo):     1
+==============================
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+Error_rate: 0.100000
+packet length = 35
+Attempt 1: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 9
+Filename exist, the server will be sending data
+File Ok state reached
+~~~~~Expected: 0  ~~~~~~~ 
+~~~~~~~~~~~Highest: 0, Current: 0, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 0, Current: 0, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 0
+Sending RR and SREJ in buffer:1 
+~~~~~Expected: 1  ~~~~~~~ 
+~~~~~~~~~~~Highest: 0, Current: 1, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 0, Current: 1, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 1
+Sending RR and SREJ in buffer:2 
+~~~~~Expected: 2  ~~~~~~~ 
+~~~~~~~~~~~Highest: 1, Current: 2, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 1, Current: 2, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 2
+Sending RR and SREJ in buffer:3 
+~~~~~Expected: 3  ~~~~~~~ 
+~~~~~~~~~~~Highest: 2, Current: 3, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 2, Current: 3, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 3
+Sending RR and SREJ in buffer:4 
+~~~~~Expected: 4  ~~~~~~~ 
+~~~~~~~~~~~Highest: 3, Current: 4, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 3, Current: 4, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 4
+Sending RR and SREJ in buffer:5 
+~~~~~Expected: 5  ~~~~~~~ 
+~~~~~~~~~~~Highest: 4, Current: 5, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 4, Current: 5, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 5
+Sending RR and SREJ in buffer:6 
+~~~~~Expected: 6  ~~~~~~~ 
+~~~~~~~~~~~Highest: 5, Current: 6, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 5, Current: 6, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 6  ~~~~~~~ 
+~~~~~~~~~~~Highest: 5, Current: 6, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 5, Current: 6, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 6
+Sending RR and SREJ in buffer:7 
+~~~~~Expected: 7  ~~~~~~~ 
+~~~~~~~~~~~Highest: 6, Current: 7, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 6, Current: 7, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 7
+Sending RR and SREJ in buffer:8 
+~~~~~Expected: 8  ~~~~~~~ 
+~~~~~~~~~~~Highest: 7, Current: 8, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 7, Current: 8, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 8  ~~~~~~~ 
+~~~~~~~~~~~Highest: 7, Current: 8, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 7, Current: 8, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 8
+Sending RR and SREJ in buffer:9 
+~~~~~Expected: 9  ~~~~~~~ 
+~~~~~~~~~~~Highest: 8, Current: 9, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+Exiting tranfer completeSent EOF packet to client.
+Exiting from INORDER
+
+real	0m0.002s
+user	0m0.000s
+sys	0m0.002s

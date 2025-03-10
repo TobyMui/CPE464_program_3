@@ -35,6 +35,7 @@ void buffer_add(CircularBuffer *buff, int sequence_num, uint8_t *data, int data_
     memcpy(buff->entries[index].data, data, data_size);
     buff->entries[index].sequence_num = sequence_num;
     buff->entries[index].valid_flag = 1;
+    buff->entries[index].data_len = data_size; 
 }
 
 // Free dynamically allocated memory

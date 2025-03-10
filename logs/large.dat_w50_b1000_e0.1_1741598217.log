@@ -1,0 +1,3626 @@
+Send Err-INIT ErrRate: 0.10 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   35 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS  9   -FNAME response
+RECV          SEQ#   0 LEN 1007 FLAGS 16   -Data #:    0
+SEND MSG#   2 SEQ#   0 LEN   11 FLAGS  5   -RR #:      1
+RECV          SEQ#   1 LEN 1007 FLAGS 16   -Data #:    1
+SEND MSG#   3 SEQ#   0 LEN   11 FLAGS  5   -RR #:      2
+RECV          SEQ#   2 LEN 1007 FLAGS 16   -Data #:    2
+SEND MSG#   4 SEQ#   0 LEN   11 FLAGS  5   -RR #:      3
+RECV          SEQ#   3 LEN 1007 FLAGS 16   -Data #:    3
+SEND MSG#   5 SEQ#   0 LEN   11 FLAGS  5   -RR #:      4
+RECV          SEQ#   4 LEN 1007 FLAGS 16   -Data #:    4
+SEND MSG#   6 SEQ#   0 LEN   11 FLAGS  5   -RR #:      5
+RECV          SEQ#   5 LEN 1007 FLAGS 16   -Data #:    5
+SEND MSG#   7 SEQ#   0 LEN   11 FLAGS  5   -RR #:      6
+RECV          SEQ#   6 LEN 1007 FLAGS 16   -Data #:    6
+SEND MSG#   8 SEQ#   0 LEN   11 FLAGS  5   -RR #:      7
+RECV          SEQ#   7 LEN 1007 FLAGS 16   -Data #:    7
+SEND MSG#   9 SEQ#   0 LEN   11 FLAGS  5   -RR #:      8
+RECV          SEQ#   8 LEN 1007 FLAGS 16   -Data #:    8
+SEND MSG#  10 SEQ#   0 LEN   11 FLAGS  5   -RR #:      9
+RECV          SEQ#   9 LEN 1007 FLAGS 16   -Data #:    9
+SEND MSG#  11 SEQ#   0 LEN   11 FLAGS  5   -RR #:     10
+RECV          SEQ#  10 LEN 1007 FLAGS 16   -Data #:   10
+SEND MSG#  12 SEQ#   0 LEN   11 FLAGS  5   -RR #:     11
+RECV          SEQ#  11 LEN 1007 FLAGS 16   -Data #:   11
+SEND MSG#  13 SEQ#   0 LEN   11 FLAGS  5   -RR #:     12
+RECV          SEQ#  12 LEN 1007 FLAGS 16   -Data #:   12
+SEND MSG#  14 SEQ#   0 LEN   11 FLAGS  5   -RR #:     13
+RECV          SEQ#  13 LEN 1007 FLAGS 16   -Data #:   13
+SEND MSG#  15 SEQ#   0 LEN   11 FLAGS  5   -RR #:     14
+RECV          SEQ#  14 LEN 1007 FLAGS 16   -Data #:   14
+SEND MSG#  16 SEQ#   0 LEN   11 FLAGS  5   -RR #:     15
+RECV          SEQ#  15 LEN 1007 FLAGS 16   -Data #:   15
+SEND MSG#  17 SEQ#   0 LEN   11 FLAGS  5   -RR #:     16
+RECV          SEQ#  16 LEN 1007 FLAGS 16   -Data #:   16
+SEND MSG#  18 SEQ#   0 LEN   11 FLAGS  5   -RR #:     17
+RECV          SEQ#  17 LEN 1007 FLAGS 16   -Data #:   17
+SEND MSG#  19 SEQ#   0 LEN   11 FLAGS  5   -RR #:     18
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+Error_rate: 0.100000
+packet length = 35
+Attempt 1: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 9
+Filename exist, the server will be sending data
+File Ok state reached
+~~~~~Expected: 0  ~~~~~~~ 
+~~~~~~~~~~~Highest: 0, Current: 0, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 0, Current: 0, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 0
+Sending RR and SREJ in buffer:1 
+~~~~~Expected: 1  ~~~~~~~ 
+~~~~~~~~~~~Highest: 0, Current: 1, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 0, Current: 1, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 1
+Sending RR and SREJ in buffer:2 
+~~~~~Expected: 2  ~~~~~~~ 
+~~~~~~~~~~~Highest: 1, Current: 2, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 1, Current: 2, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 2
+Sending RR and SREJ in buffer:3 
+~~~~~Expected: 3  ~~~~~~~ 
+~~~~~~~~~~~Highest: 2, Current: 3, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 2, Current: 3, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 3
+Sending RR and SREJ in buffer:4 
+~~~~~Expected: 4  ~~~~~~~ 
+~~~~~~~~~~~Highest: 3, Current: 4, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 3, Current: 4, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 4
+Sending RR and SREJ in buffer:5 
+~~~~~Expected: 5  ~~~~~~~ 
+~~~~~~~~~~~Highest: 4, Current: 5, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 4, Current: 5, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 5
+Sending RR and SREJ in buffer:6 
+~~~~~Expected: 6  ~~~~~~~ 
+~~~~~~~~~~~Highest: 5, Current: 6, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 5, Current: 6, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 6
+Sending RR and SREJ in buffer:7 
+~~~~~Expected: 7  ~~~~~~~ 
+~~~~~~~~~~~Highest: 6, Current: 7, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 6, Current: 7, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 7
+Sending RR and SREJ in buffer:8 
+~~~~~Expected: 8  ~~~~~~~ 
+~~~~~~~~~~~Highest: 7, Current: 8, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 7, Current: 8, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 8
+Sending RR and SREJ in buffer:9 
+~~~~~Expected: 9  ~~~~~~~ 
+~~~~~~~~~~~Highest: 8, Current: 9, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 8, Current: 9, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 9
+Sending RR and SREJ in buffer:10 
+~~~~~Expected: 10  ~~~~~~~ 
+~~~~~~~~~~~Highest: 9, Current: 10, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 9, Current: 10, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 10
+Sending RR and SREJ in buffer:11 
+~~~~~Expected: 11  ~~~~~~~ 
+~~~~~~~~~~~Highest: 10, Current: 11, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 10, Current: 11, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 11
+Sending RR and SREJ in buffer:12 
+~~~~~Expected: 12  ~~~~~~~ 
+~~~~~~~~~~~Highest: 11, Current: 12, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 11, Current: 12, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 12
+Sending RR and SREJ in buffer:13 
+~~~~~Expected: 13  ~~~~~~~ 
+~~~~~~~~~~~Highest: 12, Current: 13, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 12, Current: 13, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 13
+Sending RR and SREJ in buffer:14 
+~~~~~Expected: 14  ~~~~~~~ 
+~~~~~~~~~~~Highest: 13, Current: 14, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 13, Current: 14, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 14
+Sending RR and SREJ in buffer:15 
+~~~~~Expected: 15  ~~~~~~~ 
+~~~~~~~~~~~Highest: 14, Current: 15, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 14, Current: 15, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 15
+Sending RR and SREJ in buffer:16 
+~~~~~Expected: 16  ~~~~~~~ 
+~~~~~~~~~~~Highest: 15, Current: 16, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 15, Current: 16, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 16
+Sending RR and SREJ in buffer:17 
+~~~~~Expected: 17  ~~~~~~~ 
+~~~~~~~~~~~Highest: 16, Current: 17, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 16, Current: 17, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 17
+Sending RR and SREJ in buffeRECV          SEQ#  18 LEN 1007 FLAGS 16   -Data #:   18
+SEND MSG#  20 SEQ#   0 LEN   11 FLAGS  5   -RR #:     19
+RECV          SEQ#  19 LEN 1007 FLAGS 16   -Data #:   19
+SEND MSG#  21 SEQ#   0 LEN   11 FLAGS  5   -RR #:     20 - FLIPPED BITS 
+RECV          SEQ#  20 LEN 1007 FLAGS 16   -Data #:   20
+SEND MSG#  22 SEQ#   0 LEN   11 FLAGS  5   -RR #:     21
+RECV          SEQ#  19 LEN 1007 FLAGS 17   -Resent Data #:   19
+SEND MSG#  23 SEQ#   0 LEN   11 FLAGS  5   -RR #:     21
+RECV          SEQ#  21 LEN 1007 FLAGS 16   -Data #:   21
+SEND MSG#  24 SEQ#   0 LEN   11 FLAGS  5   -RR #:     22
+RECV          SEQ#  22 LEN 1007 FLAGS 16   -Data #:   22
+SEND MSG#  25 SEQ#   0 LEN   11 FLAGS  5   -RR #:     23
+RECV          SEQ#  23 LEN 1007 FLAGS 16   -Data #:   23
+SEND MSG#  26 SEQ#   0 LEN   11 FLAGS  5   -RR #:     24 - FLIPPED BITS 
+RECV          SEQ#  24 LEN 1007 FLAGS 16   -Data #:   24
+SEND MSG#  27 SEQ#   0 LEN   11 FLAGS  5   -RR #:     25
+RECV          SEQ#  23 LEN 1007 FLAGS 17   -Resent Data #:   23
+SEND MSG#  28 SEQ#   0 LEN   11 FLAGS  5   -RR #:     25
+RECV          SEQ#  25 LEN 1007 FLAGS 16   -Data #:   25
+SEND MSG#  29 SEQ#   0 LEN   11 FLAGS  5   -RR #:     26
+RECV          SEQ#  26 LEN 1007 FLAGS 16   -Data #:   26
+SEND MSG#  30 SEQ#   0 LEN   11 FLAGS  5   -RR #:     27
+RECV          SEQ#  27 LEN 1007 FLAGS 16   -Data #:   27
+SEND MSG#  31 SEQ#   0 LEN   11 FLAGS  5   -RR #:     28
+RECV          SEQ#  28 LEN 1007 FLAGS 16   -Data #:   28
+SEND MSG#  32 SEQ#   0 LEN   11 FLAGS  5   -RR #:     29
+RECV          SEQ#  29 LEN 1007 FLAGS 16   -Data #:   29
+SEND MSG#  33 SEQ#   0 LEN   11 FLAGS  5   -RR #:     30
+RECV          SEQ#  30 LEN 1007 FLAGS 16   -Data #:   30
+SEND MSG#  34 SEQ#   0 LEN   11 FLAGS  5   -RR #:     31
+RECV          SEQ#  31 LEN 1007 FLAGS 16   -Data #:   31
+SEND MSG#  35 SEQ#   0 LEN   11 FLAGS  5   -RR #:     32
+RECV          SEQ#  32 LEN 1007 FLAGS 16   -Data #:   32
+SEND MSG#  36 SEQ#   0 LEN   11 FLAGS  5   -RR #:     33
+RECV          SEQ#  33 LEN 1007 FLAGS 16   -Data #:   33
+SEND MSG#  37 SEQ#   0 LEN   11 FLAGS  5   -RR #:     34
+RECV          SEQ#  34 LEN 1007 FLAGS 16   -Data #:   34
+SEND MSG#  38 SEQ#   0 LEN   11 FLAGS  5   -RR #:     35
+r:18 
+~~~~~Expected: 18  ~~~~~~~ 
+~~~~~~~~~~~Highest: 17, Current: 18, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 17, Current: 18, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 18
+Sending RR and SREJ in buffer:19 
+~~~~~Expected: 19  ~~~~~~~ 
+~~~~~~~~~~~Highest: 18, Current: 19, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 18, Current: 19, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 19
+Sending RR and SREJ in buffer:20 
+~~~~~Expected: 20  ~~~~~~~ 
+~~~~~~~~~~~Highest: 19, Current: 20, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 19, Current: 20, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 20
+Sending RR and SREJ in buffer:21 
+~~~~~Expected: 21  ~~~~~~~ 
+~~~~~~~~~~~Highest: 20, Current: 21, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 20, Current: 21, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 21  ~~~~~~~ 
+~~~~~~~~~~~Highest: 20, Current: 21, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 20, Current: 21, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 21
+Sending RR and SREJ in buffer:22 
+~~~~~Expected: 22  ~~~~~~~ 
+~~~~~~~~~~~Highest: 21, Current: 22, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 21, Current: 22, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 22
+Sending RR and SREJ in buffer:23 
+~~~~~Expected: 23  ~~~~~~~ 
+~~~~~~~~~~~Highest: 22, Current: 23, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 22, Current: 23, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 23
+Sending RR and SREJ in buffer:24 
+~~~~~Expected: 24  ~~~~~~~ 
+~~~~~~~~~~~Highest: 23, Current: 24, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 23, Current: 24, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 24
+Sending RR and SREJ in buffer:25 
+~~~~~Expected: 25  ~~~~~~~ 
+~~~~~~~~~~~Highest: 24, Current: 25, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 24, Current: 25, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 25  ~~~~~~~ 
+~~~~~~~~~~~Highest: 24, Current: 25, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 24, Current: 25, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 25
+Sending RR and SREJ in buffer:26 
+~~~~~Expected: 26  ~~~~~~~ 
+~~~~~~~~~~~Highest: 25, Current: 26, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 25, Current: 26, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 26
+Sending RR and SREJ in buffer:27 
+~~~~~Expected: 27  ~~~~~~~ 
+~~~~~~~~~~~Highest: 26, Current: 27, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 26, Current: 27, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 27
+Sending RR and SREJ in buffer:28 
+~~~~~Expected: 28  ~~~~~~~ 
+~~~~~~~~~~~Highest: 27, Current: 28, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 27, Current: 28, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 28
+Sending RR and SREJ in buffer:29 
+~~~~~Expected: 29  ~~~~~~~ 
+~~~~~~~~~~~Highest: 28, Current: 29, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 28, Current: 29, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 29
+Sending RR and SREJ in buffer:30 
+~~~~~Expected: 30  ~~~~~~~ 
+~~~~~~~~~~~Highest: 29, Current: 30, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 29, Current: 30, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 30
+Sending RR and SREJ in buffer:31 
+~~~~~Expected: 31  ~~~~~~~ 
+~~~~~~~~~~~Highest: 30, Current: 31, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 30, Current: 31, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 31
+Sending RR and SREJ in buffer:32 
+~~~~~Expected: 32  ~~~~~~~ 
+~~~~~~~~~~~Highest: 31, Current: 32, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 31, Current: 32, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 32
+Sending RR and SREJ in buffer:33 
+~~~~~Expected: 33  ~~~~~~~ 
+~~~~~~~~~~~Highest: 32, Current: 33, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 32, Current: 33, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 33
+Sending RR and SREJ in buffer:34 
+~~~~~Expected: 34  ~~~~~~~ 
+~~~~~~~~~~~Highest: 33, Current: 34, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 33, Current: 34, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 34
+Sending RR and SREJ in buffer:35 
+~~~~~Expected: 35  ~~~~~~~ 
+~~~~~~~~~~~Highest: 34, CuRECV          SEQ#  35 LEN 1007 FLAGS 16   -Data #:   35
+SEND MSG#  39 SEQ#   0 LEN   11 FLAGS  5   -RR #:     36
+RECV          SEQ#  36 LEN 1007 FLAGS 16   -Data #:   36
+SEND MSG#  40 SEQ#   0 LEN   11 FLAGS  5   -RR #:     37
+RECV          SEQ#  37 LEN 1007 FLAGS 16   -Data #:   37
+SEND MSG#  41 SEQ#   0 LEN   11 FLAGS  5   -RR #:     38
+RECV          SEQ#  38 LEN 1007 FLAGS 16   -Data #:   38
+SEND MSG#  42 SEQ#   0 LEN   11 FLAGS  5   -RR #:     39
+RECV          SEQ#  39 LEN 1007 FLAGS 16   -Data #:   39
+SEND MSG#  43 SEQ#   0 LEN   11 FLAGS  5   -RR #:     40
+RECV          SEQ#  40 LEN 1007 FLAGS 16   -Data #:   40
+SEND MSG#  44 SEQ#   0 LEN   11 FLAGS  5   -RR #:     41
+RECV          SEQ#  41 LEN 1007 FLAGS 16   -Data #:   41
+SEND MSG#  45 SEQ#   0 LEN   11 FLAGS  5   -RR #:     42
+RECV          SEQ#  42 LEN 1007 FLAGS 16   -Data #:   42
+SEND MSG#  46 SEQ#   0 LEN   11 FLAGS  5   -RR #:     43
+RECV          SEQ#  43 LEN 1007 FLAGS 16   -Data #:   43
+SEND MSG#  47 SEQ#   0 LEN   11 FLAGS  5   -RR #:     44
+RECV          SEQ#  44 LEN 1007 FLAGS 16   -Data #:   44
+SEND MSG#  48 SEQ#   0 LEN   11 FLAGS  5   -RR #:     45
+RECV          SEQ#  45 LEN 1007 FLAGS 16   -Data #:   45
+SEND MSG#  49 SEQ#   0 LEN   11 FLAGS  5   -RR #:     46 - DROPPED 
+RECV          SEQ#  46 LEN 1007 FLAGS 16   -Data #:   46
+SEND MSG#  50 SEQ#   0 LEN   11 FLAGS  5   -RR #:     47
+RECV          SEQ#  47 LEN 1007 FLAGS 16   -Data #:   47
+SEND MSG#  51 SEQ#   0 LEN   11 FLAGS  5   -RR #:     48
+RECV          SEQ#  48 LEN 1007 FLAGS 16   -Data #:   48
+SEND MSG#  52 SEQ#   0 LEN   11 FLAGS  5   -RR #:     49
+RECV          SEQ#  49 LEN 1007 FLAGS 16   -Data #:   49
+SEND MSG#  53 SEQ#   0 LEN   11 FLAGS  5   -RR #:     50 - FLIPPED BITS 
+RECV          SEQ#  50 LEN 1007 FLAGS 16   -Data #:   50
+SEND MSG#  54 SEQ#   0 LEN   11 FLAGS  5   -RR #:     51
+RECV          SEQ#  51 LEN 1007 FLAGS 16   -Data #:   51
+SEND MSG#  55 SEQ#   0 LEN   11 FLAGS  5   -RR #:     52
+RECV          SEQ#  52 LEN 1007 FLAGS 16   -Data #:   52
+SEND MSG#  56 SEQ#   0 LEN   11 FLAGS  5   -RR #:     53
+RECV          SEQ#  53 LEN 1007 FLAGS 16   -Data #:   53
+SEND MSG#  57 SEQ#   0 LEN   11 FLAGS  5   -RR #:     54
+rrent: 35, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 34, Current: 35, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 35
+Sending RR and SREJ in buffer:36 
+~~~~~Expected: 36  ~~~~~~~ 
+~~~~~~~~~~~Highest: 35, Current: 36, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 35, Current: 36, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 36
+Sending RR and SREJ in buffer:37 
+~~~~~Expected: 37  ~~~~~~~ 
+~~~~~~~~~~~Highest: 36, Current: 37, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 36, Current: 37, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 37
+Sending RR and SREJ in buffer:38 
+~~~~~Expected: 38  ~~~~~~~ 
+~~~~~~~~~~~Highest: 37, Current: 38, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 37, Current: 38, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 38
+Sending RR and SREJ in buffer:39 
+~~~~~Expected: 39  ~~~~~~~ 
+~~~~~~~~~~~Highest: 38, Current: 39, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 38, Current: 39, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 39
+Sending RR and SREJ in buffer:40 
+~~~~~Expected: 40  ~~~~~~~ 
+~~~~~~~~~~~Highest: 39, Current: 40, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 39, Current: 40, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 40
+Sending RR and SREJ in buffer:41 
+~~~~~Expected: 41  ~~~~~~~ 
+~~~~~~~~~~~Highest: 40, Current: 41, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 40, Current: 41, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 41
+Sending RR and SREJ in buffer:42 
+~~~~~Expected: 42  ~~~~~~~ 
+~~~~~~~~~~~Highest: 41, Current: 42, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 41, Current: 42, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 42
+Sending RR and SREJ in buffer:43 
+~~~~~Expected: 43  ~~~~~~~ 
+~~~~~~~~~~~Highest: 42, Current: 43, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 42, Current: 43, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 43
+Sending RR and SREJ in buffer:44 
+~~~~~Expected: 44  ~~~~~~~ 
+~~~~~~~~~~~Highest: 43, Current: 44, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 43, Current: 44, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 44
+Sending RR and SREJ in buffer:45 
+~~~~~Expected: 45  ~~~~~~~ 
+~~~~~~~~~~~Highest: 44, Current: 45, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 44, Current: 45, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 45
+Sending RR and SREJ in buffer:46 
+~~~~~Expected: 46  ~~~~~~~ 
+~~~~~~~~~~~Highest: 45, Current: 46, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 45, Current: 46, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 46
+Sending RR and SREJ in buffer:47 
+~~~~~Expected: 47  ~~~~~~~ 
+~~~~~~~~~~~Highest: 46, Current: 47, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 46, Current: 47, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 47
+Sending RR and SREJ in buffer:48 
+~~~~~Expected: 48  ~~~~~~~ 
+~~~~~~~~~~~Highest: 47, Current: 48, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 47, Current: 48, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 48
+Sending RR and SREJ in buffer:49 
+~~~~~Expected: 49  ~~~~~~~ 
+~~~~~~~~~~~Highest: 48, Current: 49, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 48, Current: 49, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 49
+Sending RR and SREJ in buffer:50 
+~~~~~Expected: 50  ~~~~~~~ 
+~~~~~~~~~~~Highest: 49, Current: 50, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 49, Current: 50, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 50
+Sending RR and SREJ in buffer:51 
+~~~~~Expected: 51  ~~~~~~~ 
+~~~~~~~~~~~Highest: 50, Current: 51, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 50, Current: 51, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 51
+Sending RR and SREJ in buffer:52 
+~~~~~Expected: 52  ~~~~~~~ 
+~~~~~~~~~~~Highest: 51, Current: 52, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 51, Current: 52, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 52
+Sending RR and SREJ in buffer:53 
+~~~~~Expected: 53  ~~~~~~~ 
+~~~~~~~~~~~Highest: 52, Current: 53, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 52, Current: 53, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 53
+Sending RR and SREJ in buffer:54 
+~~~~~ExpRECV          SEQ#  54 LEN 1007 FLAGS 16   -Data #:   54
+SEND MSG#  58 SEQ#   0 LEN   11 FLAGS  5   -RR #:     55
+RECV          SEQ#  49 LEN 1007 FLAGS 17   -Resent Data #:   49
+SEND MSG#  59 SEQ#   0 LEN   11 FLAGS  5   -RR #:     55 - FLIPPED BITS 
+RECV          SEQ#  55 LEN 1007 FLAGS 16   -Data #:   55
+SEND MSG#  60 SEQ#   0 LEN   11 FLAGS  5   -RR #:     56
+RECV          SEQ#  56 LEN 1007 FLAGS 16   -Data #:   56
+SEND MSG#  61 SEQ#   0 LEN   11 FLAGS  5   -RR #:     57 - FLIPPED BITS 
+RECV          SEQ#  57 LEN 1007 FLAGS 16   -Data #:   57
+SEND MSG#  62 SEQ#   0 LEN   11 FLAGS  5   -RR #:     58 - DROPPED 
+RECV          SEQ#  55 LEN 1007 FLAGS 17   -Resent Data #:   55
+SEND MSG#  63 SEQ#   0 LEN   11 FLAGS  5   -RR #:     58 - FLIPPED BITS 
+RECV          SEQ#  56 LEN 1007 FLAGS 17   -Resent Data #:   56
+SEND MSG#  64 SEQ#   0 LEN   11 FLAGS  5   -RR #:     58
+RECV          SEQ#  56 LEN 1007 FLAGS 17   -Resent Data #:   56
+SEND MSG#  65 SEQ#   0 LEN   11 FLAGS  5   -RR #:     58
+RECV          SEQ#  58 LEN 1007 FLAGS 16   -Data #:   58
+SEND MSG#  66 SEQ#   0 LEN   11 FLAGS  5   -RR #:     59
+RECV          SEQ#  59 LEN 1007 FLAGS 16   -Data #:   59
+SEND MSG#  67 SEQ#   0 LEN   11 FLAGS  5   -RR #:     60 - DROPPED 
+RECV          SEQ#  60 LEN 1007 FLAGS 16   -Data #:   60
+SEND MSG#  68 SEQ#   0 LEN   11 FLAGS  5   -RR #:     61
+RECV          SEQ#  61 LEN 1007 FLAGS 16   -Data #:   61
+SEND MSG#  69 SEQ#   0 LEN   11 FLAGS  5   -RR #:     62
+RECV          SEQ#  62 LEN 1007 FLAGS 16   -Data #:   62
+SEND MSG#  70 SEQ#   0 LEN   11 FLAGS  5   -RR #:     63
+RECV          SEQ#  63 LEN 1007 FLAGS 16   -Data #:   63
+SEND MSG#  71 SEQ#   0 LEN   11 FLAGS  5   -RR #:     64
+RECV          SEQ#  64 LEN 1007 FLAGS 16   -Data #:   64
+SEND MSG#  72 SEQ#   0 LEN   11 FLAGS  5   -RR #:     65
+RECV          SEQ#  65 LEN 1007 FLAGS 16   -Data #:   65
+SEND MSG#  73 SEQ#   0 LEN   11 FLAGS  5   -RR #:     66
+RECV          SEQ#  66 LEN 1007 FLAGS 16   -Data #:   66
+SEND MSG#  74 SEQ#   0 LEN   11 FLAGS  5   -RR #:     67
+RECV          SEQ#  67 LEN 1007 FLAGS 16   -Data #:   67
+SEND MSG#  75 SEQ#   0 LEN   11 FLAGS  5   -RR #:     68
+RECV          SEQ#  68 LEN 1007 FLAGS 16   -Data #:   68
+SEND MSG#  76 SEQ#   0 LEN   11 FLAGS  5   -RR #:     69
+RECV          SEQ#  69 LEN 1007 FLAGS 16   -Data #:   69
+ected: 54  ~~~~~~~ 
+~~~~~~~~~~~Highest: 53, Current: 54, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 53, Current: 54, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 54
+Sending RR and SREJ in buffer:55 
+~~~~~Expected: 55  ~~~~~~~ 
+~~~~~~~~~~~Highest: 54, Current: 55, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 54, Current: 55, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 55  ~~~~~~~ 
+~~~~~~~~~~~Highest: 54, Current: 55, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 54, Current: 55, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 55
+Sending RR and SREJ in buffer:56 
+~~~~~Expected: 56  ~~~~~~~ 
+~~~~~~~~~~~Highest: 55, Current: 56, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 55, Current: 56, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 56
+Sending RR and SREJ in buffer:57 
+~~~~~Expected: 57  ~~~~~~~ 
+~~~~~~~~~~~Highest: 56, Current: 57, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 56, Current: 57, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 57
+Sending RR and SREJ in buffer:58 
+~~~~~Expected: 58  ~~~~~~~ 
+~~~~~~~~~~~Highest: 57, Current: 58, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 57, Current: 58, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 58  ~~~~~~~ 
+~~~~~~~~~~~Highest: 57, Current: 58, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 57, Current: 58, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 58  ~~~~~~~ 
+~~~~~~~~~~~Highest: 57, Current: 58, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 57, Current: 58, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 58  ~~~~~~~ 
+~~~~~~~~~~~Highest: 57, Current: 58, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 57, Current: 58, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 58
+Sending RR and SREJ in buffer:59 
+~~~~~Expected: 59  ~~~~~~~ 
+~~~~~~~~~~~Highest: 58, Current: 59, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 58, Current: 59, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 59
+Sending RR and SREJ in buffer:60 
+~~~~~Expected: 60  ~~~~~~~ 
+~~~~~~~~~~~Highest: 59, Current: 60, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 59, Current: 60, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 60
+Sending RR and SREJ in buffer:61 
+~~~~~Expected: 61  ~~~~~~~ 
+~~~~~~~~~~~Highest: 60, Current: 61, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 60, Current: 61, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 61
+Sending RR and SREJ in buffer:62 
+~~~~~Expected: 62  ~~~~~~~ 
+~~~~~~~~~~~Highest: 61, Current: 62, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 61, Current: 62, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 62
+Sending RR and SREJ in buffer:63 
+~~~~~Expected: 63  ~~~~~~~ 
+~~~~~~~~~~~Highest: 62, Current: 63, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 62, Current: 63, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 63
+Sending RR and SREJ in buffer:64 
+~~~~~Expected: 64  ~~~~~~~ 
+~~~~~~~~~~~Highest: 63, Current: 64, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 63, Current: 64, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 64
+Sending RR and SREJ in buffer:65 
+~~~~~Expected: 65  ~~~~~~~ 
+~~~~~~~~~~~Highest: 64, Current: 65, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 64, Current: 65, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 65
+Sending RR and SREJ in buffer:66 
+~~~~~Expected: 66  ~~~~~~~ 
+~~~~~~~~~~~Highest: 65, Current: 66, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 65, Current: 66, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 66
+Sending RR and SREJ in buffer:67 
+~~~~~Expected: 67  ~~~~~~~ 
+~~~~~~~~~~~Highest: 66, Current: 67, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 66, Current: 67, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 67
+Sending RR and SREJ in buffer:68 
+~~~~~Expected: 68  ~~~~~~~ 
+~~~~~~~~~~~Highest: 67, Current: 68, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 67, Current: 68, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 68
+Sending RR and SREJ in buffer:69 
+~~~~~Expected: 69  ~~~~~~~ 
+~~~~~~~~~~~Highest: 68, Current: 69, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 68, Current: 69, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing iSEND MSG#  77 SEQ#   0 LEN   11 FLAGS  5   -RR #:     70
+RECV          SEQ#  70 LEN 1007 FLAGS 16   -Data #:   70
+SEND MSG#  78 SEQ#   0 LEN   11 FLAGS  5   -RR #:     71
+RECV          SEQ#  71 LEN 1007 FLAGS 16   -Data #:   71
+SEND MSG#  79 SEQ#   0 LEN   11 FLAGS  5   -RR #:     72
+RECV          SEQ#  72 LEN 1007 FLAGS 16   -Data #:   72
+SEND MSG#  80 SEQ#   0 LEN   11 FLAGS  5   -RR #:     73
+RECV          SEQ#  73 LEN 1007 FLAGS 16   -Data #:   73
+SEND MSG#  81 SEQ#   0 LEN   11 FLAGS  5   -RR #:     74
+RECV          SEQ#  74 LEN 1007 FLAGS 16   -Data #:   74
+SEND MSG#  82 SEQ#   0 LEN   11 FLAGS  5   -RR #:     75
+RECV          SEQ#  75 LEN 1007 FLAGS 16   -Data #:   75
+SEND MSG#  83 SEQ#   0 LEN   11 FLAGS  5   -RR #:     76
+RECV          SEQ#  76 LEN 1007 FLAGS 16   -Data #:   76
+SEND MSG#  84 SEQ#   0 LEN   11 FLAGS  5   -RR #:     77
+RECV          SEQ#  77 LEN 1007 FLAGS 16   -Data #:   77
+SEND MSG#  85 SEQ#   0 LEN   11 FLAGS  5   -RR #:     78
+RECV          SEQ#  78 LEN 1007 FLAGS 16   -Data #:   78
+SEND MSG#  86 SEQ#   0 LEN   11 FLAGS  5   -RR #:     79
+RECV          SEQ#  79 LEN 1007 FLAGS 16   -Data #:   79
+SEND MSG#  87 SEQ#   0 LEN   11 FLAGS  5   -RR #:     80
+RECV          SEQ#  80 LEN 1007 FLAGS 16   -Data #:   80
+SEND MSG#  88 SEQ#   0 LEN   11 FLAGS  5   -RR #:     81
+RECV          SEQ#  81 LEN 1007 FLAGS 16   -Data #:   81
+SEND MSG#  89 SEQ#   0 LEN   11 FLAGS  5   -RR #:     82
+RECV          SEQ#  82 LEN 1007 FLAGS 16   -Data #:   82
+SEND MSG#  90 SEQ#   0 LEN   11 FLAGS  5   -RR #:     83
+RECV          SEQ#  83 LEN 1007 FLAGS 16   -Data #:   83
+SEND MSG#  91 SEQ#   0 LEN   11 FLAGS  5   -RR #:     84 - DROPPED 
+RECV          SEQ#  84 LEN 1007 FLAGS 16   -Data #:   84
+SEND MSG#  92 SEQ#   0 LEN   11 FLAGS  5   -RR #:     85 - DROPPED 
+RECV          SEQ#  85 LEN 1007 FLAGS 16   -Data #:   85
+SEND MSG#  93 SEQ#   0 LEN   11 FLAGS  5   -RR #:     86
+RECV          SEQ#  86 LEN 1007 FLAGS 16   -Data #:   86
+SEND MSG#  94 SEQ#   0 LEN   11 FLAGS  5   -RR #:     87
+RECV          SEQ#  87 LEN 1007 FLAGS 16   -Data #:   87
+SEND MSG#  95 SEQ#   0 LEN   11 FLAGS  5   -RR #:     88
+RECV          SEQ#  88 LEN 1007 FLAGS 16   -Data #:   88
+norder 69
+Sending RR and SREJ in buffer:70 
+~~~~~Expected: 70  ~~~~~~~ 
+~~~~~~~~~~~Highest: 69, Current: 70, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 69, Current: 70, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 70
+Sending RR and SREJ in buffer:71 
+~~~~~Expected: 71  ~~~~~~~ 
+~~~~~~~~~~~Highest: 70, Current: 71, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 70, Current: 71, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 71
+Sending RR and SREJ in buffer:72 
+~~~~~Expected: 72  ~~~~~~~ 
+~~~~~~~~~~~Highest: 71, Current: 72, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 71, Current: 72, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 72
+Sending RR and SREJ in buffer:73 
+~~~~~Expected: 73  ~~~~~~~ 
+~~~~~~~~~~~Highest: 72, Current: 73, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 72, Current: 73, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 73
+Sending RR and SREJ in buffer:74 
+~~~~~Expected: 74  ~~~~~~~ 
+~~~~~~~~~~~Highest: 73, Current: 74, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 73, Current: 74, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 74
+Sending RR and SREJ in buffer:75 
+~~~~~Expected: 75  ~~~~~~~ 
+~~~~~~~~~~~Highest: 74, Current: 75, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 74, Current: 75, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 75
+Sending RR and SREJ in buffer:76 
+~~~~~Expected: 76  ~~~~~~~ 
+~~~~~~~~~~~Highest: 75, Current: 76, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 75, Current: 76, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 76
+Sending RR and SREJ in buffer:77 
+~~~~~Expected: 77  ~~~~~~~ 
+~~~~~~~~~~~Highest: 76, Current: 77, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 76, Current: 77, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 77
+Sending RR and SREJ in buffer:78 
+~~~~~Expected: 78  ~~~~~~~ 
+~~~~~~~~~~~Highest: 77, Current: 78, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 77, Current: 78, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 78
+Sending RR and SREJ in buffer:79 
+~~~~~Expected: 79  ~~~~~~~ 
+~~~~~~~~~~~Highest: 78, Current: 79, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 78, Current: 79, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 79
+Sending RR and SREJ in buffer:80 
+~~~~~Expected: 80  ~~~~~~~ 
+~~~~~~~~~~~Highest: 79, Current: 80, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 79, Current: 80, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 80
+Sending RR and SREJ in buffer:81 
+~~~~~Expected: 81  ~~~~~~~ 
+~~~~~~~~~~~Highest: 80, Current: 81, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 80, Current: 81, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 81
+Sending RR and SREJ in buffer:82 
+~~~~~Expected: 82  ~~~~~~~ 
+~~~~~~~~~~~Highest: 81, Current: 82, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 81, Current: 82, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 82
+Sending RR and SREJ in buffer:83 
+~~~~~Expected: 83  ~~~~~~~ 
+~~~~~~~~~~~Highest: 82, Current: 83, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 82, Current: 83, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 83
+Sending RR and SREJ in buffer:84 
+~~~~~Expected: 84  ~~~~~~~ 
+~~~~~~~~~~~Highest: 83, Current: 84, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 83, Current: 84, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 84
+Sending RR and SREJ in buffer:85 
+~~~~~Expected: 85  ~~~~~~~ 
+~~~~~~~~~~~Highest: 84, Current: 85, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 84, Current: 85, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 85
+Sending RR and SREJ in buffer:86 
+~~~~~Expected: 86  ~~~~~~~ 
+~~~~~~~~~~~Highest: 85, Current: 86, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 85, Current: 86, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 86
+Sending RR and SREJ in buffer:87 
+~~~~~Expected: 87  ~~~~~~~ 
+~~~~~~~~~~~Highest: 86, Current: 87, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 86, Current: 87, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 87
+Sending RR and SREJ in buffer:88 
+~~~~~Expected: 88  ~~~~~~~ 
+~~~~~~~~~~~Highest: 87, Current: 88, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 87, CurSEND MSG#  96 SEQ#   0 LEN   11 FLAGS  5   -RR #:     89
+RECV          SEQ#  89 LEN 1007 FLAGS 16   -Data #:   89
+SEND MSG#  97 SEQ#   0 LEN   11 FLAGS  5   -RR #:     90
+RECV          SEQ#  90 LEN 1007 FLAGS 16   -Data #:   90
+SEND MSG#  98 SEQ#   0 LEN   11 FLAGS  5   -RR #:     91
+RECV          SEQ#  91 LEN 1007 FLAGS 16   -Data #:   91
+SEND MSG#  99 SEQ#   0 LEN   11 FLAGS  5   -RR #:     92
+RECV          SEQ#  92 LEN 1007 FLAGS 16   -Data #:   92
+SEND MSG# 100 SEQ#   0 LEN   11 FLAGS  5   -RR #:     93
+RECV          SEQ#  93 LEN 1007 FLAGS 16   -Data #:   93
+SEND MSG# 101 SEQ#   0 LEN   11 FLAGS  5   -RR #:     94
+RECV          SEQ#  94 LEN 1007 FLAGS 16   -Data #:   94
+SEND MSG# 102 SEQ#   0 LEN   11 FLAGS  5   -RR #:     95
+RECV          SEQ#  95 LEN 1007 FLAGS 16   -Data #:   95
+SEND MSG# 103 SEQ#   0 LEN   11 FLAGS  5   -RR #:     96 - DROPPED 
+RECV          SEQ#  96 LEN 1007 FLAGS 16   -Data #:   96
+SEND MSG# 104 SEQ#   0 LEN   11 FLAGS  5   -RR #:     97
+RECV          SEQ#  97 LEN 1007 FLAGS 16   -Data #:   97
+SEND MSG# 105 SEQ#   0 LEN   11 FLAGS  5   -RR #:     98
+RECV          SEQ#  98 LEN 1007 FLAGS 16   -Data #:   98
+SEND MSG# 106 SEQ#   0 LEN   11 FLAGS  5   -RR #:     99
+RECV          SEQ#  99 LEN 1007 FLAGS 16   -Data #:   99
+SEND MSG# 107 SEQ#   0 LEN   11 FLAGS  5   -RR #:    100
+RECV          SEQ# 100 LEN 1007 FLAGS 16   -Data #:  100
+SEND MSG# 108 SEQ#   0 LEN   11 FLAGS  5   -RR #:    101
+RECV          SEQ# 101 LEN 1007 FLAGS 16   -Data #:  101
+SEND MSG# 109 SEQ#   0 LEN   11 FLAGS  5   -RR #:    102
+RECV          SEQ# 102 LEN 1007 FLAGS 16   -Data #:  102
+SEND MSG# 110 SEQ#   0 LEN   11 FLAGS  5   -RR #:    103
+RECV          SEQ# 103 LEN 1007 FLAGS 16   -Data #:  103
+SEND MSG# 111 SEQ#   0 LEN   11 FLAGS  5   -RR #:    104
+RECV          SEQ# 104 LEN 1007 FLAGS 16   -Data #:  104
+SEND MSG# 112 SEQ#   0 LEN   11 FLAGS  5   -RR #:    105
+RECV          SEQ# 105 LEN 1007 FLAGS 16   -Data #:  105
+SEND MSG# 113 SEQ#   0 LEN   11 FLAGS  5   -RR #:    106
+RECV          SEQ# 106 LEN 1007 FLAGS 16   -Data #:  106
+SEND MSG# 114 SEQ#   0 LEN   11 FLAGS  5   -RR #:    107
+rent: 88, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 88
+Sending RR and SREJ in buffer:89 
+~~~~~Expected: 89  ~~~~~~~ 
+~~~~~~~~~~~Highest: 88, Current: 89, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 88, Current: 89, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 89
+Sending RR and SREJ in buffer:90 
+~~~~~Expected: 90  ~~~~~~~ 
+~~~~~~~~~~~Highest: 89, Current: 90, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 89, Current: 90, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 90
+Sending RR and SREJ in buffer:91 
+~~~~~Expected: 91  ~~~~~~~ 
+~~~~~~~~~~~Highest: 90, Current: 91, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 90, Current: 91, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 91
+Sending RR and SREJ in buffer:92 
+~~~~~Expected: 92  ~~~~~~~ 
+~~~~~~~~~~~Highest: 91, Current: 92, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 91, Current: 92, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 92
+Sending RR and SREJ in buffer:93 
+~~~~~Expected: 93  ~~~~~~~ 
+~~~~~~~~~~~Highest: 92, Current: 93, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 92, Current: 93, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 93
+Sending RR and SREJ in buffer:94 
+~~~~~Expected: 94  ~~~~~~~ 
+~~~~~~~~~~~Highest: 93, Current: 94, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 93, Current: 94, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 94
+Sending RR and SREJ in buffer:95 
+~~~~~Expected: 95  ~~~~~~~ 
+~~~~~~~~~~~Highest: 94, Current: 95, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 94, Current: 95, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 95
+Sending RR and SREJ in buffer:96 
+~~~~~Expected: 96  ~~~~~~~ 
+~~~~~~~~~~~Highest: 95, Current: 96, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 95, Current: 96, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 96
+Sending RR and SREJ in buffer:97 
+~~~~~Expected: 97  ~~~~~~~ 
+~~~~~~~~~~~Highest: 96, Current: 97, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 96, Current: 97, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 97
+Sending RR and SREJ in buffer:98 
+~~~~~Expected: 98  ~~~~~~~ 
+~~~~~~~~~~~Highest: 97, Current: 98, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 97, Current: 98, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 98
+Sending RR and SREJ in buffer:99 
+~~~~~Expected: 99  ~~~~~~~ 
+~~~~~~~~~~~Highest: 98, Current: 99, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 98, Current: 99, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 99
+Sending RR and SREJ in buffer:100 
+~~~~~Expected: 100  ~~~~~~~ 
+~~~~~~~~~~~Highest: 99, Current: 100, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 99, Current: 100, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 100
+Sending RR and SREJ in buffer:101 
+~~~~~Expected: 101  ~~~~~~~ 
+~~~~~~~~~~~Highest: 100, Current: 101, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 100, Current: 101, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 101
+Sending RR and SREJ in buffer:102 
+~~~~~Expected: 102  ~~~~~~~ 
+~~~~~~~~~~~Highest: 101, Current: 102, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 101, Current: 102, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 102
+Sending RR and SREJ in buffer:103 
+~~~~~Expected: 103  ~~~~~~~ 
+~~~~~~~~~~~Highest: 102, Current: 103, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 102, Current: 103, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 103
+Sending RR and SREJ in buffer:104 
+~~~~~Expected: 104  ~~~~~~~ 
+~~~~~~~~~~~Highest: 103, Current: 104, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 103, Current: 104, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 104
+Sending RR and SREJ in buffer:105 
+~~~~~Expected: 105  ~~~~~~~ 
+~~~~~~~~~~~Highest: 104, Current: 105, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 104, Current: 105, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 105
+Sending RR and SREJ in buffer:106 
+~~~~~Expected: 106  ~~~~~~~ 
+~~~~~~~~~~~Highest: 105, Current: 106, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 105, Current: 106, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 106
+Sending RR and SREJ in buffer:107 
+~~~~~Expected: 107  ~~~~~~~ 
+~~~~~RECV          SEQ# 107 LEN 1007 FLAGS 16   -Data #:  107
+SEND MSG# 115 SEQ#   0 LEN   11 FLAGS  5   -RR #:    108
+RECV          SEQ# 108 LEN 1007 FLAGS 16   -Data #:  108
+SEND MSG# 116 SEQ#   0 LEN   11 FLAGS  5   -RR #:    109 - DROPPED 
+RECV          SEQ# 109 LEN 1007 FLAGS 16   -Data #:  109
+SEND MSG# 117 SEQ#   0 LEN   11 FLAGS  5   -RR #:    110
+RECV          SEQ# 110 LEN 1007 FLAGS 16   -Data #:  110
+SEND MSG# 118 SEQ#   0 LEN   11 FLAGS  5   -RR #:    111
+RECV          SEQ# 111 LEN 1007 FLAGS 16   -Data #:  111
+SEND MSG# 119 SEQ#   0 LEN   11 FLAGS  5   -RR #:    112
+RECV          SEQ# 112 LEN 1007 FLAGS 16   -Data #:  112
+SEND MSG# 120 SEQ#   0 LEN   11 FLAGS  5   -RR #:    113
+RECV          SEQ# 113 LEN 1007 FLAGS 16   -Data #:  113
+SEND MSG# 121 SEQ#   0 LEN   11 FLAGS  5   -RR #:    114
+RECV          SEQ# 114 LEN 1007 FLAGS 16   -Data #:  114
+SEND MSG# 122 SEQ#   0 LEN   11 FLAGS  5   -RR #:    115
+RECV          SEQ# 115 LEN 1007 FLAGS 16   -Data #:  115
+SEND MSG# 123 SEQ#   0 LEN   11 FLAGS  5   -RR #:    116
+RECV          SEQ# 116 LEN 1007 FLAGS 16   -Data #:  116
+SEND MSG# 124 SEQ#   0 LEN   11 FLAGS  5   -RR #:    117
+RECV          SEQ# 117 LEN 1007 FLAGS 16   -Data #:  117
+SEND MSG# 125 SEQ#   0 LEN   11 FLAGS  5   -RR #:    118
+RECV          SEQ# 118 LEN 1007 FLAGS 16   -Data #:  118
+SEND MSG# 126 SEQ#   0 LEN   11 FLAGS  5   -RR #:    119
+RECV          SEQ# 119 LEN 1007 FLAGS 16   -Data #:  119
+SEND MSG# 127 SEQ#   0 LEN   11 FLAGS  5   -RR #:    120 - FLIPPED BITS 
+RECV          SEQ# 120 LEN 1007 FLAGS 16   -Data #:  120
+SEND MSG# 128 SEQ#   0 LEN   11 FLAGS  5   -RR #:    121
+RECV          SEQ# 121 LEN 1007 FLAGS 16   -Data #:  121
+SEND MSG# 129 SEQ#   0 LEN   11 FLAGS  5   -RR #:    122
+RECV          SEQ# 122 LEN 1007 FLAGS 16   -Data #:  122
+SEND MSG# 130 SEQ#   0 LEN   11 FLAGS  5   -RR #:    123
+RECV          SEQ# 123 LEN 1007 FLAGS 16   -Data #:  123
+SEND MSG# 131 SEQ#   0 LEN   11 FLAGS  5   -RR #:    124
+RECV          SEQ# 124 LEN 1007 FLAGS 16   -Data #:  124
+SEND MSG# 132 SEQ#   0 LEN   11 FLAGS  5   -RR #:    125
+~~~~~~Highest: 106, Current: 107, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 106, Current: 107, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 107
+Sending RR and SREJ in buffer:108 
+~~~~~Expected: 108  ~~~~~~~ 
+~~~~~~~~~~~Highest: 107, Current: 108, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 107, Current: 108, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 108
+Sending RR and SREJ in buffer:109 
+~~~~~Expected: 109  ~~~~~~~ 
+~~~~~~~~~~~Highest: 108, Current: 109, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 108, Current: 109, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 109
+Sending RR and SREJ in buffer:110 
+~~~~~Expected: 110  ~~~~~~~ 
+~~~~~~~~~~~Highest: 109, Current: 110, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 109, Current: 110, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 110
+Sending RR and SREJ in buffer:111 
+~~~~~Expected: 111  ~~~~~~~ 
+~~~~~~~~~~~Highest: 110, Current: 111, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 110, Current: 111, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 111
+Sending RR and SREJ in buffer:112 
+~~~~~Expected: 112  ~~~~~~~ 
+~~~~~~~~~~~Highest: 111, Current: 112, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 111, Current: 112, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 112
+Sending RR and SREJ in buffer:113 
+~~~~~Expected: 113  ~~~~~~~ 
+~~~~~~~~~~~Highest: 112, Current: 113, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 112, Current: 113, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 113
+Sending RR and SREJ in buffer:114 
+~~~~~Expected: 114  ~~~~~~~ 
+~~~~~~~~~~~Highest: 113, Current: 114, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 113, Current: 114, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 114
+Sending RR and SREJ in buffer:115 
+~~~~~Expected: 115  ~~~~~~~ 
+~~~~~~~~~~~Highest: 114, Current: 115, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 114, Current: 115, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 115
+Sending RR and SREJ in buffer:116 
+~~~~~Expected: 116  ~~~~~~~ 
+~~~~~~~~~~~Highest: 115, Current: 116, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 115, Current: 116, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 116
+Sending RR and SREJ in buffer:117 
+~~~~~Expected: 117  ~~~~~~~ 
+~~~~~~~~~~~Highest: 116, Current: 117, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 116, Current: 117, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 117
+Sending RR and SREJ in buffer:118 
+~~~~~Expected: 118  ~~~~~~~ 
+~~~~~~~~~~~Highest: 117, Current: 118, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 117, Current: 118, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 118
+Sending RR and SREJ in buffer:119 
+~~~~~Expected: 119  ~~~~~~~ 
+~~~~~~~~~~~Highest: 118, Current: 119, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 118, Current: 119, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 119
+Sending RR and SREJ in buffer:120 
+~~~~~Expected: 120  ~~~~~~~ 
+~~~~~~~~~~~Highest: 119, Current: 120, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 119, Current: 120, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 120
+Sending RR and SREJ in buffer:121 
+~~~~~Expected: 121  ~~~~~~~ 
+~~~~~~~~~~~Highest: 120, Current: 121, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 120, Current: 121, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 121
+Sending RR and SREJ in buffer:122 
+~~~~~Expected: 122  ~~~~~~~ 
+~~~~~~~~~~~Highest: 121, Current: 122, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 121, Current: 122, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 122
+Sending RR and SREJ in buffer:123 
+~~~~~Expected: 123  ~~~~~~~ 
+~~~~~~~~~~~Highest: 122, Current: 123, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 122, Current: 123, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 123
+Sending RR and SREJ in buffer:124 
+~~~~~Expected: 124  ~~~~~~~ 
+~~~~~~~~~~~Highest: 123, Current: 124, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 123, Current: 124, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 124
+Sending RR and SREJ in buffer:125 
+~~~~~Expected: 125  ~~~~~~~ 
+~~~~~~~~~~~Highest: 124, Current: 125, Lowest: 0~~~RECV          SEQ# 125 LEN 1007 FLAGS 16   -Data #:  125
+SEND MSG# 133 SEQ#   0 LEN   11 FLAGS  5   -RR #:    126 - DROPPED 
+RECV          SEQ# 126 LEN 1007 FLAGS 16   -Data #:  126
+SEND MSG# 134 SEQ#   0 LEN   11 FLAGS  5   -RR #:    127
+RECV          SEQ# 119 LEN 1007 FLAGS 17   -Resent Data #:  119
+SEND MSG# 135 SEQ#   0 LEN   11 FLAGS  5   -RR #:    127
+RECV          SEQ# 127 LEN 1007 FLAGS 16   -Data #:  127
+SEND MSG# 136 SEQ#   0 LEN   11 FLAGS  5   -RR #:    128
+RECV          SEQ# 128 LEN 1007 FLAGS 16   -Data #:  128
+SEND MSG# 137 SEQ#   0 LEN   11 FLAGS  5   -RR #:    129
+RECV          SEQ# 129 LEN 1007 FLAGS 16   -Data #:  129
+SEND MSG# 138 SEQ#   0 LEN   11 FLAGS  5   -RR #:    130 - DROPPED 
+RECV          SEQ# 130 LEN 1007 FLAGS 16   -Data #:  130
+SEND MSG# 139 SEQ#   0 LEN   11 FLAGS  5   -RR #:    131
+RECV          SEQ# 131 LEN 1007 FLAGS 16   -Data #:  131
+SEND MSG# 140 SEQ#   0 LEN   11 FLAGS  5   -RR #:    132
+RECV          SEQ# 132 LEN 1007 FLAGS 16   -Data #:  132
+SEND MSG# 141 SEQ#   0 LEN   11 FLAGS  5   -RR #:    133
+RECV          SEQ# 133 LEN 1007 FLAGS 16   -Data #:  133
+SEND MSG# 142 SEQ#   0 LEN   11 FLAGS  5   -RR #:    134
+RECV          SEQ# 134 LEN 1007 FLAGS 16   -Data #:  134
+SEND MSG# 143 SEQ#   0 LEN   11 FLAGS  5   -RR #:    135
+RECV          SEQ# 135 LEN 1007 FLAGS 16   -Data #:  135
+SEND MSG# 144 SEQ#   0 LEN   11 FLAGS  5   -RR #:    136
+RECV          SEQ# 136 LEN 1007 FLAGS 16   -Data #:  136
+SEND MSG# 145 SEQ#   0 LEN   11 FLAGS  5   -RR #:    137
+RECV          SEQ# 137 LEN 1007 FLAGS 16   -Data #:  137
+SEND MSG# 146 SEQ#   0 LEN   11 FLAGS  5   -RR #:    138
+RECV          SEQ# 138 LEN 1007 FLAGS 16   -Data #:  138
+SEND MSG# 147 SEQ#   0 LEN   11 FLAGS  5   -RR #:    139
+RECV          SEQ# 139 LEN 1007 FLAGS 16   -Data #:  139
+SEND MSG# 148 SEQ#   0 LEN   11 FLAGS  5   -RR #:    140
+RECV          SEQ# 140 LEN 1007 FLAGS 16   -Data #:  140
+SEND MSG# 149 SEQ#   0 LEN   11 FLAGS  5   -RR #:    141
+RECV          SEQ# 141 LEN 1007 FLAGS 16   -Data #:  141
+SEND MSG# 150 SEQ#   0 LEN   11 FLAGS  5   -RR #:    142
+RECV          SEQ# 142 LEN 1007 FLAGS 16   -Data #:  142
+~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 124, Current: 125, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 125
+Sending RR and SREJ in buffer:126 
+~~~~~Expected: 126  ~~~~~~~ 
+~~~~~~~~~~~Highest: 125, Current: 126, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 125, Current: 126, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 126
+Sending RR and SREJ in buffer:127 
+~~~~~Expected: 127  ~~~~~~~ 
+~~~~~~~~~~~Highest: 126, Current: 127, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 126, Current: 127, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 127  ~~~~~~~ 
+~~~~~~~~~~~Highest: 126, Current: 127, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 126, Current: 127, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 127
+Sending RR and SREJ in buffer:128 
+~~~~~Expected: 128  ~~~~~~~ 
+~~~~~~~~~~~Highest: 127, Current: 128, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 127, Current: 128, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 128
+Sending RR and SREJ in buffer:129 
+~~~~~Expected: 129  ~~~~~~~ 
+~~~~~~~~~~~Highest: 128, Current: 129, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 128, Current: 129, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 129
+Sending RR and SREJ in buffer:130 
+~~~~~Expected: 130  ~~~~~~~ 
+~~~~~~~~~~~Highest: 129, Current: 130, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 129, Current: 130, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 130
+Sending RR and SREJ in buffer:131 
+~~~~~Expected: 131  ~~~~~~~ 
+~~~~~~~~~~~Highest: 130, Current: 131, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 130, Current: 131, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 131
+Sending RR and SREJ in buffer:132 
+~~~~~Expected: 132  ~~~~~~~ 
+~~~~~~~~~~~Highest: 131, Current: 132, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 131, Current: 132, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 132
+Sending RR and SREJ in buffer:133 
+~~~~~Expected: 133  ~~~~~~~ 
+~~~~~~~~~~~Highest: 132, Current: 133, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 132, Current: 133, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 133
+Sending RR and SREJ in buffer:134 
+~~~~~Expected: 134  ~~~~~~~ 
+~~~~~~~~~~~Highest: 133, Current: 134, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 133, Current: 134, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 134
+Sending RR and SREJ in buffer:135 
+~~~~~Expected: 135  ~~~~~~~ 
+~~~~~~~~~~~Highest: 134, Current: 135, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 134, Current: 135, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 135
+Sending RR and SREJ in buffer:136 
+~~~~~Expected: 136  ~~~~~~~ 
+~~~~~~~~~~~Highest: 135, Current: 136, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 135, Current: 136, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 136
+Sending RR and SREJ in buffer:137 
+~~~~~Expected: 137  ~~~~~~~ 
+~~~~~~~~~~~Highest: 136, Current: 137, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 136, Current: 137, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 137
+Sending RR and SREJ in buffer:138 
+~~~~~Expected: 138  ~~~~~~~ 
+~~~~~~~~~~~Highest: 137, Current: 138, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 137, Current: 138, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 138
+Sending RR and SREJ in buffer:139 
+~~~~~Expected: 139  ~~~~~~~ 
+~~~~~~~~~~~Highest: 138, Current: 139, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 138, Current: 139, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 139
+Sending RR and SREJ in buffer:140 
+~~~~~Expected: 140  ~~~~~~~ 
+~~~~~~~~~~~Highest: 139, Current: 140, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 139, Current: 140, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 140
+Sending RR and SREJ in buffer:141 
+~~~~~Expected: 141  ~~~~~~~ 
+~~~~~~~~~~~Highest: 140, Current: 141, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 140, Current: 141, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 141
+Sending RR and SREJ in buffer:142 
+~~~~~Expected: 142  ~~~~~~~ 
+~~~~~~~~~~~Highest: 141, Current: 142, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 141, Current: 142, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inoSEND MSG# 151 SEQ#   0 LEN   11 FLAGS  5   -RR #:    143 - DROPPED 
+RECV          SEQ# 143 LEN 1007 FLAGS 16   -Data #:  143
+SEND MSG# 152 SEQ#   0 LEN   11 FLAGS  5   -RR #:    144
+RECV          SEQ# 144 LEN 1007 FLAGS 16   -Data #:  144
+SEND MSG# 153 SEQ#   0 LEN   11 FLAGS  5   -RR #:    145
+RECV          SEQ# 145 LEN 1007 FLAGS 16   -Data #:  145
+SEND MSG# 154 SEQ#   0 LEN   11 FLAGS  5   -RR #:    146
+RECV          SEQ# 146 LEN 1007 FLAGS 16   -Data #:  146
+SEND MSG# 155 SEQ#   0 LEN   11 FLAGS  5   -RR #:    147
+RECV          SEQ# 147 LEN 1007 FLAGS 16   -Data #:  147
+SEND MSG# 156 SEQ#   0 LEN   11 FLAGS  5   -RR #:    148
+RECV          SEQ# 148 LEN 1007 FLAGS 16   -Data #:  148
+SEND MSG# 157 SEQ#   0 LEN   11 FLAGS  5   -RR #:    149
+RECV          SEQ# 149 LEN 1007 FLAGS 16   -Data #:  149
+SEND MSG# 158 SEQ#   0 LEN   11 FLAGS  5   -RR #:    150
+RECV          SEQ# 150 LEN 1007 FLAGS 16   -Data #:  150
+SEND MSG# 159 SEQ#   0 LEN   11 FLAGS  5   -RR #:    151 - DROPPED 
+RECV          SEQ# 151 LEN 1007 FLAGS 16   -Data #:  151
+SEND MSG# 160 SEQ#   0 LEN   11 FLAGS  5   -RR #:    152
+RECV          SEQ# 152 LEN 1007 FLAGS 16   -Data #:  152
+SEND MSG# 161 SEQ#   0 LEN   11 FLAGS  5   -RR #:    153 - DROPPED 
+RECV          SEQ# 153 LEN 1007 FLAGS 16   -Data #:  153
+SEND MSG# 162 SEQ#   0 LEN   11 FLAGS  5   -RR #:    154
+RECV          SEQ# 154 LEN 1007 FLAGS 16   -Data #:  154
+SEND MSG# 163 SEQ#   0 LEN   11 FLAGS  5   -RR #:    155
+RECV          SEQ# 155 LEN 1007 FLAGS 16   -Data #:  155
+SEND MSG# 164 SEQ#   0 LEN   11 FLAGS  5   -RR #:    156
+RECV          SEQ# 156 LEN 1007 FLAGS 16   -Data #:  156
+SEND MSG# 165 SEQ#   0 LEN   11 FLAGS  5   -RR #:    157
+RECV          SEQ# 157 LEN 1007 FLAGS 16   -Data #:  157
+SEND MSG# 166 SEQ#   0 LEN   11 FLAGS  5   -RR #:    158
+RECV          SEQ# 158 LEN 1007 FLAGS 16   -Data #:  158
+SEND MSG# 167 SEQ#   0 LEN   11 FLAGS  5   -RR #:    159
+RECV          SEQ# 159 LEN 1007 FLAGS 16   -Data #:  159
+SEND MSG# 168 SEQ#   0 LEN   11 FLAGS  5   -RR #:    160
+RECV          SEQ# 160 LEN 1007 FLAGS 16   -Data #:  160
+SEND MSG# 169 SEQ#   0 LEN   11 FLAGS  5   -RR #:    161
+rder 142
+Sending RR and SREJ in buffer:143 
+~~~~~Expected: 143  ~~~~~~~ 
+~~~~~~~~~~~Highest: 142, Current: 143, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 142, Current: 143, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 143
+Sending RR and SREJ in buffer:144 
+~~~~~Expected: 144  ~~~~~~~ 
+~~~~~~~~~~~Highest: 143, Current: 144, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 143, Current: 144, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 144
+Sending RR and SREJ in buffer:145 
+~~~~~Expected: 145  ~~~~~~~ 
+~~~~~~~~~~~Highest: 144, Current: 145, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 144, Current: 145, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 145
+Sending RR and SREJ in buffer:146 
+~~~~~Expected: 146  ~~~~~~~ 
+~~~~~~~~~~~Highest: 145, Current: 146, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 145, Current: 146, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 146
+Sending RR and SREJ in buffer:147 
+~~~~~Expected: 147  ~~~~~~~ 
+~~~~~~~~~~~Highest: 146, Current: 147, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 146, Current: 147, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 147
+Sending RR and SREJ in buffer:148 
+~~~~~Expected: 148  ~~~~~~~ 
+~~~~~~~~~~~Highest: 147, Current: 148, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 147, Current: 148, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 148
+Sending RR and SREJ in buffer:149 
+~~~~~Expected: 149  ~~~~~~~ 
+~~~~~~~~~~~Highest: 148, Current: 149, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 148, Current: 149, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 149
+Sending RR and SREJ in buffer:150 
+~~~~~Expected: 150  ~~~~~~~ 
+~~~~~~~~~~~Highest: 149, Current: 150, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 149, Current: 150, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 150
+Sending RR and SREJ in buffer:151 
+~~~~~Expected: 151  ~~~~~~~ 
+~~~~~~~~~~~Highest: 150, Current: 151, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 150, Current: 151, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 151
+Sending RR and SREJ in buffer:152 
+~~~~~Expected: 152  ~~~~~~~ 
+~~~~~~~~~~~Highest: 151, Current: 152, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 151, Current: 152, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 152
+Sending RR and SREJ in buffer:153 
+~~~~~Expected: 153  ~~~~~~~ 
+~~~~~~~~~~~Highest: 152, Current: 153, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 152, Current: 153, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 153
+Sending RR and SREJ in buffer:154 
+~~~~~Expected: 154  ~~~~~~~ 
+~~~~~~~~~~~Highest: 153, Current: 154, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 153, Current: 154, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 154
+Sending RR and SREJ in buffer:155 
+~~~~~Expected: 155  ~~~~~~~ 
+~~~~~~~~~~~Highest: 154, Current: 155, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 154, Current: 155, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 155
+Sending RR and SREJ in buffer:156 
+~~~~~Expected: 156  ~~~~~~~ 
+~~~~~~~~~~~Highest: 155, Current: 156, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 155, Current: 156, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 156
+Sending RR and SREJ in buffer:157 
+~~~~~Expected: 157  ~~~~~~~ 
+~~~~~~~~~~~Highest: 156, Current: 157, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 156, Current: 157, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 157
+Sending RR and SREJ in buffer:158 
+~~~~~Expected: 158  ~~~~~~~ 
+~~~~~~~~~~~Highest: 157, Current: 158, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 157, Current: 158, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 158
+Sending RR and SREJ in buffer:159 
+~~~~~Expected: 159  ~~~~~~~ 
+~~~~~~~~~~~Highest: 158, Current: 159, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 158, Current: 159, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 159
+Sending RR and SREJ in buffer:160 
+~~~~~Expected: 160  ~~~~~~~ 
+~~~~~~~~~~~Highest: 159, Current: 160, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 159, Current: 160, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 160
+Sending RR and SREJ in buffer:161 
+~~RECV          SEQ# 161 LEN 1007 FLAGS 16   -Data #:  161
+SEND MSG# 170 SEQ#   0 LEN   11 FLAGS  5   -RR #:    162
+RECV          SEQ# 162 LEN 1007 FLAGS 16   -Data #:  162
+SEND MSG# 171 SEQ#   0 LEN   11 FLAGS  5   -RR #:    163
+RECV          SEQ# 163 LEN 1007 FLAGS 16   -Data #:  163
+SEND MSG# 172 SEQ#   0 LEN   11 FLAGS  5   -RR #:    164
+RECV          SEQ# 164 LEN 1007 FLAGS 16   -Data #:  164
+SEND MSG# 173 SEQ#   0 LEN   11 FLAGS  5   -RR #:    165
+RECV          SEQ# 165 LEN 1007 FLAGS 16   -Data #:  165
+SEND MSG# 174 SEQ#   0 LEN   11 FLAGS  5   -RR #:    166
+RECV          SEQ# 166 LEN 1007 FLAGS 16   -Data #:  166
+SEND MSG# 175 SEQ#   0 LEN   11 FLAGS  5   -RR #:    167
+RECV          SEQ# 167 LEN 1007 FLAGS 16   -Data #:  167
+SEND MSG# 176 SEQ#   0 LEN   11 FLAGS  5   -RR #:    168
+RECV          SEQ# 168 LEN 1007 FLAGS 16   -Data #:  168
+SEND MSG# 177 SEQ#   0 LEN   11 FLAGS  5   -RR #:    169
+RECV          SEQ# 169 LEN 1007 FLAGS 16   -Data #:  169
+SEND MSG# 178 SEQ#   0 LEN   11 FLAGS  5   -RR #:    170
+RECV          SEQ# 170 LEN 1007 FLAGS 16   -Data #:  170
+SEND MSG# 179 SEQ#   0 LEN   11 FLAGS  5   -RR #:    171 - FLIPPED BITS 
+RECV          SEQ# 170 LEN 1007 FLAGS 17   -Resent Data #:  170
+SEND MSG# 180 SEQ#   0 LEN   11 FLAGS  5   -RR #:    171
+RECV          SEQ# 171 LEN 1007 FLAGS 16   -Data #:  171
+SEND MSG# 181 SEQ#   0 LEN   11 FLAGS  5   -RR #:    172
+RECV          SEQ# 172 LEN 1007 FLAGS 16   -Data #:  172
+SEND MSG# 182 SEQ#   0 LEN   11 FLAGS  5   -RR #:    173
+RECV          SEQ# 173 LEN 1007 FLAGS 16   -Data #:  173
+SEND MSG# 183 SEQ#   0 LEN   11 FLAGS  5   -RR #:    174
+RECV          SEQ# 174 LEN 1007 FLAGS 16   -Data #:  174
+SEND MSG# 184 SEQ#   0 LEN   11 FLAGS  5   -RR #:    175
+RECV          SEQ# 175 LEN 1007 FLAGS 16   -Data #:  175
+SEND MSG# 185 SEQ#   0 LEN   11 FLAGS  5   -RR #:    176
+RECV          SEQ# 176 LEN 1007 FLAGS 16   -Data #:  176
+SEND MSG# 186 SEQ#   0 LEN   11 FLAGS  5   -RR #:    177
+RECV          SEQ# 177 LEN 1007 FLAGS 16   -Data #:  177
+SEND MSG# 187 SEQ#   0 LEN   11 FLAGS  5   -RR #:    178
+~~~Expected: 161  ~~~~~~~ 
+~~~~~~~~~~~Highest: 160, Current: 161, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 160, Current: 161, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 161
+Sending RR and SREJ in buffer:162 
+~~~~~Expected: 162  ~~~~~~~ 
+~~~~~~~~~~~Highest: 161, Current: 162, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 161, Current: 162, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 162
+Sending RR and SREJ in buffer:163 
+~~~~~Expected: 163  ~~~~~~~ 
+~~~~~~~~~~~Highest: 162, Current: 163, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 162, Current: 163, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 163
+Sending RR and SREJ in buffer:164 
+~~~~~Expected: 164  ~~~~~~~ 
+~~~~~~~~~~~Highest: 163, Current: 164, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 163, Current: 164, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 164
+Sending RR and SREJ in buffer:165 
+~~~~~Expected: 165  ~~~~~~~ 
+~~~~~~~~~~~Highest: 164, Current: 165, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 164, Current: 165, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 165
+Sending RR and SREJ in buffer:166 
+~~~~~Expected: 166  ~~~~~~~ 
+~~~~~~~~~~~Highest: 165, Current: 166, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 165, Current: 166, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 166
+Sending RR and SREJ in buffer:167 
+~~~~~Expected: 167  ~~~~~~~ 
+~~~~~~~~~~~Highest: 166, Current: 167, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 166, Current: 167, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 167
+Sending RR and SREJ in buffer:168 
+~~~~~Expected: 168  ~~~~~~~ 
+~~~~~~~~~~~Highest: 167, Current: 168, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 167, Current: 168, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 168
+Sending RR and SREJ in buffer:169 
+~~~~~Expected: 169  ~~~~~~~ 
+~~~~~~~~~~~Highest: 168, Current: 169, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 168, Current: 169, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 169
+Sending RR and SREJ in buffer:170 
+~~~~~Expected: 170  ~~~~~~~ 
+~~~~~~~~~~~Highest: 169, Current: 170, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 169, Current: 170, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 170
+Sending RR and SREJ in buffer:171 
+~~~~~Expected: 171  ~~~~~~~ 
+~~~~~~~~~~~Highest: 170, Current: 171, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 170, Current: 171, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 171  ~~~~~~~ 
+~~~~~~~~~~~Highest: 170, Current: 171, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 170, Current: 171, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 171
+Sending RR and SREJ in buffer:172 
+~~~~~Expected: 172  ~~~~~~~ 
+~~~~~~~~~~~Highest: 171, Current: 172, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 171, Current: 172, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 172
+Sending RR and SREJ in buffer:173 
+~~~~~Expected: 173  ~~~~~~~ 
+~~~~~~~~~~~Highest: 172, Current: 173, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 172, Current: 173, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 173
+Sending RR and SREJ in buffer:174 
+~~~~~Expected: 174  ~~~~~~~ 
+~~~~~~~~~~~Highest: 173, Current: 174, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 173, Current: 174, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 174
+Sending RR and SREJ in buffer:175 
+~~~~~Expected: 175  ~~~~~~~ 
+~~~~~~~~~~~Highest: 174, Current: 175, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 174, Current: 175, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 175
+Sending RR and SREJ in buffer:176 
+~~~~~Expected: 176  ~~~~~~~ 
+~~~~~~~~~~~Highest: 175, Current: 176, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 175, Current: 176, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 176
+Sending RR and SREJ in buffer:177 
+~~~~~Expected: 177  ~~~~~~~ 
+~~~~~~~~~~~Highest: 176, Current: 177, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 176, Current: 177, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 177
+Sending RR and SREJ in buffer:178 
+~~~~~Expected: 178  ~~~~~~~ 
+~~~~~~~~~~~Highest: 177, Current: 178, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:RECV          SEQ# 178 LEN 1007 FLAGS 16   -Data #:  178
+SEND MSG# 188 SEQ#   0 LEN   11 FLAGS  5   -RR #:    179
+RECV          SEQ# 179 LEN 1007 FLAGS 16   -Data #:  179
+SEND MSG# 189 SEQ#   0 LEN   11 FLAGS  5   -RR #:    180
+RECV          SEQ# 180 LEN 1007 FLAGS 16   -Data #:  180
+SEND MSG# 190 SEQ#   0 LEN   11 FLAGS  5   -RR #:    181
+RECV          SEQ# 181 LEN 1007 FLAGS 16   -Data #:  181
+SEND MSG# 191 SEQ#   0 LEN   11 FLAGS  5   -RR #:    182
+RECV          SEQ# 182 LEN 1007 FLAGS 16   -Data #:  182
+SEND MSG# 192 SEQ#   0 LEN   11 FLAGS  5   -RR #:    183 - FLIPPED BITS 
+RECV          SEQ# 182 LEN 1007 FLAGS 17   -Resent Data #:  182
+SEND MSG# 193 SEQ#   0 LEN   11 FLAGS  5   -RR #:    183
+RECV          SEQ# 183 LEN 1007 FLAGS 16   -Data #:  183
+SEND MSG# 194 SEQ#   0 LEN   11 FLAGS  5   -RR #:    184
+RECV          SEQ# 184 LEN 1007 FLAGS 16   -Data #:  184
+SEND MSG# 195 SEQ#   0 LEN   11 FLAGS  5   -RR #:    185
+RECV          SEQ# 185 LEN 1007 FLAGS 16   -Data #:  185
+SEND MSG# 196 SEQ#   0 LEN   11 FLAGS  5   -RR #:    186
+RECV          SEQ# 186 LEN 1007 FLAGS 16   -Data #:  186
+SEND MSG# 197 SEQ#   0 LEN   11 FLAGS  5   -RR #:    187
+RECV          SEQ# 187 LEN 1007 FLAGS 16   -Data #:  187
+SEND MSG# 198 SEQ#   0 LEN   11 FLAGS  5   -RR #:    188
+RECV          SEQ# 188 LEN 1007 FLAGS 16   -Data #:  188
+SEND MSG# 199 SEQ#   0 LEN   11 FLAGS  5   -RR #:    189
+RECV          SEQ# 189 LEN 1007 FLAGS 16   -Data #:  189
+SEND MSG# 200 SEQ#   0 LEN   11 FLAGS  5   -RR #:    190
+RECV          SEQ# 190 LEN 1007 FLAGS 16   -Data #:  190
+SEND MSG# 201 SEQ#   0 LEN   11 FLAGS  5   -RR #:    191
+RECV          SEQ# 191 LEN 1007 FLAGS 16   -Data #:  191
+SEND MSG# 202 SEQ#   0 LEN   11 FLAGS  5   -RR #:    192
+RECV          SEQ# 192 LEN 1007 FLAGS 16   -Data #:  192
+SEND MSG# 203 SEQ#   0 LEN   11 FLAGS  5   -RR #:    193
+RECV          SEQ# 193 LEN 1007 FLAGS 16   -Data #:  193
+SEND MSG# 204 SEQ#   0 LEN   11 FLAGS  5   -RR #:    194
+RECV          SEQ# 194 LEN 1007 FLAGS 16   -Data #:  194
+SEND MSG# 205 SEQ#   0 LEN   11 FLAGS  5   -RR #:    195
+RECV          SEQ# 195 LEN 1007 FLAGS 16   -Data #:  195
+SEND MSG# 206 SEQ#   0 LEN   11 FLAGS  5   -RR #:    196 - FLIPPED BITS 
+
+~~~~~~~~~~~Highest: 177, Current: 178, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 178
+Sending RR and SREJ in buffer:179 
+~~~~~Expected: 179  ~~~~~~~ 
+~~~~~~~~~~~Highest: 178, Current: 179, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 178, Current: 179, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 179
+Sending RR and SREJ in buffer:180 
+~~~~~Expected: 180  ~~~~~~~ 
+~~~~~~~~~~~Highest: 179, Current: 180, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 179, Current: 180, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 180
+Sending RR and SREJ in buffer:181 
+~~~~~Expected: 181  ~~~~~~~ 
+~~~~~~~~~~~Highest: 180, Current: 181, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 180, Current: 181, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 181
+Sending RR and SREJ in buffer:182 
+~~~~~Expected: 182  ~~~~~~~ 
+~~~~~~~~~~~Highest: 181, Current: 182, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 181, Current: 182, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 182
+Sending RR and SREJ in buffer:183 
+~~~~~Expected: 183  ~~~~~~~ 
+~~~~~~~~~~~Highest: 182, Current: 183, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 182, Current: 183, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 183  ~~~~~~~ 
+~~~~~~~~~~~Highest: 182, Current: 183, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 182, Current: 183, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 183
+Sending RR and SREJ in buffer:184 
+~~~~~Expected: 184  ~~~~~~~ 
+~~~~~~~~~~~Highest: 183, Current: 184, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 183, Current: 184, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 184
+Sending RR and SREJ in buffer:185 
+~~~~~Expected: 185  ~~~~~~~ 
+~~~~~~~~~~~Highest: 184, Current: 185, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 184, Current: 185, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 185
+Sending RR and SREJ in buffer:186 
+~~~~~Expected: 186  ~~~~~~~ 
+~~~~~~~~~~~Highest: 185, Current: 186, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 185, Current: 186, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 186
+Sending RR and SREJ in buffer:187 
+~~~~~Expected: 187  ~~~~~~~ 
+~~~~~~~~~~~Highest: 186, Current: 187, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 186, Current: 187, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 187
+Sending RR and SREJ in buffer:188 
+~~~~~Expected: 188  ~~~~~~~ 
+~~~~~~~~~~~Highest: 187, Current: 188, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 187, Current: 188, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 188
+Sending RR and SREJ in buffer:189 
+~~~~~Expected: 189  ~~~~~~~ 
+~~~~~~~~~~~Highest: 188, Current: 189, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 188, Current: 189, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 189
+Sending RR and SREJ in buffer:190 
+~~~~~Expected: 190  ~~~~~~~ 
+~~~~~~~~~~~Highest: 189, Current: 190, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 189, Current: 190, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 190
+Sending RR and SREJ in buffer:191 
+~~~~~Expected: 191  ~~~~~~~ 
+~~~~~~~~~~~Highest: 190, Current: 191, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 190, Current: 191, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 191
+Sending RR and SREJ in buffer:192 
+~~~~~Expected: 192  ~~~~~~~ 
+~~~~~~~~~~~Highest: 191, Current: 192, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 191, Current: 192, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 192
+Sending RR and SREJ in buffer:193 
+~~~~~Expected: 193  ~~~~~~~ 
+~~~~~~~~~~~Highest: 192, Current: 193, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 192, Current: 193, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 193
+Sending RR and SREJ in buffer:194 
+~~~~~Expected: 194  ~~~~~~~ 
+~~~~~~~~~~~Highest: 193, Current: 194, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 193, Current: 194, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 194
+Sending RR and SREJ in buffer:195 
+~~~~~Expected: 195  ~~~~~~~ 
+~~~~~~~~~~~Highest: 194, Current: 195, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 194, Current: 195, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 195
+Sending RR andRECV          SEQ# 196 LEN 1007 FLAGS 16   -Data #:  196
+SEND MSG# 207 SEQ#   0 LEN   11 FLAGS  5   -RR #:    197
+RECV          SEQ# 197 LEN 1007 FLAGS 16   -Data #:  197
+SEND MSG# 208 SEQ#   0 LEN   11 FLAGS  5   -RR #:    198
+RECV          SEQ# 195 LEN 1007 FLAGS 17   -Resent Data #:  195
+SEND MSG# 209 SEQ#   0 LEN   11 FLAGS  5   -RR #:    198
+RECV          SEQ# 198 LEN 1007 FLAGS 16   -Data #:  198
+SEND MSG# 210 SEQ#   0 LEN   11 FLAGS  5   -RR #:    199
+RECV          SEQ# 199 LEN 1007 FLAGS 16   -Data #:  199
+SEND MSG# 211 SEQ#   0 LEN   11 FLAGS  5   -RR #:    200
+RECV          SEQ# 200 LEN 1007 FLAGS 16   -Data #:  200
+SEND MSG# 212 SEQ#   0 LEN   11 FLAGS  5   -RR #:    201
+RECV          SEQ# 201 LEN 1007 FLAGS 16   -Data #:  201
+SEND MSG# 213 SEQ#   0 LEN   11 FLAGS  5   -RR #:    202
+RECV          SEQ# 202 LEN 1007 FLAGS 16   -Data #:  202
+SEND MSG# 214 SEQ#   0 LEN   11 FLAGS  5   -RR #:    203
+RECV          SEQ# 203 LEN 1007 FLAGS 16   -Data #:  203
+SEND MSG# 215 SEQ#   0 LEN   11 FLAGS  5   -RR #:    204
+RECV          SEQ# 204 LEN 1007 FLAGS 16   -Data #:  204
+SEND MSG# 216 SEQ#   0 LEN   11 FLAGS  5   -RR #:    205
+RECV          SEQ# 205 LEN 1007 FLAGS 16   -Data #:  205
+SEND MSG# 217 SEQ#   0 LEN   11 FLAGS  5   -RR #:    206
+RECV          SEQ# 206 LEN 1007 FLAGS 16   -Data #:  206
+SEND MSG# 218 SEQ#   0 LEN   11 FLAGS  5   -RR #:    207 - FLIPPED BITS 
+RECV          SEQ# 207 LEN 1007 FLAGS 16   -Data #:  207
+SEND MSG# 219 SEQ#   0 LEN   11 FLAGS  5   -RR #:    208
+RECV          SEQ# 208 LEN 1007 FLAGS 16   -Data #:  208
+SEND MSG# 220 SEQ#   0 LEN   11 FLAGS  5   -RR #:    209
+RECV          SEQ# 209 LEN 1007 FLAGS 16   -Data #:  209
+SEND MSG# 221 SEQ#   0 LEN   11 FLAGS  5   -RR #:    210
+RECV          SEQ# 206 LEN 1007 FLAGS 17   -Resent Data #:  206
+SEND MSG# 222 SEQ#   0 LEN   11 FLAGS  5   -RR #:    210
+RECV          SEQ# 210 LEN 1007 FLAGS 16   -Data #:  210
+SEND MSG# 223 SEQ#   0 LEN   11 FLAGS  5   -RR #:    211
+RECV          SEQ# 211 LEN 1007 FLAGS 16   -Data #:  211
+SEND MSG# 224 SEQ#   0 LEN   11 FLAGS  5   -RR #:    212
+RECV          SEQ# 212 LEN 1007 FLAGS 16   -Data #:  212
+ SREJ in buffer:196 
+~~~~~Expected: 196  ~~~~~~~ 
+~~~~~~~~~~~Highest: 195, Current: 196, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 195, Current: 196, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 196
+Sending RR and SREJ in buffer:197 
+~~~~~Expected: 197  ~~~~~~~ 
+~~~~~~~~~~~Highest: 196, Current: 197, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 196, Current: 197, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 197
+Sending RR and SREJ in buffer:198 
+~~~~~Expected: 198  ~~~~~~~ 
+~~~~~~~~~~~Highest: 197, Current: 198, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 197, Current: 198, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 198  ~~~~~~~ 
+~~~~~~~~~~~Highest: 197, Current: 198, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 197, Current: 198, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 198
+Sending RR and SREJ in buffer:199 
+~~~~~Expected: 199  ~~~~~~~ 
+~~~~~~~~~~~Highest: 198, Current: 199, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 198, Current: 199, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 199
+Sending RR and SREJ in buffer:200 
+~~~~~Expected: 200  ~~~~~~~ 
+~~~~~~~~~~~Highest: 199, Current: 200, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 199, Current: 200, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 200
+Sending RR and SREJ in buffer:201 
+~~~~~Expected: 201  ~~~~~~~ 
+~~~~~~~~~~~Highest: 200, Current: 201, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 200, Current: 201, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 201
+Sending RR and SREJ in buffer:202 
+~~~~~Expected: 202  ~~~~~~~ 
+~~~~~~~~~~~Highest: 201, Current: 202, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 201, Current: 202, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 202
+Sending RR and SREJ in buffer:203 
+~~~~~Expected: 203  ~~~~~~~ 
+~~~~~~~~~~~Highest: 202, Current: 203, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 202, Current: 203, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 203
+Sending RR and SREJ in buffer:204 
+~~~~~Expected: 204  ~~~~~~~ 
+~~~~~~~~~~~Highest: 203, Current: 204, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 203, Current: 204, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 204
+Sending RR and SREJ in buffer:205 
+~~~~~Expected: 205  ~~~~~~~ 
+~~~~~~~~~~~Highest: 204, Current: 205, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 204, Current: 205, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 205
+Sending RR and SREJ in buffer:206 
+~~~~~Expected: 206  ~~~~~~~ 
+~~~~~~~~~~~Highest: 205, Current: 206, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 205, Current: 206, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 206
+Sending RR and SREJ in buffer:207 
+~~~~~Expected: 207  ~~~~~~~ 
+~~~~~~~~~~~Highest: 206, Current: 207, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 206, Current: 207, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 207
+Sending RR and SREJ in buffer:208 
+~~~~~Expected: 208  ~~~~~~~ 
+~~~~~~~~~~~Highest: 207, Current: 208, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 207, Current: 208, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 208
+Sending RR and SREJ in buffer:209 
+~~~~~Expected: 209  ~~~~~~~ 
+~~~~~~~~~~~Highest: 208, Current: 209, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 208, Current: 209, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 209
+Sending RR and SREJ in buffer:210 
+~~~~~Expected: 210  ~~~~~~~ 
+~~~~~~~~~~~Highest: 209, Current: 210, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 209, Current: 210, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 210  ~~~~~~~ 
+~~~~~~~~~~~Highest: 209, Current: 210, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 209, Current: 210, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 210
+Sending RR and SREJ in buffer:211 
+~~~~~Expected: 211  ~~~~~~~ 
+~~~~~~~~~~~Highest: 210, Current: 211, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 210, Current: 211, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 211
+Sending RR and SREJ in buffer:212 
+~~~~~Expected: 212  ~~~~~~~ 
+~~~~~~~~~~~Highest: 211, Current: 212, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 211, CurrenSEND MSG# 225 SEQ#   0 LEN   11 FLAGS  5   -RR #:    213
+RECV          SEQ# 213 LEN 1007 FLAGS 16   -Data #:  213
+SEND MSG# 226 SEQ#   0 LEN   11 FLAGS  5   -RR #:    214
+RECV          SEQ# 214 LEN 1007 FLAGS 16   -Data #:  214
+SEND MSG# 227 SEQ#   0 LEN   11 FLAGS  5   -RR #:    215
+RECV          SEQ# 215 LEN 1007 FLAGS 16   -Data #:  215
+SEND MSG# 228 SEQ#   0 LEN   11 FLAGS  5   -RR #:    216
+RECV          SEQ# 216 LEN 1007 FLAGS 16   -Data #:  216
+SEND MSG# 229 SEQ#   0 LEN   11 FLAGS  5   -RR #:    217
+RECV          SEQ# 217 LEN 1007 FLAGS 16   -Data #:  217
+SEND MSG# 230 SEQ#   0 LEN   11 FLAGS  5   -RR #:    218
+RECV          SEQ# 218 LEN 1007 FLAGS 16   -Data #:  218
+SEND MSG# 231 SEQ#   0 LEN   11 FLAGS  5   -RR #:    219
+RECV          SEQ# 219 LEN 1007 FLAGS 16   -Data #:  219
+SEND MSG# 232 SEQ#   0 LEN   11 FLAGS  5   -RR #:    220
+RECV          SEQ# 220 LEN 1007 FLAGS 16   -Data #:  220
+SEND MSG# 233 SEQ#   0 LEN   11 FLAGS  5   -RR #:    221
+RECV          SEQ# 221 LEN 1007 FLAGS 16   -Data #:  221
+SEND MSG# 234 SEQ#   0 LEN   11 FLAGS  5   -RR #:    222
+RECV          SEQ# 222 LEN 1007 FLAGS 16   -Data #:  222
+SEND MSG# 235 SEQ#   0 LEN   11 FLAGS  5   -RR #:    223
+RECV          SEQ# 223 LEN 1007 FLAGS 16   -Data #:  223
+SEND MSG# 236 SEQ#   0 LEN   11 FLAGS  5   -RR #:    224
+RECV          SEQ# 224 LEN 1007 FLAGS 16   -Data #:  224
+SEND MSG# 237 SEQ#   0 LEN   11 FLAGS  5   -RR #:    225
+RECV          SEQ# 225 LEN 1007 FLAGS 16   -Data #:  225
+SEND MSG# 238 SEQ#   0 LEN   11 FLAGS  5   -RR #:    226
+RECV          SEQ# 226 LEN 1007 FLAGS 16   -Data #:  226
+SEND MSG# 239 SEQ#   0 LEN   11 FLAGS  5   -RR #:    227
+RECV          SEQ# 227 LEN 1007 FLAGS 16   -Data #:  227
+SEND MSG# 240 SEQ#   0 LEN   11 FLAGS  5   -RR #:    228
+RECV          SEQ# 228 LEN 1007 FLAGS 16   -Data #:  228
+SEND MSG# 241 SEQ#   0 LEN   11 FLAGS  5   -RR #:    229
+RECV          SEQ# 229 LEN 1007 FLAGS 16   -Data #:  229
+SEND MSG# 242 SEQ#   0 LEN   11 FLAGS  5   -RR #:    230
+RECV          SEQ# 230 LEN 1007 FLAGS 16   -Data #:  230
+t: 212, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 212
+Sending RR and SREJ in buffer:213 
+~~~~~Expected: 213  ~~~~~~~ 
+~~~~~~~~~~~Highest: 212, Current: 213, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 212, Current: 213, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 213
+Sending RR and SREJ in buffer:214 
+~~~~~Expected: 214  ~~~~~~~ 
+~~~~~~~~~~~Highest: 213, Current: 214, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 213, Current: 214, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 214
+Sending RR and SREJ in buffer:215 
+~~~~~Expected: 215  ~~~~~~~ 
+~~~~~~~~~~~Highest: 214, Current: 215, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 214, Current: 215, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 215
+Sending RR and SREJ in buffer:216 
+~~~~~Expected: 216  ~~~~~~~ 
+~~~~~~~~~~~Highest: 215, Current: 216, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 215, Current: 216, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 216
+Sending RR and SREJ in buffer:217 
+~~~~~Expected: 217  ~~~~~~~ 
+~~~~~~~~~~~Highest: 216, Current: 217, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 216, Current: 217, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 217
+Sending RR and SREJ in buffer:218 
+~~~~~Expected: 218  ~~~~~~~ 
+~~~~~~~~~~~Highest: 217, Current: 218, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 217, Current: 218, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 218
+Sending RR and SREJ in buffer:219 
+~~~~~Expected: 219  ~~~~~~~ 
+~~~~~~~~~~~Highest: 218, Current: 219, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 218, Current: 219, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 219
+Sending RR and SREJ in buffer:220 
+~~~~~Expected: 220  ~~~~~~~ 
+~~~~~~~~~~~Highest: 219, Current: 220, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 219, Current: 220, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 220
+Sending RR and SREJ in buffer:221 
+~~~~~Expected: 221  ~~~~~~~ 
+~~~~~~~~~~~Highest: 220, Current: 221, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 220, Current: 221, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 221
+Sending RR and SREJ in buffer:222 
+~~~~~Expected: 222  ~~~~~~~ 
+~~~~~~~~~~~Highest: 221, Current: 222, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 221, Current: 222, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 222
+Sending RR and SREJ in buffer:223 
+~~~~~Expected: 223  ~~~~~~~ 
+~~~~~~~~~~~Highest: 222, Current: 223, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 222, Current: 223, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 223
+Sending RR and SREJ in buffer:224 
+~~~~~Expected: 224  ~~~~~~~ 
+~~~~~~~~~~~Highest: 223, Current: 224, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 223, Current: 224, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 224
+Sending RR and SREJ in buffer:225 
+~~~~~Expected: 225  ~~~~~~~ 
+~~~~~~~~~~~Highest: 224, Current: 225, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 224, Current: 225, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 225
+Sending RR and SREJ in buffer:226 
+~~~~~Expected: 226  ~~~~~~~ 
+~~~~~~~~~~~Highest: 225, Current: 226, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 225, Current: 226, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 226
+Sending RR and SREJ in buffer:227 
+~~~~~Expected: 227  ~~~~~~~ 
+~~~~~~~~~~~Highest: 226, Current: 227, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 226, Current: 227, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 227
+Sending RR and SREJ in buffer:228 
+~~~~~Expected: 228  ~~~~~~~ 
+~~~~~~~~~~~Highest: 227, Current: 228, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 227, Current: 228, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 228
+Sending RR and SREJ in buffer:229 
+~~~~~Expected: 229  ~~~~~~~ 
+~~~~~~~~~~~Highest: 228, Current: 229, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 228, Current: 229, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 229
+Sending RR and SREJ in buffer:230 
+~~~~~Expected: 230  ~~~~~~~ 
+~~~~~~~~~~~Highest: 229, Current: 230, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 229, Current: 230, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inoSEND MSG# 243 SEQ#   0 LEN   11 FLAGS  5   -RR #:    231
+RECV          SEQ# 231 LEN 1007 FLAGS 16   -Data #:  231
+SEND MSG# 244 SEQ#   0 LEN   11 FLAGS  5   -RR #:    232 - FLIPPED BITS 
+RECV          SEQ# 231 LEN 1007 FLAGS 17   -Resent Data #:  231
+SEND MSG# 245 SEQ#   0 LEN   11 FLAGS  5   -RR #:    232
+RECV          SEQ# 232 LEN 1007 FLAGS 16   -Data #:  232
+SEND MSG# 246 SEQ#   0 LEN   11 FLAGS  5   -RR #:    233
+RECV          SEQ# 233 LEN 1007 FLAGS 16   -Data #:  233
+SEND MSG# 247 SEQ#   0 LEN   11 FLAGS  5   -RR #:    234
+RECV          SEQ# 234 LEN 1007 FLAGS 16   -Data #:  234
+SEND MSG# 248 SEQ#   0 LEN   11 FLAGS  5   -RR #:    235
+RECV          SEQ# 235 LEN 1007 FLAGS 16   -Data #:  235
+SEND MSG# 249 SEQ#   0 LEN   11 FLAGS  5   -RR #:    236
+RECV          SEQ# 236 LEN 1007 FLAGS 16   -Data #:  236
+SEND MSG# 250 SEQ#   0 LEN   11 FLAGS  5   -RR #:    237
+RECV          SEQ# 237 LEN 1007 FLAGS 16   -Data #:  237
+SEND MSG# 251 SEQ#   0 LEN   11 FLAGS  5   -RR #:    238
+RECV          SEQ# 238 LEN 1007 FLAGS 16   -Data #:  238
+SEND MSG# 252 SEQ#   0 LEN   11 FLAGS  5   -RR #:    239
+RECV          SEQ# 239 LEN 1007 FLAGS 16   -Data #:  239
+SEND MSG# 253 SEQ#   0 LEN   11 FLAGS  5   -RR #:    240
+RECV          SEQ# 240 LEN 1007 FLAGS 16   -Data #:  240
+SEND MSG# 254 SEQ#   0 LEN   11 FLAGS  5   -RR #:    241
+RECV          SEQ# 241 LEN 1007 FLAGS 16   -Data #:  241
+SEND MSG# 255 SEQ#   0 LEN   11 FLAGS  5   -RR #:    242
+RECV          SEQ# 242 LEN 1007 FLAGS 16   -Data #:  242
+SEND MSG# 256 SEQ#   0 LEN   11 FLAGS  5   -RR #:    243
+RECV          SEQ# 243 LEN 1007 FLAGS 16   -Data #:  243
+SEND MSG# 257 SEQ#   0 LEN   11 FLAGS  5   -RR #:    244
+RECV          SEQ# 244 LEN 1007 FLAGS 16   -Data #:  244
+SEND MSG# 258 SEQ#   0 LEN   11 FLAGS  5   -RR #:    245
+RECV          SEQ# 245 LEN 1007 FLAGS 16   -Data #:  245
+SEND MSG# 259 SEQ#   0 LEN   11 FLAGS  5   -RR #:    246
+RECV          SEQ# 246 LEN 1007 FLAGS 16   -Data #:  246
+SEND MSG# 260 SEQ#   0 LEN   11 FLAGS  5   -RR #:    247
+RECV          SEQ# 247 LEN 1007 FLAGS 16   -Data #:  247
+SEND MSG# 261 SEQ#   0 LEN   11 FLAGS  5   -RR #:    248 - FLIPPED BITS 
+rder 230
+Sending RR and SREJ in buffer:231 
+~~~~~Expected: 231  ~~~~~~~ 
+~~~~~~~~~~~Highest: 230, Current: 231, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 230, Current: 231, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 231
+Sending RR and SREJ in buffer:232 
+~~~~~Expected: 232  ~~~~~~~ 
+~~~~~~~~~~~Highest: 231, Current: 232, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 231, Current: 232, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 232  ~~~~~~~ 
+~~~~~~~~~~~Highest: 231, Current: 232, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 231, Current: 232, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 232
+Sending RR and SREJ in buffer:233 
+~~~~~Expected: 233  ~~~~~~~ 
+~~~~~~~~~~~Highest: 232, Current: 233, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 232, Current: 233, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 233
+Sending RR and SREJ in buffer:234 
+~~~~~Expected: 234  ~~~~~~~ 
+~~~~~~~~~~~Highest: 233, Current: 234, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 233, Current: 234, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 234
+Sending RR and SREJ in buffer:235 
+~~~~~Expected: 235  ~~~~~~~ 
+~~~~~~~~~~~Highest: 234, Current: 235, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 234, Current: 235, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 235
+Sending RR and SREJ in buffer:236 
+~~~~~Expected: 236  ~~~~~~~ 
+~~~~~~~~~~~Highest: 235, Current: 236, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 235, Current: 236, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 236
+Sending RR and SREJ in buffer:237 
+~~~~~Expected: 237  ~~~~~~~ 
+~~~~~~~~~~~Highest: 236, Current: 237, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 236, Current: 237, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 237
+Sending RR and SREJ in buffer:238 
+~~~~~Expected: 238  ~~~~~~~ 
+~~~~~~~~~~~Highest: 237, Current: 238, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 237, Current: 238, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 238
+Sending RR and SREJ in buffer:239 
+~~~~~Expected: 239  ~~~~~~~ 
+~~~~~~~~~~~Highest: 238, Current: 239, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 238, Current: 239, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 239
+Sending RR and SREJ in buffer:240 
+~~~~~Expected: 240  ~~~~~~~ 
+~~~~~~~~~~~Highest: 239, Current: 240, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 239, Current: 240, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 240
+Sending RR and SREJ in buffer:241 
+~~~~~Expected: 241  ~~~~~~~ 
+~~~~~~~~~~~Highest: 240, Current: 241, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 240, Current: 241, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 241
+Sending RR and SREJ in buffer:242 
+~~~~~Expected: 242  ~~~~~~~ 
+~~~~~~~~~~~Highest: 241, Current: 242, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 241, Current: 242, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 242
+Sending RR and SREJ in buffer:243 
+~~~~~Expected: 243  ~~~~~~~ 
+~~~~~~~~~~~Highest: 242, Current: 243, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 242, Current: 243, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 243
+Sending RR and SREJ in buffer:244 
+~~~~~Expected: 244  ~~~~~~~ 
+~~~~~~~~~~~Highest: 243, Current: 244, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 243, Current: 244, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 244
+Sending RR and SREJ in buffer:245 
+~~~~~Expected: 245  ~~~~~~~ 
+~~~~~~~~~~~Highest: 244, Current: 245, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 244, Current: 245, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 245
+Sending RR and SREJ in buffer:246 
+~~~~~Expected: 246  ~~~~~~~ 
+~~~~~~~~~~~Highest: 245, Current: 246, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 245, Current: 246, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 246
+Sending RR and SREJ in buffer:247 
+~~~~~Expected: 247  ~~~~~~~ 
+~~~~~~~~~~~Highest: 246, Current: 247, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 246, Current: 247, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 247
+Sending RR and SREJ in buffer:248 
+~~~~~Expected: 248  ~~~~~~~ 
+~~~~~~~~~~~Highest: 247, CurRECV          SEQ# 248 LEN 1007 FLAGS 16   -Data #:  248
+SEND MSG# 262 SEQ#   0 LEN   11 FLAGS  5   -RR #:    249
+RECV          SEQ# 249 LEN 1007 FLAGS 16   -Data #:  249
+SEND MSG# 263 SEQ#   0 LEN   11 FLAGS  5   -RR #:    250
+RECV          SEQ# 250 LEN 1007 FLAGS 16   -Data #:  250
+SEND MSG# 264 SEQ#   0 LEN   11 FLAGS  5   -RR #:    251
+RECV          SEQ# 251 LEN 1007 FLAGS 16   -Data #:  251
+SEND MSG# 265 SEQ#   0 LEN   11 FLAGS  5   -RR #:    252
+RECV          SEQ# 252 LEN 1007 FLAGS 16   -Data #:  252
+SEND MSG# 266 SEQ#   0 LEN   11 FLAGS  5   -RR #:    253
+RECV          SEQ# 253 LEN 1007 FLAGS 16   -Data #:  253
+SEND MSG# 267 SEQ#   0 LEN   11 FLAGS  5   -RR #:    254
+RECV          SEQ# 254 LEN 1007 FLAGS 16   -Data #:  254
+SEND MSG# 268 SEQ#   0 LEN   11 FLAGS  5   -RR #:    255
+RECV          SEQ# 247 LEN 1007 FLAGS 17   -Resent Data #:  247
+SEND MSG# 269 SEQ#   0 LEN   11 FLAGS  5   -RR #:    255
+RECV          SEQ# 255 LEN 1007 FLAGS 16   -Data #:  255
+SEND MSG# 270 SEQ#   0 LEN   11 FLAGS  5   -RR #:    256
+RECV          SEQ# 256 LEN 1007 FLAGS 16   -Data #:  256
+SEND MSG# 271 SEQ#   0 LEN   11 FLAGS  5   -RR #:    257
+RECV          SEQ# 257 LEN 1007 FLAGS 16   -Data #:  257
+SEND MSG# 272 SEQ#   0 LEN   11 FLAGS  5   -RR #:    258
+RECV          SEQ# 258 LEN 1007 FLAGS 16   -Data #:  258
+SEND MSG# 273 SEQ#   0 LEN   11 FLAGS  5   -RR #:    259
+RECV          SEQ# 259 LEN 1007 FLAGS 16   -Data #:  259
+SEND MSG# 274 SEQ#   0 LEN   11 FLAGS  5   -RR #:    260
+RECV          SEQ# 260 LEN 1007 FLAGS 16   -Data #:  260
+SEND MSG# 275 SEQ#   0 LEN   11 FLAGS  5   -RR #:    261
+RECV          SEQ# 261 LEN 1007 FLAGS 16   -Data #:  261
+SEND MSG# 276 SEQ#   0 LEN   11 FLAGS  5   -RR #:    262
+RECV          SEQ# 262 LEN 1007 FLAGS 16   -Data #:  262
+SEND MSG# 277 SEQ#   0 LEN   11 FLAGS  5   -RR #:    263
+RECV          SEQ# 263 LEN 1007 FLAGS 16   -Data #:  263
+SEND MSG# 278 SEQ#   0 LEN   11 FLAGS  5   -RR #:    264
+RECV          SEQ# 264 LEN 1007 FLAGS 16   -Data #:  264
+SEND MSG# 279 SEQ#   0 LEN   11 FLAGS  5   -RR #:    265
+RECV          SEQ# 265 LEN 1007 FLAGS 16   -Data #:  265
+rent: 248, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 247, Current: 248, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 248
+Sending RR and SREJ in buffer:249 
+~~~~~Expected: 249  ~~~~~~~ 
+~~~~~~~~~~~Highest: 248, Current: 249, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 248, Current: 249, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 249
+Sending RR and SREJ in buffer:250 
+~~~~~Expected: 250  ~~~~~~~ 
+~~~~~~~~~~~Highest: 249, Current: 250, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 249, Current: 250, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 250
+Sending RR and SREJ in buffer:251 
+~~~~~Expected: 251  ~~~~~~~ 
+~~~~~~~~~~~Highest: 250, Current: 251, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 250, Current: 251, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 251
+Sending RR and SREJ in buffer:252 
+~~~~~Expected: 252  ~~~~~~~ 
+~~~~~~~~~~~Highest: 251, Current: 252, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 251, Current: 252, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 252
+Sending RR and SREJ in buffer:253 
+~~~~~Expected: 253  ~~~~~~~ 
+~~~~~~~~~~~Highest: 252, Current: 253, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 252, Current: 253, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 253
+Sending RR and SREJ in buffer:254 
+~~~~~Expected: 254  ~~~~~~~ 
+~~~~~~~~~~~Highest: 253, Current: 254, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 253, Current: 254, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 254
+Sending RR and SREJ in buffer:255 
+~~~~~Expected: 255  ~~~~~~~ 
+~~~~~~~~~~~Highest: 254, Current: 255, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 254, Current: 255, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 255  ~~~~~~~ 
+~~~~~~~~~~~Highest: 254, Current: 255, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 254, Current: 255, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 255
+Sending RR and SREJ in buffer:256 
+~~~~~Expected: 256  ~~~~~~~ 
+~~~~~~~~~~~Highest: 255, Current: 256, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 255, Current: 256, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 256
+Sending RR and SREJ in buffer:257 
+~~~~~Expected: 257  ~~~~~~~ 
+~~~~~~~~~~~Highest: 256, Current: 257, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 256, Current: 257, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 257
+Sending RR and SREJ in buffer:258 
+~~~~~Expected: 258  ~~~~~~~ 
+~~~~~~~~~~~Highest: 257, Current: 258, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 257, Current: 258, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 258
+Sending RR and SREJ in buffer:259 
+~~~~~Expected: 259  ~~~~~~~ 
+~~~~~~~~~~~Highest: 258, Current: 259, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 258, Current: 259, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 259
+Sending RR and SREJ in buffer:260 
+~~~~~Expected: 260  ~~~~~~~ 
+~~~~~~~~~~~Highest: 259, Current: 260, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 259, Current: 260, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 260
+Sending RR and SREJ in buffer:261 
+~~~~~Expected: 261  ~~~~~~~ 
+~~~~~~~~~~~Highest: 260, Current: 261, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 260, Current: 261, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 261
+Sending RR and SREJ in buffer:262 
+~~~~~Expected: 262  ~~~~~~~ 
+~~~~~~~~~~~Highest: 261, Current: 262, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 261, Current: 262, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 262
+Sending RR and SREJ in buffer:263 
+~~~~~Expected: 263  ~~~~~~~ 
+~~~~~~~~~~~Highest: 262, Current: 263, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 262, Current: 263, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 263
+Sending RR and SREJ in buffer:264 
+~~~~~Expected: 264  ~~~~~~~ 
+~~~~~~~~~~~Highest: 263, Current: 264, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 263, Current: 264, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 264
+Sending RR and SREJ in buffer:265 
+~~~~~Expected: 265  ~~~~~~~ 
+~~~~~~~~~~~Highest: 264, Current: 265, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 264, Current: 265, Lowest: 0~~~~~~SEND MSG# 280 SEQ#   0 LEN   11 FLAGS  5   -RR #:    266
+RECV          SEQ# 266 LEN 1007 FLAGS 16   -Data #:  266
+SEND MSG# 281 SEQ#   0 LEN   11 FLAGS  5   -RR #:    267
+RECV          SEQ# 267 LEN 1007 FLAGS 16   -Data #:  267
+SEND MSG# 282 SEQ#   0 LEN   11 FLAGS  5   -RR #:    268
+RECV          SEQ# 268 LEN 1007 FLAGS 16   -Data #:  268
+SEND MSG# 283 SEQ#   0 LEN   11 FLAGS  5   -RR #:    269
+RECV          SEQ# 269 LEN 1007 FLAGS 16   -Data #:  269
+SEND MSG# 284 SEQ#   0 LEN   11 FLAGS  5   -RR #:    270
+RECV          SEQ# 270 LEN 1007 FLAGS 16   -Data #:  270
+SEND MSG# 285 SEQ#   0 LEN   11 FLAGS  5   -RR #:    271
+RECV          SEQ# 271 LEN 1007 FLAGS 16   -Data #:  271
+SEND MSG# 286 SEQ#   0 LEN   11 FLAGS  5   -RR #:    272 - FLIPPED BITS 
+RECV          SEQ# 272 LEN 1007 FLAGS 16   -Data #:  272
+SEND MSG# 287 SEQ#   0 LEN   11 FLAGS  5   -RR #:    273
+RECV          SEQ# 273 LEN 1007 FLAGS 16   -Data #:  273
+SEND MSG# 288 SEQ#   0 LEN   11 FLAGS  5   -RR #:    274
+RECV          SEQ# 271 LEN 1007 FLAGS 17   -Resent Data #:  271
+SEND MSG# 289 SEQ#   0 LEN   11 FLAGS  5   -RR #:    274
+RECV          SEQ# 274 LEN 1007 FLAGS 16   -Data #:  274
+SEND MSG# 290 SEQ#   0 LEN   11 FLAGS  5   -RR #:    275
+RECV          SEQ# 275 LEN 1007 FLAGS 16   -Data #:  275
+SEND MSG# 291 SEQ#   0 LEN   11 FLAGS  5   -RR #:    276
+RECV          SEQ# 276 LEN 1007 FLAGS 16   -Data #:  276
+SEND MSG# 292 SEQ#   0 LEN   11 FLAGS  5   -RR #:    277
+RECV          SEQ# 277 LEN 1007 FLAGS 16   -Data #:  277
+SEND MSG# 293 SEQ#   0 LEN   11 FLAGS  5   -RR #:    278
+RECV          SEQ# 278 LEN 1007 FLAGS 16   -Data #:  278
+SEND MSG# 294 SEQ#   0 LEN   11 FLAGS  5   -RR #:    279 - FLIPPED BITS 
+RECV          SEQ# 279 LEN 1007 FLAGS 16   -Data #:  279
+SEND MSG# 295 SEQ#   0 LEN   11 FLAGS  5   -RR #:    280
+RECV          SEQ# 280 LEN 1007 FLAGS 16   -Data #:  280
+SEND MSG# 296 SEQ#   0 LEN   11 FLAGS  5   -RR #:    281
+RECV          SEQ# 281 LEN 1007 FLAGS 16   -Data #:  281
+SEND MSG# 297 SEQ#   0 LEN   11 FLAGS  5   -RR #:    282
+RECV          SEQ# 278 LEN 1007 FLAGS 17   -Resent Data #:  278
+SEND MSG# 298 SEQ#   0 LEN   11 FLAGS  5   -RR #:    282
+~~~~~~~~~~~
+Writing inorder 265
+Sending RR and SREJ in buffer:266 
+~~~~~Expected: 266  ~~~~~~~ 
+~~~~~~~~~~~Highest: 265, Current: 266, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 265, Current: 266, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 266
+Sending RR and SREJ in buffer:267 
+~~~~~Expected: 267  ~~~~~~~ 
+~~~~~~~~~~~Highest: 266, Current: 267, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 266, Current: 267, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 267
+Sending RR and SREJ in buffer:268 
+~~~~~Expected: 268  ~~~~~~~ 
+~~~~~~~~~~~Highest: 267, Current: 268, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 267, Current: 268, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 268
+Sending RR and SREJ in buffer:269 
+~~~~~Expected: 269  ~~~~~~~ 
+~~~~~~~~~~~Highest: 268, Current: 269, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 268, Current: 269, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 269
+Sending RR and SREJ in buffer:270 
+~~~~~Expected: 270  ~~~~~~~ 
+~~~~~~~~~~~Highest: 269, Current: 270, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 269, Current: 270, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 270
+Sending RR and SREJ in buffer:271 
+~~~~~Expected: 271  ~~~~~~~ 
+~~~~~~~~~~~Highest: 270, Current: 271, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 270, Current: 271, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 271
+Sending RR and SREJ in buffer:272 
+~~~~~Expected: 272  ~~~~~~~ 
+~~~~~~~~~~~Highest: 271, Current: 272, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 271, Current: 272, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 272
+Sending RR and SREJ in buffer:273 
+~~~~~Expected: 273  ~~~~~~~ 
+~~~~~~~~~~~Highest: 272, Current: 273, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 272, Current: 273, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 273
+Sending RR and SREJ in buffer:274 
+~~~~~Expected: 274  ~~~~~~~ 
+~~~~~~~~~~~Highest: 273, Current: 274, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 273, Current: 274, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 274  ~~~~~~~ 
+~~~~~~~~~~~Highest: 273, Current: 274, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 273, Current: 274, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 274
+Sending RR and SREJ in buffer:275 
+~~~~~Expected: 275  ~~~~~~~ 
+~~~~~~~~~~~Highest: 274, Current: 275, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 274, Current: 275, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 275
+Sending RR and SREJ in buffer:276 
+~~~~~Expected: 276  ~~~~~~~ 
+~~~~~~~~~~~Highest: 275, Current: 276, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 275, Current: 276, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 276
+Sending RR and SREJ in buffer:277 
+~~~~~Expected: 277  ~~~~~~~ 
+~~~~~~~~~~~Highest: 276, Current: 277, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 276, Current: 277, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 277
+Sending RR and SREJ in buffer:278 
+~~~~~Expected: 278  ~~~~~~~ 
+~~~~~~~~~~~Highest: 277, Current: 278, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 277, Current: 278, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 278
+Sending RR and SREJ in buffer:279 
+~~~~~Expected: 279  ~~~~~~~ 
+~~~~~~~~~~~Highest: 278, Current: 279, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 278, Current: 279, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 279
+Sending RR and SREJ in buffer:280 
+~~~~~Expected: 280  ~~~~~~~ 
+~~~~~~~~~~~Highest: 279, Current: 280, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 279, Current: 280, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 280
+Sending RR and SREJ in buffer:281 
+~~~~~Expected: 281  ~~~~~~~ 
+~~~~~~~~~~~Highest: 280, Current: 281, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 280, Current: 281, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 281
+Sending RR and SREJ in buffer:282 
+~~~~~Expected: 282  ~~~~~~~ 
+~~~~~~~~~~~Highest: 281, Current: 282, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 281, Current: 282, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 282  ~~~~~~~ 
+~~~~~~~~~~~Highest: 281, Current: 282, Lowest: 0~~~~~~~~~~~~RECV          SEQ# 282 LEN 1007 FLAGS 16   -Data #:  282
+SEND MSG# 299 SEQ#   0 LEN   11 FLAGS  5   -RR #:    283
+RECV          SEQ# 283 LEN 1007 FLAGS 16   -Data #:  283
+SEND MSG# 300 SEQ#   0 LEN   11 FLAGS  5   -RR #:    284
+RECV          SEQ# 284 LEN 1007 FLAGS 16   -Data #:  284
+SEND MSG# 301 SEQ#   0 LEN   11 FLAGS  5   -RR #:    285
+RECV          SEQ# 285 LEN 1007 FLAGS 16   -Data #:  285
+SEND MSG# 302 SEQ#   0 LEN   11 FLAGS  5   -RR #:    286
+RECV          SEQ# 286 LEN 1007 FLAGS 16   -Data #:  286
+SEND MSG# 303 SEQ#   0 LEN   11 FLAGS  5   -RR #:    287
+RECV          SEQ# 287 LEN 1007 FLAGS 16   -Data #:  287
+SEND MSG# 304 SEQ#   0 LEN   11 FLAGS  5   -RR #:    288
+RECV          SEQ# 288 LEN 1007 FLAGS 16   -Data #:  288
+SEND MSG# 305 SEQ#   0 LEN   11 FLAGS  5   -RR #:    289
+RECV          SEQ# 289 LEN 1007 FLAGS 16   -Data #:  289
+SEND MSG# 306 SEQ#   0 LEN   11 FLAGS  5   -RR #:    290
+RECV          SEQ# 290 LEN 1007 FLAGS 16   -Data #:  290
+SEND MSG# 307 SEQ#   0 LEN   11 FLAGS  5   -RR #:    291
+RECV          SEQ# 291 LEN 1007 FLAGS 16   -Data #:  291
+SEND MSG# 308 SEQ#   0 LEN   11 FLAGS  5   -RR #:    292
+RECV          SEQ# 292 LEN 1007 FLAGS 16   -Data #:  292
+SEND MSG# 309 SEQ#   0 LEN   11 FLAGS  5   -RR #:    293
+RECV          SEQ# 293 LEN 1007 FLAGS 16   -Data #:  293
+SEND MSG# 310 SEQ#   0 LEN   11 FLAGS  5   -RR #:    294
+RECV          SEQ# 294 LEN 1007 FLAGS 16   -Data #:  294
+SEND MSG# 311 SEQ#   0 LEN   11 FLAGS  5   -RR #:    295
+RECV          SEQ# 295 LEN 1007 FLAGS 16   -Data #:  295
+SEND MSG# 312 SEQ#   0 LEN   11 FLAGS  5   -RR #:    296
+RECV          SEQ# 296 LEN 1007 FLAGS 16   -Data #:  296
+SEND MSG# 313 SEQ#   0 LEN   11 FLAGS  5   -RR #:    297
+RECV          SEQ# 297 LEN 1007 FLAGS 16   -Data #:  297
+SEND MSG# 314 SEQ#   0 LEN   11 FLAGS  5   -RR #:    298
+RECV          SEQ# 298 LEN 1007 FLAGS 16   -Data #:  298
+SEND MSG# 315 SEQ#   0 LEN   11 FLAGS  5   -RR #:    299
+RECV          SEQ# 299 LEN 1007 FLAGS 16   -Data #:  299
+SEND MSG# 316 SEQ#   0 LEN   11 FLAGS  5   -RR #:    300
+RECV          SEQ# 300 LEN 1007 FLAGS 16   -Data #:  300
+~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 281, Current: 282, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 282
+Sending RR and SREJ in buffer:283 
+~~~~~Expected: 283  ~~~~~~~ 
+~~~~~~~~~~~Highest: 282, Current: 283, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 282, Current: 283, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 283
+Sending RR and SREJ in buffer:284 
+~~~~~Expected: 284  ~~~~~~~ 
+~~~~~~~~~~~Highest: 283, Current: 284, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 283, Current: 284, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 284
+Sending RR and SREJ in buffer:285 
+~~~~~Expected: 285  ~~~~~~~ 
+~~~~~~~~~~~Highest: 284, Current: 285, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 284, Current: 285, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 285
+Sending RR and SREJ in buffer:286 
+~~~~~Expected: 286  ~~~~~~~ 
+~~~~~~~~~~~Highest: 285, Current: 286, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 285, Current: 286, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 286
+Sending RR and SREJ in buffer:287 
+~~~~~Expected: 287  ~~~~~~~ 
+~~~~~~~~~~~Highest: 286, Current: 287, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 286, Current: 287, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 287
+Sending RR and SREJ in buffer:288 
+~~~~~Expected: 288  ~~~~~~~ 
+~~~~~~~~~~~Highest: 287, Current: 288, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 287, Current: 288, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 288
+Sending RR and SREJ in buffer:289 
+~~~~~Expected: 289  ~~~~~~~ 
+~~~~~~~~~~~Highest: 288, Current: 289, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 288, Current: 289, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 289
+Sending RR and SREJ in buffer:290 
+~~~~~Expected: 290  ~~~~~~~ 
+~~~~~~~~~~~Highest: 289, Current: 290, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 289, Current: 290, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 290
+Sending RR and SREJ in buffer:291 
+~~~~~Expected: 291  ~~~~~~~ 
+~~~~~~~~~~~Highest: 290, Current: 291, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 290, Current: 291, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 291
+Sending RR and SREJ in buffer:292 
+~~~~~Expected: 292  ~~~~~~~ 
+~~~~~~~~~~~Highest: 291, Current: 292, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 291, Current: 292, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 292
+Sending RR and SREJ in buffer:293 
+~~~~~Expected: 293  ~~~~~~~ 
+~~~~~~~~~~~Highest: 292, Current: 293, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 292, Current: 293, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 293
+Sending RR and SREJ in buffer:294 
+~~~~~Expected: 294  ~~~~~~~ 
+~~~~~~~~~~~Highest: 293, Current: 294, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 293, Current: 294, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 294
+Sending RR and SREJ in buffer:295 
+~~~~~Expected: 295  ~~~~~~~ 
+~~~~~~~~~~~Highest: 294, Current: 295, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 294, Current: 295, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 295
+Sending RR and SREJ in buffer:296 
+~~~~~Expected: 296  ~~~~~~~ 
+~~~~~~~~~~~Highest: 295, Current: 296, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 295, Current: 296, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 296
+Sending RR and SREJ in buffer:297 
+~~~~~Expected: 297  ~~~~~~~ 
+~~~~~~~~~~~Highest: 296, Current: 297, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 296, Current: 297, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 297
+Sending RR and SREJ in buffer:298 
+~~~~~Expected: 298  ~~~~~~~ 
+~~~~~~~~~~~Highest: 297, Current: 298, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 297, Current: 298, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 298
+Sending RR and SREJ in buffer:299 
+~~~~~Expected: 299  ~~~~~~~ 
+~~~~~~~~~~~Highest: 298, Current: 299, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 298, Current: 299, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 299
+Sending RR and SREJ in buffer:300 
+~~~~~Expected: 300  ~~~~~~~ 
+~~~~~~~~~~~Highest: 299, Current: 300, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 299, CurrenSEND MSG# 317 SEQ#   0 LEN   11 FLAGS  5   -RR #:    301
+RECV          SEQ# 301 LEN 1007 FLAGS 16   -Data #:  301
+SEND MSG# 318 SEQ#   0 LEN   11 FLAGS  5   -RR #:    302
+RECV          SEQ# 302 LEN 1007 FLAGS 16   -Data #:  302
+SEND MSG# 319 SEQ#   0 LEN   11 FLAGS  5   -RR #:    303
+RECV          SEQ# 303 LEN 1007 FLAGS 16   -Data #:  303
+SEND MSG# 320 SEQ#   0 LEN   11 FLAGS  5   -RR #:    304
+RECV          SEQ# 304 LEN 1007 FLAGS 16   -Data #:  304
+SEND MSG# 321 SEQ#   0 LEN   11 FLAGS  5   -RR #:    305
+RECV          SEQ# 305 LEN 1007 FLAGS 16   -Data #:  305
+SEND MSG# 322 SEQ#   0 LEN   11 FLAGS  5   -RR #:    306
+RECV          SEQ# 306 LEN 1007 FLAGS 16   -Data #:  306
+SEND MSG# 323 SEQ#   0 LEN   11 FLAGS  5   -RR #:    307
+RECV          SEQ# 307 LEN 1007 FLAGS 16   -Data #:  307
+SEND MSG# 324 SEQ#   0 LEN   11 FLAGS  5   -RR #:    308 - DROPPED 
+RECV          SEQ# 308 LEN 1007 FLAGS 16   -Data #:  308
+SEND MSG# 325 SEQ#   0 LEN   11 FLAGS  5   -RR #:    309
+RECV          SEQ# 309 LEN 1007 FLAGS 16   -Data #:  309
+SEND MSG# 326 SEQ#   0 LEN   11 FLAGS  5   -RR #:    310 - FLIPPED BITS 
+RECV          SEQ# 310 LEN 1007 FLAGS 16   -Data #:  310
+SEND MSG# 327 SEQ#   0 LEN   11 FLAGS  5   -RR #:    311
+RECV          SEQ# 309 LEN 1007 FLAGS 17   -Resent Data #:  309
+SEND MSG# 328 SEQ#   0 LEN   11 FLAGS  5   -RR #:    311
+RECV          SEQ# 311 LEN 1007 FLAGS 16   -Data #:  311
+SEND MSG# 329 SEQ#   0 LEN   11 FLAGS  5   -RR #:    312 - FLIPPED BITS 
+RECV          SEQ# 312 LEN 1007 FLAGS 16   -Data #:  312
+SEND MSG# 330 SEQ#   0 LEN   11 FLAGS  5   -RR #:    313
+RECV          SEQ# 311 LEN 1007 FLAGS 17   -Resent Data #:  311
+SEND MSG# 331 SEQ#   0 LEN   11 FLAGS  5   -RR #:    313
+RECV          SEQ# 313 LEN 1007 FLAGS 16   -Data #:  313
+SEND MSG# 332 SEQ#   0 LEN   11 FLAGS  5   -RR #:    314
+RECV          SEQ# 314 LEN 1007 FLAGS 16   -Data #:  314
+SEND MSG# 333 SEQ#   0 LEN   11 FLAGS  5   -RR #:    315
+RECV          SEQ# 315 LEN 1007 FLAGS 16   -Data #:  315
+SEND MSG# 334 SEQ#   0 LEN   11 FLAGS  5   -RR #:    316
+RECV          SEQ# 316 LEN 1007 FLAGS 16   -Data #:  316
+SEND MSG# 335 SEQ#   0 LEN   11 FLAGS  5   -RR #:    317
+t: 300, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 300
+Sending RR and SREJ in buffer:301 
+~~~~~Expected: 301  ~~~~~~~ 
+~~~~~~~~~~~Highest: 300, Current: 301, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 300, Current: 301, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 301
+Sending RR and SREJ in buffer:302 
+~~~~~Expected: 302  ~~~~~~~ 
+~~~~~~~~~~~Highest: 301, Current: 302, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 301, Current: 302, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 302
+Sending RR and SREJ in buffer:303 
+~~~~~Expected: 303  ~~~~~~~ 
+~~~~~~~~~~~Highest: 302, Current: 303, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 302, Current: 303, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 303
+Sending RR and SREJ in buffer:304 
+~~~~~Expected: 304  ~~~~~~~ 
+~~~~~~~~~~~Highest: 303, Current: 304, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 303, Current: 304, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 304
+Sending RR and SREJ in buffer:305 
+~~~~~Expected: 305  ~~~~~~~ 
+~~~~~~~~~~~Highest: 304, Current: 305, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 304, Current: 305, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 305
+Sending RR and SREJ in buffer:306 
+~~~~~Expected: 306  ~~~~~~~ 
+~~~~~~~~~~~Highest: 305, Current: 306, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 305, Current: 306, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 306
+Sending RR and SREJ in buffer:307 
+~~~~~Expected: 307  ~~~~~~~ 
+~~~~~~~~~~~Highest: 306, Current: 307, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 306, Current: 307, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 307
+Sending RR and SREJ in buffer:308 
+~~~~~Expected: 308  ~~~~~~~ 
+~~~~~~~~~~~Highest: 307, Current: 308, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 307, Current: 308, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 308
+Sending RR and SREJ in buffer:309 
+~~~~~Expected: 309  ~~~~~~~ 
+~~~~~~~~~~~Highest: 308, Current: 309, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 308, Current: 309, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 309
+Sending RR and SREJ in buffer:310 
+~~~~~Expected: 310  ~~~~~~~ 
+~~~~~~~~~~~Highest: 309, Current: 310, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 309, Current: 310, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 310
+Sending RR and SREJ in buffer:311 
+~~~~~Expected: 311  ~~~~~~~ 
+~~~~~~~~~~~Highest: 310, Current: 311, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 310, Current: 311, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 311  ~~~~~~~ 
+~~~~~~~~~~~Highest: 310, Current: 311, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 310, Current: 311, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 311
+Sending RR and SREJ in buffer:312 
+~~~~~Expected: 312  ~~~~~~~ 
+~~~~~~~~~~~Highest: 311, Current: 312, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 311, Current: 312, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 312
+Sending RR and SREJ in buffer:313 
+~~~~~Expected: 313  ~~~~~~~ 
+~~~~~~~~~~~Highest: 312, Current: 313, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 312, Current: 313, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 313  ~~~~~~~ 
+~~~~~~~~~~~Highest: 312, Current: 313, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 312, Current: 313, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 313
+Sending RR and SREJ in buffer:314 
+~~~~~Expected: 314  ~~~~~~~ 
+~~~~~~~~~~~Highest: 313, Current: 314, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 313, Current: 314, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 314
+Sending RR and SREJ in buffer:315 
+~~~~~Expected: 315  ~~~~~~~ 
+~~~~~~~~~~~Highest: 314, Current: 315, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 314, Current: 315, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 315
+Sending RR and SREJ in buffer:316 
+~~~~~Expected: 316  ~~~~~~~ 
+~~~~~~~~~~~Highest: 315, Current: 316, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 315, Current: 316, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 316
+Sending RR and SREJ in buffer:317 
+~~~~~Expected: 317  ~~~~~~~ 
+~~~~~~~~~~~Highest: 316, Current: 317RECV          SEQ# 317 LEN 1007 FLAGS 16   -Data #:  317
+SEND MSG# 336 SEQ#   0 LEN   11 FLAGS  5   -RR #:    318 - FLIPPED BITS 
+RECV          SEQ# 318 LEN 1007 FLAGS 16   -Data #:  318
+SEND MSG# 337 SEQ#   0 LEN   11 FLAGS  5   -RR #:    319 - FLIPPED BITS 
+RECV          SEQ# 317 LEN 1007 FLAGS 17   -Resent Data #:  317
+SEND MSG# 338 SEQ#   0 LEN   11 FLAGS  5   -RR #:    319
+RECV          SEQ# 317 LEN 1007 FLAGS 17   -Resent Data #:  317
+SEND MSG# 339 SEQ#   0 LEN   11 FLAGS  5   -RR #:    319
+RECV          SEQ# 319 LEN 1007 FLAGS 16   -Data #:  319
+SEND MSG# 340 SEQ#   0 LEN   11 FLAGS  5   -RR #:    320
+RECV          SEQ# 320 LEN 1007 FLAGS 16   -Data #:  320
+SEND MSG# 341 SEQ#   0 LEN   11 FLAGS  5   -RR #:    321
+RECV          SEQ# 321 LEN 1007 FLAGS 16   -Data #:  321
+SEND MSG# 342 SEQ#   0 LEN   11 FLAGS  5   -RR #:    322
+RECV          SEQ# 322 LEN 1007 FLAGS 16   -Data #:  322
+SEND MSG# 343 SEQ#   0 LEN   11 FLAGS  5   -RR #:    323
+RECV          SEQ# 323 LEN 1007 FLAGS 16   -Data #:  323
+SEND MSG# 344 SEQ#   0 LEN   11 FLAGS  5   -RR #:    324
+RECV          SEQ# 324 LEN 1007 FLAGS 16   -Data #:  324
+SEND MSG# 345 SEQ#   0 LEN   11 FLAGS  5   -RR #:    325
+RECV          SEQ# 325 LEN 1007 FLAGS 16   -Data #:  325
+SEND MSG# 346 SEQ#   0 LEN   11 FLAGS  5   -RR #:    326
+RECV          SEQ# 326 LEN 1007 FLAGS 16   -Data #:  326
+SEND MSG# 347 SEQ#   0 LEN   11 FLAGS  5   -RR #:    327 - FLIPPED BITS 
+RECV          SEQ# 327 LEN 1007 FLAGS 16   -Data #:  327
+SEND MSG# 348 SEQ#   0 LEN   11 FLAGS  5   -RR #:    328
+RECV          SEQ# 326 LEN 1007 FLAGS 17   -Resent Data #:  326
+SEND MSG# 349 SEQ#   0 LEN   11 FLAGS  5   -RR #:    328
+RECV          SEQ# 328 LEN 1007 FLAGS 16   -Data #:  328
+SEND MSG# 350 SEQ#   0 LEN   11 FLAGS  5   -RR #:    329
+RECV          SEQ# 329 LEN 1007 FLAGS 16   -Data #:  329
+SEND MSG# 351 SEQ#   0 LEN   11 FLAGS  5   -RR #:    330
+RECV          SEQ# 330 LEN 1007 FLAGS 16   -Data #:  330
+SEND MSG# 352 SEQ#   0 LEN   11 FLAGS  5   -RR #:    331
+RECV          SEQ# 331 LEN 1007 FLAGS 16   -Data #:  331
+SEND MSG# 353 SEQ#   0 LEN   11 FLAGS  5   -RR #:    332 - DROPPED 
+RECV          SEQ# 332 LEN 1007 FLAGS 16   -Data #:  332
+SEND MSG# 354 SEQ#   0 LEN   11 FLAGS  5   -RR #:    333
+, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 316, Current: 317, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 317
+Sending RR and SREJ in buffer:318 
+~~~~~Expected: 318  ~~~~~~~ 
+~~~~~~~~~~~Highest: 317, Current: 318, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 317, Current: 318, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 318
+Sending RR and SREJ in buffer:319 
+~~~~~Expected: 319  ~~~~~~~ 
+~~~~~~~~~~~Highest: 318, Current: 319, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 318, Current: 319, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 319  ~~~~~~~ 
+~~~~~~~~~~~Highest: 318, Current: 319, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 318, Current: 319, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 319  ~~~~~~~ 
+~~~~~~~~~~~Highest: 318, Current: 319, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 318, Current: 319, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 319
+Sending RR and SREJ in buffer:320 
+~~~~~Expected: 320  ~~~~~~~ 
+~~~~~~~~~~~Highest: 319, Current: 320, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 319, Current: 320, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 320
+Sending RR and SREJ in buffer:321 
+~~~~~Expected: 321  ~~~~~~~ 
+~~~~~~~~~~~Highest: 320, Current: 321, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 320, Current: 321, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 321
+Sending RR and SREJ in buffer:322 
+~~~~~Expected: 322  ~~~~~~~ 
+~~~~~~~~~~~Highest: 321, Current: 322, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 321, Current: 322, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 322
+Sending RR and SREJ in buffer:323 
+~~~~~Expected: 323  ~~~~~~~ 
+~~~~~~~~~~~Highest: 322, Current: 323, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 322, Current: 323, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 323
+Sending RR and SREJ in buffer:324 
+~~~~~Expected: 324  ~~~~~~~ 
+~~~~~~~~~~~Highest: 323, Current: 324, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 323, Current: 324, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 324
+Sending RR and SREJ in buffer:325 
+~~~~~Expected: 325  ~~~~~~~ 
+~~~~~~~~~~~Highest: 324, Current: 325, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 324, Current: 325, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 325
+Sending RR and SREJ in buffer:326 
+~~~~~Expected: 326  ~~~~~~~ 
+~~~~~~~~~~~Highest: 325, Current: 326, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 325, Current: 326, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 326
+Sending RR and SREJ in buffer:327 
+~~~~~Expected: 327  ~~~~~~~ 
+~~~~~~~~~~~Highest: 326, Current: 327, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 326, Current: 327, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 327
+Sending RR and SREJ in buffer:328 
+~~~~~Expected: 328  ~~~~~~~ 
+~~~~~~~~~~~Highest: 327, Current: 328, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 327, Current: 328, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 328  ~~~~~~~ 
+~~~~~~~~~~~Highest: 327, Current: 328, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 327, Current: 328, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 328
+Sending RR and SREJ in buffer:329 
+~~~~~Expected: 329  ~~~~~~~ 
+~~~~~~~~~~~Highest: 328, Current: 329, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 328, Current: 329, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 329
+Sending RR and SREJ in buffer:330 
+~~~~~Expected: 330  ~~~~~~~ 
+~~~~~~~~~~~Highest: 329, Current: 330, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 329, Current: 330, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 330
+Sending RR and SREJ in buffer:331 
+~~~~~Expected: 331  ~~~~~~~ 
+~~~~~~~~~~~Highest: 330, Current: 331, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 330, Current: 331, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 331
+Sending RR and SREJ in buffer:332 
+~~~~~Expected: 332  ~~~~~~~ 
+~~~~~~~~~~~Highest: 331, Current: 332, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 331, Current: 332, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 332
+Sending RR and SREJ in buffer:333 
+~~~~~Expected: 333  ~~~~~~~ 
+~~~~~~~~~~~Highest: 332RECV          SEQ# 333 LEN 1007 FLAGS 16   -Data #:  333
+SEND MSG# 355 SEQ#   0 LEN   11 FLAGS  5   -RR #:    334
+RECV          SEQ# 334 LEN 1007 FLAGS 16   -Data #:  334
+SEND MSG# 356 SEQ#   0 LEN   11 FLAGS  5   -RR #:    335
+RECV          SEQ# 335 LEN 1007 FLAGS 16   -Data #:  335
+SEND MSG# 357 SEQ#   0 LEN   11 FLAGS  5   -RR #:    336
+RECV          SEQ# 336 LEN 1007 FLAGS 16   -Data #:  336
+SEND MSG# 358 SEQ#   0 LEN   11 FLAGS  5   -RR #:    337
+RECV          SEQ# 337 LEN 1007 FLAGS 16   -Data #:  337
+SEND MSG# 359 SEQ#   0 LEN   11 FLAGS  5   -RR #:    338
+RECV          SEQ# 338 LEN 1007 FLAGS 16   -Data #:  338
+SEND MSG# 360 SEQ#   0 LEN   11 FLAGS  5   -RR #:    339
+RECV          SEQ# 339 LEN 1007 FLAGS 16   -Data #:  339
+SEND MSG# 361 SEQ#   0 LEN   11 FLAGS  5   -RR #:    340
+RECV          SEQ# 340 LEN 1007 FLAGS 16   -Data #:  340
+SEND MSG# 362 SEQ#   0 LEN   11 FLAGS  5   -RR #:    341
+RECV          SEQ# 341 LEN 1007 FLAGS 16   -Data #:  341
+SEND MSG# 363 SEQ#   0 LEN   11 FLAGS  5   -RR #:    342
+RECV          SEQ# 342 LEN 1007 FLAGS 16   -Data #:  342
+SEND MSG# 364 SEQ#   0 LEN   11 FLAGS  5   -RR #:    343
+RECV          SEQ# 343 LEN 1007 FLAGS 16   -Data #:  343
+SEND MSG# 365 SEQ#   0 LEN   11 FLAGS  5   -RR #:    344
+RECV          SEQ# 344 LEN 1007 FLAGS 16   -Data #:  344
+SEND MSG# 366 SEQ#   0 LEN   11 FLAGS  5   -RR #:    345
+RECV          SEQ# 345 LEN 1007 FLAGS 16   -Data #:  345
+SEND MSG# 367 SEQ#   0 LEN   11 FLAGS  5   -RR #:    346
+RECV          SEQ# 346 LEN 1007 FLAGS 16   -Data #:  346
+SEND MSG# 368 SEQ#   0 LEN   11 FLAGS  5   -RR #:    347
+RECV          SEQ# 347 LEN 1007 FLAGS 16   -Data #:  347
+SEND MSG# 369 SEQ#   0 LEN   11 FLAGS  5   -RR #:    348
+RECV          SEQ# 348 LEN 1007 FLAGS 16   -Data #:  348
+SEND MSG# 370 SEQ#   0 LEN   11 FLAGS  5   -RR #:    349 - DROPPED 
+RECV          SEQ# 349 LEN 1007 FLAGS 16   -Data #:  349
+SEND MSG# 371 SEQ#   0 LEN   11 FLAGS  5   -RR #:    350
+RECV          SEQ# 350 LEN 1007 FLAGS 16   -Data #:  350
+SEND MSG# 372 SEQ#   0 LEN   11 FLAGS  5   -RR #:    351
+, Current: 333, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 332, Current: 333, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 333
+Sending RR and SREJ in buffer:334 
+~~~~~Expected: 334  ~~~~~~~ 
+~~~~~~~~~~~Highest: 333, Current: 334, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 333, Current: 334, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 334
+Sending RR and SREJ in buffer:335 
+~~~~~Expected: 335  ~~~~~~~ 
+~~~~~~~~~~~Highest: 334, Current: 335, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 334, Current: 335, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 335
+Sending RR and SREJ in buffer:336 
+~~~~~Expected: 336  ~~~~~~~ 
+~~~~~~~~~~~Highest: 335, Current: 336, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 335, Current: 336, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 336
+Sending RR and SREJ in buffer:337 
+~~~~~Expected: 337  ~~~~~~~ 
+~~~~~~~~~~~Highest: 336, Current: 337, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 336, Current: 337, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 337
+Sending RR and SREJ in buffer:338 
+~~~~~Expected: 338  ~~~~~~~ 
+~~~~~~~~~~~Highest: 337, Current: 338, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 337, Current: 338, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 338
+Sending RR and SREJ in buffer:339 
+~~~~~Expected: 339  ~~~~~~~ 
+~~~~~~~~~~~Highest: 338, Current: 339, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 338, Current: 339, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 339
+Sending RR and SREJ in buffer:340 
+~~~~~Expected: 340  ~~~~~~~ 
+~~~~~~~~~~~Highest: 339, Current: 340, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 339, Current: 340, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 340
+Sending RR and SREJ in buffer:341 
+~~~~~Expected: 341  ~~~~~~~ 
+~~~~~~~~~~~Highest: 340, Current: 341, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 340, Current: 341, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 341
+Sending RR and SREJ in buffer:342 
+~~~~~Expected: 342  ~~~~~~~ 
+~~~~~~~~~~~Highest: 341, Current: 342, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 341, Current: 342, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 342
+Sending RR and SREJ in buffer:343 
+~~~~~Expected: 343  ~~~~~~~ 
+~~~~~~~~~~~Highest: 342, Current: 343, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 342, Current: 343, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 343
+Sending RR and SREJ in buffer:344 
+~~~~~Expected: 344  ~~~~~~~ 
+~~~~~~~~~~~Highest: 343, Current: 344, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 343, Current: 344, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 344
+Sending RR and SREJ in buffer:345 
+~~~~~Expected: 345  ~~~~~~~ 
+~~~~~~~~~~~Highest: 344, Current: 345, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 344, Current: 345, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 345
+Sending RR and SREJ in buffer:346 
+~~~~~Expected: 346  ~~~~~~~ 
+~~~~~~~~~~~Highest: 345, Current: 346, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 345, Current: 346, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 346
+Sending RR and SREJ in buffer:347 
+~~~~~Expected: 347  ~~~~~~~ 
+~~~~~~~~~~~Highest: 346, Current: 347, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 346, Current: 347, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 347
+Sending RR and SREJ in buffer:348 
+~~~~~Expected: 348  ~~~~~~~ 
+~~~~~~~~~~~Highest: 347, Current: 348, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 347, Current: 348, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 348
+Sending RR and SREJ in buffer:349 
+~~~~~Expected: 349  ~~~~~~~ 
+~~~~~~~~~~~Highest: 348, Current: 349, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 348, Current: 349, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 349
+Sending RR and SREJ in buffer:350 
+~~~~~Expected: 350  ~~~~~~~ 
+~~~~~~~~~~~Highest: 349, Current: 350, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 349, Current: 350, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 350
+Sending RR and SREJ in buffer:351 
+~~~~~Expected: 351  ~~~~~~~ 
+~~~~~~~~~~~Highest: 350, Current: 351, Lowest: 0~~~~~~~~~~~~~~~~~
+INORECV          SEQ# 351 LEN 1007 FLAGS 16   -Data #:  351
+SEND MSG# 373 SEQ#   0 LEN   11 FLAGS  5   -RR #:    352
+RECV          SEQ# 352 LEN 1007 FLAGS 16   -Data #:  352
+SEND MSG# 374 SEQ#   0 LEN   11 FLAGS  5   -RR #:    353 - DROPPED 
+RECV          SEQ# 353 LEN 1007 FLAGS 16   -Data #:  353
+SEND MSG# 375 SEQ#   0 LEN   11 FLAGS  5   -RR #:    354
+RECV          SEQ# 354 LEN 1007 FLAGS 16   -Data #:  354
+SEND MSG# 376 SEQ#   0 LEN   11 FLAGS  5   -RR #:    355
+RECV          SEQ# 355 LEN 1007 FLAGS 16   -Data #:  355
+SEND MSG# 377 SEQ#   0 LEN   11 FLAGS  5   -RR #:    356 - DROPPED 
+RECV          SEQ# 356 LEN 1007 FLAGS 16   -Data #:  356
+SEND MSG# 378 SEQ#   0 LEN   11 FLAGS  5   -RR #:    357
+RECV          SEQ# 357 LEN 1007 FLAGS 16   -Data #:  357
+SEND MSG# 379 SEQ#   0 LEN   11 FLAGS  5   -RR #:    358
+RECV          SEQ# 358 LEN 1007 FLAGS 16   -Data #:  358
+SEND MSG# 380 SEQ#   0 LEN   11 FLAGS  5   -RR #:    359
+RECV          SEQ# 359 LEN 1007 FLAGS 16   -Data #:  359
+SEND MSG# 381 SEQ#   0 LEN   11 FLAGS  5   -RR #:    360 - FLIPPED BITS 
+RECV          SEQ# 360 LEN 1007 FLAGS 16   -Data #:  360
+SEND MSG# 382 SEQ#   0 LEN   11 FLAGS  5   -RR #:    361 - FLIPPED BITS 
+RECV          SEQ# 359 LEN 1007 FLAGS 17   -Resent Data #:  359
+SEND MSG# 383 SEQ#   0 LEN   11 FLAGS  5   -RR #:    361
+RECV          SEQ# 359 LEN 1007 FLAGS 17   -Resent Data #:  359
+SEND MSG# 384 SEQ#   0 LEN   11 FLAGS  5   -RR #:    361
+RECV          SEQ# 361 LEN 1007 FLAGS 16   -Data #:  361
+SEND MSG# 385 SEQ#   0 LEN   11 FLAGS  5   -RR #:    362
+RECV          SEQ# 362 LEN 1007 FLAGS 16   -Data #:  362
+SEND MSG# 386 SEQ#   0 LEN   11 FLAGS  5   -RR #:    363
+RECV          SEQ# 363 LEN 1007 FLAGS 16   -Data #:  363
+SEND MSG# 387 SEQ#   0 LEN   11 FLAGS  5   -RR #:    364
+RECV          SEQ# 364 LEN 1007 FLAGS 16   -Data #:  364
+SEND MSG# 388 SEQ#   0 LEN   11 FLAGS  5   -RR #:    365
+RECV          SEQ# 365 LEN 1007 FLAGS 16   -Data #:  365
+SEND MSG# 389 SEQ#   0 LEN   11 FLAGS  5   -RR #:    366
+RECV          SEQ# 366 LEN 1007 FLAGS 16   -Data #:  366
+SEND MSG# 390 SEQ#   0 LEN   11 FLAGS  5   -RR #:    367
+RECV          SEQ# 367 LEN 1007 FLAGS 16   -Data #:  367
+SEND MSG# 391 SEQ#   0 LEN   11 FLAGS  5   -RR #:    368
+RDER:
+~~~~~~~~~~~Highest: 350, Current: 351, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 351
+Sending RR and SREJ in buffer:352 
+~~~~~Expected: 352  ~~~~~~~ 
+~~~~~~~~~~~Highest: 351, Current: 352, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 351, Current: 352, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 352
+Sending RR and SREJ in buffer:353 
+~~~~~Expected: 353  ~~~~~~~ 
+~~~~~~~~~~~Highest: 352, Current: 353, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 352, Current: 353, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 353
+Sending RR and SREJ in buffer:354 
+~~~~~Expected: 354  ~~~~~~~ 
+~~~~~~~~~~~Highest: 353, Current: 354, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 353, Current: 354, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 354
+Sending RR and SREJ in buffer:355 
+~~~~~Expected: 355  ~~~~~~~ 
+~~~~~~~~~~~Highest: 354, Current: 355, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 354, Current: 355, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 355
+Sending RR and SREJ in buffer:356 
+~~~~~Expected: 356  ~~~~~~~ 
+~~~~~~~~~~~Highest: 355, Current: 356, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 355, Current: 356, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 356
+Sending RR and SREJ in buffer:357 
+~~~~~Expected: 357  ~~~~~~~ 
+~~~~~~~~~~~Highest: 356, Current: 357, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 356, Current: 357, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 357
+Sending RR and SREJ in buffer:358 
+~~~~~Expected: 358  ~~~~~~~ 
+~~~~~~~~~~~Highest: 357, Current: 358, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 357, Current: 358, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 358
+Sending RR and SREJ in buffer:359 
+~~~~~Expected: 359  ~~~~~~~ 
+~~~~~~~~~~~Highest: 358, Current: 359, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 358, Current: 359, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 359
+Sending RR and SREJ in buffer:360 
+~~~~~Expected: 360  ~~~~~~~ 
+~~~~~~~~~~~Highest: 359, Current: 360, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 359, Current: 360, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 360
+Sending RR and SREJ in buffer:361 
+~~~~~Expected: 361  ~~~~~~~ 
+~~~~~~~~~~~Highest: 360, Current: 361, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 360, Current: 361, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 361  ~~~~~~~ 
+~~~~~~~~~~~Highest: 360, Current: 361, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 360, Current: 361, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 361  ~~~~~~~ 
+~~~~~~~~~~~Highest: 360, Current: 361, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 360, Current: 361, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 361
+Sending RR and SREJ in buffer:362 
+~~~~~Expected: 362  ~~~~~~~ 
+~~~~~~~~~~~Highest: 361, Current: 362, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 361, Current: 362, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 362
+Sending RR and SREJ in buffer:363 
+~~~~~Expected: 363  ~~~~~~~ 
+~~~~~~~~~~~Highest: 362, Current: 363, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 362, Current: 363, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 363
+Sending RR and SREJ in buffer:364 
+~~~~~Expected: 364  ~~~~~~~ 
+~~~~~~~~~~~Highest: 363, Current: 364, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 363, Current: 364, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 364
+Sending RR and SREJ in buffer:365 
+~~~~~Expected: 365  ~~~~~~~ 
+~~~~~~~~~~~Highest: 364, Current: 365, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 364, Current: 365, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 365
+Sending RR and SREJ in buffer:366 
+~~~~~Expected: 366  ~~~~~~~ 
+~~~~~~~~~~~Highest: 365, Current: 366, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 365, Current: 366, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 366
+Sending RR and SREJ in buffer:367 
+~~~~~Expected: 367  ~~~~~~~ 
+~~~~~~~~~~~Highest: 366, Current: 367, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 366, Current: 367, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 367
+Sending RR and SREJ in buffer:368 
+~~~~~Expected: 368  ~~~~~~~ 
+RECV          SEQ# 368 LEN 1007 FLAGS 16   -Data #:  368
+SEND MSG# 392 SEQ#   0 LEN   11 FLAGS  5   -RR #:    369
+RECV          SEQ# 369 LEN 1007 FLAGS 16   -Data #:  369
+SEND MSG# 393 SEQ#   0 LEN   11 FLAGS  5   -RR #:    370
+RECV          SEQ# 370 LEN 1007 FLAGS 16   -Data #:  370
+SEND MSG# 394 SEQ#   0 LEN   11 FLAGS  5   -RR #:    371
+RECV          SEQ# 371 LEN 1007 FLAGS 16   -Data #:  371
+SEND MSG# 395 SEQ#   0 LEN   11 FLAGS  5   -RR #:    372
+RECV          SEQ# 372 LEN 1007 FLAGS 16   -Data #:  372
+SEND MSG# 396 SEQ#   0 LEN   11 FLAGS  5   -RR #:    373
+RECV          SEQ# 373 LEN 1007 FLAGS 16   -Data #:  373
+SEND MSG# 397 SEQ#   0 LEN   11 FLAGS  5   -RR #:    374 - DROPPED 
+RECV          SEQ# 374 LEN 1007 FLAGS 16   -Data #:  374
+SEND MSG# 398 SEQ#   0 LEN   11 FLAGS  5   -RR #:    375 - FLIPPED BITS 
+RECV          SEQ# 375 LEN 1007 FLAGS 16   -Data #:  375
+SEND MSG# 399 SEQ#   0 LEN   11 FLAGS  5   -RR #:    376
+RECV          SEQ# 373 LEN 1007 FLAGS 17   -Resent Data #:  373
+SEND MSG# 400 SEQ#   0 LEN   11 FLAGS  5   -RR #:    376
+RECV          SEQ# 376 LEN 1007 FLAGS 16   -Data #:  376
+SEND MSG# 401 SEQ#   0 LEN   11 FLAGS  5   -RR #:    377
+RECV          SEQ# 377 LEN 1007 FLAGS 16   -Data #:  377
+SEND MSG# 402 SEQ#   0 LEN   11 FLAGS  5   -RR #:    378
+RECV          SEQ# 378 LEN 1007 FLAGS 16   -Data #:  378
+SEND MSG# 403 SEQ#   0 LEN   11 FLAGS  5   -RR #:    379
+RECV          SEQ# 379 LEN 1007 FLAGS 16   -Data #:  379
+SEND MSG# 404 SEQ#   0 LEN   11 FLAGS  5   -RR #:    380
+RECV          SEQ# 380 LEN 1007 FLAGS 16   -Data #:  380
+SEND MSG# 405 SEQ#   0 LEN   11 FLAGS  5   -RR #:    381
+RECV          SEQ# 381 LEN 1007 FLAGS 16   -Data #:  381
+SEND MSG# 406 SEQ#   0 LEN   11 FLAGS  5   -RR #:    382
+RECV          SEQ# 382 LEN 1007 FLAGS 16   -Data #:  382
+SEND MSG# 407 SEQ#   0 LEN   11 FLAGS  5   -RR #:    383
+RECV          SEQ# 383 LEN 1007 FLAGS 16   -Data #:  383
+SEND MSG# 408 SEQ#   0 LEN   11 FLAGS  5   -RR #:    384
+RECV          SEQ# 384 LEN 1007 FLAGS 16   -Data #:  384
+SEND MSG# 409 SEQ#   0 LEN   11 FLAGS  5   -RR #:    385
+RECV          SEQ# 385 LEN 1007 FLAGS 16   -Data #:  385
+~~~~~~~~~~~Highest: 367, Current: 368, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 367, Current: 368, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 368
+Sending RR and SREJ in buffer:369 
+~~~~~Expected: 369  ~~~~~~~ 
+~~~~~~~~~~~Highest: 368, Current: 369, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 368, Current: 369, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 369
+Sending RR and SREJ in buffer:370 
+~~~~~Expected: 370  ~~~~~~~ 
+~~~~~~~~~~~Highest: 369, Current: 370, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 369, Current: 370, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 370
+Sending RR and SREJ in buffer:371 
+~~~~~Expected: 371  ~~~~~~~ 
+~~~~~~~~~~~Highest: 370, Current: 371, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 370, Current: 371, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 371
+Sending RR and SREJ in buffer:372 
+~~~~~Expected: 372  ~~~~~~~ 
+~~~~~~~~~~~Highest: 371, Current: 372, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 371, Current: 372, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 372
+Sending RR and SREJ in buffer:373 
+~~~~~Expected: 373  ~~~~~~~ 
+~~~~~~~~~~~Highest: 372, Current: 373, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 372, Current: 373, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 373
+Sending RR and SREJ in buffer:374 
+~~~~~Expected: 374  ~~~~~~~ 
+~~~~~~~~~~~Highest: 373, Current: 374, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 373, Current: 374, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 374
+Sending RR and SREJ in buffer:375 
+~~~~~Expected: 375  ~~~~~~~ 
+~~~~~~~~~~~Highest: 374, Current: 375, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 374, Current: 375, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 375
+Sending RR and SREJ in buffer:376 
+~~~~~Expected: 376  ~~~~~~~ 
+~~~~~~~~~~~Highest: 375, Current: 376, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 375, Current: 376, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 376  ~~~~~~~ 
+~~~~~~~~~~~Highest: 375, Current: 376, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 375, Current: 376, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 376
+Sending RR and SREJ in buffer:377 
+~~~~~Expected: 377  ~~~~~~~ 
+~~~~~~~~~~~Highest: 376, Current: 377, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 376, Current: 377, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 377
+Sending RR and SREJ in buffer:378 
+~~~~~Expected: 378  ~~~~~~~ 
+~~~~~~~~~~~Highest: 377, Current: 378, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 377, Current: 378, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 378
+Sending RR and SREJ in buffer:379 
+~~~~~Expected: 379  ~~~~~~~ 
+~~~~~~~~~~~Highest: 378, Current: 379, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 378, Current: 379, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 379
+Sending RR and SREJ in buffer:380 
+~~~~~Expected: 380  ~~~~~~~ 
+~~~~~~~~~~~Highest: 379, Current: 380, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 379, Current: 380, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 380
+Sending RR and SREJ in buffer:381 
+~~~~~Expected: 381  ~~~~~~~ 
+~~~~~~~~~~~Highest: 380, Current: 381, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 380, Current: 381, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 381
+Sending RR and SREJ in buffer:382 
+~~~~~Expected: 382  ~~~~~~~ 
+~~~~~~~~~~~Highest: 381, Current: 382, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 381, Current: 382, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 382
+Sending RR and SREJ in buffer:383 
+~~~~~Expected: 383  ~~~~~~~ 
+~~~~~~~~~~~Highest: 382, Current: 383, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 382, Current: 383, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 383
+Sending RR and SREJ in buffer:384 
+~~~~~Expected: 384  ~~~~~~~ 
+~~~~~~~~~~~Highest: 383, Current: 384, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 383, Current: 384, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 384
+Sending RR and SREJ in buffer:385 
+~~~~~Expected: 385  ~~~~~~~ 
+~~~~~~~~~~~Highest: 384, Current: 385, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 384, CSEND MSG# 410 SEQ#   0 LEN   11 FLAGS  5   -RR #:    386 - DROPPED 
+RECV          SEQ# 386 LEN 1007 FLAGS 16   -Data #:  386
+SEND MSG# 411 SEQ#   0 LEN   11 FLAGS  5   -RR #:    387
+RECV          SEQ# 387 LEN 1007 FLAGS 16   -Data #:  387
+SEND MSG# 412 SEQ#   0 LEN   11 FLAGS  5   -RR #:    388
+RECV          SEQ# 388 LEN 1007 FLAGS 16   -Data #:  388
+SEND MSG# 413 SEQ#   0 LEN   11 FLAGS  5   -RR #:    389
+RECV          SEQ# 389 LEN 1007 FLAGS 16   -Data #:  389
+SEND MSG# 414 SEQ#   0 LEN   11 FLAGS  5   -RR #:    390
+RECV          SEQ# 390 LEN 1007 FLAGS 16   -Data #:  390
+SEND MSG# 415 SEQ#   0 LEN   11 FLAGS  5   -RR #:    391
+RECV          SEQ# 391 LEN 1007 FLAGS 16   -Data #:  391
+SEND MSG# 416 SEQ#   0 LEN   11 FLAGS  5   -RR #:    392
+RECV          SEQ# 392 LEN 1007 FLAGS 16   -Data #:  392
+SEND MSG# 417 SEQ#   0 LEN   11 FLAGS  5   -RR #:    393
+RECV          SEQ# 393 LEN 1007 FLAGS 16   -Data #:  393
+SEND MSG# 418 SEQ#   0 LEN   11 FLAGS  5   -RR #:    394 - FLIPPED BITS 
+RECV          SEQ# 394 LEN 1007 FLAGS 16   -Data #:  394
+SEND MSG# 419 SEQ#   0 LEN   11 FLAGS  5   -RR #:    395
+RECV          SEQ# 395 LEN 1007 FLAGS 16   -Data #:  395
+SEND MSG# 420 SEQ#   0 LEN   11 FLAGS  5   -RR #:    396
+RECV          SEQ# 393 LEN 1007 FLAGS 17   -Resent Data #:  393
+SEND MSG# 421 SEQ#   0 LEN   11 FLAGS  5   -RR #:    396
+RECV          SEQ# 396 LEN 1007 FLAGS 16   -Data #:  396
+SEND MSG# 422 SEQ#   0 LEN   11 FLAGS  5   -RR #:    397
+RECV          SEQ# 397 LEN 1007 FLAGS 16   -Data #:  397
+SEND MSG# 423 SEQ#   0 LEN   11 FLAGS  5   -RR #:    398
+RECV          SEQ# 398 LEN 1007 FLAGS 16   -Data #:  398
+SEND MSG# 424 SEQ#   0 LEN   11 FLAGS  5   -RR #:    399
+RECV          SEQ# 399 LEN 1007 FLAGS 16   -Data #:  399
+SEND MSG# 425 SEQ#   0 LEN   11 FLAGS  5   -RR #:    400
+RECV          SEQ# 400 LEN 1007 FLAGS 16   -Data #:  400
+SEND MSG# 426 SEQ#   0 LEN   11 FLAGS  5   -RR #:    401
+RECV          SEQ# 401 LEN 1007 FLAGS 16   -Data #:  401
+SEND MSG# 427 SEQ#   0 LEN   11 FLAGS  5   -RR #:    402
+RECV          SEQ# 402 LEN 1007 FLAGS 16   -Data #:  402
+SEND MSG# 428 SEQ#   0 LEN   11 FLAGS  5   -RR #:    403
+urrent: 385, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 385
+Sending RR and SREJ in buffer:386 
+~~~~~Expected: 386  ~~~~~~~ 
+~~~~~~~~~~~Highest: 385, Current: 386, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 385, Current: 386, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 386
+Sending RR and SREJ in buffer:387 
+~~~~~Expected: 387  ~~~~~~~ 
+~~~~~~~~~~~Highest: 386, Current: 387, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 386, Current: 387, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 387
+Sending RR and SREJ in buffer:388 
+~~~~~Expected: 388  ~~~~~~~ 
+~~~~~~~~~~~Highest: 387, Current: 388, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 387, Current: 388, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 388
+Sending RR and SREJ in buffer:389 
+~~~~~Expected: 389  ~~~~~~~ 
+~~~~~~~~~~~Highest: 388, Current: 389, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 388, Current: 389, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 389
+Sending RR and SREJ in buffer:390 
+~~~~~Expected: 390  ~~~~~~~ 
+~~~~~~~~~~~Highest: 389, Current: 390, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 389, Current: 390, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 390
+Sending RR and SREJ in buffer:391 
+~~~~~Expected: 391  ~~~~~~~ 
+~~~~~~~~~~~Highest: 390, Current: 391, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 390, Current: 391, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 391
+Sending RR and SREJ in buffer:392 
+~~~~~Expected: 392  ~~~~~~~ 
+~~~~~~~~~~~Highest: 391, Current: 392, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 391, Current: 392, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 392
+Sending RR and SREJ in buffer:393 
+~~~~~Expected: 393  ~~~~~~~ 
+~~~~~~~~~~~Highest: 392, Current: 393, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 392, Current: 393, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 393
+Sending RR and SREJ in buffer:394 
+~~~~~Expected: 394  ~~~~~~~ 
+~~~~~~~~~~~Highest: 393, Current: 394, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 393, Current: 394, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 394
+Sending RR and SREJ in buffer:395 
+~~~~~Expected: 395  ~~~~~~~ 
+~~~~~~~~~~~Highest: 394, Current: 395, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 394, Current: 395, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 395
+Sending RR and SREJ in buffer:396 
+~~~~~Expected: 396  ~~~~~~~ 
+~~~~~~~~~~~Highest: 395, Current: 396, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 395, Current: 396, Lowest: 0~~~~~~~~~~~~~~~~~
+~~~~~Expected: 396  ~~~~~~~ 
+~~~~~~~~~~~Highest: 395, Current: 396, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 395, Current: 396, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 396
+Sending RR and SREJ in buffer:397 
+~~~~~Expected: 397  ~~~~~~~ 
+~~~~~~~~~~~Highest: 396, Current: 397, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 396, Current: 397, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 397
+Sending RR and SREJ in buffer:398 
+~~~~~Expected: 398  ~~~~~~~ 
+~~~~~~~~~~~Highest: 397, Current: 398, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 397, Current: 398, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 398
+Sending RR and SREJ in buffer:399 
+~~~~~Expected: 399  ~~~~~~~ 
+~~~~~~~~~~~Highest: 398, Current: 399, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 398, Current: 399, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 399
+Sending RR and SREJ in buffer:400 
+~~~~~Expected: 400  ~~~~~~~ 
+~~~~~~~~~~~Highest: 399, Current: 400, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 399, Current: 400, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 400
+Sending RR and SREJ in buffer:401 
+~~~~~Expected: 401  ~~~~~~~ 
+~~~~~~~~~~~Highest: 400, Current: 401, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 400, Current: 401, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 401
+Sending RR and SREJ in buffer:402 
+~~~~~Expected: 402  ~~~~~~~ 
+~~~~~~~~~~~Highest: 401, Current: 402, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 401, Current: 402, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 402
+Sending RR and SREJ in buffer:403 
+~~~~~ERECV          SEQ# 403 LEN 1007 FLAGS 16   -Data #:  403
+SEND MSG# 429 SEQ#   0 LEN   11 FLAGS  5   -RR #:    404
+RECV          SEQ# 404 LEN 1007 FLAGS 16   -Data #:  404
+SEND MSG# 430 SEQ#   0 LEN   11 FLAGS  5   -RR #:    405
+RECV          SEQ# 405 LEN 1007 FLAGS 16   -Data #:  405
+SEND MSG# 431 SEQ#   0 LEN   11 FLAGS  5   -RR #:    406
+RECV          SEQ# 406 LEN 1007 FLAGS 16   -Data #:  406
+SEND MSG# 432 SEQ#   0 LEN   11 FLAGS  5   -RR #:    407 - DROPPED 
+RECV          SEQ# 407 LEN 1007 FLAGS 16   -Data #:  407
+SEND MSG# 433 SEQ#   0 LEN   11 FLAGS  5   -RR #:    408
+RECV          SEQ# 408 LEN 1007 FLAGS 16   -Data #:  408
+SEND MSG# 434 SEQ#   0 LEN   11 FLAGS  5   -RR #:    409
+RECV          SEQ# 409 LEN 1007 FLAGS 16   -Data #:  409
+SEND MSG# 435 SEQ#   0 LEN   11 FLAGS  5   -RR #:    410
+RECV          SEQ# 410 LEN 1007 FLAGS 16   -Data #:  410
+SEND MSG# 436 SEQ#   0 LEN   11 FLAGS  5   -RR #:    411
+RECV          SEQ# 411 LEN 1007 FLAGS 16   -Data #:  411
+SEND MSG# 437 SEQ#   0 LEN   11 FLAGS  5   -RR #:    412
+RECV          SEQ# 412 LEN 1007 FLAGS 16   -Data #:  412
+SEND MSG# 438 SEQ#   0 LEN   11 FLAGS  5   -RR #:    413
+RECV          SEQ# 413 LEN 1007 FLAGS 16   -Data #:  413
+SEND MSG# 439 SEQ#   0 LEN   11 FLAGS  5   -RR #:    414
+RECV          SEQ# 414 LEN 1007 FLAGS 16   -Data #:  414
+SEND MSG# 440 SEQ#   0 LEN   11 FLAGS  5   -RR #:    415
+RECV          SEQ# 415 LEN 1007 FLAGS 16   -Data #:  415
+SEND MSG# 441 SEQ#   0 LEN   11 FLAGS  5   -RR #:    416
+RECV          SEQ# 416 LEN 1007 FLAGS 16   -Data #:  416
+SEND MSG# 442 SEQ#   0 LEN   11 FLAGS  5   -RR #:    417
+RECV          SEQ# 417 LEN 1007 FLAGS 16   -Data #:  417
+SEND MSG# 443 SEQ#   0 LEN   11 FLAGS  5   -RR #:    418
+RECV          SEQ# 418 LEN 1007 FLAGS 16   -Data #:  418
+SEND MSG# 444 SEQ#   0 LEN   11 FLAGS  5   -RR #:    419
+RECV          SEQ# 419 LEN 1007 FLAGS 16   -Data #:  419
+SEND MSG# 445 SEQ#   0 LEN   11 FLAGS  5   -RR #:    420 - DROPPED 
+RECV          SEQ# 420 LEN 1007 FLAGS 16   -Data #:  420
+SEND MSG# 446 SEQ#   0 LEN   11 FLAGS  5   -RR #:    421
+xpected: 403  ~~~~~~~ 
+~~~~~~~~~~~Highest: 402, Current: 403, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 402, Current: 403, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 403
+Sending RR and SREJ in buffer:404 
+~~~~~Expected: 404  ~~~~~~~ 
+~~~~~~~~~~~Highest: 403, Current: 404, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 403, Current: 404, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 404
+Sending RR and SREJ in buffer:405 
+~~~~~Expected: 405  ~~~~~~~ 
+~~~~~~~~~~~Highest: 404, Current: 405, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 404, Current: 405, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 405
+Sending RR and SREJ in buffer:406 
+~~~~~Expected: 406  ~~~~~~~ 
+~~~~~~~~~~~Highest: 405, Current: 406, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 405, Current: 406, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 406
+Sending RR and SREJ in buffer:407 
+~~~~~Expected: 407  ~~~~~~~ 
+~~~~~~~~~~~Highest: 406, Current: 407, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 406, Current: 407, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 407
+Sending RR and SREJ in buffer:408 
+~~~~~Expected: 408  ~~~~~~~ 
+~~~~~~~~~~~Highest: 407, Current: 408, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 407, Current: 408, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 408
+Sending RR and SREJ in buffer:409 
+~~~~~Expected: 409  ~~~~~~~ 
+~~~~~~~~~~~Highest: 408, Current: 409, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 408, Current: 409, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 409
+Sending RR and SREJ in buffer:410 
+~~~~~Expected: 410  ~~~~~~~ 
+~~~~~~~~~~~Highest: 409, Current: 410, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 409, Current: 410, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 410
+Sending RR and SREJ in buffer:411 
+~~~~~Expected: 411  ~~~~~~~ 
+~~~~~~~~~~~Highest: 410, Current: 411, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 410, Current: 411, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 411
+Sending RR and SREJ in buffer:412 
+~~~~~Expected: 412  ~~~~~~~ 
+~~~~~~~~~~~Highest: 411, Current: 412, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 411, Current: 412, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 412
+Sending RR and SREJ in buffer:413 
+~~~~~Expected: 413  ~~~~~~~ 
+~~~~~~~~~~~Highest: 412, Current: 413, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 412, Current: 413, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 413
+Sending RR and SREJ in buffer:414 
+~~~~~Expected: 414  ~~~~~~~ 
+~~~~~~~~~~~Highest: 413, Current: 414, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 413, Current: 414, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 414
+Sending RR and SREJ in buffer:415 
+~~~~~Expected: 415  ~~~~~~~ 
+~~~~~~~~~~~Highest: 414, Current: 415, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 414, Current: 415, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 415
+Sending RR and SREJ in buffer:416 
+~~~~~Expected: 416  ~~~~~~~ 
+~~~~~~~~~~~Highest: 415, Current: 416, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 415, Current: 416, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 416
+Sending RR and SREJ in buffer:417 
+~~~~~Expected: 417  ~~~~~~~ 
+~~~~~~~~~~~Highest: 416, Current: 417, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 416, Current: 417, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 417
+Sending RR and SREJ in buffer:418 
+~~~~~Expected: 418  ~~~~~~~ 
+~~~~~~~~~~~Highest: 417, Current: 418, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 417, Current: 418, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 418
+Sending RR and SREJ in buffer:419 
+~~~~~Expected: 419  ~~~~~~~ 
+~~~~~~~~~~~Highest: 418, Current: 419, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 418, Current: 419, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 419
+Sending RR and SREJ in buffer:420 
+~~~~~Expected: 420  ~~~~~~~ 
+~~~~~~~~~~~Highest: 419, Current: 420, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 419, Current: 420, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 420
+Sending RR and SREJ in buffer:421 
+~~~~~Expected: 421  ~~~~~~~ 
+~~~~~~~~~~~Highest: 420RECV          SEQ# 421 LEN 1007 FLAGS 16   -Data #:  421
+SEND MSG# 447 SEQ#   0 LEN   11 FLAGS  5   -RR #:    422 - DROPPED 
+RECV          SEQ# 422 LEN 1007 FLAGS 16   -Data #:  422
+SEND MSG# 448 SEQ#   0 LEN   11 FLAGS  5   -RR #:    423
+RECV          SEQ# 423 LEN 1007 FLAGS 16   -Data #:  423
+SEND MSG# 449 SEQ#   0 LEN   11 FLAGS  5   -RR #:    424
+RECV          SEQ# 424 LEN 1007 FLAGS 16   -Data #:  424
+SEND MSG# 450 SEQ#   0 LEN   11 FLAGS  5   -RR #:    425
+RECV          SEQ# 425 LEN 1007 FLAGS 16   -Data #:  425
+SEND MSG# 451 SEQ#   0 LEN   11 FLAGS  5   -RR #:    426
+RECV          SEQ# 426 LEN 1007 FLAGS 16   -Data #:  426
+SEND MSG# 452 SEQ#   0 LEN   11 FLAGS  5   -RR #:    427
+RECV          SEQ# 427 LEN 1007 FLAGS 16   -Data #:  427
+SEND MSG# 453 SEQ#   0 LEN   11 FLAGS  5   -RR #:    428
+RECV          SEQ# 428 LEN 1007 FLAGS 16   -Data #:  428
+SEND MSG# 454 SEQ#   0 LEN   11 FLAGS  5   -RR #:    429
+RECV          SEQ# 429 LEN 1007 FLAGS 16   -Data #:  429
+SEND MSG# 455 SEQ#   0 LEN   11 FLAGS  5   -RR #:    430
+RECV          SEQ# 430 LEN   87 FLAGS 16   -Data #:  430
+SEND MSG# 456 SEQ#   0 LEN   11 FLAGS  5   -RR #:    431 - FLIPPED BITS 
+RECV          SEQ# 431 LEN    7 FLAGS 10   -User defined 
+SEND MSG# 457 SEQ#   0 LEN   11 FLAGS  5   -RR #:    432
+RECV          SEQ# 431 LEN    7 FLAGS 10   -User defined 
+SEND MSG# 458 SEQ#   0 LEN    7 FLAGS 10   -User defined 
+======== SeqNo Report ========
+  Msgs (Total)       :   458
+  Msgs (Unique SeqNo):     1
+==============================
+, Current: 421, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 420, Current: 421, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 421
+Sending RR and SREJ in buffer:422 
+~~~~~Expected: 422  ~~~~~~~ 
+~~~~~~~~~~~Highest: 421, Current: 422, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 421, Current: 422, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 422
+Sending RR and SREJ in buffer:423 
+~~~~~Expected: 423  ~~~~~~~ 
+~~~~~~~~~~~Highest: 422, Current: 423, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 422, Current: 423, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 423
+Sending RR and SREJ in buffer:424 
+~~~~~Expected: 424  ~~~~~~~ 
+~~~~~~~~~~~Highest: 423, Current: 424, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 423, Current: 424, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 424
+Sending RR and SREJ in buffer:425 
+~~~~~Expected: 425  ~~~~~~~ 
+~~~~~~~~~~~Highest: 424, Current: 425, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 424, Current: 425, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 425
+Sending RR and SREJ in buffer:426 
+~~~~~Expected: 426  ~~~~~~~ 
+~~~~~~~~~~~Highest: 425, Current: 426, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 425, Current: 426, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 426
+Sending RR and SREJ in buffer:427 
+~~~~~Expected: 427  ~~~~~~~ 
+~~~~~~~~~~~Highest: 426, Current: 427, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 426, Current: 427, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 427
+Sending RR and SREJ in buffer:428 
+~~~~~Expected: 428  ~~~~~~~ 
+~~~~~~~~~~~Highest: 427, Current: 428, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 427, Current: 428, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 428
+Sending RR and SREJ in buffer:429 
+~~~~~Expected: 429  ~~~~~~~ 
+~~~~~~~~~~~Highest: 428, Current: 429, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 428, Current: 429, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 429
+Sending RR and SREJ in buffer:430 
+~~~~~Expected: 430  ~~~~~~~ 
+~~~~~~~~~~~Highest: 429, Current: 430, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 429, Current: 430, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 430
+Sending RR and SREJ in buffer:431 
+~~~~~Expected: 431  ~~~~~~~ 
+~~~~~~~~~~~Highest: 430, Current: 431, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 430, Current: 431, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 431
+Sending RR and SREJ in buffer:432 
+~~~~~Expected: 432  ~~~~~~~ 
+~~~~~~~~~~~Highest: 431, Current: 432, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+Exiting tranfer completeSent EOF packet to client.
+Exiting from INORDER
+
+real	0m0.043s
+user	0m0.000s
+sys	0m0.013s

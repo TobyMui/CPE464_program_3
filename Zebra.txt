@@ -1,0 +1,2 @@
+File transfer is the process of moving data from one location to another over a communication network. 
+This can be done between different types of devices, such as between two computers or between a 

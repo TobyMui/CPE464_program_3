@@ -29,14 +29,14 @@ typedef enum{
 	SEND_FILENAME,
 	RECEIVE_DATA,
 	FILE_OK
-} RcopyState;
+}RcopyState;
 
 typedef enum{
 	INORDER,
 	BUFFER, 
 	FLUSH,
 	EXIT
-} recvState;
+}RecvState;
 
 void send_filename(int socketNum, struct sockaddr_in6 *server, uint32_t window_size, uint32_t buffer_size, char *filename);
 void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]);
@@ -247,18 +247,22 @@ void send_rr(int sockfd, struct sockaddr_in6 *server, uint32_t next_expected_seq
 	safeSendto(sockfd, rr_packet, 11, 0, (struct sockaddr *)server, addr_len);
 }
 
-recvState handle_flush(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile) {
+RecvState handle_flush(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile) {
     while(1) {
         // Calculate current index using modulo for circular buffer
 		printf("buffering\n"); 
         int current_index = buffer->current % buffer->size;
+
+		printf("CURRENT INDEX IN BUFFER: %d\n", current_index ); 
         
         // Exit loop if current entry is invalid
         if (buffer->entries[current_index].valid_flag != 1) break;
 
         // Write the actual buffered data
-        fwrite(buffer->entries[current_index].data, 1, buffer->entries[current_index].data_len,  outFile);
-        
+		printf("Writing in flush%d\n", buffer->current);
+
+		fwrite(buffer->entries[current_index].data, buffer->entries[current_index].data_len, 1, outFile);
+
         buffer->entries[current_index].valid_flag = 0;
         
         // Move to next sequence number
@@ -283,7 +287,7 @@ recvState handle_flush(int sockNum, struct sockaddr_in6 *server, CircularBuffer 
     return INORDER;
 }
 
-recvState handle_buffer(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile){
+RecvState handle_buffer(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile){
 	//Init for FSM
 	int recvLen = 0; 
 	int socketReady; 
@@ -320,6 +324,7 @@ recvState handle_buffer(int sockNum, struct sockaddr_in6 *server, CircularBuffer
 
 		//Algorithm for determining the next state
 		if(seq_num == buffer->current){ //Move to flush state; 
+			printf("Writing in buffer%d\n", buffer->current);
 			fwrite(in_packet + HEADER_SIZE , recvLen - HEADER_SIZE, 1, outFile); // Write to file go to inorder 
 			fflush(outFile);
 			buffer->current++;
@@ -328,6 +333,8 @@ recvState handle_buffer(int sockNum, struct sockaddr_in6 *server, CircularBuffer
 			buffer_add(buffer, seq_num, in_packet + HEADER_SIZE, recvLen - HEADER_SIZE ); 
 			buffer->highest = seq_num;
 			return BUFFER;
+		}else if(seq_num < buffer->current){
+			send_rr(sockNum,server,buffer->current);
 		}
 	}else if(socketReady == -1){ 
 		exit(-1); 
@@ -335,7 +342,7 @@ recvState handle_buffer(int sockNum, struct sockaddr_in6 *server, CircularBuffer
 	return BUFFER; 
 }
 
-recvState handle_inorder(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile){
+RecvState handle_inorder(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile){
 	//Init for FSM
 	int recvLen = 0; 
 	int socketReady; 
@@ -373,6 +380,7 @@ recvState handle_inorder(int sockNum, struct sockaddr_in6 *server, CircularBuffe
 		printf("~~~~~~~~~~~Highest: %d, Current: %d, Lowest: %d~~~~~~~~~~~~~~~~~\n", buffer->highest, buffer->current, buffer->lowest);
 
 		if( seq_num == buffer->current){
+			printf("Writing inorder %d\n", buffer->current);
 			fwrite(in_packet + HEADER_SIZE , recvLen - HEADER_SIZE, 1, outFile); // Write to file go to inorder
 			fflush(outFile);
 			buffer->highest = buffer->current; 
@@ -386,22 +394,27 @@ recvState handle_inorder(int sockNum, struct sockaddr_in6 *server, CircularBuffe
 			buffer_add(buffer, seq_num, in_packet + HEADER_SIZE, recvLen - HEADER_SIZE ); 
 			buffer->highest = seq_num;
 			return BUFFER;
+		}else if(seq_num < buffer->current){
+			send_rr(sockNum,server,buffer->current);
 		}
-		send_rr(sockNum, server, buffer->current);
 	}else if(socketReady == -1){ 
 		exit(-1); 
 	}
 	return INORDER; 
 }
 
-RcopyState receive_data_fsm(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile, recvState current, recvState next){
+RecvState receive_data_fsm(int sockNum, struct sockaddr_in6 *server, CircularBuffer *buffer, FILE *outFile, RecvState current){
 	printf("~~~~~Expected: %d  ~~~~~~~ \n", buffer->current); 	
+	printf("~~~~~~~~~~~Highest: %d, Current: %d, Lowest: %d~~~~~~~~~~~~~~~~~\n", buffer->highest, buffer->current, buffer->lowest);
+
+	RecvState next; 
 	switch(current){
 			case INORDER: 
+				printf("INORDER:\n");
 				next = handle_inorder(sockNum, server, buffer, outFile);
 				if (next == EXIT) {
 					printf("Exiting from INORDER\n");
-					return DONE; 
+					return EXIT; 
 				}
 				break;
 			case BUFFER:
@@ -409,7 +422,7 @@ RcopyState receive_data_fsm(int sockNum, struct sockaddr_in6 *server, CircularBu
 				next = handle_buffer(sockNum, server, buffer, outFile);
 				if (next == EXIT) {
 					printf("Exiting from BUFFER\n");
-					return DONE; 
+					return EXIT; 
 
 				}
 				break; 
@@ -417,7 +430,7 @@ RcopyState receive_data_fsm(int sockNum, struct sockaddr_in6 *server, CircularBu
 				next = handle_flush(sockNum, server, buffer, outFile);
 				if (next == EXIT) {
 					printf("Exiting from FLUSH\n");
-					return DONE; 
+					return EXIT; 
 				}
 				break; 
 			case EXIT: 
@@ -425,7 +438,7 @@ RcopyState receive_data_fsm(int sockNum, struct sockaddr_in6 *server, CircularBu
 			default:
 				next = EXIT; 
 	}
-	return RECEIVE_DATA;
+	return next;
 }
 
 /////////////////////////////////////////FSM///////////////////////////////////////////
@@ -438,8 +451,7 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]){
 	buffer_init(buffer, atoi(argv[3]), atoi(argv[4]), 0);
 
 	//Init for recvFSM
-	recvState currentRecvState = INORDER; 
-	recvState nextRecvState =  INORDER; 
+	RecvState currentRecvState = INORDER; 
 
 	// Open a file for writing
 	FILE *outFile = fopen(argv[2], "wb");
@@ -464,12 +476,12 @@ void rcopy_FSM(int sockfd, struct sockaddr_in6 *server, char *argv[]){
 			printf("File Ok state reached\n");
 			break;
 		case RECEIVE_DATA:
-			currentRecvState = nextRecvState; 
-			state = receive_data_fsm(sockfd,server, buffer, outFile, currentRecvState, nextRecvState);
-			if(state == DONE){
+			currentRecvState = receive_data_fsm(sockfd,server, buffer, outFile, currentRecvState);
+			if(currentRecvState == EXIT){
 				fflush(outFile);
 				fclose(outFile);
 				buffer_free(buffer); 
+				state = DONE; 
 			}
 			break;
 		default:

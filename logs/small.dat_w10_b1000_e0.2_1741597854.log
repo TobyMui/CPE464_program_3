@@ -1,0 +1,42 @@
+Send Err-INIT ErrRate: 0.20 Drop: Y Flip: Y Rand: Y Debug: Y
+SEND MSG#   1 SEQ#   0 LEN   35 FLAGS  8   -FNAME request
+RECV          SEQ#   0 LEN    7 FLAGS  9   -FNAME response
+RECV          SEQ#   0 LEN  807 FLAGS 16   -Data #:    0
+SEND MSG#   2 SEQ#   0 LEN   11 FLAGS  5   -RR #:      1
+RECV          SEQ#   1 LEN    7 FLAGS 10   -User defined 
+SEND MSG#   3 SEQ#   0 LEN   11 FLAGS  5   -RR #:      2 - FLIPPED BITS 
+RECV          SEQ#   1 LEN    7 FLAGS 10   -User defined 
+SEND MSG#   4 SEQ#   0 LEN    7 FLAGS 10   -User defined 
+======== SeqNo Report ========
+  Msgs (Total)       :     4
+  Msgs (Unique SeqNo):     1
+==============================
+Server info - IP: ::ffff:127.0.0.1 Port: 41418 
+Error_rate: 0.200000
+packet length = 35
+Attempt 1: Sent filename packet
+Incoming bytes: 7, Received response from server: 
+Flag: 9
+Filename exist, the server will be sending data
+File Ok state reached
+~~~~~Expected: 0  ~~~~~~~ 
+~~~~~~~~~~~Highest: 0, Current: 0, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 0, Current: 0, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 0
+Sending RR and SREJ in buffer:1 
+~~~~~Expected: 1  ~~~~~~~ 
+~~~~~~~~~~~Highest: 0, Current: 1, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+~~~~~~~~~~~Highest: 0, Current: 1, Lowest: 0~~~~~~~~~~~~~~~~~
+Writing inorder 1
+Sending RR and SREJ in buffer:2 
+~~~~~Expected: 2  ~~~~~~~ 
+~~~~~~~~~~~Highest: 1, Current: 2, Lowest: 0~~~~~~~~~~~~~~~~~
+INORDER:
+Exiting tranfer completeSent EOF packet to client.
+Exiting from INORDER
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.002s

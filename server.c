@@ -255,18 +255,20 @@ int process_rr_srej_eof(int socketNum, struct sockaddr_in6 *client, CircularBuff
     //Check the flag and call send either RR or SREJ
     if (flag == FLAG_RR){
         printf("Received RR for packet #%d. Moving window forward.\n", seq_num);
+        window->lowest = seq_num;
+        window->highest = window->lowest + window->size;
 
-        if (seq_num >= window->lowest) {  // Ensure we're moving forward, not backward
-            window->lowest = seq_num;
-            window->highest = window->lowest + window->size;
+        // if (seq_num >= window->lowest) {  // Ensure we're moving forward, not backward
+        //     window->lowest = seq_num;
+        //     window->highest = window->lowest + window->size;
     
-            if (window->current > window->highest) {
-                printf("Warning: Current sequence (%d) ahead of highest (%d). Adjusting.\n", window->current, window->highest);
-                window->current = window->highest;  // Prevent current from exceeding highest
-            }
-        } else {
-            printf("Warning: Received RR for an earlier packet (%d), ignoring.\n", seq_num);
-        }
+        //     if (window->current > window->highest) {
+        //         printf("Warning: Current sequence (%d) ahead of highest (%d). Adjusting.\n", window->current, window->highest);
+        //         window->current = window->highest;  // Prevent current from exceeding highest
+        //     }
+        // } else {
+        //     printf("Warning: Received RR for an earlier packet (%d), ignoring.\n", seq_num);
+        // }
     }else if (flag == FLAG_SREJ){
         printf("\n"); 
         printf("Received SREJ for packet #%d. Resending...\n", seq_num);
@@ -315,7 +317,7 @@ ServerState handle_send_data(int socketNum, struct sockaddr_in6 *client, Circula
         if(socketReady == -1){ // Poll with 1s timeout
             if (++attempts >= 10){
                 printf("Client timed out. Ending transfer.\n"); //Probably have to change to something else. 
-                return DONE;
+                return DONE; 
             }
             printf("Resending from timeout:%d\n", window->current);
             resend_packet(socketNum, client, window->lowest, window, FLAG_RESENT_TIMEOUT);
